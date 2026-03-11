@@ -6,6 +6,7 @@ import { Logos } from "@/components/blocks/logos";
 import { Pricing } from "@/components/blocks/pricing";
 import { ResourceAllocation } from "@/components/blocks/resource-allocation";
 import { Testimonials } from "@/components/blocks/testimonials";
+import { Trainers } from "@/components/blocks/trainers";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Logos />
         <Features />
         <ResourceAllocation />
+        <Trainers />
       </Background>
       <Testimonials />
       <Background variant="bottom">
