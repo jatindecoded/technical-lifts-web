@@ -1,27 +1,23 @@
 @import "tailwindcss";
-
 @import "tw-animate-css";
-@plugin '@tailwindcss/typography';
-
-@variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: #0A0A0A;
+  --foreground: #F5F5F5;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.92 0.04 86.47);
-  --primary-foreground: oklch(0.31 0.02 86.64);
+  --primary: #E8FF00;
+  --primary-foreground: #0A0A0A;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted: #2A2A2A;
+  --muted-foreground: #A0A0A0;
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
+  --border: oklch(1 0 0 / 10%);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
 
@@ -40,7 +36,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  --radius: 8px;
+  --radius: 0.625rem;
 
   --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
   --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
@@ -58,7 +54,6 @@
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  /* StyleGlide provides a better abstraction for fonts */
   --display-family: var(--font-sans);
   --text-family: var(--font-inter);
   --display-weight: 600;
@@ -72,8 +67,8 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: #E8FF00;
+  --primary-foreground: #0A0A0A;
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -102,23 +97,32 @@
 }
 
 @theme inline {
+  --font-heading: "Syne", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --color-primary: #E8FF00;
+  --color-dark: #0A0A0A;
+  --color-surface: #141414;
+  --color-muted: #2A2A2A;
+  --color-border: #2A2A2A;
+  --color-text-base: #F5F5F5;
+  --color-text-muted: #A0A0A0;
+  --spacing-section: 6rem;
+  --spacing-container: 80rem;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
 
@@ -159,36 +163,11 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1400px; /* default is 1536px */
+  --breakpoint-2xl: 1400px;
 
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
   --font-mono: var(--font-mono);
-
-  --font-display: var(--display-family);
-  --font-text: var(--text-family);
-  --font-weight-display: var(--display-weight);
-  --font-weight-text: var(--text-weight);
-
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
 }
 
 @utility container {
@@ -200,13 +179,26 @@
 }
 
 @layer base {
-  * {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-dark text-text-base font-body;
   }
-  *,
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+
   ::after,
   ::before,
   ::backdrop,
@@ -215,43 +207,11 @@
   }
 }
 
-@layer utilities {
-  body,
-  .font-text {
-    font-family: var(--font-text);
-    font-weight: var(--text-weight);
-  }
-  h1,
-  h2,
-  .font-display {
-    font-family: var(--font-display);
-    font-weight: var(--display-weight);
-    -webkit-font-feature-settings:
-      "ss02" on,
-      "ss03" on,
-      "ss04" on;
-    -moz-font-feature-settings:
-      "ss02" on,
-      "ss03" on,
-      "ss04" on;
-    -ms-font-feature-settings:
-      "ss02" on,
-      "ss03" on,
-      "ss04" on;
-    font-feature-settings:
-      "ss02" on,
-      "ss03" on,
-      "ss04" on; /* Enables the special `a` character and other characters for DM Sans */
-  }
-  .font-mono {
-    font-family: var(--font-mono), monospace;
-  }
-}
-
 @layer components {
   button {
     cursor: pointer;
   }
+
   [class*="border"] {
     @apply border-border;
   }
@@ -261,6 +221,7 @@ html,
 body {
   scroll-behavior: smooth;
 }
+
 body {
   position: relative;
 }
