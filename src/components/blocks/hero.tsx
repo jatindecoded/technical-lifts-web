@@ -10,6 +10,7 @@ import {
 
 import { DashedLine } from "@/components/dashed-line";
 import { Button } from "@/components/ui/button";
+import { SITE } from "@/lib/constants";
 
 const features = [
   {
@@ -41,30 +42,26 @@ export const Hero = () => {
         {/* Left side - Main content */}
         <div className="flex-1">
           <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl xl:whitespace-nowrap">
-            Mainline Next.js template
+            {SITE.tagline}
+            <br />
+            <span className="text-primary">{SITE.taglineAccent}</span>
           </h1>
 
           <p className="text-muted-foreground text-1xl mt-5 md:text-3xl">
-            Mainline is an open-source website template built with shadcn/ui,
-            Tailwind 4 & Next.js
+            {SITE.subheadline}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
             <Button asChild>
-              <a href="https://github.com/shadcnblocks/mainline-nextjs-template">
-                Get template
-              </a>
+              <a href="#trial">{SITE.trialCTA}</a>
             </Button>
             <Button
               variant="outline"
               className="from-background h-auto gap-2 bg-linear-to-r to-transparent shadow-md"
               asChild
             >
-              <a
-                href="https://shadcnblocks.com"
-                className="max-w-56 truncate text-start md:max-w-none"
-              >
-                Built by shadcnblocks.com
+              <a href="#pricing" className="max-w-56 truncate text-start md:max-w-none">
+                {SITE.secondaryCTA}
                 <ArrowRight className="stroke-3" />
               </a>
             </Button>
@@ -103,8 +100,8 @@ export const Hero = () => {
       <div className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
         <div className="relative h-[793px] w-full">
           <Image
-            src="/hero.webp"
-            alt="hero"
+            src="/hero.jpg"
+            alt={SITE.name}
             fill
             className="rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none"
           />
