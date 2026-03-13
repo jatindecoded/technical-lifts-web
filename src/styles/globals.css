@@ -2,18 +2,18 @@
 @import "tw-animate-css";
 
 :root {
-  --background: #0A0A0A;
-  --foreground: #F5F5F5;
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #E8FF00;
-  --primary-foreground: #0A0A0A;
+  --primary: #e8ff00;
+  --primary-foreground: #0a0a0a;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: #2A2A2A;
-  --muted-foreground: #A0A0A0;
+  --muted: #2a2a2a;
+  --muted-foreground: #a0a0a0;
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -67,8 +67,8 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: #E8FF00;
-  --primary-foreground: #0A0A0A;
+  --primary: #e8ff00;
+  --primary-foreground: #0a0a0a;
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -97,15 +97,15 @@
 }
 
 @theme inline {
-  --font-heading: "Syne", sans-serif;
+  --font-heading: "Bricolage Grotesque", sans-serif;
   --font-body: "Inter", sans-serif;
-  --color-primary: #E8FF00;
-  --color-dark: #0A0A0A;
+  --color-primary: #e8ff00;
+  --color-dark: #0a0a0a;
   --color-surface: #141414;
-  --color-muted: #2A2A2A;
-  --color-border: #2A2A2A;
-  --color-text-base: #F5F5F5;
-  --color-text-muted: #A0A0A0;
+  --color-muted: #2a2a2a;
+  --color-border: #2a2a2a;
+  --color-text-base: #f5f5f5;
+  --color-text-muted: #a0a0a0;
   --spacing-section: 6rem;
   --spacing-container: 80rem;
 
@@ -197,6 +197,7 @@
   h5,
   h6 {
     @apply font-heading;
+    font-weight: 700;
   }
 
   ::after,
