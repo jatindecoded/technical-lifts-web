@@ -11,7 +11,7 @@ import { Trainers } from "@/components/blocks/trainers";
 export default function Home() {
   return (
     <>
-      <Background className="via-muted to-muted/80">
+      <Background className="via-black to-black/80">
         <Hero />
         <Logos />
         <Features />

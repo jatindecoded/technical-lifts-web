@@ -21,12 +21,12 @@ export const Navbar = () => {
   return (
     <section
       className={cn(
-        "bg-background/70 absolute left-1/2 z-50 w-[min(90%,700px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
+        "bg-background shadow-xl absolute left-1/2 z-50 w-[min(90%,900px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
         "top-5 lg:top-12",
       )}
     >
       <div className="flex items-center justify-between px-6 py-3">
-        <Link href="/" className="flex shrink-0 items-center gap-2">
+        <Link href="/" className="flex text-primary shrink-0 items-center gap-2 font-heading uppercase">
           {SITE.name}
         </Link>
 

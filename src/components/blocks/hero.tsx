@@ -38,20 +38,20 @@ const features = [
 export const Hero = () => {
   return (
     <section className="py-28 lg:py-32 lg:pt-44">
-      <div className="container flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
+      <div className="container flex flex-col items-center justify-center lg:flex-row gap-10">
         {/* Left side - Main content */}
-        <div className="flex-1">
-          <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl xl:whitespace-nowrap">
+        <div className="overflow-hidden text-center flex flex-col items-center lg:items-start lg:text-left">
+          <h1 className="text-foreground max-w-160 text-4xl tracking-tight md:text-5xl lg:text-6xl">
             {SITE.tagline}
             <br />
             <span className="text-primary">{SITE.taglineAccent}</span>
           </h1>
 
-          <p className="text-muted-foreground text-1xl mt-5 md:text-3xl">
+          <p className="text-muted-foreground text-lg mt-5 md:text-lg lg:max-w-100">
             {SITE.subheadline}
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
+          <div className="mt-8 flex flex-col flex-wrap items-center gap-4 lg:flex-nowrap lg:flex-row">
             <Button asChild>
               <a href="#trial">{SITE.trialCTA}</a>
             </Button>
@@ -69,7 +69,7 @@ export const Hero = () => {
         </div>
 
         {/* Right side - Features */}
-        <div className="relative flex flex-1 flex-col justify-center space-y-5 max-lg:pt-10 lg:pl-10">
+        <div className="relative flex flex-col justify-center space-y-5 lg:pl-10 pt-10 lg:pt-0">
           <DashedLine
             orientation="vertical"
             className="absolute top-0 left-0 max-lg:hidden"

@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Technical Lifts",
-  tagline: "Built for",
+  tagline: "We are Built for",
   taglineAccent: "SERIOUS LIFTERS",
   subheadline:
     "Certified trainers. Real equipment. No fluff. Whether you are starting out or training seriously - this is where progress happens.",
@@ -79,6 +79,24 @@ export const TRAINERS_SECTION = {
   heading: "The People Behind Your Progress",
   subline:
     "Every trainer is certified and has helped real members hit real goals.",
+};
+
+export const TRANSFORMATIONS_SECTION = {
+  heading: "Real People. Real Results.",
+  googleReviewsLine: "100+ five-star reviews on Google.",
+};
+
+export const PRICING_SECTION = {
+  heading: "Find a Plan That Fits",
+  ctaLabel: "Get Started",
+  footnote:
+    "Personal Training pricing is customized. Talk to us - no commitment required.",
+};
+
+export const FAQ_SECTION = {
+  heading: "Common Questions",
+  supportLinePrefix: "If you can't find what you're looking for,",
+  supportLinkLabel: "get in touch",
 };
 
 export interface Trainer {
