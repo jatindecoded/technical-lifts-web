@@ -1,24 +1,27 @@
 export const SITE = {
   name: "Technical Lifts",
   tagline: "Technical Lifts is Built for",
-  taglineAccent: "Serious Lifters",
+  taglineAccent: "Transformations",
   subheadline:
     "Certified trainers. Real equipment. No fluff. Whether you are starting out or training seriously - this is where progress happens.",
-  phone: "+91XXXXXXXXXX",
-  email: "hello@technicallifts.in",
-  address: "Full Address, Vikaspuri, New Delhi",
+  phone: "+91-89205-76059",
+  whatsapp: "+91-89205-76059",
+  // email: "hello@technicallifts.in",
+  address: "C-596, Vikas Puri, Near PVR Cinema, New Delhi - 110018",
   googleMapsUrl: "",
   instagramUrl: "",
   googleReviewsUrl: "",
   trialCTA: "Book Free Trial",
+  trialSubtext: "Free for website visitors. Walk-ins pay ₹500.",
   secondaryCTA: "See Membership Plans",
-  timings: "Mon-Sat: 6AM - 10PM  |  Sun: 7AM - 1PM",
+  timings: "Open 7 Days  |  5AM – 12AM (Midnight)",
 };
 
 export const NAV_LINKS = [
   { label: "Facilities", href: "#facilities" },
   { label: "Trainers", href: "#trainers" },
   { label: "Pricing", href: "#pricing" },
+  { label: "Blogs", href: "/blogs" },
   { label: "Transformations", href: "#transformations" },
   { label: "Contact", href: "#trial" },
 ];
@@ -253,34 +256,42 @@ export interface PricingPlan {
   features: string[];
 }
 
+const INCLUSIVE_FEATURES = [
+  "Full gym access",
+  "Weekly group classes",
+  "Unlimited chiller shower",
+  "Unlimited steam access",
+  "General trainer guidance",
+];
+
 export const PRICING_PLANS: PricingPlan[] = [
   {
     name: "Monthly",
-    duration: "1 Month",
-    price: "₹X",
+    duration: "30 Days",
+    price: "₹3,000",
     isPopular: false,
-    features: ["Full gym access", "Locker room", "Parking"],
+    features: INCLUSIVE_FEATURES,
   },
   {
     name: "Quarterly",
-    duration: "3 Months",
-    price: "₹X",
+    duration: "90 Days",
+    price: "₹7,500",
     isPopular: false,
-    features: ["Full gym access", "Locker room", "Parking"],
+    features: INCLUSIVE_FEATURES,
   },
   {
     name: "Half Yearly",
-    duration: "6 Months",
-    price: "₹X",
+    duration: "180 Days",
+    price: "₹12,000",
     isPopular: true,
-    features: ["Full gym access", "Locker room", "Parking", "Best value"],
+    features: INCLUSIVE_FEATURES,
   },
   {
     name: "Yearly",
-    duration: "12 Months",
-    price: "₹X",
+    duration: "365 Days",
+    price: "₹16,000",
     isPopular: false,
-    features: ["Full gym access", "Locker room", "Parking", "Max savings"],
+    features: INCLUSIVE_FEATURES,
   },
 ];
 

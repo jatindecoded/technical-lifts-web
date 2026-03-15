@@ -232,7 +232,7 @@ export function ContactForm() {
                   required
                 />
               </FormControl>
-              <div className="space-y-1 leading-none">
+              <div className="space-y-1">
                 <FormLabel>I agree to the terms and conditions</FormLabel>
 
                 <FormMessage />

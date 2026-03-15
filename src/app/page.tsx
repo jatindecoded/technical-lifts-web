@@ -11,19 +11,15 @@ export default function Home() {
   return (
     <>
       <Background className="via-black to-black/80">
-        <div className="space-y-48">
           <Hero />
           <Features />
           <ResourceAllocation />
           <Trainers />
-        </div>
       </Background>
       <Testimonials />
       <Background variant="bottom">
-        <div className="space-y-48">
           <Pricing />
           <FAQ />
-        </div>
       </Background >
     </>
   );

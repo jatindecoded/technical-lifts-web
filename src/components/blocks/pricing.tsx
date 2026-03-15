@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 export const Pricing = ({ className }: { className?: string }) => {
   return (
-    <section id="pricing" className={cn("py-28 lg:py-32", className)}>
+    <section id="pricing" className={cn("py-48 lg:py-64", className)}>
       <div className="container max-w-8xl">
         <div className="space-y-4 text-center">
           <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">

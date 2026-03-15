@@ -34,7 +34,7 @@ interface SectionItem {
 
 const topItems: SectionItem[] = [
     {
-        title: FEATURE_SECTIONS.personalTrainingHeading,
+        title: "",
         description: FEATURE_SECTIONS.personalTrainingBody,
         images: [],
         className:
@@ -81,7 +81,7 @@ const bottomItems: SectionItem[] = FACILITIES.map((facility, index) => ({
 
 export const ResourceAllocation = () => {
     return (
-        <section id="personal-training" className="overflow-hidden pb-28 lg:pb-32">
+        <section id="personal-training" className="overflow-hidden py-48 lg:py-64">
             <div className="">
                 <h2 className="container text-center text-3xl tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">
                     {FEATURE_SECTIONS.personalTrainingHeading}
@@ -146,7 +146,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
     return (
         <div
             className={cn(
-                "relative flex flex-col justify-between px-0 py-6 md:px-6 md:py-8",
+                "relative flex flex-col items-center justify-between px-0 py-6 md:px-6 md:py-8",
                 className,
                 item.className,
             )}
