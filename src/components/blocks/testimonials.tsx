@@ -30,7 +30,7 @@ export const Testimonials = ({
       <section className={cn("overflow-hidden py-28 lg:py-32", className)}>
         <div className="container">
           <div className="space-y-4">
-            <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
+            <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl text-center">
               {TRANSFORMATIONS_SECTION.heading}
             </h2>
           </div>
@@ -80,10 +80,10 @@ export const Testimonials = ({
               </div>
             </Carousel>
           </div>
-          <p className="text-muted-foreground max-w-md leading-snug">
+          <p className="text-muted-foreground max-w-md leading-snug my-8">
             <Link
               href={SITE.googleReviewsUrl}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground font-heading uppercase tracking-wide hover:text-foreground transition-colors"
             >
               {TRANSFORMATIONS_SECTION.googleReviewsLine}
             </Link>

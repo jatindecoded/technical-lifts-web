@@ -7,7 +7,7 @@ export const Trainers = () => {
     return (
         <section id={TRAINERS_SECTION.id} className="pb-28 lg:pb-32">
             <div className="container">
-                <div className="space-y-4">
+                <div className="space-y-4 text-center flex flex-col items-center">
                     <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
                         {TRAINERS_SECTION.heading}
                     </h2>

@@ -26,22 +26,26 @@ export const NAV_LINKS = [
 export const HERO_FEATURES = [
   {
     title: "Certified Trainers",
-    description: "Every trainer is ISSA or ACE certified with hands-on experience.",
+    description:
+      "Every trainer is ISSA or ACE certified with hands-on experience.",
     iconName: "Users",
   },
   {
     title: "Serious Equipment",
-    description: "Squat racks, deadlift platforms, full machine section — no compromises.",
+    description:
+      "Squat racks, deadlift platforms, full machine section — no compromises.",
     iconName: "Zap",
   },
   {
     title: "Custom Programs",
-    description: "Plans built around your schedule, body, and goals — not a template.",
+    description:
+      "Plans built around your schedule, body, and goals — not a template.",
     iconName: "Target",
   },
   {
     title: "Proven Results",
-    description: "100+ members have hit real goals here. Progress you can measure.",
+    description:
+      "100+ members have hit real goals here. Progress you can measure.",
     iconName: "TrendingUp",
   },
 ];
@@ -86,7 +90,7 @@ export const FACILITIES = [
 ];
 
 export const FEATURE_SECTIONS = {
-  whoItsForHeading: "Whether You Are Just Starting or Going All In",
+  whoItsForHeading: "Which Type of Lifter Are You?",
   personalTrainingHeading: "Train With a Plan, Not Just Motivation",
   personalTrainingBody:
     "Most people plateau because they are working hard without direction. Our certified personal trainers build a plan around you - your schedule, your body, your goal.",
@@ -155,7 +159,7 @@ export const TRAINERS_SECTION = {
 };
 
 export const TRANSFORMATIONS_SECTION = {
-  heading: "Real People. Real Results.",
+  heading: "Real People getting Real Results.",
   googleReviewsLine: "100+ five-star reviews on Google.",
 };
 
