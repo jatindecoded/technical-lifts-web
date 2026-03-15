@@ -11,7 +11,7 @@ const iconMap: Record<string, LucideIcon> = { Users, Zap, Target, TrendingUp };
 
 export const Hero = () => {
   return (
-    <section className="py-28 pt-50 lg:py-32 lg:pt-64">
+    <section className="relative py-28 pt-50 lg:py-32 lg:pt-64">
 
       <div className="container flex flex-col items-center justify-center lg:flex-row gap-10">
         {/* Left side - Main content */}
@@ -22,7 +22,7 @@ export const Hero = () => {
             <span className="text-primary">{SITE.taglineAccent}</span>
           </h1>
 
-          <p className="text-foreground text-lg mt-5 md:text-lg lg:max-w-100 leading-6">
+          <p className="text-muted-foreground text-md md:text-lg mt-5 md:text-lg lg:max-w-100 leading-6">
             {SITE.subheadline}
           </p>
 
@@ -77,7 +77,7 @@ export const Hero = () => {
           src={IMAGE_ASSETS.hero.src}
           alt={IMAGE_ASSETS.hero.alt}
           fill
-          className="rounded-2xl opacity-7 object-contain object-left-top shadow-lg max-lg:rounded-tr-none"
+          className="rounded-2xl opacity-7 object-contain object-left-top"
         />
         <div className="relative w-full">
           <Image

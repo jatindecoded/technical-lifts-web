@@ -54,7 +54,7 @@ export const Features = () => {
                       <h3 className="font-display max-w-60 text-2xl leading-tight font-bold tracking-tight">
                         {item.title}
                       </h3>
-                      <p className="text-muted-foreground max-w-76 text-sm">
+                      <p className="text-foreground text-md leading-6 max-w-76">
                         {item.description}
                       </p>
                     </div>
