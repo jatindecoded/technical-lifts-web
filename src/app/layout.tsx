@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { Footer } from "@/components/blocks/footer";
 import { Navbar } from "@/components/blocks/navbar";
-import { ThemeProvider } from "@/components/theme-provider";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],

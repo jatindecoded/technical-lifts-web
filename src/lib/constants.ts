@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Technical Lifts",
-  tagline: "We are Built for",
-  taglineAccent: "SERIOUS LIFTERS",
+  tagline: "Technical Lifts is Built for",
+  taglineAccent: "Serious Lifters",
   subheadline:
     "Certified trainers. Real equipment. No fluff. Whether you are starting out or training seriously - this is where progress happens.",
   phone: "+91XXXXXXXXXX",
@@ -21,6 +21,29 @@ export const NAV_LINKS = [
   { label: "Pricing", href: "#pricing" },
   { label: "Transformations", href: "#transformations" },
   { label: "Contact", href: "#trial" },
+];
+
+export const HERO_FEATURES = [
+  {
+    title: "Certified Trainers",
+    description: "Every trainer is ISSA or ACE certified with hands-on experience.",
+    iconName: "Users",
+  },
+  {
+    title: "Serious Equipment",
+    description: "Squat racks, deadlift platforms, full machine section — no compromises.",
+    iconName: "Zap",
+  },
+  {
+    title: "Custom Programs",
+    description: "Plans built around your schedule, body, and goals — not a template.",
+    iconName: "Target",
+  },
+  {
+    title: "Proven Results",
+    description: "100+ members have hit real goals here. Progress you can measure.",
+    iconName: "TrendingUp",
+  },
 ];
 
 export const TRUST_BAR = [
@@ -71,7 +94,57 @@ export const FEATURE_SECTIONS = {
   personalTrainingCtaHref: "#trial",
   facilitiesHeading: "Built for Serious Training",
   facilitiesFootnote: "Everything you need. Nothing you don't.",
-  personalTrainingImageAlt: "Personal training session",
+  personalTrainingImageAlt: "Member training with dumbbells",
+};
+
+export const IMAGE_ASSETS = {
+  hero: {
+    src: "/stock-images/group-sitting-in-gym.webp",
+    alt: "Group training in gym",
+  },
+  whoItsFor: [
+    {
+      src: "/stock-images/gym-machine-speaker.webp",
+      alt: "Gym equipment and machine setup",
+    },
+    {
+      src: "/stock-images/black-red-kettlebells.webp",
+      alt: "Kettlebells and strength equipment",
+    },
+    {
+      src: "/stock-images/trainer-arms-crossed.webp",
+      alt: "Trainer standing with arms crossed",
+    },
+  ],
+  personalTraining: {
+    src: "/stock-images/man-holding-dumbbells.webp",
+    alt: "Member holding dumbbells in gym",
+  },
+  about: [
+    {
+      src: "/stock-images/trainer-hands-on-hips.webp",
+      alt: "Trainer standing hands on hips",
+    },
+    {
+      src: "/stock-images/man-sitting-bench-gym.webp",
+      alt: "Member sitting on gym bench",
+    },
+    {
+      src: "/stock-images/man-barbell-squat-gym.webp",
+      alt: "Member performing barbell squat",
+    },
+    {
+      src: "/stock-images/man-squatting-gym.webp",
+      alt: "Member squatting during gym session",
+    },
+  ],
+  investors: [
+    "/stock-images/trainer-arms-crossed.webp",
+    "/stock-images/trainer-hands-on-hips.webp",
+    "/stock-images/man-holding-dumbbells.webp",
+    "/stock-images/man-barbell-squat-gym.webp",
+    "/stock-images/man-sitting-bench-gym.webp",
+  ],
 };
 
 export const TRAINERS_SECTION = {
@@ -111,31 +184,31 @@ export const TRAINERS: Trainer[] = [
     name: "Trainer Name",
     certification: "ISSA CPT",
     speciality: "Strength & Hypertrophy",
-    photo: "/trainers/t1.jpg",
+    photo: "/stock-images/trainer-arms-crossed.webp",
   },
   {
     name: "Trainer Name",
     certification: "ACE CPT",
     speciality: "Weight Loss & Cardio",
-    photo: "/trainers/t2.jpg",
+    photo: "/stock-images/trainer-hands-on-hips.webp",
   },
   {
     name: "Trainer Name",
     certification: "ISSA CPT",
     speciality: "Functional Fitness",
-    photo: "/trainers/t3.jpg",
+    photo: "/stock-images/man-holding-dumbbells.webp",
   },
   {
     name: "Trainer Name",
     certification: "ACE CPT",
     speciality: "Muscle Building",
-    photo: "/trainers/t4.jpg",
+    photo: "/stock-images/man-barbell-squat-gym.webp",
   },
   {
     name: "Trainer Name",
     certification: "ISSA CPT",
     speciality: "Beginner Programs",
-    photo: "/trainers/t5.jpg",
+    photo: "/stock-images/man-squatting-gym.webp",
   },
 ];
 
@@ -149,22 +222,22 @@ export const TRANSFORMATIONS: Transformation[] = [
   {
     name: "Priya",
     result: "Lost 14kg in 5 months",
-    photo: "/transformations/priya.jpg",
+    photo: "/stock-images/man-sitting-bench-gym.webp",
   },
   {
     name: "Arjun",
     result: "Gained 8kg lean muscle in 4 months",
-    photo: "/transformations/arjun.jpg",
+    photo: "/stock-images/man-barbell-squat-gym.webp",
   },
   {
     name: "Rahul",
     result: "Lost 10kg in 3 months",
-    photo: "/transformations/rahul.jpg",
+    photo: "/stock-images/man-squatting-gym.webp",
   },
   {
     name: "Sneha",
     result: "Completed first fitness goal in 6 weeks",
-    photo: "/transformations/sneha.jpg",
+    photo: "/stock-images/trainer-hands-on-hips.webp",
   },
 ];
 
