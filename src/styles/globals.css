@@ -190,16 +190,6 @@
     @apply bg-dark text-text-base font-body;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading;
-    font-weight: 700;
-  }
-
   ::after,
   ::before,
   ::backdrop,
@@ -225,4 +215,18 @@ body {
 
 body {
   position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading;
+  font-weight: 700;
+}
+
+h2 {
+  @apply text-6xl;
 }

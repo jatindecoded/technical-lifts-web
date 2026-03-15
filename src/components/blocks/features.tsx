@@ -1,24 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { ChevronRight } from "lucide-react";
-
 import { DashedLine } from "../dashed-line";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { FEATURE_SECTIONS, SITE, WHO_ITS_FOR } from "@/lib/constants";
-
-const cardImages = [
-  {
-    image: "/features/triage-card.svg",
-  },
-  {
-    image: "/features/cycle-card.svg",
-  },
-  {
-    image: "/features/overview-card.svg",
-  },
-];
+import { FEATURE_SECTIONS, IMAGE_ASSETS, SITE, WHO_ITS_FOR } from "@/lib/constants";
 
 export const Features = () => {
   return (
@@ -33,11 +19,11 @@ export const Features = () => {
         </div>
 
         {/* Content */}
-        <div className="mx-auto mt-10 grid max-w-4xl items-center gap-3 md:gap-0 lg:mt-24 lg:grid-cols-2">
+        <div className="mx-auto mt-10 flex flex-col justify-center max-w-xl lg:max-w-4xl items-center gap-3 lg:mt-24 text-center">
           <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
             {FEATURE_SECTIONS.whoItsForHeading}
           </h2>
-          <p className="text-muted-foreground leading-snug">
+          <p className="text-muted-foreground leading-snug max-w-2xl">
             {SITE.subheadline}
           </p>
         </div>
@@ -47,13 +33,13 @@ export const Features = () => {
           <CardContent className="flex p-0 max-md:flex-col">
             {WHO_ITS_FOR.map((item, i) => (
               <div key={i} className="flex flex-1 max-md:flex-col">
-                <div className="flex-1 p-4 pe-0! md:p-6">
-                  <div className="relative aspect-[1.28/1] overflow-hidden">
+                <div className="flex-1 p-4 pe-0!">
+                  <div className="relative aspect-[2/1] md:aspect-[1.28/1] overflow-hidden">
                     <Image
-                      src={cardImages[i % cardImages.length].image}
-                      alt={item.title}
+                      src={IMAGE_ASSETS.whoItsFor[i % IMAGE_ASSETS.whoItsFor.length].src}
+                      alt={IMAGE_ASSETS.whoItsFor[i % IMAGE_ASSETS.whoItsFor.length].alt}
                       fill
-                      className="object-cover object-left-top ps-4 pt-2"
+                      className="object-cover object-left-top mt-2 rounded-l-2xl"
                     />
                     <div className="from-background absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent" />
                   </div>
@@ -72,9 +58,9 @@ export const Features = () => {
                         {item.description}
                       </p>
                     </div>
-                    <div className="rounded-full border p-2">
+                    {/* <div className="rounded-full border p-2">
                       <ChevronRight className="size-6 transition-transform group-hover:translate-x-1 lg:size-9" />
-                    </div>
+                    </div> */}
                   </Link>
                 </div>
                 {i < WHO_ITS_FOR.length - 1 && (

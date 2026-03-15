@@ -25,7 +25,7 @@ export const Trainers = () => {
                                     alt={trainer.name}
                                     width={600}
                                     height={600}
-                                    className="aspect-square w-full object-cover"
+                                    className="aspect-[2/1] w-full object-cover"
                                 />
                                 <div className="space-y-0.5 p-6">
                                     <div className="text-primary font-semibold">{trainer.name}</div>

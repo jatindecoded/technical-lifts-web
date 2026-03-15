@@ -1,10 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { DumbbellIcon } from "lucide-react";
+
 import { DashedLine } from "../dashed-line";
 
 import { Button } from "@/components/ui/button";
-import { FACILITIES, FEATURE_SECTIONS, PT_INCLUDES } from "@/lib/constants";
+import {
+    FACILITIES,
+    FEATURE_SECTIONS,
+    IMAGE_ASSETS,
+    PT_INCLUDES,
+} from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 interface SectionItem {
@@ -44,8 +51,8 @@ const topItems: SectionItem[] = [
         description: "",
         images: [
             {
-                src: "/pt-session.jpg",
-                alt: FEATURE_SECTIONS.personalTrainingImageAlt,
+                src: IMAGE_ASSETS.personalTraining.src,
+                alt: IMAGE_ASSETS.personalTraining.alt,
                 width: 495,
                 height: 420,
             },
@@ -56,17 +63,19 @@ const topItems: SectionItem[] = [
     },
 ];
 
-const facilityClassNames = [
-    "[&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
-    "justify-normal [&>.title-container]:mb-5 md:[&>.title-container]:mb-0 [&>.image-container]:flex-1 md:[&>.image-container]:place-items-center md:[&>.image-container]:-translate-y-3",
-    "[&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
-];
 
 const bottomItems: SectionItem[] = FACILITIES.map((facility, index) => ({
     title: facility,
     description: "",
-    images: [],
-    className: facilityClassNames[index % facilityClassNames.length],
+    images: [
+        {
+            src: IMAGE_ASSETS.whoItsFor[index%2]?.src,
+            alt: IMAGE_ASSETS.whoItsFor[index%2]?.alt,
+            width: 495,
+            height: 420,
+        },
+    ],
+    className: "",
     fade: index % 2 === 0 ? ["bottom"] : [""],
 }));
 
@@ -95,12 +104,12 @@ export const ResourceAllocation = () => {
                         className="container max-w-7xl scale-x-110"
                     />
 
-                    <h3
+                    <h2
                         id="facilities"
-                        className="container mt-8 text-center text-3xl tracking-tight text-balance sm:text-4xl md:mt-12 md:text-5xl lg:mt-20 lg:text-6xl"
+                        className="container my-16 text-center text-3xl tracking-tight text-balance sm:text-4xl md:mt-12 md:text-5xl lg:mt-20 lg:text-6xl"
                     >
                         {FEATURE_SECTIONS.facilitiesHeading}
-                    </h3>
+                    </h2>
 
                     <div className="relative container grid max-w-7xl md:grid-cols-3">
                         {bottomItems.map((item, i) => (
@@ -113,8 +122,8 @@ export const ResourceAllocation = () => {
                         ))}
                     </div>
 
-                    <p className="text-muted-foreground container mt-6 text-center">
-                        {FEATURE_SECTIONS.facilitiesFootnote}
+                    <p className="text-muted-foreground container text-lg m-6 text-center uppercase font-semibold font-heading tracking-wide">
+                        "{FEATURE_SECTIONS.facilitiesFootnote}"
                     </p>
                 </div>
 
@@ -143,16 +152,16 @@ const Item = ({ item, isLast, className }: ItemProps) => {
             )}
         >
             {(item.title || item.description) && (
-                <div className="title-container text-balance">
-                    <h3 className="inline font-semibold">{item.title} </h3>
+                <div className="title-container text-center mb-4">
+                    <h3 className="inline font-semibold text-xl">{item.title} </h3>
                     <span className="text-muted-foreground"> {item.description}</span>
                 </div>
             )}
 
             {item.listItems && (
-                <ul className="text-muted-foreground mb-6 ml-4 list-disc space-y-2 text-sm">
+                <ul className="text-muted-foreground mb-6 ml-4 list-disc space-y-2 uppercase text-sm font-semibold">
                     {item.listItems.map((listItem) => (
-                        <li key={listItem}>{listItem}</li>
+                        <ul key={listItem}><DumbbellIcon className="inline size-4 mx-2" />{listItem}</ul>
                     ))}
                 </ul>
             )}
@@ -165,9 +174,9 @@ const Item = ({ item, isLast, className }: ItemProps) => {
                 </div>
             )}
 
-            {item.fade.includes("bottom") && (
+            {/* {item.fade.includes("bottom") && (
                 <div className="from-muted/80 absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent md:hidden" />
-            )}
+            )} */}
             {item.images.length > 4 ? (
                 <div className="relative overflow-hidden">
                     <div className="flex flex-col gap-5">
@@ -175,14 +184,14 @@ const Item = ({ item, isLast, className }: ItemProps) => {
                             {item.images.slice(0, 4).map((image, j) => (
                                 <div
                                     key={j}
-                                    className="bg-background grid aspect-square size-16 place-items-center rounded-2xl p-2 lg:size-20"
+                                    className="bg-background grid aspect-video size-16 place-items-center rounded-2xl p-2 lg:size-20"
                                 >
                                     <Image
                                         src={image.src}
                                         alt={image.alt}
                                         width={image.width}
                                         height={image.height}
-                                        className="object-contain object-left-top"
+                                        className="object-cover object-left-top"
                                     />
                                     <div className="from-muted/80 absolute inset-y-0 right-0 z-10 w-16 bg-linear-to-l to-transparent" />
                                 </div>
@@ -216,7 +225,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
                             alt={image.alt}
                             width={image.width}
                             height={image.height}
-                            className="object-contain object-left-top"
+                            className="object-cover aspect-video object-left-top rounded-2xl"
                         />
                     ))}
                 </div>

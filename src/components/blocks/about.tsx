@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { IMAGE_ASSETS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const About = () => {
@@ -11,8 +12,8 @@ const About = () => {
       <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
         <ImageSection
           images={[
-            { src: "/about/1.webp", alt: "Team collaboration" },
-            { src: "/about/2.webp", alt: "Team workspace" },
+            IMAGE_ASSETS.about[0],
+            IMAGE_ASSETS.about[1],
           ]}
           className="xl:-translate-x-10"
         />
@@ -41,8 +42,8 @@ const About = () => {
         />
         <ImageSection
           images={[
-            { src: "/about/3.webp", alt: "Modern workspace" },
-            { src: "/about/4.webp", alt: "Team collaboration" },
+            IMAGE_ASSETS.about[2],
+            IMAGE_ASSETS.about[3],
           ]}
           className="hidden lg:flex xl:translate-x-10"
         />
