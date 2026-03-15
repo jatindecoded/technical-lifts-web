@@ -7,17 +7,17 @@ import { SITE } from "@/lib/constants";
 
 export function Footer() {
   const navigation = [
-    { name: "Product", href: "/#feature-modern-teams" },
-    { name: "About Us", href: "/about" },
+    { name: "Facilities", href: "/#facilities" },
+    { name: "Trainers", href: "/#trainers" },
     { name: "Pricing", href: "/pricing" },
+    { name: "Blog", href: "/blog" },
     { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },
   ];
 
-  const social = [
-    { name: "Xwitter", href: "https://x.com/ausrobdev" },
-    { name: "LinkedIn", href: "#" },
-  ];
+  const social = SITE.instagramUrl
+    ? [{ name: "Instagram", href: SITE.instagramUrl }]
+    : [];
 
   const legal = [{ name: "Privacy Policy", href: "/privacy" }];
   const footerWordmark = SITE.name;
@@ -26,17 +26,14 @@ export function Footer() {
     <footer className="flex flex-col items-center gap-14 pt-28 lg:pt-32">
       <div className="container space-y-3 text-center">
         <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-          Start your free trial today
+          Your First Session Is On Us
         </h2>
         <p className="text-muted-foreground mx-auto max-w-xl leading-snug text-balance">
-          Mainline is the fit-for-purpose tool for planning and building modern
-          software products.
+          Walk in, train once, see if it fits. Free trial for website visitors.
         </p>
         <div>
           <Button size="lg" className="mt-4" asChild>
-            <a href="https://github.com/shadcnblocks/mainline-nextjs-template">
-              Get template
-            </a>
+            <a href="/contact">{SITE.trialCTA}</a>
           </Button>
         </div>
       </div>
@@ -79,7 +76,7 @@ export function Footer() {
       </nav>
 
       <div className="mt-10 w-full overflow-hidden md:mt-14 lg:mt-20">
-        <div className="opacity-80 font-heading mx-auto w-full max-w-[1570px] bg-linear-to-b from-primary to-white/40 bg-clip-text text-center text-[clamp(1rem,16vw,15.5rem)] leading-[0.78] tracking-tight text-transparent lowercase whitespace-nowrap select-none translate-y-10">
+        <div className="opacity-80 font-heading mx-auto w-full max-w-[1570px] bg-linear-to-b from-primary to-white/40 bg-clip-text text-center text-[clamp(1rem,16vw,15.5rem)] leading-[0.78] tracking-tight text-transparent lowercase whitespace-nowrap select-none translate-y-[30%]">
           {footerWordmark}
         </div>
       </div>

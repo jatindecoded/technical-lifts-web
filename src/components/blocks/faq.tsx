@@ -19,7 +19,7 @@ export const FAQ = ({
   className2?: string;
 }) => {
   return (
-    <section className={cn("py-28 lg:py-32", className)}>
+    <section className={cn("py-48 lg:py-64", className)}>
       <div className="container max-w-5xl">
         <div className={cn("mx-auto grid gap-16 lg:grid-cols-2", className2)}>
           <div className="space-y-4">
@@ -32,7 +32,7 @@ export const FAQ = ({
                 {FAQ_SECTION.heading}
               </h2>
             )}
-            <p className="text-muted-foreground max-w-md leading-snug lg:mx-auto">
+            <p className="text-muted-foreground max-w-md leading-tight lg:mx-auto">
               {FAQ_SECTION.supportLinePrefix}{" "}
               <Link href="/contact" className="underline underline-offset-4">
                 {FAQ_SECTION.supportLinkLabel}

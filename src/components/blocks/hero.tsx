@@ -11,7 +11,7 @@ const iconMap: Record<string, LucideIcon> = { Users, Zap, Target, TrendingUp };
 
 export const Hero = () => {
   return (
-    <section className="relative py-28 pt-50 lg:py-32 lg:pt-64">
+    <section className="relative pb-32 pt-50 lg:pb-48 lg:pt-64">
 
       <div className="container flex flex-col items-center justify-center lg:flex-row gap-10">
         {/* Left side - Main content */}
@@ -22,7 +22,7 @@ export const Hero = () => {
             <span className="text-primary">{SITE.taglineAccent}</span>
           </h1>
 
-          <p className="text-muted-foreground text-md md:text-lg mt-5 md:text-lg lg:max-w-100 leading-6">
+          <p className="text-muted-foreground text-sm md:text-lg mt-5 lg:max-w-100 leading-tight">
             {SITE.subheadline}
           </p>
 
@@ -41,6 +41,9 @@ export const Hero = () => {
               </a>
             </Button>
           </div>
+          <p className="text-text-muted mt-3 text-xs lg:text-left text-center">
+            {SITE.trialSubtext}
+          </p>
         </div>
 
         {/* Right side - Features */}
@@ -53,22 +56,25 @@ export const Hero = () => {
             orientation="horizontal"
             className="absolute top-0 lg:hidden"
           />
-          {HERO_FEATURES.map((feature) => {
-            const Icon = iconMap[feature.iconName];
-            return (
-              <div key={feature.title} className="flex gap-2.5 lg:gap-5">
-                <Icon className="text-foreground mt-1 size-4 shrink-0 lg:size-5" />
-                <div>
-                  <h3 className="font-text text-foreground font-semibold uppercase">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground max-w-76 text-sm">
-                    {feature.description}
-                  </p>
+          <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
+
+            {HERO_FEATURES.map((feature) => {
+              const Icon = iconMap[feature.iconName];
+              return (
+                <div key={feature.title} className="flex gap-2.5 lg:gap-5">
+                  <Icon className="text-foreground mt-1 size-4 shrink-0 lg:size-5" />
+                  <div>
+                    <h3 className="text-md text-foreground font-semibold uppercase">
+                      {feature.title}
+                    </h3>
+                    <p className="hidden md:block text-muted-foreground max-w-76 text-sm">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
 
@@ -77,7 +83,7 @@ export const Hero = () => {
           src={IMAGE_ASSETS.hero.src}
           alt={IMAGE_ASSETS.hero.alt}
           fill
-          className="rounded-2xl opacity-7 object-contain object-left-top"
+          className="rounded-2xl opacity-10 object-contain object-left-top"
         />
         <div className="relative w-full">
           <Image
@@ -86,13 +92,13 @@ export const Hero = () => {
             width={1500}
             height={700}
             // fill
-            className="rounded-2xl w-full object-cover aspect-[2/1] shadow-lg max-lg:rounded-tr-none"
+            className="rounded-xl w-full object-cover aspect-[2/1] shadow-lg "
           />
         </div>
       </div>
       <div className="my-16">
 
-      <Logos />
+        <Logos />
       </div>
     </section>
   );

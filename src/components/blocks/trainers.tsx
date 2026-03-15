@@ -5,7 +5,7 @@ import { TRAINERS, TRAINERS_SECTION } from "@/lib/constants";
 
 export const Trainers = () => {
     return (
-        <section id={TRAINERS_SECTION.id} className="pb-28 lg:pb-32">
+        <section id={TRAINERS_SECTION.id} className="py-48 lg:py-64">
             <div className="container">
                 <div className="space-y-4 text-center flex flex-col items-center">
                     <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">

@@ -8,7 +8,7 @@ import { FEATURE_SECTIONS, IMAGE_ASSETS, SITE, WHO_ITS_FOR } from "@/lib/constan
 
 export const Features = () => {
   return (
-    <section id="about" className="pb-28 lg:pb-32">
+    <section id="" className="py-28 lg:py-32">
       <div className="container">
         {/* Top dashed line with text */}
         <div className="relative flex items-center justify-center">

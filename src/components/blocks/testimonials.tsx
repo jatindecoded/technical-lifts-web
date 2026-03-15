@@ -27,7 +27,7 @@ export const Testimonials = ({
 }) => {
   return (
     <>
-      <section className={cn("overflow-hidden py-28 lg:py-32", className)}>
+      <section id="transformations" className={cn("overflow-hidden py-48 lg:py-64", className)}>
         <div className="container">
           <div className="space-y-4">
             <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl text-center">
@@ -60,7 +60,7 @@ export const Testimonials = ({
                           />
                         </div>
                         <div className="flex flex-1 flex-col justify-between gap-10 p-6">
-                          <blockquote className="font-heading text-lg leading-none! font-medium md:text-xl lg:text-2xl">
+                          <blockquote className="font-heading text-lg leading-tight font-medium md:text-xl lg:text-2xl">
                             {transformation.result}
                           </blockquote>
                           <div className="space-y-0.5">
