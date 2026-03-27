@@ -27,23 +27,23 @@ export const Testimonials = ({
 }) => {
   return (
     <>
-      <section id="transformations" className={cn("overflow-hidden py-48 lg:py-64", className)}>
+      <section id="transformations" className={cn("overflow-hidden py-24 lg:py-32", className)}>
         <div className="container">
-          <div className="space-y-4">
+          <div className="space-y-3">
             <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl text-center">
               {TRANSFORMATIONS_SECTION.heading}
             </h2>
+            <p className="text-muted-foreground text-center text-sm md:text-base">
+              {TRANSFORMATIONS_SECTION.subheading}
+            </p>
           </div>
 
-          <div className="relative mt-8 -mr-[max(3rem,calc((100vw-80rem)/2+3rem))] md:mt-12 lg:mt-20">
+          <div className="relative mt-8 -mr-[max(3rem,calc((100vw-80rem)/2+3rem))] md:mt-12 lg:mt-16">
             <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
+              opts={{ align: "start", loop: true }}
               className="w-full"
             >
-              <CarouselContent className="">
+              <CarouselContent>
                 {TRANSFORMATIONS.map((transformation, index) => (
                   <CarouselItem
                     key={index}
@@ -59,13 +59,16 @@ export const Testimonials = ({
                             className="object-cover object-top"
                           />
                         </div>
-                        <div className="flex flex-1 flex-col justify-between gap-10 p-6">
-                          <blockquote className="font-heading text-lg leading-tight font-medium md:text-xl lg:text-2xl">
+                        <div className="flex flex-1 flex-col justify-between gap-6 p-6">
+                          <blockquote className="font-heading text-xl font-bold leading-tight tracking-tight md:text-2xl">
                             {transformation.result}
                           </blockquote>
                           <div className="space-y-0.5">
-                            <div className="text-primary font-heading tracking-wide uppercase font-semibold">
+                            <div className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
                               {transformation.name}
+                            </div>
+                            <div className="text-muted-foreground text-sm">
+                              {transformation.duration}
                             </div>
                           </div>
                         </div>
@@ -75,15 +78,16 @@ export const Testimonials = ({
                 ))}
               </CarouselContent>
               <div className="mt-8 flex gap-3">
-                <CarouselPrevious className="bg-muted hover:bg-muted/80 static size-14.5 translate-x-0 translate-y-0 transition-colors [&>svg]:size-6 lg:[&>svg]:size-8" />
-                <CarouselNext className="bg-muted hover:bg-muted/80 static size-14.5 translate-x-0 translate-y-0 transition-colors [&>svg]:size-6 lg:[&>svg]:size-8" />
+                <CarouselPrevious className="bg-muted hover:bg-muted/80 static size-14 translate-x-0 translate-y-0 transition-colors [&>svg]:size-6 lg:[&>svg]:size-8" />
+                <CarouselNext className="bg-muted hover:bg-muted/80 static size-14 translate-x-0 translate-y-0 transition-colors [&>svg]:size-6 lg:[&>svg]:size-8" />
               </div>
             </Carousel>
           </div>
-          <p className="text-muted-foreground max-w-md leading-snug my-8">
+
+          <p className="mt-8">
             <Link
-              href={SITE.googleReviewsUrl}
-              className="text-muted-foreground font-heading uppercase tracking-wide hover:text-foreground transition-colors"
+              href={SITE.googleReviewsUrl || "#"}
+              className="font-heading text-sm uppercase tracking-wide text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
             >
               {TRANSFORMATIONS_SECTION.googleReviewsLine}
             </Link>

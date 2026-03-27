@@ -1,4 +1,9 @@
-import { Inter, Bricolage_Grotesque } from "next/font/google";
+// NOTE: To use Google Fonts in production, replace the localFont calls below
+// with the following (requires internet at build time):
+//   import { Inter, Bricolage_Grotesque } from "next/font/google";
+//   const bricolageGrotesque = Bricolage_Grotesque({ subsets: ["latin"], weight: ["600","800"], variable: "--font-heading", display: "swap" });
+//   const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
+import localFont from "next/font/local";
 
 import type { Metadata } from "next";
 
@@ -6,15 +11,22 @@ import "@/styles/globals.css";
 import { Footer } from "@/components/blocks/footer";
 import { Navbar } from "@/components/blocks/navbar";
 
-const bricolageGrotesque = Bricolage_Grotesque({
-  subsets: ["latin"],
-  weight: ["600", "800"],
+const bricolageGrotesque = localFont({
+  src: [
+    { path: "../../fonts/dm-sans/DMSans-SemiBold.ttf", weight: "600" },
+    { path: "../../fonts/dm-sans/DMSans-Bold.ttf", weight: "700" },
+    { path: "../../fonts/dm-sans/DMSans-Bold.ttf", weight: "800" },
+  ],
   variable: "--font-heading",
   display: "swap",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: [
+    { path: "../../fonts/dm-sans/DMSans-Regular.ttf", weight: "400" },
+    { path: "../../fonts/dm-sans/DMSans-Medium.ttf", weight: "500" },
+    { path: "../../fonts/dm-sans/DMSans-SemiBold.ttf", weight: "600" },
+  ],
   variable: "--font-body",
   display: "swap",
 });
