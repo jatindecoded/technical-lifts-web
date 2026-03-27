@@ -1,61 +1,77 @@
 "use client";
 
+import Link from "next/link";
+
 import { Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { PRICING_PLANS, PRICING_SECTION } from "@/lib/constants";
+import { PRICING_PLANS, PRICING_SECTION, SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export const Pricing = ({ className }: { className?: string }) => {
   return (
-    <section id="pricing" className={cn("py-48 lg:py-64", className)}>
-      <div className="container max-w-8xl">
-        <div className="space-y-4 text-center">
+    <section id="pricing" className={cn("py-24 lg:py-32", className)}>
+      <div className="container">
+        <div className="space-y-3 text-center">
           <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
             {PRICING_SECTION.heading}
           </h2>
+          <p className="text-muted-foreground mx-auto max-w-md leading-snug">
+            {PRICING_SECTION.subheading}
+          </p>
         </div>
 
-        <div className="mt-8 grid items-start gap-5 text-start md:mt-12 md:grid-cols-4 lg:mt-20">
+        <div className="mt-8 grid items-start gap-4 text-start md:mt-12 md:grid-cols-4 lg:mt-16">
           {PRICING_PLANS.map((plan) => (
             <Card
               key={plan.name}
-              className={`${plan.isPopular
-                  ? "outline-primary origin-top outline-4"
-                  : ""
-                } h-full`}
+              className={cn(
+                "relative h-full transition-all",
+                plan.isPopular &&
+                  "border-primary/60 shadow-[0_0_0_1px_var(--color-primary)]",
+              )}
             >
-              <CardContent className="flex flex-col items-stretch gap-7 px-6 py-5 h-full">
-                <div className="space-y-2">
-                  <h3 className="text-foreground font-semibold">{plan.name}</h3>
-                  <div className="space-y-1">
-                    <div className="text-muted-foreground text-lg font-medium">
-                      {plan.price}
-                    </div>
-                    <span className="text-muted-foreground text-sm">
-                      {plan.duration}
-                    </span>
+              {plan.isPopular && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="rounded-full bg-primary px-3 py-0.5 font-heading text-xs font-bold uppercase tracking-widest text-dark">
+                    Most Popular
+                  </span>
+                </div>
+              )}
+              <CardContent className="flex h-full flex-col gap-6 px-6 py-5">
+                <div className="space-y-1">
+                  <h3 className="font-heading text-lg font-bold uppercase tracking-tight">
+                    {plan.name}
+                  </h3>
+                  <div className={cn("font-heading text-3xl font-bold tracking-tight", plan.isPopular && "text-primary")}>
+                    {plan.price}
+                  </div>
+                  <div className="text-muted-foreground text-sm">
+                    {plan.duration} · {plan.priceNote}
                   </div>
                 </div>
 
-                <div className="space-y-3 flex-1">
+                <div className="flex-1 space-y-2.5">
                   {plan.features.map((feature) => (
                     <div
                       key={feature}
-                      className="text-muted-foreground flex items-center gap-1.5"
+                      className="text-muted-foreground flex items-center gap-2"
                     >
-                      <Check className="size-5 shrink-0" />
+                      <Check className="text-primary size-4 shrink-0" />
                       <span className="text-sm">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 <Button
-                  className="w-fit"
+                  className="w-full"
                   variant={plan.isPopular ? "default" : "outline"}
+                  asChild
                 >
-                  {PRICING_SECTION.ctaLabel}
+                  <Link href={`/contact?inquiry=membership`}>
+                    {PRICING_SECTION.ctaLabel}
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -63,7 +79,13 @@ export const Pricing = ({ className }: { className?: string }) => {
         </div>
 
         <p className="text-muted-foreground mt-6 text-sm">
-          {PRICING_SECTION.footnote}
+          {PRICING_SECTION.footnote}{" "}
+          <Link
+            href={`tel:${SITE.phone}`}
+            className="underline underline-offset-4 hover:text-foreground transition-colors"
+          >
+            {SITE.phone}
+          </Link>
         </p>
       </div>
     </section>

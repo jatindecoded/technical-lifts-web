@@ -8,11 +8,13 @@ export interface ActionResponse<T = unknown> {
   };
   inputs?: T;
 }
+
 export const formSchema = z.object({
-  name: z.string({ message: "This field is required" }),
-  email: z.string({ message: "This field is required" }),
-  company: z.string({ message: "This field is required" }).optional(),
-  employees: z.string().min(1, "Please select an item").optional(),
-  message: z.string({ message: "This field is required" }),
-  agree: z.literal(true, { message: "This field is required" }),
+  name: z.string({ message: "Name is required" }).min(1, "Name is required"),
+  phone: z
+    .string({ message: "Phone number is required" })
+    .min(10, "Enter a valid phone number"),
+  inquiry: z.string({ message: "Please select an inquiry type" }).min(1),
+  message: z.string().optional(),
+  agree: z.literal(true, { message: "You must agree to continue" }),
 });
