@@ -1,189 +1,88 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Check } from "lucide-react";
-import { motion } from "motion/react";
-import { useAction } from "next-safe-action/hooks";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
+import React from "react";
 
-import { serverAction } from "@/actions/server-action";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
 import { CONTACT_FORM } from "@/lib/constants";
-import { formSchema } from "@/lib/form-schema";
 
-type Schema = z.infer<typeof formSchema>;
-
+// Simple HTML form posting to FormSubmit.co for static export compatibility.
+// TODO: Replace the action email (you@example.com) with the real recipient and set _next to your thank-you page.
 export function ContactForm() {
-  const form = useForm<Schema>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      phone: "",
-      inquiry: "",
-      message: "",
-      agree: false,
-    } as unknown as Schema,
-  });
-
-  const formAction = useAction(serverAction, {
-    onSuccess: () => {
-      form.reset();
-    },
-    onError: () => {},
-  });
-
-  const handleSubmit = form.handleSubmit(async (data: Schema) => {
-    formAction.execute(data);
-  });
-
-  const { isExecuting, hasSucceeded } = formAction;
-
-  if (hasSucceeded) {
-    return (
-      <div className="w-full rounded-xl border border-white/[0.08] p-8">
-        <motion.div
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="flex flex-col items-center gap-4 py-4 text-center"
-        >
-          <motion.div
-            initial={{ scale: 0.5 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.3, type: "spring", stiffness: 500, damping: 15 }}
-            className="flex size-12 items-center justify-center rounded-full bg-primary"
-          >
-            <Check className="size-6 text-dark" />
-          </motion.div>
-          <h2 className="text-2xl font-heading font-bold">
-            {CONTACT_FORM.successHeading}
-          </h2>
-          <p className="text-muted-foreground max-w-sm">
-            {CONTACT_FORM.successBody}
-          </p>
-        </motion.div>
-      </div>
-    );
-  }
-
   return (
-    <Form {...form}>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+    <div className="w-full rounded-xl border border-white/[0.08] p-8">
+      <form
+        action="https://formsubmit.co/you@example.com"
+        method="POST"
+        className="flex flex-col gap-5"
+      >
+        {/* FormSubmit hidden fields - replace _next and email in action */}
+        <input type="hidden" name="_subject" value="Website inquiry — Technical Lifts" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://example.com/thank-you" />
+
         <div className="grid gap-5 sm:grid-cols-2">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Full name *</FormLabel>
-                <FormControl>
-                  <Input placeholder="First and last name" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Phone / WhatsApp *</FormLabel>
-                <FormControl>
-                  <Input placeholder="+91 98765 43210" type="tel" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+          <div>
+            <label htmlFor="contact-name" className="block text-sm font-medium mb-1">Full name *</label>
+            <input
+              id="contact-name"
+              name="name"
+              required
+              className="w-full rounded-md bg-background border border-white/[0.06] px-3 py-2 text-text-base"
+              placeholder="First and last name"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="contact-phone" className="block text-sm font-medium mb-1">Phone / WhatsApp *</label>
+            <input
+              id="contact-phone"
+              name="phone"
+              type="tel"
+              required
+              className="w-full rounded-md bg-background border border-white/[0.06] px-3 py-2 text-text-base"
+              placeholder="+91 98765 43210"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="contact-inquiry" className="block text-sm font-medium mb-1">What are you looking for? *</label>
+          <select
+            id="contact-inquiry"
+            name="inquiry"
+            required
+            className="w-full rounded-md bg-background border border-white/[0.06] px-3 py-2 text-text-base"
+          >
+            {CONTACT_FORM.inquiryOptions.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="contact-message" className="block text-sm font-medium mb-1">Anything else?</label>
+          <textarea
+            id="contact-message"
+            name="message"
+            rows={4}
+            className="w-full rounded-md bg-background border border-white/[0.06] px-3 py-2 text-text-base"
+            placeholder="Tell us about your goal, schedule, any injuries — anything helpful"
           />
         </div>
 
-        <FormField
-          control={form.control}
-          name="inquiry"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>What are you looking for? *</FormLabel>
-              <Select onValueChange={field.onChange} value={field.value}>
-                <FormControl>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select an option" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  {CONTACT_FORM.inquiryOptions.map(({ label, value }) => (
-                    <SelectItem key={value} value={value}>
-                      {label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <div className="flex items-start gap-3">
+          <input id="contact-agree" name="agree" type="checkbox" className="mt-1" />
+          <label htmlFor="contact-agree" className="text-sm text-muted-foreground">
+            I agree to be contacted by the Technical Lifts team
+          </label>
+        </div>
 
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Anything else?</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Tell us about your goal, schedule, any injuries — anything helpful"
-                  className="resize-none"
-                  rows={4}
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="agree"
-          render={({ field }) => (
-            <FormItem className="flex flex-row items-start gap-2 space-y-0">
-              <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
-              </FormControl>
-              <FormLabel className="font-normal text-muted-foreground leading-snug">
-                I agree to be contacted by the Technical Lifts team
-              </FormLabel>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <Button className="w-full sm:w-fit" size="lg">
-          {isExecuting ? CONTACT_FORM.submittingLabel : CONTACT_FORM.submitLabel}
+        <Button type="submit" size="lg" className="w-full sm:w-fit">
+          {CONTACT_FORM.submitLabel}
         </Button>
       </form>
-    </Form>
+    </div>
   );
 }

@@ -56,20 +56,24 @@ export const Hero = () => {
           </motion.p>
 
           <motion.div variants={item} className="mt-8 flex flex-col flex-wrap items-center gap-4 lg:flex-nowrap lg:flex-row">
-            <Button size="lg" asChild>
-              <a href="#trial">{SITE.trialCTA}</a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="from-background gap-2 bg-linear-to-r to-transparent shadow-md h-auto"
-              asChild
-            >
-              <a href="#pricing" className="max-w-56 truncate text-start md:max-w-none">
-                {SITE.secondaryCTA}
-                <ArrowRight className="stroke-3 shrink-0" />
-              </a>
-            </Button>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+              <Button size="lg" asChild>
+                <a href="#trial">{SITE.trialCTA}</a>
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="from-background gap-2 bg-linear-to-r to-transparent shadow-md"
+                asChild
+              >
+                <a href="#pricing" className="max-w-56 truncate text-start md:max-w-none">
+                  {SITE.secondaryCTA}
+                  <ArrowRight className="stroke-3 shrink-0" />
+                </a>
+              </Button>
+            </motion.div>
           </motion.div>
           <motion.p variants={item} className="text-text-muted mt-3 text-center text-xs lg:text-left">
             {SITE.trialSubtext}
