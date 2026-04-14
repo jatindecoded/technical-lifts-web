@@ -658,6 +658,70 @@ export const BLOG_POSTS = [
     ],
     meta: { description: "Recovery and mobility routines that keep you training longer and stronger." },
   },
+  // Additional blog placeholders — expand to 2500+ words each (TODO)
+  {
+    slug: "training-variations",
+    title: "Training Variations & Periods",
+    excerpt: "How to use phases, deloads and variation to sustain progress across months.",
+    content: [
+      "TODO: Expand to 2500+ words. Placeholder: Periodisation and planned variation help athletes avoid plateaus by changing stimulus while preserving core lifts. Include local examples and sample 12-week phase plan."
+    ],
+    meta: { description: "Using planned variation and phases to keep training progressive and resilient." },
+  },
+  {
+    slug: "local-nutrition-guide-vikaspuri",
+    title: "Local Nutrition Guide — Vikaspuri Edition",
+    excerpt: "Practical meal and grocery strategies using local food to support training and recovery.",
+    content: [
+      "TODO: Expand to 2500+ words. Placeholder: Practical nutrition using local ingredients, shopping tips in Vikaspuri markets, sample meals and hacks for busy schedules."
+    ],
+    meta: { description: "A realistic nutrition playbook for trainees in Vikaspuri and nearby neighbourhoods." },
+  },
+  {
+    slug: "member-stories-vikaspuri",
+    title: "Member Stories: Vikaspuri Transformations",
+    excerpt: "Case studies from local members — goals, programming and the results achieved.",
+    content: [
+      "TODO: Expand to 2500+ words. Placeholder: Narrative-driven case studies showing assessed baselines, programmed progressions, and measurable outcomes. Add images and specific numbers when available."
+    ],
+    meta: { description: "Real member case studies highlighting long-term, sustainable change." },
+  },
+  {
+    slug: "program-design-for-beginners",
+    title: "Program Design for Beginners",
+    excerpt: "A step-by-step guide for someone new to the gym: what to prioritise and why.",
+    content: [
+      "TODO: Expand to 2500+ words. Placeholder: Beginner-friendly program templates, common pitfalls, and coaching cues that accelerate safe progress."
+    ],
+    meta: { description: "How to start training to build strength safely and effectively." },
+  },
+  {
+    slug: "overcoming-plateaus",
+    title: "Overcoming Plateaus: Practical Strategies",
+    excerpt: "Why progress stalls and what to change in training, nutrition and recovery to restart gains.",
+    content: [
+      "TODO: Expand to 2500+ words. Placeholder: Identify causes of plateaus, diagnostic steps, and corrective programming examples."
+    ],
+    meta: { description: "A tactical guide to diagnosing and overcoming training plateaus." },
+  },
+  {
+    slug: "gym-etiquette-and-safety",
+    title: "Gym Etiquette & Safety",
+    excerpt: "Simple rules to keep the training environment respectful, safe and efficient for everyone.",
+    content: [
+      "TODO: Expand to 2500+ words. Placeholder: Safety protocols, spotter etiquette, equipment care, and community standards tailored to Technical Lifts."
+    ],
+    meta: { description: "Guidelines to maintain a safe and welcoming gym atmosphere." },
+  },
+  {
+    slug: "home-workouts-for-commuters",
+    title: "Home Workouts for Busy Commuters",
+    excerpt: "Short, high-value sessions for days when getting to the gym isn't possible.",
+    content: [
+      "TODO: Expand to 2500+ words. Placeholder: 20–30 minute routines, minimal equipment progressions, and weekly scheduling strategies for commuters."
+    ],
+    meta: { description: "Practical home training plans that preserve strength and consistency for busy schedules." },
+  },
 ];
 
 export const COMPONENT_PAGES = [
