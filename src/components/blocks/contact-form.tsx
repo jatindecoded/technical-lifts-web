@@ -18,7 +18,7 @@ export function ContactForm() {
         {/* FormSubmit hidden fields - replace _next and email in action */}
         <input type="hidden" name="_subject" value="Website inquiry — Technical Lifts" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://example.com/thank-you" />
+        <input type="hidden" name="_next" value="/thank-you" />
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
