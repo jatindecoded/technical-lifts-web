@@ -74,7 +74,7 @@ export default function RootLayout({
           forcedTheme="dark" */}
           {/* <StyleGlideProvider /> */}
           <Navbar />
-          <main className="">{children}</main>
+          <main className="pt-28">{children}</main>
           <Footer />
         {/* </ThemeProvider> */}
       </body>

@@ -48,9 +48,28 @@ export const Hero = () => {
             variants={item}
             className="max-w-160 text-4xl tracking-tight text-foreground md:text-5xl lg:text-6xl xl:text-7xl"
           >
-            {SITE.tagline}
+            {/* word/line reveal using overflow-hidden + translateY animation */}
+            <span className="inline-block overflow-hidden align-middle">
+              <motion.span
+                initial={{ y: '100%' }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="block"
+              >
+                {SITE.tagline}
+              </motion.span>
+            </span>
             <br />
-            <span className="text-primary">{SITE.taglineAccent}</span>
+            <span className="inline-block overflow-hidden align-middle text-primary">
+              <motion.span
+                initial={{ y: '100%' }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.65, delay: 0.06, ease: "easeOut" }}
+                className="block"
+              >
+                {SITE.taglineAccent}
+              </motion.span>
+            </span>
           </motion.h1>
 
           <motion.p variants={item} className="text-muted-foreground mt-5 text-sm leading-tight md:text-lg lg:max-w-100">
