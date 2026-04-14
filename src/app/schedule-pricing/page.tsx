@@ -1,4 +1,3 @@
-/* eslint-disable import/order */
 import React from "react";
 
 import { COMPONENT_PAGES, PRICING_PLANS, PAGES } from "@/lib/constants";

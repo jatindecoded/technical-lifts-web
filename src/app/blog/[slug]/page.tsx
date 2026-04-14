@@ -1,5 +1,5 @@
-/* eslint-disable import/order */
 import React from "react";
+
 import { notFound } from "next/navigation";
 
 import { BLOG_POSTS } from "@/lib/constants";

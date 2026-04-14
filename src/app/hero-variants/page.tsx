@@ -1,5 +1,5 @@
-/* eslint-disable import/order */
 import React from "react";
+
 import { Hero } from "@/components/blocks/hero";
 import { COMPONENT_PAGES, PAGES } from "@/lib/constants";
 

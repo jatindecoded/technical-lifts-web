@@ -1,5 +1,5 @@
-/* eslint-disable import/order */
 import React from "react";
+
 import Link from "next/link";
 
 import { BLOG_POSTS, PAGES } from "@/lib/constants";
