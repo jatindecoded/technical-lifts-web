@@ -28,6 +28,11 @@ export const NAV_LINKS = [
   { label: "Trainers", href: "/#trainers" },
   { label: "Pricing", href: "/pricing" },
   { label: "Transformations", href: "/transformations" },
+  { label: "Blog", href: "/blog" },
+  { label: "Member Story", href: "/member-story" },
+  { label: "Hero Variants", href: "/hero-variants" },
+  { label: "Card Variants", href: "/card-variants" },
+  { label: "Schedule & Pricing", href: "/schedule-pricing" },
   { label: "Contact", href: "/contact" },
 ];
 
