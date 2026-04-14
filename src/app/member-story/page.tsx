@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 import React from "react";
 import { COMPONENT_PAGES } from "@/lib/constants";
 
