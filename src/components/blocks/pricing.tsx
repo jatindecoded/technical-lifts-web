@@ -1,13 +1,27 @@
 "use client";
 
+import React from "react";
+
 import Link from "next/link";
 
+import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { CardHeading } from "@/components/ui/card-heading";
 import { PRICING_PLANS, PRICING_SECTION, SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.06 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45 } },
+};
 
 export const Pricing = ({ className }: { className?: string }) => {
   return (
@@ -22,16 +36,16 @@ export const Pricing = ({ className }: { className?: string }) => {
           </p>
         </div>
 
-        <div className="mt-8 grid items-start gap-4 text-start md:mt-12 md:grid-cols-4 lg:mt-16">
+        <motion.div className="mt-8 grid items-start gap-4 text-start md:mt-12 md:grid-cols-4 lg:mt-16" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} variants={container}>
           {PRICING_PLANS.map((plan) => (
-            <Card
-              key={plan.name}
-              className={cn(
-                "relative h-full transition-all",
-                plan.isPopular &&
-                  "border-primary/60 shadow-[0_0_0_1px_var(--color-primary)]",
-              )}
-            >
+            <motion.div key={plan.name} variants={item}>
+              <Card
+                className={cn(
+                  "relative h-full transition-all",
+                  plan.isPopular &&
+                    "border-primary/60 shadow-[0_0_0_1px_var(--color-primary)]",
+                )}
+              >
               {plan.isPopular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="rounded-full bg-primary px-3 py-0.5 font-heading text-xs font-bold uppercase tracking-widest text-dark">
@@ -41,9 +55,9 @@ export const Pricing = ({ className }: { className?: string }) => {
               )}
               <CardContent className="flex h-full flex-col gap-6 px-6 py-5">
                 <div className="space-y-1">
-                  <h3 className="font-heading text-lg font-bold uppercase tracking-tight">
+                  <CardHeading as="h3" className="text-lg uppercase tracking-tight">
                     {plan.name}
-                  </h3>
+                  </CardHeading>
                   <div className={cn("font-heading text-3xl font-bold tracking-tight", plan.isPopular && "text-primary")}>
                     {plan.price}
                   </div>
@@ -75,8 +89,9 @@ export const Pricing = ({ className }: { className?: string }) => {
                 </Button>
               </CardContent>
             </Card>
-          ))}
-        </div>
+          </motion.div>
+        ))}
+        </motion.div>
 
         <p className="text-muted-foreground mt-6 text-sm">
           {PRICING_SECTION.footnote}{" "}

@@ -1,7 +1,4 @@
 "use client";
-/* TODO: Remove this eslint-disable once import ordering rules are harmonized across files */
-/* eslint-disable import/order */
-
 import React from "react";
 
 import Link from "next/link";

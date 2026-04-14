@@ -19,12 +19,13 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <section
-      className={cn(
-        "bg-background shadow-xl fixed left-1/2 z-50 w-[min(90%,900px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
-        "top-5 lg:top-12",
-      )}
-    >
+    <section className="fixed inset-x-0 top-5 z-50 pointer-events-auto">
+      <div
+        className={cn(
+          "bg-background shadow-xl w-[min(90%,900px)] mx-auto rounded-4xl border backdrop-blur-md transition-all duration-300",
+          "lg:top-12",
+        )}
+      >
       <div className="flex items-center justify-between px-6 py-3">
         <Link href="/" className="flex text-primary shrink-0 items-center gap-2 font-heading uppercase">
           {SITE.name}
@@ -32,7 +33,7 @@ export const Navbar = () => {
 
         {/* Desktop Navigation */}
         <NavigationMenu className="max-lg:hidden">
-          <NavigationMenuList>
+          <NavigationMenuList className="flex flex-wrap gap-4">
             {NAV_LINKS.map((link) => (
               <NavigationMenuItem key={link.label} className="">
                 <Link
@@ -105,6 +106,7 @@ export const Navbar = () => {
             </Link>
           ))}
         </nav>
+      </div>
       </div>
     </section>
   );

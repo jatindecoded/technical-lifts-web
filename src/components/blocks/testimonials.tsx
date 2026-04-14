@@ -1,5 +1,11 @@
+"use client";
+
+import React from "react";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { motion } from "framer-motion";
 
 import { DashedLine } from "../dashed-line";
 
@@ -18,6 +24,17 @@ import {
 } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
+// motion tokens
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.06 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 export const Testimonials = ({
   className,
   dashedLineClassName,
@@ -27,7 +44,7 @@ export const Testimonials = ({
 }) => {
   return (
     <>
-      <section id="transformations" className={cn("overflow-hidden py-24 lg:py-32", className)}>
+      <motion.section id="transformations" className={cn("overflow-hidden py-24 lg:py-32", className)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} variants={container}>
         <div className="container">
           <div className="space-y-3">
             <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl text-center">
@@ -49,31 +66,33 @@ export const Testimonials = ({
                     key={index}
                     className="xl:basis-1/3.5 grow basis-4/5 sm:basis-3/5 md:basis-2/5 lg:basis-[28%] 2xl:basis-[24%]"
                   >
-                    <Card className="bg-muted h-full overflow-hidden border-none">
-                      <CardContent className="flex h-full flex-col p-0">
-                        <div className="relative h-[288px] lg:h-[328px]">
-                          <Image
-                            src={transformation.photo}
-                            alt={transformation.name}
-                            fill
-                            className="object-cover object-top"
-                          />
-                        </div>
-                        <div className="flex flex-1 flex-col justify-between gap-6 p-6">
-                          <blockquote className="font-heading text-xl font-bold leading-tight tracking-tight md:text-2xl">
-                            {transformation.result}
-                          </blockquote>
-                          <div className="space-y-0.5">
-                            <div className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
-                              {transformation.name}
-                            </div>
-                            <div className="text-muted-foreground text-sm">
-                              {transformation.duration}
+                    <motion.div variants={item}>
+                      <Card className="bg-muted h-full overflow-hidden border-none">
+                        <CardContent className="flex h-full flex-col p-0">
+                          <div className="relative h-[288px] lg:h-[328px]">
+                            <Image
+                              src={transformation.photo}
+                              alt={transformation.name}
+                              fill
+                              className="object-cover object-top"
+                            />
+                          </div>
+                          <div className="flex flex-1 flex-col justify-between gap-6 p-6">
+                            <blockquote className="font-heading text-xl font-bold leading-tight tracking-tight md:text-2xl">
+                              {transformation.result}
+                            </blockquote>
+                            <div className="space-y-0.5">
+                              <div className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
+                                {transformation.name}
+                              </div>
+                              <div className="text-muted-foreground text-sm">
+                                {transformation.duration}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </CardContent>
-                    </Card>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
@@ -93,7 +112,7 @@ export const Testimonials = ({
             </Link>
           </p>
         </div>
-      </section>
+      </motion.section>
       <DashedLine
         orientation="horizontal"
         className={cn("mx-auto max-w-[80%]", dashedLineClassName)}

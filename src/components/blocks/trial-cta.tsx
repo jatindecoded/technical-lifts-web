@@ -1,10 +1,25 @@
+"use client";
+
+import React from "react";
+
 import Link from "next/link";
 
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { TRIAL_CTA } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.06 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 8 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45 } },
+};
 
 interface TrialCtaProps {
   className?: string;
@@ -12,12 +27,16 @@ interface TrialCtaProps {
 
 export function TrialCta({ className }: TrialCtaProps) {
   return (
-    <section
+    <motion.section
       id={TRIAL_CTA.id}
       className={cn(
         "py-24 lg:py-32",
         className,
       )}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.12 }}
+      variants={container}
     >
       <div className="container max-w-3xl text-center">
         <span className="inline-block rounded-full border border-primary/40 bg-primary/10 px-4 py-1 font-heading text-xs font-semibold uppercase tracking-widest text-primary">
@@ -34,7 +53,7 @@ export function TrialCta({ className }: TrialCtaProps) {
           {TRIAL_CTA.body}
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <motion.div className="mt-10 flex flex-wrap items-center justify-center gap-4" variants={item}>
           <Button size="lg" asChild>
             <Link href={TRIAL_CTA.primaryCtaHref}>
               {TRIAL_CTA.primaryCTA}
@@ -44,10 +63,10 @@ export function TrialCta({ className }: TrialCtaProps) {
           <Button size="lg" variant="outline" asChild>
             <Link href={TRIAL_CTA.secondaryCtaHref}>{TRIAL_CTA.secondaryCTA}</Link>
           </Button>
-        </div>
+        </motion.div>
 
         <p className="text-muted-foreground mt-4 text-sm">{TRIAL_CTA.note}</p>
       </div>
-    </section>
+    </motion.section>
   );
 }
