@@ -528,48 +528,57 @@ export const BLOG_POSTS = [
     slug: "training-philosophy",
     title: "Training Philosophy",
     excerpt:
-      "Why measured, progressive training beats fads — a concise look at the coaching principles that guide every program at Technical Lifts.",
+      "Why measured, progressive training beats fads — the coaching principles that guide every plan at Technical Lifts.",
     content: [
-      "Our approach is simple: assess, program, progress. Every plan starts with a movement screen and a schedule that fits your life.",
-      "Progressive overload, consistent coaching, and attention to recovery form the backbone of long-term results. Shortcuts and fads are avoided in favour of methods that scale with you.",
-      "Coaches focus on technique, load management, and simple metrics so progress can be tracked and sustained.",
+      "We prioritise assessment over assumptions. Every new member receives a movement screen and a practical plan built around their schedule and constraints.",
+      "Programs are driven by progressive overload and simple metrics: load, reps, and consistency. Tracking small wins prevents plateaus and keeps motivation high.",
+      "Technique is non-negotiable. Coaches cue movement quality first, then increase load — this reduces injury risk and accelerates sustainable progress.",
+      "Coaching at Technical Lifts is not about one-size-fits-all templates. It’s about scaling sessions to real life: busy jobs, family obligations, and limited training windows.",
+      "Long-term results come from consistency, honest coaching feedback, and plans that evolve as you get stronger. Shortcuts don’t scale."
     ],
     meta: {
       description:
-        "Technical Lifts — Training Philosophy: progressive overload, coaching, and consistency over quick fixes.",
+        "Technical Lifts — Training Philosophy: assessment, progressive overload, and coaching that fits your life.",
     },
   },
   {
     slug: "strength-program-basics",
     title: "Strength Program Basics",
-    excerpt: "A beginner-friendly primer on sets, reps, frequency, and how to build strength without overtraining.",
+    excerpt: "A practical primer on sets, reps, frequency and how to build strength without overtraining.",
     content: [
-      "Strength training is built on three pillars: specificity, progressive overload, and recovery.",
-      "Simple programming templates work best: compound movements 2–4x/week, accessory work to address weaknesses, and planned deloads every 6–8 weeks.",
-      "Nutrition and sleep are non-negotiable components for meaningful strength gains.",
+      "Start with the big lifts: squat, hinge, press, and row. These compound movements produce the most transfer to everyday strength.",
+      "Train movement patterns 2–4x per week depending on recovery. For most people, 3 focused sessions strike the right balance between stimulus and recovery.",
+      "Use simple progressions: add weight, add a rep, or tighten ranges of motion. Keep accessory work targeted to your weak links rather than chasing variety for its own sake.",
+      "Program a deload every 6–8 weeks — light weeks are where adaptation consolidates and injuries are prevented.",
+      "Remember: nutrition and sleep are training partners. Without them, even well-designed programs underperform."
     ],
-    meta: { description: "Strength training basics from Technical Lifts — practical advice for real progress." },
+    meta: { description: "Strength training fundamentals from Technical Lifts — practical, evidence-based, and human-centered." },
   },
   {
     slug: "nutrition-for-performance",
     title: "Nutrition for Performance",
-    excerpt: "Practical nutrition for gym-goers who want to build muscle, lose fat, or simply feel better during training.",
+    excerpt: "Simple, sustainable nutrition advice that supports training and recovery.",
     content: [
-      "Prioritise protein, maintain a slight caloric surplus for muscle gain, and plan meals around training times.",
-      "Small, consistent changes beat restrictive diets. Hydration and timing matter for workout quality.",
-      "If you need a tailored plan, our personal trainers include practical nutrition guidance as part of PT packages.",
+      "Protein is the foundation: aim for a protein-rich source with most meals to support muscle repair and growth.",
+      "For body recomposition, small calorie changes over weeks beat drastic diets. Prioritise adherence and nutrient quality.",
+      "Timing matters for training quality: a solid meal 2–3 hours before training, or a small protein snack 30–60 minutes prior, improves performance for many athletes.",
+      "Hydration and electrolytes affect energy and recovery — don’t overlook them on heavy training days.",
+      "If you want a plan that actually fits your life, our trainers include practical, habit-based nutrition coaching as part of PT packages."
     ],
-    meta: { description: "Nutrition fundamentals that support training — practical, simple, and sustainable." },
+    meta: { description: "Practical nutrition tips that help you train harder and recover better." },
   },
   {
     slug: "recovery-and-mobility",
     title: "Recovery & Mobility",
-    excerpt: "Short reads on movement prep, mobility drills, and recovery strategies that keep you training longer and harder.",
+    excerpt: "Focused strategies to keep you training consistently and reduce injury risk.",
     content: [
-      "Active recovery, sleep, foam rolling, and mobility work keep training consistent. Small daily habits compound over months.",
-      "Our trainers prescribe targeted mobility drills to address individual movement restrictions — a 10-minute routine can dramatically improve lift quality.",
+      "Consistency beats extremes. A short daily mobility routine has more impact than occasional long sessions.",
+      "Prioritise sleep and active recovery: easy movement, walks, and light mobility between heavy sessions speed up recovery.",
+      "Use targeted mobility drills prescribed by coaches — these correct movement restrictions and improve lift mechanics.",
+      "In-session breathing and tempo control often improve recovery and performance more than extra accessory sets.",
+      "Recovery is not optional. Build it into the program: sleep, nutrition, and planned rest weeks are part of the plan."
     ],
-    meta: { description: "Recovery and mobility tips to maintain progress and reduce injury risk." },
+    meta: { description: "Recovery and mobility routines that keep you training longer and stronger." },
   },
 ];
 
@@ -603,7 +612,11 @@ export const COMPONENT_PAGES = [
     title: "Member Story — Ravi",
     excerpt: "An editorial-style case study documenting one member's transformation.",
     content: [
-      "Ravi came with inconsistent training and limited time. With a focused 16-week plan, he improved strength, moved better, and regained confidence.",
+      "Ravi arrived at Technical Lifts with sporadic training, inconsistent nutrition, and limited time to train. He wanted results without a programme that demanded his life.",
+      "The first step was assessment: movement screening, a simple strength baseline, and a conversation about time and priorities. From there, coaches designed a 16-week plan focused on compound lifts and recovery.",
+      "Key changes included three focused sessions per week, small but consistent nutritional improvements, and mobility work to fix movement restrictions that had limited his lifts.",
+      "By week 8 Ravi was consistently adding load to his major lifts. By week 16 he reported better posture, a 12% improvement in his main lifts, and most importantly—a sustainable routine he could keep.",
+      "Ravi’s story is typical of our approach: individual assessment, simple programming, consistent coaching, and measurable progress."
     ],
   },
 ];
