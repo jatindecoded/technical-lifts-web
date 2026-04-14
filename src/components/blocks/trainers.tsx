@@ -7,6 +7,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { CardHeading } from "@/components/ui/card-heading";
 import { TRAINERS, TRAINERS_SECTION } from "@/lib/constants";
 
 const container = {
@@ -52,9 +53,9 @@ export const Trainers = () => {
                     />
                   </div>
                   <div className="space-y-1 p-5">
-                    <div className="font-heading text-base font-bold uppercase tracking-wide text-primary">
+                    <CardHeading as="div" className="text-base text-primary">
                       {trainer.name}
-                    </div>
+                    </CardHeading>
                     <div className="text-muted-foreground text-sm">
                       {trainer.certification}
                     </div>

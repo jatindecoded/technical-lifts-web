@@ -1,20 +1,31 @@
+"use client";
+
+import React from "react";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { motion } from "framer-motion";
 
 import { DashedLine } from "../dashed-line";
 
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  FEATURE_SECTIONS,
-  FEATURES_TAGLINE,
-  IMAGE_ASSETS,
-  SITE,
-  WHO_ITS_FOR,
-} from "@/lib/constants";
+import { CardHeading } from "@/components/ui/card-heading";
+import { FEATURE_SECTIONS, FEATURES_TAGLINE, IMAGE_ASSETS, SITE, WHO_ITS_FOR } from "@/lib/constants";
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.06 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 8 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45 } },
+};
 
 export const Features = () => {
   return (
-    <section className="py-28 lg:py-32">
+    <motion.section className="py-28 lg:py-32" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} variants={container}>
       <div className="container">
         <div className="relative flex items-center justify-center">
           <DashedLine className="text-muted-foreground" />
@@ -34,8 +45,8 @@ export const Features = () => {
 
         <Card className="mt-8 rounded-3xl md:mt-12 lg:mt-20">
           <CardContent className="flex p-0 max-md:flex-col">
-            {WHO_ITS_FOR.map((item, i) => (
-              <div key={i} className="flex flex-1 max-md:flex-col">
+            {WHO_ITS_FOR.map((sectionItem, i) => (
+              <motion.div key={i} variants={item} className="flex flex-1 max-md:flex-col">
                 <div className="flex-1 p-4 pe-0!">
                   <div className="relative aspect-[2/1] overflow-hidden md:aspect-[1.28/1]">
                     <Image
@@ -58,11 +69,11 @@ export const Features = () => {
                     className="group flex items-center justify-between gap-4 pe-4 pt-4 md:pe-6 md:pt-6"
                   >
                     <div className="space-y-2">
-                      <h3 className="font-heading max-w-60 text-2xl font-bold leading-tight tracking-tight">
-                        {item.title}
-                      </h3>
+                      <CardHeading as="h3" className="max-w-60 text-2xl leading-tight">
+                        {sectionItem.title}
+                      </CardHeading>
                       <p className="text-foreground max-w-76 text-base leading-6">
-                        {item.description}
+                        {sectionItem.description}
                       </p>
                     </div>
                   </Link>
@@ -77,11 +88,11 @@ export const Features = () => {
                     <DashedLine orientation="horizontal" />
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </CardContent>
         </Card>
       </div>
-    </section>
+    </motion.section>
   );
 };

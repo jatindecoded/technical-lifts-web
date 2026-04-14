@@ -1,18 +1,25 @@
+"use client";
+
+import React from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
 import { DumbbellIcon } from "lucide-react";
 
 import { DashedLine } from "../dashed-line";
 
 import { Button } from "@/components/ui/button";
-import {
-    FACILITIES,
-    FEATURE_SECTIONS,
-    IMAGE_ASSETS,
-    PT_INCLUDES,
-} from "@/lib/constants";
+// constants & utils
+import { FACILITIES, FEATURE_SECTIONS, IMAGE_ASSETS, PT_INCLUDES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+
+// motion tokens
+const motionItem = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 interface SectionItem {
     title: string;
@@ -144,7 +151,11 @@ interface ItemProps {
 
 const Item = ({ item, isLast, className }: ItemProps) => {
     return (
-        <div
+        <motion.div
+            variants={motionItem}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.12 }}
             className={cn(
                 "relative flex flex-col items-center justify-between px-0 py-6 md:px-6 md:py-8",
                 className,
@@ -243,6 +254,6 @@ const Item = ({ item, isLast, className }: ItemProps) => {
                     />
                 </>
             )}
-        </div>
+        </motion.div>
     );
 };
