@@ -1,7 +1,21 @@
+/* eslint-disable import/order */
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { TRAINERS, TRAINERS_SECTION } from "@/lib/constants";
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 export const Trainers = () => {
   return (
@@ -16,36 +30,41 @@ export const Trainers = () => {
           </p>
         </div>
 
-        <div className="relative mt-8 grid gap-4 md:mt-12 md:grid-cols-3 lg:mt-16">
+        <motion.div
+          className="relative mt-8 grid gap-4 md:mt-12 md:grid-cols-3 lg:mt-16"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={container}
+        >
           {TRAINERS.map((trainer, index) => (
-            <Card
-              key={index}
-              className="bg-muted h-full overflow-hidden border-none"
-            >
-              <CardContent className="flex h-full flex-col p-0">
-                <div className="relative aspect-[3/2] w-full overflow-hidden">
-                  <Image
-                    src={trainer.photo}
-                    alt={trainer.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="space-y-1 p-5">
-                  <div className="font-heading text-base font-bold uppercase tracking-wide text-primary">
-                    {trainer.name}
+            <motion.div key={index} variants={item}>
+              <Card className="bg-muted h-full overflow-hidden border-none">
+                <CardContent className="flex h-full flex-col p-0">
+                  <div className="relative aspect-[3/2] w-full overflow-hidden">
+                    <Image
+                      src={trainer.photo}
+                      alt={trainer.name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                  <div className="text-muted-foreground text-sm">
-                    {trainer.certification}
+                  <div className="space-y-1 p-5">
+                    <div className="font-heading text-base font-bold uppercase tracking-wide text-primary">
+                      {trainer.name}
+                    </div>
+                    <div className="text-muted-foreground text-sm">
+                      {trainer.certification}
+                    </div>
+                    <div className="text-muted-foreground text-sm">
+                      {trainer.speciality}
+                    </div>
                   </div>
-                  <div className="text-muted-foreground text-sm">
-                    {trainer.speciality}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
