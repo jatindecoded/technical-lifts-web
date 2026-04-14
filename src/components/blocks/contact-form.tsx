@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button";
 import { CONTACT_FORM } from "@/lib/constants";
 
 // Simple HTML form posting to FormSubmit.co for static export compatibility.
-// TODO: Replace the action email (you@example.com) with the real recipient and set _next to your thank-you page.
+// NOTE: Using a non-production placeholder address below. Replace with the real recipient email before deployment.
 export function ContactForm() {
   return (
     <div className="w-full rounded-xl border border-white/[0.08] p-8">
       <form
-        action="https://formsubmit.co/you@example.com"
+        action="https://formsubmit.co/hello@technical-lifts.example"
         method="POST"
         className="flex flex-col gap-5"
       >
