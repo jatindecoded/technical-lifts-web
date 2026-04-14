@@ -9,8 +9,11 @@ export const SITE = {
   phone: "+91-89205-76059",
   whatsapp: "+91-89205-76059",
   address: "C-596, Vikas Puri, Near PVR Cinema, New Delhi - 110018",
+  // TODO: Add Google Maps URL for the gym when available
   googleMapsUrl: "",
+  // TODO: Add Instagram handle URL
   instagramUrl: "",
+  // TODO: Add Google Reviews URL
   googleReviewsUrl: "",
   trialCTA: "Book Free Trial",
   trialSubtext: "Free for website visitors. Walk-ins pay ₹500.",
@@ -283,28 +286,28 @@ export const TRANSFORMATIONS: Transformation[] = [
     name: "Priya",
     result: "Lost 14kg",
     duration: "5 months",
-    // Replace with: /gym/transformations/priya.webp
+    // TODO: Replace with: /gym/transformations/priya.webp
     photo: "/stock-images/man-sitting-bench-gym.webp",
   },
   {
     name: "Arjun",
     result: "Gained 8kg lean muscle",
     duration: "4 months",
-    // Replace with: /gym/transformations/arjun.webp
+    // TODO: Replace with: /gym/transformations/arjun.webp
     photo: "/stock-images/man-barbell-squat-gym.webp",
   },
   {
     name: "Rahul",
     result: "Lost 10kg",
     duration: "3 months",
-    // Replace with: /gym/transformations/rahul.webp
+    // TODO: Replace with: /gym/transformations/rahul.webp
     photo: "/stock-images/man-squatting-gym.webp",
   },
   {
     name: "Sneha",
     result: "First fitness goal hit",
     duration: "6 weeks",
-    // Replace with: /gym/transformations/sneha.webp
+    // TODO: Replace with: /gym/transformations/sneha.webp
     photo: "/stock-images/trainer-hands-on-hips.webp",
   },
 ];
@@ -464,55 +467,155 @@ export const CONTACT_FORM = {
 
 // ─── Images ───────────────────────────────────────────────────────────────────
 // Drop real photos from the Drive into public/gym/ and update paths here.
+// TODO: Replace placeholder image paths with production assets when available.
 
 export const IMAGE_ASSETS = {
   hero: {
-    // Replace with: /gym/gallery/hero.webp
+    // TODO: Replace with: /gym/gallery/hero.webp
     src: "/stock-images/group-sitting-in-gym.webp",
     alt: "Group training inside Technical Lifts gym",
   },
   whoItsFor: [
     {
-      // Replace with: /gym/gallery/equipment.webp
+      // TODO: Replace with: /gym/gallery/equipment.webp
       src: "/stock-images/gym-machine-speaker.webp",
       alt: "Gym equipment and machine setup",
     },
     {
-      // Replace with: /gym/gallery/kettlebells.webp
+      // TODO: Replace with: /gym/gallery/kettlebells.webp
       src: "/stock-images/black-red-kettlebells.webp",
       alt: "Kettlebells and strength equipment",
     },
     {
-      // Replace with: /gym/gallery/trainer.webp
+      // TODO: Replace with: /gym/gallery/trainer.webp
       src: "/stock-images/trainer-arms-crossed.webp",
       alt: "Trainer standing with arms crossed",
     },
   ],
   personalTraining: {
-    // Replace with: /gym/gallery/personal-training.webp
+    // TODO: Replace with: /gym/gallery/personal-training.webp
     src: "/stock-images/man-holding-dumbbells.webp",
     alt: "Member holding dumbbells in gym",
   },
   about: [
     {
-      // Replace with: /gym/gallery/about-1.webp
+      // TODO: Replace with: /gym/gallery/about-1.webp
       src: "/stock-images/trainer-hands-on-hips.webp",
       alt: "Trainer at Technical Lifts",
     },
     {
-      // Replace with: /gym/gallery/about-2.webp
+      // TODO: Replace with: /gym/gallery/about-2.webp
       src: "/stock-images/man-sitting-bench-gym.webp",
       alt: "Member resting between sets",
     },
     {
-      // Replace with: /gym/gallery/about-3.webp
+      // TODO: Replace with: /gym/gallery/about-3.webp
       src: "/stock-images/man-barbell-squat-gym.webp",
       alt: "Member performing barbell squat",
     },
     {
-      // Replace with: /gym/gallery/about-4.webp
+      // TODO: Replace with: /gym/gallery/about-4.webp
       src: "/stock-images/man-squatting-gym.webp",
       alt: "Member squatting during gym session",
     },
   ],
+};
+
+// ─── Pages & Blog Posts (content source for new pages) ────────────────────────
+
+export const BLOG_POSTS = [
+  {
+    slug: "training-philosophy",
+    title: "Training Philosophy",
+    excerpt:
+      "Why measured, progressive training beats fads — a concise look at the coaching principles that guide every program at Technical Lifts.",
+    content: [
+      "Our approach is simple: assess, program, progress. Every plan starts with a movement screen and a schedule that fits your life.",
+      "Progressive overload, consistent coaching, and attention to recovery form the backbone of long-term results. Shortcuts and fads are avoided in favour of methods that scale with you.",
+      "Coaches focus on technique, load management, and simple metrics so progress can be tracked and sustained.",
+    ],
+    meta: {
+      description:
+        "Technical Lifts — Training Philosophy: progressive overload, coaching, and consistency over quick fixes.",
+    },
+  },
+  {
+    slug: "strength-program-basics",
+    title: "Strength Program Basics",
+    excerpt: "A beginner-friendly primer on sets, reps, frequency, and how to build strength without overtraining.",
+    content: [
+      "Strength training is built on three pillars: specificity, progressive overload, and recovery.",
+      "Simple programming templates work best: compound movements 2–4x/week, accessory work to address weaknesses, and planned deloads every 6–8 weeks.",
+      "Nutrition and sleep are non-negotiable components for meaningful strength gains.",
+    ],
+    meta: { description: "Strength training basics from Technical Lifts — practical advice for real progress." },
+  },
+  {
+    slug: "nutrition-for-performance",
+    title: "Nutrition for Performance",
+    excerpt: "Practical nutrition for gym-goers who want to build muscle, lose fat, or simply feel better during training.",
+    content: [
+      "Prioritise protein, maintain a slight caloric surplus for muscle gain, and plan meals around training times.",
+      "Small, consistent changes beat restrictive diets. Hydration and timing matter for workout quality.",
+      "If you need a tailored plan, our personal trainers include practical nutrition guidance as part of PT packages.",
+    ],
+    meta: { description: "Nutrition fundamentals that support training — practical, simple, and sustainable." },
+  },
+  {
+    slug: "recovery-and-mobility",
+    title: "Recovery & Mobility",
+    excerpt: "Short reads on movement prep, mobility drills, and recovery strategies that keep you training longer and harder.",
+    content: [
+      "Active recovery, sleep, foam rolling, and mobility work keep training consistent. Small daily habits compound over months.",
+      "Our trainers prescribe targeted mobility drills to address individual movement restrictions — a 10-minute routine can dramatically improve lift quality.",
+    ],
+    meta: { description: "Recovery and mobility tips to maintain progress and reduce injury risk." },
+  },
+];
+
+export const COMPONENT_PAGES = [
+  {
+    slug: "hero-variants",
+    title: "Hero Variants",
+    excerpt: "A showcase of hero layouts and headline treatments used across the site.",
+    content: [
+      "Two-tone headlines, tight tracking, and a single accent word define our hero treatments. Variants show different CTA priorities and visual balance.",
+    ],
+  },
+  {
+    slug: "card-variants",
+    title: "Card Variants",
+    excerpt: "Design and use-cases for the card components used site-wide.",
+    content: [
+      "Cards are low-contrast surfaces with subtle borders and tight typography. Use them for trainers, transformations, and blog teasers.",
+    ],
+  },
+  {
+    slug: "schedule-pricing",
+    title: "Schedule & Pricing",
+    excerpt: "Detailed breakdown of class schedules, membership tiers, and PT booking flow.",
+    content: [
+      "Use this page to deep-link pricing CTAs and provide an expanded explanation of what's included in each plan.",
+    ],
+  },
+  {
+    slug: "member-story",
+    title: "Member Story — Ravi",
+    excerpt: "An editorial-style case study documenting one member's transformation.",
+    content: [
+      "Ravi came with inconsistent training and limited time. With a focused 16-week plan, he improved strength, moved better, and regained confidence.",
+    ],
+  },
+];
+
+// quick combined list for routing and sitemap generation
+export const EXTRA_PAGES = [...BLOG_POSTS.map((p) => ({ path: `/blog/${p.slug}`, title: p.title })),
+  ...COMPONENT_PAGES.map((p) => ({ path: `/${p.slug}`, title: p.title }))];
+
+// Page-level headings and small copy used by scaffolding pages
+export const PAGES = {
+  // TODO: Replace with final editorial heading for blog index
+  blogIndexHeading: "From the Gym Floor",
+  // TODO: Replace with final editorial heading for component showcases
+  componentsHeading: "Design System: Components",
 };
