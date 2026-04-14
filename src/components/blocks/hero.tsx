@@ -73,7 +73,9 @@ export const Hero = () => {
           </motion.h1>
 
           <motion.p variants={item} className="text-muted-foreground mt-5 text-sm leading-tight md:text-lg lg:max-w-100">
-            {SITE.subheadline}
+            <motion.span initial={{ y: 6, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, ease: 'easeOut' }}>
+              {SITE.subheadline}
+            </motion.span>
           </motion.p>
 
           <motion.div variants={item} className="mt-8 flex flex-col flex-wrap items-center gap-4 lg:flex-nowrap lg:flex-row">

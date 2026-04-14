@@ -38,7 +38,7 @@ export const Pricing = ({ className }: { className?: string }) => {
 
         <motion.div className="mt-8 grid items-start gap-4 text-start md:mt-12 md:grid-cols-4 lg:mt-16" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} variants={container}>
           {PRICING_PLANS.map((plan) => (
-            <motion.div key={plan.name} variants={item}>
+            <motion.div key={plan.name} variants={item} whileHover={{ y: -6 }} whileTap={{ scale: 0.995 }} transition={{ type: 'spring', stiffness: 280, damping: 20 }}>
               <Card
                 className={cn(
                   "relative h-full transition-all",

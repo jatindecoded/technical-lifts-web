@@ -70,12 +70,14 @@ export const Testimonials = ({
                       <Card className="bg-muted h-full overflow-hidden border-none">
                         <CardContent className="flex h-full flex-col p-0">
                           <div className="relative h-[288px] lg:h-[328px]">
-                            <Image
-                              src={transformation.photo}
-                              alt={transformation.name}
-                              fill
-                              className="object-cover object-top"
-                            />
+                            <motion.div whileHover={{ y: -8 }} transition={{ type: 'spring', stiffness: 260, damping: 18 }} className="h-full">
+                              <Image
+                                src={transformation.photo}
+                                alt={transformation.name}
+                                fill
+                                className="object-cover object-top"
+                              />
+                            </motion.div>
                           </div>
                           <div className="flex flex-1 flex-col justify-between gap-6 p-6">
                             <blockquote className="font-heading text-xl font-bold leading-tight tracking-tight md:text-2xl">
