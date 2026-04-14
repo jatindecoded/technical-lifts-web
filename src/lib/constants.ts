@@ -636,25 +636,64 @@ export const BLOG_POSTS = [
     title: "Nutrition for Performance",
     excerpt: "Simple, sustainable nutrition advice that supports training and recovery.",
     content: [
-      "Nutrition at Technical Lifts is framed by simplicity and sustainability. The goal is not to chase fleeting diet trends but to provide practical, habit-based guidance that fits the lives of people in Vikaspuri. At the core: adequate protein intake, sensible calorie management and meal timing that supports training quality and recovery. These building blocks allow trainees to train harder, recover faster and make measurable progress over months rather than days.",
+      "Nutrition is the silent partner of every training program — it determines whether the metres you run and the kilos you lift translate into long-term progress. At Technical Lifts, the nutrition approach is pragmatic: use local foods, create repeatable habits, and prioritise the small actions that compound into measurable results. This guide is written for Vikaspuri members who need realistic, actionable steps that fit busy lives rather than brittle, complicated regimens.",
 
-      "Protein is non-negotiable for anyone aiming to build muscle or retain lean mass while losing fat. A practical target commonly advised is to include a protein-rich source at each meal — eggs, dairy, pulses, lean meats, or protein-fortified options. For many members this means practical swaps: adding a bowl of dal, yoghurt, or a paneer-based dish rather than complex supplements. Consistent protein distribution across the day supports muscle protein synthesis and recovery from sessions.",
+      "Start with the outcome you want. Are you chasing strength, fat loss, or sustained energy? Your primary aim determines the first decisions: a strength-focused plan will emphasise a modest calorie surplus and reliable protein intake; a fat-loss plan will create a gentle calorie deficit while preserving protein and training intensity. For most people the healthiest starting point is improving body composition gradually—prioritise protein and training while making small caloric adjustments over weeks rather than days.",
 
-      "Calorie balance is personal and gradual. For recomposition (losing fat while keeping or gaining muscle) small, sustained changes to caloric intake over weeks are more effective and sustainable than dramatic cuts. Coaches at Technical Lifts work with members to make incremental adjustments — reduce a small portion, swap a refined carbohydrate for a complex one, and increase protein — so adherence stays high and performance doesn’t collapse.",
+      "Protein: the priority macronutrient. Protein is the cornerstone of recovery and muscle maintenance. A practical target for most trainees is to aim for a protein-rich source at every meal — eggs, paneer, yoghurt, dal, chicken, fish or lentil-based dishes. A reasonable rule of thumb is 1.6–2.2 g/kg bodyweight per day for those seeking strength or hypertrophy, but this can be simplified in practice: ensure each plate has a concentrated protein portion. For Vikaspuri residents, common local options — curd, paneer sabzi, chana, dals and eggs — make this achievable without supplements. When gaps exist, a basic whey or plant protein powder is an efficient bridge, not a requirement.",
 
-      "Timing meals around training improves session quality. A well-timed meal 2–3 hours before training provides steady energy; when time is short a small protein snack 30–60 minutes before can help preserve training intensity. Post-session, combining protein with a moderate amount of carbohydrate supports recovery and glycogen replenishment. These are practical rules that translate to better training consistency in a busy urban life.",
+      "Sensible calorie management. Energy balance drives body composition. Dramatic cuts produce short-term results but collapse training performance and increase the risk of injury. The Technical Lifts approach advocates small, sustainable changes: reduce portion size by ~10–15% or trim one high-calorie snack per day, monitor weekly trends, and adjust slowly. For strength-focused members, a modest surplus of 150–300 kcal/day paired with consistent training and protein is often sufficient to support muscle gain while limiting fat accumulation.",
 
-      "Hydration and electrolyte balance matter for heavy sessions. Dehydration reduces power and endurance; for members training multiple days in a row, simple rehydration strategies and mindful electrolyte intake on hotter days maintain performance and reduce cramping. Coaches encourage regular fluid intake and practical replacement strategies for high sweat sessions.",
+      "Timing meals around training. Meal timing should support session quality and recovery. Aim for a balanced meal 2–3 hours before training; when time is limited, a light snack with carbs and protein 30–60 minutes before can help maintain intensity. After training, prioritise protein and some carbohydrate within a practical window — a chapati with dal and a side of curd is a perfectly adequate recovery meal. For sessions earlier in the day, plan a portable option (eggs and fruit, paneer sandwich) so training remains the priority rather than skipped or under-fuelled workouts.",
 
-      "Local food culture is respected and leveraged. Vikaspuri and Delhi cuisine can be protein-rich and varied; coaches provide guidance on making culturally familiar meals training-friendly rather than prescribing unfamiliar diets. This keeps adherence high and makes nutrition changes feel realistic rather than punitive.",
+      "Hydration and electrolytes. Even mild dehydration reduces strength and cognitive focus. Encourage simple habits: sip water regularly, increase intake on hot days, and include small sources of electrolytes after heavy sweat sessions (or use salted lassi/salty buttermilk if calories are a concern). Monitor urine colour as a simple gauge; pale straw-coloured urine usually indicates adequate hydration for most people.",
 
-      "Supplements are used sparingly and only when they add clear value. Priority is whole-food protein sources, adequate calorie intake and sleep. Where useful, coaches may recommend evidence-backed supplements such as creatine monohydrate for strength and performance or a basic protein supplement to fill gaps; however these are adjuncts, not replacements for good food and consistent training.",
+      "Local food-first recommendations. The best diet is the one you can sustain culturally and socially. In Vikaspuri and Delhi, local staples can be repurposed for performance: rajma, chole and dal for sustained protein and carbohydrate; paneer and curd for quick, high-quality protein; roti and brown rice for complex carbs. Coaches emphasise minimal friction changes—swap fried items for grilled alternatives a few times per week, add an extra serving of vegetables, or include a cup of curd with a main meal. These small choices preserve social habits while improving the nutrition foundation.",
 
-      "How coaching integrates nutrition: habit-based steps, not prescriptive meal plans. Trainers identify small, achievable changes — add protein to breakfast, choose grilled over fried options a few times a week, or include an extra serving of vegetables. These incremental improvements compound into meaningful changes without overwhelming members' schedules or preferences.",
+      "Meal examples that fit local tastes:",
+      "- Breakfast: 2 eggs (or bowl of curd+fruit) + 1-2 rotis or oats",
+      "- Lunch: Roti + dal/chicken curry + salad + curd",
+      "- Snack: Roasted chana / fruit + handful of nuts",
+      "- Dinner: Roti + sabzi with paneer/tofu or lean meat + seasonal vegetable",
+      "- Post-workout (if evening): Dahi with banana or roti with egg/paneer",
 
-      "Tracking and adjustments: coaches use simple metrics — training quality, weekly weigh-ins, and progress photos — to guide changes. If performance drops or recovery falters, coaches refine energy intake rather than simply mandate reductions. The process is collaborative and realistic, tailored to the demands of everyday life in Vikaspuri.",
+      "Supplements: use where they add clear value. Supplements are adjuncts to food and training, not replacements. Creatine monohydrate is one evidence-backed, low-cost supplement that consistently supports strength gains and power output. Protein powders are a practical convenience when whole-food protein is limited. Caffeine can improve session intensity if used judiciously. Avoid complex stacks; focus on proven basics and consult coaches for personalized recommendations.",
 
-      "What members can do today: prioritise protein, hydrate, and adjust one meal a week to be more nutrient-dense. Over time these small steps support stronger sessions, faster recovery and sustainable body composition changes. Nutrition is the invisible training partner — when it is done well, everything else improves."
+      "Micronutrients and digestive health. A balanced diet rich in vegetables, fruits and pulses typically provides sufficient micronutrients for most trainees. However, certain groups may need attention—vegetarians should monitor iron and B12, and individuals with limited sun exposure should consider vitamin D testing. Prioritise fibre for gut health (vegetables, fruits, whole grains) which also supports satiety and steady energy. Simple tests with a local clinic can guide targeted supplementation when needed.",
+
+      "Practical grocery shopping tips for Vikaspuri:",
+      "- Buy seasonal vegetables and pulses in bulk — they are cost-effective and nutrient dense",
+      "- Choose wholegrain roti options or mix wheat with millets for added fibre",
+      "- Opt for fresh curd and paneer when possible (homemade or trusted vendors)",
+      "- Stock easy snacks: roasted chana, peanuts, mixed nuts; these prevent high-sugar choices when time is short",
+
+      "Planning and meal prep. A small amount of planning prevents poor choices. Batch-cook a dal or a chicken curry for 2–3 days, portion into simple containers, and pair with fresh salads or rotis at mealtime. Prepare portable breakfast options (overnight oats, boiled eggs) for busy mornings. A little preparation reduces decision fatigue and keeps training fuel on hand.",
+
+      "Adjustments for training phase. Nutrition must adapt to programming: high-volume conditioning phases require more carbohydrate to sustain performance; strength-focused phases prioritise steady protein and slightly higher total calories. Coaches coordinate training and nutrition adjustments based on workload and recovery — if sessions become harder and performance drops, consider increasing carbohydrate around sessions or adding a small additional snack rather than immediately cutting training volume.",
+
+      "Common practical problems and fixes:",
+      "- I’m not hungry in the morning: use liquid calories (lassi or milk-based shakes) or small protein snacks within an hour of waking",
+      "- My energy crashes midday: include balanced carbs with protein at lunch and avoid long gaps between meals",
+      "- I can’t maintain training during a calorie deficit: reduce deficit slightly, prioritise protein and keep key sessions high intensity",
+
+      "Behavioral coaching: small habits, big results. Coaches focus on tiny, achievable changes—add protein to breakfast, replace one fried meal per week, or pack a snack for post-work sessions. These micro-habits are tracked and iterated; small wins build confidence and become automatic behaviours over time.",
+
+      "Monitoring and iteration. Use simple metrics: training performance (can you lift the planned loads?), restorative sleep, weekly weight trends, and how you feel during sessions. When performance or recovery slips, adjust energy intake and fibre intake before overhauling the whole approach. Data is informative but keep it simple—weekly trends beat daily noise.",
+
+      "Case example (practical): A 30-year-old member training for strength might start with a modest 200 kcal daily surplus, distribute protein across three meals (eggs/curd at breakfast, dal/chicken at lunch, paneer/tofu at dinner), and add creatine 5g/day if desired. After 6–8 weeks, measure working sets and recovery; if progress stalls and fat gain is unwanted, reduce surplus by 100 kcal and optimise protein and sleep.",
+
+      "When to seek further help. Persistent fatigue, large weight swings, or medical concerns warrant a coach-led review and possibly blood work. Technical Lifts coaches will triage issues, suggest diet adjustments, and refer to a dietitian or physician where required.",
+
+      "Summary — a simple action plan:",
+      "1) Prioritise protein at each meal (local sources like dahi, paneer, dals, eggs)",
+      "2) Make modest calorie adjustments slowly based on your goal",
+      "3) Time meals to support training energy and recovery",
+      "4) Hydrate consistently and use electrolytes on heavy sweat days",
+      "5) Use supplements sparingly and evidence-backed (creatine, protein powder)",
+
+      "TODO: Replace nutritional case studies with local member examples and add downloadable meal templates and groceries list (images/links).",
+
+      "TODO: Add short recipe cards (3–4) that are Vikaspuri-friendly and quick to prepare."
     ],
     meta: { description: "Practical nutrition tips that help you train harder and recover better." },
   },
