@@ -32,6 +32,8 @@ export function BlogList() {
         <motion.article
           key={post.slug}
           variants={reduce ? undefined : item}
+          whileHover={reduce ? undefined : { y: -6 }}
+          transition={reduce ? undefined : { type: 'spring', stiffness: 260, damping: 20 }}
           className="bg-surface border border-white/[0.06] rounded-xl p-6"
         >
           <h2 className="text-xl md:text-2xl font-heading tracking-tight uppercase text-text-base">
