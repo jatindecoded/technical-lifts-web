@@ -21,13 +21,13 @@ export function CTA({ kind = "primary", buttonVariant, className, icon }: CTAPro
   const variant = buttonVariant ?? (isPrimary ? "default" : "outline");
 
   return (
-    <Link href={href} className={className}>
-      <Button variant={variant} size="lg" className="w-full sm:w-fit">
+    <Button asChild variant={variant} size="lg" className="w-full sm:w-fit">
+      <Link href={href} className={className ?? "inline-flex w-full items-center justify-center"}>
         <span className="relative z-10 flex items-center gap-2">
           {label}
           {icon}
         </span>
-      </Button>
-    </Link>
+      </Link>
+    </Button>
   );
 }
