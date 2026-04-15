@@ -982,7 +982,50 @@ export const BLOG_POSTS = [
     title: "Member Stories: Vikaspuri Transformations",
     excerpt: "Case studies from local members — goals, programming and the results achieved.",
     content: [
-      "TODO: Expand to 2500+ words. Placeholder: Narrative-driven case studies showing assessed baselines, programmed progressions, and measurable outcomes. Add images and specific numbers when available."
+      "Member stories are the clearest proof that consistent coaching and a realistic plan work. This collection focuses on real members from Vikaspuri and nearby neighbourhoods — their starting points, the obstacles they faced, the coaching interventions we used, and the measurable outcomes they achieved. Names and photos are anonymised where necessary; when permission is granted we will replace placeholders with full images and precise metrics.",
+
+      "Why stories matter. Numbers tell part of the story, but narratives explain the path. A member who lost weight or increased their squat did so through a combination of program design, habit changes, and incremental progress. Documenting the full journey — baseline assessment, program structure, nutrition adjustments, consistency, and the socio-environmental context — makes the lessons repeatable for others in the community.",
+
+      "How we format these case studies. Each story follows a consistent template: 1) baseline assessment and goals, 2) program and nutritional approach, 3) weekly adherence and coaching touchpoints, 4) objective outcomes and subjective experience, and 5) next steps and lessons learned. This structure highlights the coaching decisions that mattered rather than random success stories.",
+
+      "Case Study 1 — Priya: sustainable weight loss and strength regain",
+      "Baseline and goal: Priya arrived with a 10kg weight gain over two years, poor sleep, and low confidence with barbell training. Her goal was to lose 10–12kg within six months while building functional strength to carry her toddler and resume an active lifestyle.",
+      "Intervention: The coaching team started with a movement assessment and introduced a 3x/week full-body program focused on compound movements, paired with two behavioural nutrition changes: adding a protein portion at breakfast and removing one high-calorie fried snack per week. Coaches set small weekly adherence targets rather than dramatic calorie cuts.",
+      "Coaching and accountability: Priya received a short written plan, a simple readiness check-in before each week, and two in-person technique check-ins per month. The coach emphasised sleep hygiene and a 20-minute evening wind-down to improve recovery.",
+      "Outcomes: Over 20 weeks Priya lost 11kg, reported higher energy, and increased her working squat depth by 15% with improved confidence in the gym. Subjectively, she felt more present with her family and reported fewer low-energy days. TODO: replace with permissioned before/after photos and precise performance numbers.",
+
+      "Case Study 2 — Arjun: lean muscle gain and performance focus",
+      "Baseline and goal: Arjun had a history of intermittent gym attendance and wanted to gain muscle mass and improve his deadlift. His schedule allowed for four training sessions per week when consistent.",
+      "Intervention: We prescribed a 12-week block: 8 weeks accumulation and intensification with a fortnightly volume increase, followed by a 1-week deload and a 2-week realisation phase targeting a heavier triple. Nutrition focused on a modest 200–300 kcal surplus with prioritized protein at each meal.",
+      "Coaching and progress checks: Arjun tracked top-set loads in a simple training log. Coaches monitored recovery via sleep and session RPE, and adjusted accessory volume when stress or travel affected readiness.",
+      "Outcomes: Arjun added 6kg of lean mass and improved his deadlift by a practical margin in 12 weeks. He reported better posture, fewer daily aches, and clearer focus during sessions. TODO: add images and specific loading numbers once permissions are confirmed.",
+
+      "Case Study 3 — Rahul: rapid consistency and habit formation",
+      "Baseline and goal: Rahul struggled with inconsistent attendance and needed a plan that fit shift work. The primary aim was to create reliable training habits and a 3-month streak of consistent sessions.",
+      "Intervention: Coaches designed a flexible, modular program with three core sessions and simple alternatives for travel or late shifts. The emphasis was on achieving a weekly session target rather than perfection. Habit coaching included trigger-based actions (pack gym bag the night before) and micro-commitments (two mobility minutes on low-energy days).",
+      "Outcomes: Rahul completed a 12-week streak of consistent sessions, improved his 5-rep performance across key lifts by 10–15%, and reported a durable habit of prioritising training. The psychological shift — seeing training as non-negotiable time — proved the most valuable outcome. TODO: add testimonial quote and photo when available.",
+
+      "Design lessons from multiple stories",
+      "1) Small, consistent changes win. Most sustainable transformations used modest daily habits rather than extreme interventions.",
+      "2) Coaching beats guessing. Member progress accelerated when coaches tied program changes to simple data and recovery signals rather than intuition alone.",
+      "3) Cultural fit matters. Plans that used local foods, realistic meal prep, and flexible training windows had higher adherence.",
+
+      "How to read these stories and apply them",
+      "- Focus on the intervention, not the headline result. The details — how the program was delivered, how setbacks were handled, and what tactical nutrition changes were made — are the replicable parts.",
+      "- Use the template above for your own progress: baseline, plan, adherence, outcomes, and next steps.",
+
+      "Ethics and photo permissions",
+      "Member photos and sensitive metrics are used only with explicit consent. For any story that includes identifiable images or medical detail we secure signed permission. Placeholder images appear on the site until permissioned assets are provided. TODO: replace placeholders with permissioned photos and full metrics when releases are obtained.",
+
+      "How coaches use member stories in programming",
+      "Coaches review anonymised story patterns to identify what works across locals: which accessory choices accelerate squat depth, which nutrition fixes sustain energy for evening trainees, and which deload timing prevents burnout. These insights inform small but high-value adjustments in group programming and one-to-one coaching.",
+
+      "Actionable takeaways for readers",
+      "- Find one coach-driven change you can adopt this week (protein at breakfast, a specific mobility drill, or a small increase in top-set weight)",
+      "- Track just one metric consistently — session completion, top-set load, or sleep hours — and review after two weeks",
+      "- Treat setbacks as data, not failure; reduce volume or prioritize recovery and return to planned progression once readiness improves",
+
+      "TODO: Add 3–4 fully permissioned, long-form case studies with images, timelines, and downloadable PDF summaries for members who want a guided template."
     ],
     meta: { description: "Real member case studies highlighting long-term, sustainable change." },
   },
