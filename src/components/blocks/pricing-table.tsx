@@ -1,8 +1,6 @@
-import Link from "next/link";
-
 import { Check, Minus } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { CTA } from "@/components/ui/cta";
 import { PT_PLAN } from "@/lib/constants";
 
 interface ComparisonRow {
@@ -69,14 +67,10 @@ export const PricingTable = () => {
         <div className="mt-6 grid grid-cols-3 items-center gap-4">
           <div />
           <div className="flex justify-center">
-            <Button variant="outline" asChild>
-              <Link href="/contact?inquiry=membership">Get Started</Link>
-            </Button>
+            <CTA id="pricingContact" />
           </div>
           <div className="flex justify-center">
-            <Button asChild>
-              <Link href={PT_PLAN.ctaHref}>{PT_PLAN.cta}</Link>
-            </Button>
+            <CTA id="bookContact" />
           </div>
         </div>
       </div>

@@ -155,6 +155,7 @@ export const CTA_REGISTRY: Record<string, { label: string; href: string; variant
   whatsapp: { label: "WhatsApp", href: `https://wa.me/${(SITE.whatsapp || SITE.phone).replace(/\D/g, "")}`, variant: "outline" },
   instagram: { label: "Instagram", href: SITE.instagramUrl || "#", variant: "outline" },
   pricingContact: { label: "Get Started", href: "/contact?inquiry=membership", variant: "default" },
+  seePricing: { label: SITE.secondaryCTA, href: "/#pricing", variant: "outline" },
 };
 
 // ─── Gym Stats (About page) ───────────────────────────────────────────────────

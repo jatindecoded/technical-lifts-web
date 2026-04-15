@@ -2,12 +2,9 @@
 
 import React from "react";
 
-import Link from "next/link";
-
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { CTA } from "@/components/ui/cta";
 import { TRIAL_CTA } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -54,15 +51,8 @@ export function TrialCta({ className }: TrialCtaProps) {
         </p>
 
         <motion.div className="mt-10 flex flex-wrap items-center justify-center gap-4" variants={item}>
-          <Button size="lg" asChild>
-            <Link href={TRIAL_CTA.primaryCtaHref}>
-              {TRIAL_CTA.primaryCTA}
-              <ArrowRight className="ml-1 size-4" />
-            </Link>
-          </Button>
-          <Button size="lg" variant="outline" asChild>
-            <Link href={TRIAL_CTA.secondaryCtaHref}>{TRIAL_CTA.secondaryCTA}</Link>
-          </Button>
+          <CTA id="trial" />
+          <CTA id="trialSecondary" />
         </motion.div>
 
         <p className="text-muted-foreground mt-4 text-sm">{TRIAL_CTA.note}</p>
