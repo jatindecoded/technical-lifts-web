@@ -24,31 +24,22 @@ export const SITE = {
 // ─── Navigation ───────────────────────────────────────────────────────────────
 
 export const NAV_LINKS = [
-  { label: "Facilities", href: "#facilities" },
+  { label: "Facilities", href: "/#facilities" },
   { label: "Trainers", href: "/#trainers" },
   { label: "Pricing", href: "/pricing" },
   { label: "Transformations", href: "/transformations" },
   { label: "Blog", href: "/blog" },
-  { label: "Member Story", href: "/member-story" },
-  { label: "Hero Variants", href: "/hero-variants" },
-  { label: "Card Variants", href: "/card-variants" },
+  { label: "Member Stories", href: "/member-stories" },
   { label: "Schedule & Pricing", href: "/schedule-pricing" },
   { label: "Contact", href: "/contact" },
 ];
 
-export const FOOTER_NAV = [
-  { name: "Facilities", href: "/#facilities" },
-  { name: "Trainers", href: "/#trainers" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Transformations", href: "/transformations" },
-  { name: "FAQ", href: "/faq" },
-  { name: "Contact", href: "/contact" },
-];
+export const FOOTER_NAV = NAV_LINKS.map(({ label, href }) => ({ name: label, href }));
 
 export const FOOTER_LEGAL = [{ name: "Privacy Policy", href: "/privacy" }];
 
 export const FOOTER_CTA = {
-  heading: "Your First Session Is On Us",
+  heading: "Book a free trial",
   subheading:
     "Walk in, train once, see if it fits. Free trial for website visitors.",
 };
@@ -144,9 +135,9 @@ export const FEATURE_SECTIONS = {
 export const TRIAL_CTA = {
   id: "trial",
   badge: "Free Trial",
-  heading: "Come Train With Us",
-  headingAccent: "Once. On Us.",
-  body: "No commitment. No payment. Just come in, feel the space, train with our team. If it's not right for you, no hard feelings.",
+  heading: "Your first session is on us",
+  headingAccent: "Free",
+  body: "No commitment. A free session to try the gym and coaching. Come in, train, and decide — that’s it.",
   primaryCTA: "Book Free Trial",
   primaryCtaHref: "/contact",
   secondaryCTA: "Call Now",
