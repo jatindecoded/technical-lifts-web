@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
+import { CTA } from "@/components/ui/cta";
 import { ABOUT_SECTIONS, IMAGE_ASSETS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -74,9 +73,7 @@ export function TextSection({ section }: TextSectionProps) {
       </div>
       {section.cta && (
         <div className="mt-8">
-          <Link href={section.cta.href}>
-            <Button size="lg">{section.cta.text}</Button>
-          </Link>
+          <CTA id="bookContact" />
         </div>
       )}
     </div>
