@@ -52,9 +52,9 @@ const Login = () => {
                         Remember me
                       </label>
                     </div>
-                    <a href="#" className="text-primary text-sm font-medium">
+                    <button type="button" className="text-primary text-sm font-medium">
                       Forgot password
-                    </a>
+                    </button>
                   </div>
                   <Button type="submit" className="mt-2 w-full">
                     Create an account
