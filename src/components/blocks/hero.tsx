@@ -17,6 +17,7 @@ import {
 import { Logos } from "@/components/blocks/logos";
 import { DashedLine } from "@/components/dashed-line";
 import { Button } from "@/components/ui/button";
+import { CTA } from "@/components/ui/cta";
 import { HERO_FEATURES, IMAGE_ASSETS, SITE } from "@/lib/constants";
 
 const iconMap: Record<string, LucideIcon> = { Users, Zap, Target, TrendingUp };
@@ -80,9 +81,7 @@ export const Hero = () => {
 
           <motion.div variants={item} className="mt-8 flex flex-col flex-wrap items-center gap-4 lg:flex-nowrap lg:flex-row">
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-              <Button size="lg" asChild>
-                <a href="#trial">{SITE.trialCTA}</a>
-              </Button>
+              <CTA />
             </motion.div>
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
               <Button

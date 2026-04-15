@@ -77,11 +77,9 @@ export const Navbar = () => {
 
         {/* Auth Buttons */}
         <div className="flex items-center gap-2.5">
-          <Link href="#trial" className="max-lg:hidden">
-            <Button variant="outline">
-              <span className="relative z-10">{SITE.trialCTA}</span>
-            </Button>
-          </Link>
+          <div className="max-lg:hidden">
+            <CTA buttonVariant="outline" />
+          </div>
 
           {/* Hamburger Menu Button (Mobile Only) */}
           <button
