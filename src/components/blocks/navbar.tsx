@@ -5,7 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
-import { Button } from "@/components/ui/button";
+import { CTA } from "@/components/ui/cta";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { CTA } from "@/components/ui/cta";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
