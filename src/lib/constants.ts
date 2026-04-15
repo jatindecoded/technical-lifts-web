@@ -481,6 +481,16 @@ export const CONTACT_FORM = {
 // ─── Images ───────────────────────────────────────────────────────────────────
 // Drop real photos from the Drive into public/gym/ and update paths here.
 // TODO: Replace placeholder image paths with production assets when available.
+// ASSETS CHECKLIST:
+// - public/gym/gallery/hero.webp -> IMAGE_ASSETS.hero.src
+// - public/gym/gallery/equipment.webp -> IMAGE_ASSETS.whoItsFor[0].src
+// - public/gym/gallery/kettlebells.webp -> IMAGE_ASSETS.whoItsFor[1].src
+// - public/gym/gallery/trainer.webp -> IMAGE_ASSETS.whoItsFor[2].src
+// - public/gym/gallery/personal-training.webp -> IMAGE_ASSETS.personalTraining.src
+// - public/gym/about-1.webp..about-4.webp -> IMAGE_ASSETS.about[n].src
+// - public/gym/transformations/{name}.webp -> TRANSFORMATIONS.photo
+// - public/gym/trainers/trainer-{1..5}.webp -> TRAINERS.photo
+// When assets are available, update the paths above and remove these TODO lines.
 
 export const IMAGE_ASSETS = {
   hero: {
