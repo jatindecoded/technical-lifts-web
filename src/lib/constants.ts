@@ -1139,10 +1139,55 @@ export const BLOG_POSTS = [
     title: "Gym Etiquette & Safety",
     excerpt: "Simple rules to keep the training environment respectful, safe and efficient for everyone.",
     content: [
-      "TODO: Expand to 2500+ words. Placeholder: Safety protocols, spotter etiquette, equipment care, and community standards tailored to Technical Lifts."
+      "A great gym is built on shared responsibility. Etiquette and safety are not optional niceties — they are the practices that keep training consistent, reduce risk and make the space welcoming for everyone. This guide explains practical rules for members and coaches at Technical Lifts in Vikaspuri.",
+
+      "1) Respect equipment and return it promptly. After using plates, bars, dumbbells or collars, return them to their storage location. Leaving equipment in the middle of platforms creates hazards and delays other members. Train with the mindset that you leave the space better than you found it.",
+
+      "2) Use collars and safety measures for heavy lifts. Collars prevent plates from sliding and protect both the lifter and bystanders. When attempting near-maximal lifts on racks or platforms, use safety pins or ask for a spotter if appropriate. If you are unsure how to set safeties, ask a coach — proper setup is quick and prevents accidents.",
+
+      "3) Communicate on the platform. If you need the rack or platform, ask politely and estimate how long you’ll need it. When someone asks to work in, negotiate clearly (e.g., alternate sets) rather than ignoring requests. Communication reduces friction and keeps sessions efficient.",
+
+      "4) Spotting etiquette. Spotters support safety and confidence. A good spotter focuses on technique, provides minimal assistance until necessary, and communicates the plan before heavy attempts (number of reps, when to assist). Use experienced spotters for bench and heavy overhead work. If you’re offered to spot someone, stay attentive — don’t check your phone while spotting.",
+
+      "5) Hygiene and shared spaces. Wipe down benches, machines and handles after use. Bring a small towel and use the provided sprays or wipes. Personal hygiene (clean shoes, minimal strong fragrances) makes the gym comfortable for others and reduces equipment contamination.",
+
+      "6) Time-limits during peak hours. During busy periods, be mindful of time on high-demand equipment. Avoid extended rest breaks on a bench or rack if others are waiting. Use a timer or communicate an approximate remaining time so others can plan their sets.",
+
+      "7) Music and phone use. Keep personal device volume low or use headphones. Avoid phone conversations on the gym floor; step aside for calls. Recording sessions is fine when it’s not intrusive — ask permission if filming someone else or if your camera might block walkways.",
+
+      "8) Children and guests. Children should be supervised and kept off platforms and equipment. Guests must follow gym rules and not disrupt sessions. Safety is the top priority — children near heavy equipment or warm platforms create unnecessary risk.",
+
+      "9) Equipment care and reporting faults. If a machine, bar or plate is damaged, stop using it and inform staff. Reporting small faults early prevents larger incidents. Do not attempt to repair gym equipment yourself unless trained.",
+
+      "10) Warm-up and load selection. Warm-up properly before heavy lifts to reduce injury risk. Choose initial loads that allow for safe warm-up ramping. Avoid ego-driven loading, especially when fatigued or unpracticed with a movement.",
+
+      "11) Respect diversity and personal space. Not everyone trains with the same goals. Avoid unsolicited coaching unless asked. Keep language respectful and avoid mocking or shaming comments. A supportive culture retains members and fosters consistent progress.",
+
+      "12) Emergency procedures. Know the location of first-aid kits and staff trained in basic first aid. In case of injury, prioritize the injured person: call for staff assistance, keep the person still if necessary, and follow local emergency protocols. Technical Lifts keeps a list of local clinics and emergency contacts for rapid referral.",
+
+      "13) Handling conflicts. Address issues calmly and with facts. If a disagreement escalates, involve a coach or staff member to mediate. Avoid public confrontations — mediation preserves community trust and resolves issues objectively.",
+
+      "14) Access and membership fairness. Respect membership rules regarding access times, guest passes, and class bookings. Booking systems are designed to be fair — do not monopolize resources beyond your entitlement.",
+
+      "15) Sustainable gym habits. Bring a reusable water bottle, use the gym’s recycling and trash points, and avoid single-use plastics where possible. Small sustainability practices make the space healthier for people and the neighbourhood.",
+
+      "16) Coach-member boundaries. Coaches provide guidance and technical oversight. Respect coaching hours and avoid expecting constant one-to-one attention during group sessions. If you need personalized coaching, book a PT session so coaches can plan and deliver focused help.",
+
+      "17) Safety drills and education. Periodic safety briefings, barbell technique workshops and first-aid refreshers help build a resilient community. Technical Lifts runs short orientation sessions for new members to cover rack setup, collar use, and platform etiquette — attend these to speed up your safe integration.",
+
+      "18) Checklist for new members:",
+      "- Attend the orientation session",
+      "- Learn how to set safeties on the squat rack",
+      "- Practice stepping aside for others and returning equipment",
+      "- Keep personal items stored and out of walkways",
+
+      "19) Legal and consent notes. For member photos or transformations, obtain written consent before public use. Respect privacy when sharing progress details publicly — use anonymised data when consent is not granted.",
+
+      "TODO: Add printable etiquette cards for the reception area and a short orientation video for new members. Expand with local emergency contact list and staff first-aid certifications."
     ],
     meta: { description: "Guidelines to maintain a safe and welcoming gym atmosphere." },
   },
+
   {
     slug: "strength-starter-guide",
     title: "Strength Training Starter Guide (Vikaspuri)",
