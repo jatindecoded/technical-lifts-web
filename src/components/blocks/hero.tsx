@@ -1,10 +1,9 @@
 "use client";
 
-import React from "react";
 
 import Image from "next/image";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowRight,
   type LucideIcon,
@@ -22,6 +21,27 @@ import { HERO_FEATURES, IMAGE_ASSETS, SITE } from "@/lib/constants";
 
 const iconMap: Record<string, LucideIcon> = { Users, Zap, Target, TrendingUp };
 
+function SplitReveal({ text, className = "", delay = 0 }: { text: string; className?: string; delay?: number }) {
+  const reduceMotion = useReducedMotion();
+  const words = text.split(" ");
+  const wordVariant = {
+    hidden: { y: "100%", opacity: 0 },
+    show: (i: number) => ({ y: 0, opacity: 1, transition: { delay: (delay / 1000) + i * 0.06, duration: 0.45 } }),
+  };
+
+  return (
+    <span className={className} aria-hidden={reduceMotion ? true : undefined}>
+      {words.map((w, i) => (
+        <span key={i} className="inline-block overflow-hidden align-middle mr-1">
+          <motion.span initial={reduceMotion ? false : "hidden"} animate={reduceMotion ? undefined : "show"} variants={wordVariant} custom={i} className="block">
+            {w}
+          </motion.span>
+        </span>
+      ))}
+    </span>
+  );
+}
+
 // Animation variants
 const container = {
   hidden: {},
@@ -35,6 +55,9 @@ const item = {
 
 export const Hero = () => {
   const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 0.4], [0, -30]);
+
   return (
     <section className="relative pb-32 pt-40 lg:pb-48 lg:pt-56">
       <div className="container flex flex-col items-center justify-center gap-10 lg:flex-row">
@@ -50,32 +73,17 @@ export const Hero = () => {
             variants={item}
             className="max-w-160 text-4xl tracking-tight text-foreground md:text-5xl lg:text-6xl xl:text-7xl"
           >
-            {/* word/line reveal using overflow-hidden + translateY animation */}
-            <span className="inline-block overflow-hidden align-middle">
-              <motion.span
-                initial={{ y: '100%' }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="block"
-              >
-                {SITE.tagline}
-              </motion.span>
-            </span>
+            {/* Split-line/word reveal for headline */}
+            {/** Render each word in a block-level span so translateY reveals per-word */}
+            <SplitReveal text={SITE.tagline} className="inline-block" delay={0} />
             <br />
             <span className="inline-block overflow-hidden align-middle text-primary">
-              <motion.span
-                initial={{ y: '100%' }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.65, delay: 0.06, ease: "easeOut" }}
-                className="block"
-              >
-                {SITE.taglineAccent}
-              </motion.span>
+              <SplitReveal text={SITE.taglineAccent} className="inline-block" delay={60} />
             </span>
           </motion.h1>
 
           <motion.p variants={item} className="text-muted-foreground mt-5 text-sm leading-tight md:text-lg lg:max-w-100">
-            <motion.span initial={{ y: 6, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, ease: 'easeOut' }}>
+            <motion.span initial={{ y: 6, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
               {SITE.subheadline}
             </motion.span>
           </motion.p>
@@ -136,7 +144,7 @@ export const Hero = () => {
 
       {/* Hero image */}
       <div className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
-        <div className="relative w-full">
+        <motion.div style={{ y }} className="relative w-full will-change-transform">
           <Image
             src={IMAGE_ASSETS.hero.src}
             alt={IMAGE_ASSETS.hero.alt}
@@ -145,7 +153,7 @@ export const Hero = () => {
             className="aspect-[2/1] w-full rounded-xl object-cover shadow-lg"
             priority
           />
-        </div>
+        </motion.div>
       </div>
 
       <motion.div className="my-16" initial="hidden" whileInView="show" viewport={{ once: true }} variants={item}>
