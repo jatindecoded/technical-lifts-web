@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
+
 import { motion, useReducedMotion } from "framer-motion";
 
 import { Card } from "@/components/ui/card";
 import { CTA } from "@/components/ui/cta";
-import { cn } from "@/lib/utils";
 import { BLOG_POSTS } from "@/lib/constants";
 
 type Post = (typeof BLOG_POSTS)[0];
@@ -15,7 +14,7 @@ export function BlogArticle({ post }: { post: Post }) {
 
   const header = {
     hidden: { opacity: 0, y: 8 },
-    enter: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+    enter: { opacity: 1, y: 0, transition: { duration: 0.45 } },
   };
 
   const paragraph = {
