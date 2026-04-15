@@ -752,7 +752,38 @@ export const BLOG_POSTS = [
       "4) Hydrate consistently and use electrolytes on heavy sweat days",
       "5) Use supplements sparingly and evidence-backed (creatine, protein powder)",
 
-      "TODO: Replace nutritional case studies with local member examples and add downloadable meal templates and groceries list (images/links).",
+      "Local case studies and meal templates will be added soon — sample downloadable meal plans and a grocery checklist tailored to Vikaspuri markets will appear here.",
+      "Sample full-day plan (practical):",
+      "- Breakfast: 2 eggs + 1 small roti or a bowl of oats with milk and fruit (protein + carbs).",
+      "- Mid-morning snack: roasted chana or a handful of mixed nuts (protein + fibre).",
+      "- Lunch: 2 rotis or rice + dal/chicken + seasonal vegetable + curd (balanced plate, protein first).",
+      "- Afternoon snack: fruit + a small portion of paneer or yoghurt.",
+      "- Pre-workout (if needed): banana or a small roti with peanut/almond butter 30–60 minutes before training.",
+      "- Post-workout: curd with banana or a roti with eggs/paneer — practical, local and fast to prepare.",
+      "- Dinner: roti + sabzi with paneer/tofu/lean meat + salad. Keep portions in line with goals.",
+
+      "Practical swaps to improve protein intake without added cost:",
+      "- Replace one fried snack per week with roasted chana or roasted makhana.",
+      "- Add a cup of curd to one meal per day or include boiled eggs as an easy protein boost.",
+
+      "Quick recipe ideas that work in Vikaspuri:",
+      "- High-protein upma: semolina cooked with peas, carrots, onions and a cup of crumbled paneer stirred in at the end.",
+      "- Dahi fruit bowl: plain curd, chopped seasonal fruit, a spoon of ground flax or peanuts for texture and healthy fats.",
+      "- Simple dal + roti combo portioned with extra vegetables — batch-cook dal for 2–3 days and pair with fresh salad.",
+
+      "Grocery checklist (printable): pulses (moong, masoor, chana), eggs, paneer, seasonal vegetables, whole wheat flour, oats, rice, mixed nuts, roasted chana, curd, bananas.",
+
+      "Supplement guidance (evidence-backed, optional): creatine monohydrate 5g/day for strength-focused trainees, a basic whey protein to fill gaps when whole-food protein is not available, and caffeine used sparingly to enhance session focus when appropriate.",
+
+      "Timing and periodisation: increase carbohydrate intake modestly during high-volume weeks (more rice/roti at meals), and reduce portion sizes gently during fat-loss phases rather than extreme calorie cuts. Small steady adjustments are easier to sustain and protect training intensity.",
+
+      "Behavioral tips for busy members:",
+      "- Batch-prep one cooked protein (dal or chicken) for 2–3 meals so you always have a recovery option.",
+      "- Carry a small stash of nuts and roasted chana to avoid energy crashes and poor food choices after work.",
+
+      "Tracking and iteration: monitor training performance, sleep, and weekly weight or circumference trends. Make one small change at a time and track for two weeks before adjusting. Coaches at Technical Lifts will help convert trends into targeted adjustments rather than wholesale overhauls.",
+
+      "TODO: Add downloadable 3x/week printable plan, sample grocery list PDF, and two local recipe cards (images/links) when assets are available.",
 
       "TODO: Add short recipe cards (3–4) that are Vikaspuri-friendly and quick to prepare."
     ],
