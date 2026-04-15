@@ -973,10 +973,77 @@ export const BLOG_POSTS = [
     title: "Local Nutrition Guide — Vikaspuri Edition",
     excerpt: "Practical meal and grocery strategies using local food to support training and recovery.",
     content: [
-      "TODO: Expand to 2500+ words. Placeholder: Practical nutrition using local ingredients, shopping tips in Vikaspuri markets, sample meals and hacks for busy schedules."
+      "This local guide turns broad nutrition principles into practical actions you can use in Vikaspuri markets and kitchens. It focuses on affordable, familiar foods, simple meal templates, and small habits that support training without demanding extra time or money.",
+
+      "Start with a clear objective. Are you prioritising strength, body recomposition, or improved daily energy? The objective shapes small choices: if strength is the focus, favour a modest calorie surplus and consistent protein; for fat loss, aim for a gentle deficit while keeping protein and training intensity high. The easiest, highest-value step for most members is to ensure a concentrated protein source at each meal and to make one small, sustainable swap each week (for example: grilled instead of fried).",
+
+      "Protein first, local sources. Protein supports recovery and muscle maintenance. Aim for a protein portion at each meal — eggs, paneer, curd, lentils, chana, fish or chicken. For vegetarians, combine pulses and dairy (dal + curd, paneer sabzi) to reach targets. Practical target ranges for active trainees are roughly 1.6–2.0 g/kg/day; translate that into real food: two eggs and a bowl of curd at breakfast, a serving of dal or paneer at lunch, and paneer/tofu or lean meat at dinner generally moves most people close to an actionable intake without complex tracking.",
+
+      "Simple portion rules (no counting required):",
+      "- Protein: include a palm-sized portion at each meal (eggs, paneer, chicken, dal bowl).",
+      "- Carbs: choose wholegrain rotis, brown rice, or millet and match portion to activity (more on training days).",
+      "- Veg and fibre: half your plate should be vegetables or salad when possible—this improves satiety and micronutrient intake.",
+
+      "Shopping and market tips for Vikaspuri:",
+      "- Buy staples in bulk: pulses, rice, seasonal vegetables and whole wheat flour are cheaper when bought weekly or fortnightly from local vendors.",
+      "- Choose versatile, nutrient-dense items: eggs, curd, paneer, roasted chana and mixed nuts can be used across meals and are shelf-stable options for busy days.",
+      "- Seasonal produce is both affordable and nutritious; ask local vendors what’s freshest this week and plan around it.",
+      "- If meat is part of your plan, buy portions from trusted local shops and freeze in meal-sized packs to avoid waste.",
+
+      "Meal timing that supports sessions:",
+      "- Pre-workout: 30–120 minutes is a practical window. If time allows, eat a balanced meal 2 hours before training (roti + dal + curd). If you’re short on time, a banana or a small dahi bowl 30–60 minutes before works well.",
+      "- Post-workout: prioritise protein and some carbohydrate within a few hours — roti + egg/paneer or curd with fruit is simple and effective.",
+
+      "Budget-friendly meal templates (easy to batch-cook):",
+      "- Breakfast: 2 boiled eggs or a dahi bowl with fruit, + 1 small roti or a bowl of oats made with milk.",
+      "- Lunch: 2 rotis + dal/chana or a small portion of chicken curry + salad + a cup of curd.",
+      "- Dinner: 2 rotis + mixed sabzi with paneer/tofu or fish + a side salad.",
+
+      "Quick snack ideas to bridge long days: roasted chana, a handful of peanuts or mixed nuts, fruit with curd, or a small paneer sandwich. These prevent energy crashes and preserve training intensity on evening sessions.",
+
+      "Meal-prep strategies for busy members:",
+      "- Batch-cook a dal or a curry for 2–3 days and portion it with fresh rotis or quick-cooked rice.",
+      "- Pre-boil eggs for breakfasts and snacks; keep chopped salad in the fridge so meals come together in minutes.",
+      "- Use one-pot dishes (khichdi with added lentils and veggies, or a raisin/paneer upma) for nutritious, low-effort dinners.",
+
+      "Hydration and electrolytes: Delhi’s climate increases sweat loss. Habit cues: carry a water bottle, top up frequently, and consider salted lassi or a pinch of salt in buttermilk after heavy sweat sessions to restore electrolytes without expensive products.",
+
+      "Supplements — what’s worth considering: creatine and protein. Creatine monohydrate (5g/day) is inexpensive and well-supported for strength and power improvements; protein powders are a convenient way to hit targets on busy days but are optional. Use supplements to fill gaps, not as substitutes for whole food.",
+
+      "Periodising food across training cycles:",
+      "- In higher-volume weeks, increase carbohydrate intake around sessions (extra roti/rice) to sustain intensity.",
+      "- For short fat-loss phases, reduce portion sizes modestly (10–15%) and prioritise protein and training quality to preserve muscle.",
+
+      "Common problems members face and practical fixes:",
+      "- Not enough protein: add a cup of curd or a portion of paneer to one meal, or include two eggs at breakfast.",
+      "- Skipping meals on busy days: prepare a portable snack (roasted chana + fruit) the night before.",
+      "- Energy crashes: spread carbohydrate evenly across the day and include protein at each meal to stabilise blood sugar.",
+
+      "7-day sample plan (practical, budget-aware):",
+      "- Day 1 (Training day): Breakfast: eggs + roti; Lunch: dal + roti + salad; Snack: roasted chana; Dinner: paneer sabzi + roti.",
+      "- Day 2 (Light day): Breakfast: curd + fruit + oats; Lunch: rice + rajma + salad; Snack: nuts; Dinner: mixed veg + tofu + roti.",
+      "- (Repeat and swap based on seasonality and preferences) — keep variety simple and sustainable.",
+
+      "Eating out and social meals: choose grilled or curried options over fried, prefer kebabs or tandoori meats when possible, ask for less oil, and pair dishes with a salad or yoghurt to increase protein and reduce empty calories.",
+
+      "Behavioural approach: small, trackable habits. Coaches recommend one habit at a time — add a protein portion to breakfast this week, swap soda for water at one meal, or pack a snack for evening sessions. Track for two weeks and iterate.",
+
+      "Monitoring progress without overcomplicating: use simple signals — training performance (did you hit the planned load?), energy across the day, and weekly weight trends. If something slips, adjust one variable (food, sleep, or session intensity) rather than all simultaneously.",
+
+      "Local resources and vendor tips: find a reliable dairy vendor for fresh curd and paneer, use seasonal vegetable stalls for cost-effective produce, and ask local shops about bulk pulses to reduce cost per meal. Coaches can provide a printable grocery checklist tailored to Vikaspuri markets (TODO: provide downloadable PDF when assets are ready).",
+
+      "Safety and medical considerations: if you have persistent fatigue, unexplained weight swings, or known metabolic or thyroid issues, consult a physician and consider basic bloodwork (iron, B12, vitamin D) before making aggressive dietary changes.",
+
+      "Action checklist (do these in the next two weeks):",
+      "1) Add a protein portion to breakfast every day for 7 days.",
+      "2) Batch-cook one meal for 2–3 days and test how it affects training energy.",
+      "3) Carry a portable protein snack (roasted chana or nuts) for at least 3 sessions.",
+
+      "TODO: Add printable 3x/week meal templates, a Vikaspuri grocery checklist PDF, and two quick recipe cards with local images when assets are available.",
     ],
     meta: { description: "A realistic nutrition playbook for trainees in Vikaspuri and nearby neighbourhoods." },
   },
+
   {
     slug: "member-stories-vikaspuri",
     title: "Member Stories: Vikaspuri Transformations",
