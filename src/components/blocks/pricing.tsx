@@ -4,7 +4,7 @@ import React from "react";
 
 import Link from "next/link";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -24,6 +24,8 @@ const item = {
 };
 
 export const Pricing = ({ className }: { className?: string }) => {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section id="pricing" className={cn("py-24 lg:py-32", className)}>
       <div className="container">
@@ -36,9 +38,9 @@ export const Pricing = ({ className }: { className?: string }) => {
           </p>
         </div>
 
-        <motion.div className="mt-8 grid items-start gap-4 text-start md:mt-12 md:grid-cols-4 lg:mt-16" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} variants={container}>
+        <motion.div className="mt-8 grid items-start gap-4 text-start md:mt-12 md:grid-cols-4 lg:mt-16" initial={reduceMotion ? "show" : "hidden"} whileInView={reduceMotion ? undefined : "show"} viewport={{ once: true, amount: 0.12 }} variants={container}>
           {PRICING_PLANS.map((plan) => (
-            <motion.div key={plan.name} variants={item} whileHover={{ y: -6 }} whileTap={{ scale: 0.995 }} transition={{ type: 'spring', stiffness: 280, damping: 20 }}>
+            <motion.div key={plan.name} variants={item} whileHover={reduceMotion ? {} : { y: -8 }} whileTap={reduceMotion ? {} : { scale: 0.995 }} transition={{ type: 'spring', stiffness: 280, damping: 20 }}>
               <Card
                 className={cn(
                   "relative h-full transition-all",

@@ -4,7 +4,7 @@ import React from "react";
 
 import Image from "next/image";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
   type LucideIcon,
@@ -34,14 +34,15 @@ const item = {
 };
 
 export const Hero = () => {
+  const reduceMotion = useReducedMotion();
   return (
     <section className="relative pb-32 pt-40 lg:pb-48 lg:pt-56">
       <div className="container flex flex-col items-center justify-center gap-10 lg:flex-row">
         {/* Left — Main content */}
         <motion.div
           className="flex flex-col items-center overflow-hidden text-center lg:items-start lg:text-left"
-          initial="hidden"
-          whileInView="show"
+          initial={reduceMotion ? "show" : "hidden"}
+          whileInView={reduceMotion ? undefined : "show"}
           viewport={{ once: true, amount: 0.12 }}
           variants={container}
         >
@@ -116,7 +117,7 @@ export const Hero = () => {
             {HERO_FEATURES.map((feature) => {
               const Icon = iconMap[feature.iconName];
               return (
-                <motion.div key={feature.title} variants={item} whileHover={{ scale: 1.03, rotate: -1 }} transition={{ type: 'spring', stiffness: 300 }} className="flex gap-2.5 lg:gap-5">
+                <motion.div key={feature.title} variants={item} whileHover={reduceMotion ? {} : { scale: 1.04, rotate: -1 }} transition={{ type: 'spring', stiffness: 300 }} className="flex gap-2.5 lg:gap-5">
                   <Icon className="mt-1 size-4 shrink-0 text-primary lg:size-5" />
                   <div>
                     <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-foreground lg:text-base">
