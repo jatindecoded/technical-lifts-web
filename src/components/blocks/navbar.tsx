@@ -52,7 +52,7 @@ export const Navbar = () => {
         )}
       >
       <div className="flex items-center justify-between px-6 py-3">
-        <Link href="/" className="flex text-primary shrink-0 items-center gap-2 font-heading uppercase">
+        <Link href="/" className="flex text-primary shrink-0 items-center gap-2 font-heading font-bold uppercase">
           {SITE.name}
         </Link>
 
