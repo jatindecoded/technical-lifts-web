@@ -1197,7 +1197,46 @@ export const BLOG_POSTS = [
       "- Change at most 1–2 variables and track for 2–4 weeks",
       "- Use deloads and autoregulation to protect readiness",
 
-      "TODO: Expand with specific program templates for common plateau types (strength stalls vs hypertrophy stalls), and add anonymised example timelines showing applied fixes and outcomes."
+      "Strength-stall template (4–8 week corrective block):",
+      "- Goal: Restore progressive capacity for near-maximal strength (1–5 reps) by improving technique, nervous system readiness and targeted volume",
+      "- Week 1: Technique and neurological reset — reduce overall volume by 30%, keep 2–3 technical heavy sets at RPE 7 with long rests, add specific mobility drills targeting the limiting position",
+      "- Week 2: Micro-loading & frequency increase — add a second, lighter practice session for the main lift focusing on speed and bar path (e.g., 3 sets of 3 at 60–70% for bar speed), reintroduce 1–2 accessory sets for weak links",
+      "- Week 3: Progressive intensity — return to slightly higher loads (add 1–2 small micro-plates per session where possible) while keeping overall accessory volume moderated",
+      "- Week 4: Evaluation and autoregulation — test a moderate heavy set (not an all-out 1RM), use RPE to guide load next week; if progress is positive continue a 4–8 week intensification phase, if not insert a 7–10 day deload",
+      "- Notes: Use micro-plates (0.5–1kg) for upper-body and small jumps for lower-body to maintain technique. Prioritise sleep and creatine if not using already.",
+
+      "Hypertrophy-stall template (6-week volume re-accumulation):",
+      "- Goal: Re-sensitise muscle growth pathways by increasing time-under-tension and well-managed volume",
+      "- Week 1: Volume reset — reduce top-set intensity by 10% and increase accessory volume with high-quality sets (3–4 sets at 8–12) for the target muscle",
+      "- Week 2–3: Gradual volume accumulation — add 1–2 accessory sets per muscle group across sessions (monitor soreness and sleep), introduce one density session (same work in 10–15% shorter time) to increase metabolic stress",
+      "- Week 4: Intensity reintroduction — keep accumulated volume but reintroduce heavier top sets for 3–6 reps to maintain strength while keeping hypertrophy stimuli",
+      "- Week 5–6: Consolidation — select the most effective accessory exercises from weeks 2–3 and stabilise volume for continued progression; plan a light deload after week 6 if fatigue markers rise",
+      "- Notes: Increase protein slightly (+10%) during re-accumulation and prioritise post-session carbohydrate on high-volume days.",
+
+      "Example anonymised timeline — \"Priya\" (strength stall to resumed progress):",
+      "- Baseline: Priya plateaued on her squat for 8 weeks despite consistent attendance; logged top-set reps and noted reduced sleep over the same period",
+      "- Intervention week 1: Technique rework with paused squat variations and ankle mobility + reduced accessory volume",
+      "- Intervention week 2–3: Added a technique practice session with lighter loads and micro-loading on the main session",
+      "- Outcome by week 6: 5% increase in working top-set load and improved squat depth; subjective reduction in perceived exertion for the same load",
+      "- Learning: small technical changes + micro-loading and a focus on sleep restored upward trend without radical program change",
+
+      "Example anonymised timeline — \"Arjun\" (hypertrophy stall -> volume re-accumulation):",
+      "- Baseline: Arjun’s arm and chest measurements stalled despite heavier top sets; reported high daily stress and inconsistent protein intake",
+      "- Intervention week 1–3: Volume-first protocol — reduced heavy top-set intensity slightly and increased accessory volume and time-under-tension; improved protein distribution at meals",
+      "- Intervention week 4–6: Re-introduced heavier top sets while maintaining accumulated accessory volume",
+      "- Outcome by week 7: visible increase in muscle fullness and a 6% increase in measured arm circumference in training logs; strength maintained",
+      "- Learning: hypertrophy responded strongly to deliberate volume manipulation combined with improved nutrition and adherence",
+
+      "Practical monitoring checklist during a corrective block:",
+      "- Weekly: top-set trends, readiness score, sleep hours, body mass (if appropriate)",
+      "- Daily: session RPE, technical notes, and a single-line log entry",
+      "- Coaches: review timelines fortnightly and change at most one main variable per fortnight to maintain attribution",
+
+      "Final notes",
+      "- Plateaus are an opportunity for diagnostic thinking, not dramatic intervention. Use small, trackable changes and let trends re-emerge over 2–6 weeks.",
+      "- Prioritise recovery and technique — most durable gains depend on these foundations rather than chasing rapid increases in load.",
+
+      "TODO: Add anonymised timelines as downloadable PDFs and replace with permissioned case images when releases are obtained.",
     ],
     meta: { description: "A tactical guide to diagnosing and overcoming training plateaus." },
   },
