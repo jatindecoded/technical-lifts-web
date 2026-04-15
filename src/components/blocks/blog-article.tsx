@@ -1,13 +1,16 @@
 "use client";
 
 
+import Image from "next/image";
+
 import { motion, useReducedMotion } from "framer-motion";
 
 import { Card } from "@/components/ui/card";
 import { CTA } from "@/components/ui/cta";
 import { BLOG_POSTS } from "@/lib/constants";
 
-type Post = (typeof BLOG_POSTS)[0];
+type PostBase = (typeof BLOG_POSTS)[0];
+type Post = PostBase & { heroImage?: string; heroAlt?: string; pullQuote?: string };
 
 export function BlogArticle({ post }: { post: Post }) {
   const prefersReduced = useReducedMotion();
@@ -24,6 +27,8 @@ export function BlogArticle({ post }: { post: Post }) {
 
   const wordCount = post.content.join(" ").split(/\s+/).length;
   const readMins = Math.max(2, Math.round(wordCount / 200));
+
+  const related = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
 
   return (
     <article className="py-section max-w-container mx-auto px-6">
@@ -47,17 +52,49 @@ export function BlogArticle({ post }: { post: Post }) {
         </div>
       </motion.header>
 
+      {/* Optional hero image */}
+      {post.heroImage && (
+        <figure className="mb-8">
+          <Image src={post.heroImage} alt={post.heroAlt || post.title} width={1200} height={600} className="w-full rounded-xl object-cover" />
+        </figure>
+      )}
+
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         <motion.div
           className="prose prose-invert max-w-none col-span-2 text-text-base"
           initial={prefersReduced ? false : "hidden"}
           animate={prefersReduced ? false : "enter"}
         >
-          {post.content.map((p, i) => (
-            <motion.p key={i} variants={paragraph} custom={i} className="mb-6">
+          {/* Lead paragraph: larger, more readable */}
+          {post.content.slice(0, 1).map((p, i) => (
+            <motion.p key={i} variants={paragraph} custom={i} className="mb-6 text-lg leading-relaxed">
               {p}
             </motion.p>
           ))}
+
+          {post.content.slice(1).map((p, i) => (
+            <motion.p key={i} variants={paragraph} custom={i + 1} className="mb-6">
+              {p}
+            </motion.p>
+          ))}
+
+          {/* Pull quote placeholder (optional) */}
+          {post.pullQuote && (
+            <blockquote className="my-8 border-l-2 border-white/10 pl-6 italic text-text-muted">{post.pullQuote}</blockquote>
+          )}
+
+          {/* Related posts */}
+          <hr className="my-8 border-white/8" />
+          <div className="mt-6">
+            <h3 className="font-heading text-sm uppercase tracking-tight">Related</h3>
+            <ul className="mt-3 space-y-3">
+              {related.map((r) => (
+                <li key={r.slug}>
+                  <a href={`/blog/${r.slug}`} className="underline underline-offset-4">{r.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
 
         <aside>
