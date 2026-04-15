@@ -545,6 +545,22 @@ export const IMAGE_ASSETS = {
 };
 
 // ─── Pages & Blog Posts (content source for new pages) ────────────────────────
+// BLOG ASSET & CONTENT TODOs:
+// - training-philosophy: add hero image, member testimonial image, downloadable PDFs (movement screen)
+// - strength-program-basics: add exercise diagram images and 3x/week printable PDF
+// - nutrition-for-performance: add sample meal images, grocery list PDF
+// - recovery-and-mobility: add mobility video links and short GIFs for drills
+// - training-variations: add sample program images and downloadable templates
+// - local-nutrition-guide-vikaspuri: local market photos + grocery checklist
+// - member-stories-vikaspuri: replace placeholder photos with transformation images (consent required)
+// - program-design-for-beginners: add starter plan PDF and checklist
+// - overcoming-plateaus: include case study image and progress chart
+// - gym-etiquette-and-safety: add facility map and safety infographic
+// - strength-starter-guide: hero image + quick-start checklist PDF
+// - shoulder-health-injury-prevention: add diagnostic checklist PDF and exercise GIFs
+// - home-workouts-for-commuters: add space-efficient exercise photos
+// - hero-variants, card-variants, schedule-pricing: component demo images
+// When assets are ready, place them under public/gym/ and update IMAGE_ASSETS and BLOG_POSTS content with exact paths and remove these TODO comments.
 
 export const BLOG_POSTS = [
   {
