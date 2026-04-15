@@ -245,35 +245,35 @@ export const TRAINERS: Trainer[] = [
     certification: "ISSA CPT",
     speciality: "Strength & Hypertrophy",
     // Replace with: /gym/trainers/trainer-1.webp
-    photo: "/stock-images/trainer-arms-crossed.webp",
+    photo: "/gym/trainers/trainer-1.webp",
   },
   {
     name: "Trainer Name",
     certification: "ACE CPT",
     speciality: "Weight Loss & Cardio",
     // Replace with: /gym/trainers/trainer-2.webp
-    photo: "/stock-images/trainer-hands-on-hips.webp",
+    photo: "/gym/trainers/trainer-2.webp",
   },
   {
     name: "Trainer Name",
     certification: "ISSA CPT",
     speciality: "Functional Fitness",
     // Replace with: /gym/trainers/trainer-3.webp
-    photo: "/stock-images/man-holding-dumbbells.webp",
+    photo: "/gym/trainers/trainer-3.webp",
   },
   {
     name: "Trainer Name",
     certification: "ACE CPT",
     speciality: "Muscle Building",
     // Replace with: /gym/trainers/trainer-4.webp
-    photo: "/stock-images/man-barbell-squat-gym.webp",
+    photo: "/gym/trainers/trainer-4.webp",
   },
   {
     name: "Trainer Name",
     certification: "ISSA CPT",
     speciality: "Beginner Programs",
     // Replace with: /gym/trainers/trainer-5.webp
-    photo: "/stock-images/man-squatting-gym.webp",
+    photo: "/gym/trainers/trainer-5.webp",
   },
 ];
 
@@ -298,28 +298,28 @@ export const TRANSFORMATIONS: Transformation[] = [
     result: "Lost 14kg",
     duration: "5 months",
     // TODO: Replace with: /gym/transformations/priya.webp
-    photo: "/stock-images/man-sitting-bench-gym.webp",
+    photo: "/gym/transformations/priya.webp",
   },
   {
     name: "Arjun",
     result: "Gained 8kg lean muscle",
     duration: "4 months",
     // TODO: Replace with: /gym/transformations/arjun.webp
-    photo: "/stock-images/man-barbell-squat-gym.webp",
+    photo: "/gym/transformations/arjun.webp",
   },
   {
     name: "Rahul",
     result: "Lost 10kg",
     duration: "3 months",
     // TODO: Replace with: /gym/transformations/rahul.webp
-    photo: "/stock-images/man-squatting-gym.webp",
+    photo: "/gym/transformations/rahul.webp",
   },
   {
     name: "Sneha",
     result: "First fitness goal hit",
     duration: "6 weeks",
     // TODO: Replace with: /gym/transformations/sneha.webp
-    photo: "/stock-images/trainer-hands-on-hips.webp",
+    photo: "/gym/transformations/sneha.webp",
   },
 ];
 
@@ -499,50 +499,50 @@ export const CONTACT_FORM = {
 export const IMAGE_ASSETS = {
   hero: {
     // TODO: Replace with: /gym/gallery/hero.webp
-    src: "/stock-images/group-sitting-in-gym.webp",
+    src: "/gym/gallery/hero.webp",
     alt: "Group training inside Technical Lifts gym",
   },
   whoItsFor: [
     {
       // TODO: Replace with: /gym/gallery/equipment.webp
-      src: "/stock-images/gym-machine-speaker.webp",
+      src: "/gym/gallery/equipment.webp",
       alt: "Gym equipment and machine setup",
     },
     {
       // TODO: Replace with: /gym/gallery/kettlebells.webp
-      src: "/stock-images/black-red-kettlebells.webp",
+      src: "/gym/gallery/kettlebells.webp",
       alt: "Kettlebells and strength equipment",
     },
     {
       // TODO: Replace with: /gym/gallery/trainer.webp
-      src: "/stock-images/trainer-arms-crossed.webp",
+      src: "/gym/gallery/trainer.webp",
       alt: "Trainer standing with arms crossed",
     },
   ],
   personalTraining: {
     // TODO: Replace with: /gym/gallery/personal-training.webp
-    src: "/stock-images/man-holding-dumbbells.webp",
+    src: "/gym/gallery/personal-training.webp",
     alt: "Member holding dumbbells in gym",
   },
   about: [
     {
       // TODO: Replace with: /gym/gallery/about-1.webp
-      src: "/stock-images/trainer-hands-on-hips.webp",
+      src: "/gym/about/about-1.webp",
       alt: "Trainer at Technical Lifts",
     },
     {
       // TODO: Replace with: /gym/gallery/about-2.webp
-      src: "/stock-images/man-sitting-bench-gym.webp",
+      src: "/gym/about/about-2.webp",
       alt: "Member resting between sets",
     },
     {
       // TODO: Replace with: /gym/gallery/about-3.webp
-      src: "/stock-images/man-barbell-squat-gym.webp",
+      src: "/gym/about/about-3.webp",
       alt: "Member performing barbell squat",
     },
     {
       // TODO: Replace with: /gym/gallery/about-4.webp
-      src: "/stock-images/man-squatting-gym.webp",
+      src: "/gym/about/about-4.webp",
       alt: "Member squatting during gym session",
     },
   ],
