@@ -1089,7 +1089,48 @@ export const BLOG_POSTS = [
     title: "Overcoming Plateaus: Practical Strategies",
     excerpt: "Why progress stalls and what to change in training, nutrition and recovery to restart gains.",
     content: [
-      "TODO: Expand to 2500+ words. Placeholder: Identify causes of plateaus, diagnostic steps, and corrective programming examples."
+      "Plateaus are a natural part of training — they are the signal that adaptation has saturated under the current stimulus. The valuable response is diagnostic, not punitive: understand which systems (neuromuscular, structural, metabolic, or behavioural) are limiting progress and make small, targeted changes. This guide gives a practical, step-by-step blueprint to diagnose plateaus and implement corrective strategies that preserve progress and reduce risk.",
+
+      "1) Confirm the plateau — use simple metrics. Before changing anything, look at meaningful trends: top-set load and reps over 4–6 weeks, training frequency, and subjective readiness (sleep, stress). Short-term fluctuations are noise; persistent flat performance across several sessions indicates a real plateau.",
+
+      "2) Rule out non-training causes. Check recovery inputs first: has sleep declined, has diet or calorie intake changed, or has life stress increased? Small declines in these areas often explain reduced performance. Address them before altering the program.",
+
+      "3) Technique audit. Have a coach or a training partner review video for technical issues that limit progress (bar path, bracing, hip position). Often, a small technical correction unlocks immediate improvements and reduces injury risk.",
+
+      "4) Adjust volume and intensity intelligently. If the plateau occurs during a high-volume block, reduce accessory volume or introduce a short deload week (30–50% volume reduction). If progress has stalled in a low-volume program, add modest additional sets for the limiting lift or increase frequency for the movement pattern.",
+
+      "5) Introduce planned variation. Change one or two variables: shift rep ranges (e.g., from 6–8 to 3–5 for a strength emphasis), swap an exercise variant (pause squats, tempo deadlifts), or rotate accessory selections. Keep the number of changes small so one can attribute effects to the change.",
+
+      "6) Use autoregulation. Implement RPE bands or a simple performance gate: if top-set RPE >8.5 on the day, reduce planned load by 5% or remove an accessory. Autoregulation keeps intensity aligned with day-to-day readiness and prevents forced progression that compounds fatigue.",
+
+      "7) Progressive overload alternatives. When linear loading stalls, use micro-loading (small incremental weight steps), volume accumulation (more sets at the same intensity), or density work (same volume in shorter time). Choose one strategy at a time and monitor for 2–4 weeks.",
+
+      "8) Deloads and planned recovery. For chronic stalls, schedule a 7–10 day recovery block: reduced intensity, mobility, and aerobic base work. Often a short, intentional break restores responsiveness.",
+
+      "9) Mobility and accessory focus. Plateaus sometimes stem from technical limits caused by mobility deficits. Add short, focused mobility drills that directly affect the limiting position (ankle mobility for squat depth, thoracic rotation for press). Complement these with targeted strength accessories.",
+
+      "10) Nutrition and body composition checks. If the goal is strength and the athlete is in an unintended caloric deficit, restore calories modestly. For fat-loss goals, accept potential temporary strength losses and manage via programmed intensity maintenance and protein prioritisation.",
+
+      "11) Psychological and behavioral factors. Motivation, stress, and habit consistency influence progress. Simplify the plan, set small weekly adherence goals, and re-establish consistent training rhythm — often a renewed routine is the fastest way out of a plateau.",
+
+      "12) Testing and peaking decisions. Only test maximal lifts after a planned realisation block and sufficient deload. Random 1RM testing during a plateau adds noise and risk. Schedule tests when the program phase matches the goal (peak for competition or measurement after targeted accumulation).",
+
+      "13) Sample corrective progression (example):",
+      "- Week 1: Technique focus and reduce accessory volume by 30%",
+      "- Week 2: Reintroduce main lifts with micro-loading and monitor top-set trends",
+      "- Week 3: Add 1–2 focused accessory sets for the limiting muscle group",
+      "- Week 4: Evaluate — if progress resumes, continue; if not, consider a short deload before a new 4–8 week plan",
+
+      "14) When to involve a specialist. Persistent pain, neurological symptoms, or widening asymmetries warrant physiotherapy or medical review rather than program changes alone.",
+
+      "15) Practical checklist for coaches and members:",
+      "- Confirm plateau with 4–6 weeks of logged data",
+      "- Check recovery inputs (sleep, nutrition, stress)",
+      "- Audit technique via video or coach check",
+      "- Change at most 1–2 variables and track for 2–4 weeks",
+      "- Use deloads and autoregulation to protect readiness",
+
+      "TODO: Expand with specific program templates for common plateau types (strength stalls vs hypertrophy stalls), and add anonymised example timelines showing applied fixes and outcomes."
     ],
     meta: { description: "A tactical guide to diagnosing and overcoming training plateaus." },
   },
