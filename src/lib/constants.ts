@@ -648,9 +648,10 @@ export const BLOG_POSTS = [
       "- Day 3: Squat/press variation + unilateral work + short conditioning",
 
       "2) Moderate availability — 4x/week upper/lower split",
-      "- Upper A / Lower A / Upper B / Lower B with varying emphases (heavy/light),
+      "- Upper A / Lower A / Upper B / Lower B with varying emphases (heavy/light)",
 
       "3) Time-rich trainee — 5x/week with clear mesocycle objectives (volume blocks or intensity blocks)",
+
 
       "Quality over quantity: technical practice. Technique is the rate-limiter. Investing the first sets of a session in purposeful technical practice (lighter sets with focus on position, tempo, and breathing) pays dividends. Coaches teach bracing, breathing under load, and efficient bar path so heavy work becomes safer and more productive. Regular technical cues and short finishers maintain motor patterns between heavy sessions.",
 
