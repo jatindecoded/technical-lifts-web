@@ -1,7 +1,7 @@
 import React from "react";
 
-import { COMPONENT_PAGES, PAGES } from "@/lib/constants";
 import { Pricing } from "@/components/blocks/pricing";
+import { COMPONENT_PAGES, PAGES } from "@/lib/constants";
 
 export default function SchedulePricing() {
   const page = COMPONENT_PAGES.find((p) => p.slug === "schedule-pricing");
