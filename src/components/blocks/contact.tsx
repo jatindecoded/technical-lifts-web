@@ -2,11 +2,12 @@ import React from "react";
 
 import Link from "next/link";
 
-import { Clock, Instagram, MapPin, Phone } from "lucide-react";
+import { Clock, MapPin, Phone } from "lucide-react";
 
 import { ContactForm } from "@/components/blocks/contact-form";
 import { DashedLine } from "@/components/dashed-line";
-import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { CTA } from "@/components/ui/cta";
 import { SITE } from "@/lib/constants";
 
 export default function Contact() {
@@ -21,7 +22,7 @@ export default function Contact() {
         </p>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-3 lg:mt-16">
-          <div className="rounded-xl border border-white/[0.08] bg-surface p-6 space-y-3">
+          <Card>
             <MapPin className="text-primary size-5" />
             <h2 className="font-heading text-sm font-bold uppercase tracking-wide">
               Where We Train
@@ -29,21 +30,12 @@ export default function Contact() {
             <p className="text-muted-foreground text-sm leading-relaxed">
               {SITE.address}
             </p>
-            <Button variant="outline" size="sm" asChild>
-              <Link
-                href={
-                  SITE.googleMapsUrl ||
-                  "https://maps.google.com/?q=C-596%2C+Vikas+Puri%2C+Near+PVR+Cinema%2C+New+Delhi+-+110018"
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open in Maps
-              </Link>
-            </Button>
-          </div>
+            <div>
+              <CTA id="mapsOpen" buttonVariant="outline" />
+            </div>
+          </Card>
 
-          <div className="rounded-xl border border-white/[0.08] bg-surface p-6 space-y-3">
+          <Card>
             <Phone className="text-primary size-5" />
             <h2 className="font-heading text-sm font-bold uppercase tracking-wide">
               Call / WhatsApp
@@ -58,22 +50,12 @@ export default function Contact() {
               WhatsApp same number
             </p>
             <div className="flex flex-wrap gap-2">
-              <Button size="sm" asChild>
-                <Link href={`tel:${SITE.phone}`}>Call Now</Link>
-              </Button>
-              <Button size="sm" variant="outline" asChild>
-                <Link
-                  href={`https://wa.me/${(SITE.whatsapp || SITE.phone).replace(/\D/g, "")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WhatsApp
-                </Link>
-              </Button>
+              <CTA id="callNow" />
+              <CTA id="whatsapp" />
             </div>
-          </div>
+          </Card>
 
-          <div className="rounded-xl border border-white/[0.08] bg-surface p-6 space-y-3">
+          <Card>
             <Clock className="text-primary size-5" />
             <h2 className="font-heading text-sm font-bold uppercase tracking-wide">
               Hours
@@ -82,14 +64,11 @@ export default function Contact() {
               {SITE.timings}
             </p>
             {SITE.instagramUrl && (
-              <Link
-                href={SITE.instagramUrl}
-                className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm transition-colors"
-              >
-                <Instagram className="size-4" /> Instagram
-              </Link>
+              <div>
+                <CTA id="instagram" />
+              </div>
             )}
-          </div>
+          </Card>
         </div>
 
         <DashedLine className="my-12" />

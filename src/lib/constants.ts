@@ -29,7 +29,6 @@ export const NAV_LINKS = [
   { label: "Pricing", href: "/pricing" },
   { label: "Transformations", href: "/transformations" },
   { label: "Blog", href: "/blog" },
-  { label: "Member Stories", href: "/member-stories" },
   { label: "Schedule & Pricing", href: "/schedule-pricing" },
   { label: "Contact", href: "/contact" },
 ];
@@ -143,6 +142,18 @@ export const TRIAL_CTA = {
   secondaryCTA: "Call Now",
   secondaryCtaHref: "tel:+918920576059",
   note: "Free for website visitors. Walk-ins pay ₹500.",
+};
+
+// Centralised CTA registry — use CTA component with id to change labels/targets globally
+export const CTA_REGISTRY: Record<string, { label: string; href: string; variant?: "default" | "outline" }> = {
+  trial: { label: TRIAL_CTA.primaryCTA, href: TRIAL_CTA.primaryCtaHref, variant: "default" },
+  trialSecondary: { label: TRIAL_CTA.secondaryCTA, href: TRIAL_CTA.secondaryCtaHref, variant: "outline" },
+  personalTraining: { label: FEATURE_SECTIONS.personalTrainingCTA, href: FEATURE_SECTIONS.personalTrainingCtaHref, variant: "outline" },
+  bookContact: { label: SITE.trialCTA, href: "/contact", variant: "default" },
+  mapsOpen: { label: "Open in Maps", href: SITE.googleMapsUrl || "https://maps.google.com/?q=C-596%2C+Vikas+Puri%2C+Near+PVR+Cinema%2C+New+Delhi+-+110018", variant: "outline" },
+  callNow: { label: "Call Now", href: `tel:${SITE.phone}`, variant: "default" },
+  whatsapp: { label: "WhatsApp", href: `https://wa.me/${(SITE.whatsapp || SITE.phone).replace(/\D/g, "")}`, variant: "outline" },
+  instagram: { label: "Instagram", href: SITE.instagramUrl || "#", variant: "outline" },
 };
 
 // ─── Gym Stats (About page) ───────────────────────────────────────────────────
@@ -316,6 +327,8 @@ export const PRICING_SECTION = {
   ctaLabel: "Get Started",
   footnote:
     "Personal Training pricing is customized. Talk to us — no commitment required.",
+  // Message shown when prices are locked until lead form submission
+  lockedMessage: "Submit the membership form to reveal exact prices. Fill the form — it only takes a minute.",
 };
 
 export interface PricingPlan {

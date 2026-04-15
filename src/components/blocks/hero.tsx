@@ -136,12 +136,6 @@ export const Hero = () => {
 
       {/* Hero image */}
       <div className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
-        <Image
-          src={IMAGE_ASSETS.hero.src}
-          alt={IMAGE_ASSETS.hero.alt}
-          fill
-          className="rounded-2xl object-contain object-left-top opacity-10"
-        />
         <div className="relative w-full">
           <Image
             src={IMAGE_ASSETS.hero.src}

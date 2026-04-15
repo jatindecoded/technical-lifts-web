@@ -25,16 +25,19 @@ export function AboutHero() {
             orientation="horizontal"
             className="absolute top-0 lg:hidden"
           />
-          {GYM_STATS.map((stat) => (
-            <div key={stat.label} className="flex flex-col gap-0.5">
-              <div className="font-heading text-primary text-4xl font-bold tracking-tight md:text-5xl">
-                {stat.value}
+          {/* Animated gym stats (staggered) */}
+          <div className="grid grid-cols-3 gap-4">
+            {GYM_STATS.map((stat, idx) => (
+              <div key={stat.label} className="flex flex-col gap-0.5">
+                <div className="font-heading text-primary text-4xl font-bold tracking-tight md:text-5xl motion-safe:animate-fade-in-up" style={{ animationDelay: `${idx * 70}ms` }}>
+                  {stat.value}
+                </div>
+                <div className="text-muted-foreground uppercase text-sm font-semibold tracking-wide">
+                  {stat.label}
+                </div>
               </div>
-              <div className="text-muted-foreground uppercase text-sm font-semibold tracking-wide">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -3,31 +3,37 @@
 import React from "react";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
-import { TRIAL_CTA } from "@/lib/constants";
+import { TRIAL_CTA, CTA_REGISTRY } from "@/lib/constants";
 
 type CTAProps = {
-  kind?: "primary" | "secondary";
+  id?: string; // id from CTA_REGISTRY, e.g., 'trial' or 'personalTraining'
+  kind?: "primary" | "secondary"; // legacy fallback
   buttonVariant?: "default" | "outline";
   className?: string;
   icon?: React.ReactNode;
 };
 
-export function CTA({ kind = "primary", buttonVariant, className, icon }: CTAProps) {
+export function CTA({ id, kind = "primary", buttonVariant, className, icon }: CTAProps) {
   const isPrimary = kind === "primary";
-  const label = isPrimary ? TRIAL_CTA.primaryCTA : TRIAL_CTA.secondaryCTA;
-  const href = isPrimary ? TRIAL_CTA.primaryCtaHref : TRIAL_CTA.secondaryCtaHref;
-  const variant = buttonVariant ?? (isPrimary ? "default" : "outline");
+  // Prefer registry id if provided
+  const registry = id ? CTA_REGISTRY[id] : undefined;
+  const label = registry ? registry.label : isPrimary ? TRIAL_CTA.primaryCTA : TRIAL_CTA.secondaryCTA;
+  const href = registry ? registry.href : isPrimary ? TRIAL_CTA.primaryCtaHref : TRIAL_CTA.secondaryCtaHref;
+  const variant = buttonVariant ?? (registry?.variant ?? (isPrimary ? "default" : "outline"));
 
   return (
-    <Button asChild variant={variant} size="lg" className="w-full sm:w-fit">
-      <Link href={href} className={className ?? "inline-flex w-full items-center justify-center"}>
-        <span className="relative z-10 flex items-center gap-2">
-          {label}
-          {icon}
-        </span>
-      </Link>
-    </Button>
+    <motion.div whileHover={variant === "default" ? { scale: 1.03 } : {}} whileTap={{ scale: 0.98 }}>
+      <Button asChild variant={variant} size="lg" className="w-full sm:w-fit">
+        <Link href={href} className={className ?? "inline-flex w-full items-center justify-center"}>
+          <span className="relative z-10 flex items-center gap-2">
+            {label}
+            {icon}
+          </span>
+        </Link>
+      </Button>
+    </motion.div>
   );
 }
