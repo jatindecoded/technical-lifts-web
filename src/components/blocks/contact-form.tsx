@@ -11,7 +11,7 @@ export function ContactForm() {
   return (
     <div className="w-full rounded-xl border border-white/[0.08] p-8">
       <form
-        action="https://formsubmit.co/hello@technical-lifts.example"
+        action={`https://formsubmit.co/${encodeURIComponent(CONTACT_FORM.recipientEmail)}`}
         method="POST"
         className="flex flex-col gap-5"
       >
