@@ -1034,7 +1034,53 @@ export const BLOG_POSTS = [
     title: "Program Design for Beginners",
     excerpt: "A step-by-step guide for someone new to the gym: what to prioritise and why.",
     content: [
-      "TODO: Expand to 2500+ words. Placeholder: Beginner-friendly program templates, common pitfalls, and coaching cues that accelerate safe progress."
+      "Starting a training program should be simple, predictable and sustainable. This guide breaks down the first 12 weeks of training into clear steps so beginners build strength safely and make steady progress.",
+
+      "1) Begin with an assessment. Before heavy lifting begins, assess movement quality: squat depth, hip hinge, shoulder mobility and basic core control. Note any pain or movement restrictions and discuss prior injuries with a coach. This assessment informs exercise selection and initial load choices.",
+
+      "2) Prioritise compound movements. Early training should focus on multi-joint lifts that deliver the most value: squat or its variation, hinge (deadlift or Romanian deadlift), horizontal push (bench or push-up progression), horizontal pull (row), and a loaded carry or farmer carry for core and conditioning. These anchors deliver strength that translates to everyday life.",
+
+      "3) Use a simple template and repeat it. Consistency beats variety for beginners. A three-session-per-week template is highly effective:",
+      "- Session A: Squat variation, horizontal push, posterior chain accessory, core",
+      "- Session B: Hinge (deadlift or variation), vertical pull, unilateral leg work, conditioning",
+      "- Session C: Squat/press variant, horizontal pull, accessory for weaknesses, core",
+
+      "4) Progression rules that are easy to follow. Beginners benefit from linear progression: add small weight increments (2.5–5kg lower-body, 1–2.5kg upper-body) when prescribed reps are completed with good technique. Alternatively, add one extra rep to the top set before increasing load. Keep rules written and simple — members follow them reliably when steps are clear.",
+
+      "5) Volume and intensity guidance. Start with 3–5 sets of primary lifts in the 5–8 rep range for strength/hypertrophy balance. Accessory exercises use higher reps (8–15) to build capacity and address imbalances. Keep total weekly volume moderate and increase gradually over weeks 3–8 before scheduling a light recovery week.",
+
+      "6) Technique practice is non-negotiable. Use the first working sets for technical rehearsal at lighter loads: slow tempo, focused cues, and deliberate positions. Coaches should offer short, actionable feedback and simple drills that members can repeat between sessions.",
+
+      "7) Build habits around consistency. Encourage simple habits: pack gym bag the night before, schedule training sessions as non-negotiable appointments, and keep a short training log. Small behavioral nudges (phone reminders, a visible calendar sticker) increase adherence significantly.",
+
+      "8) Nutrition and recovery basics for beginners. Emphasise consistent protein intake (e.g., eggs/curd/paneer), adequate calories to support training, and prioritised sleep. Simple changes—protein at breakfast, a balanced lunch, and a small post-workout snack—create the conditions for progress.",
+
+      "9) Common beginner mistakes and fixes:",
+      "- Mistake: chasing the heaviest weight too soon. Fix: prioritise technique and add weight only when form is preserved.",
+      "- Mistake: excessive accessory work that steals recovery. Fix: pick 1–2 focused accessory exercises per session and limit sets.",
+      "- Mistake: inconsistent attendance. Fix: reduce program complexity and set clear weekly attendance goals (e.g., 3 sessions/week).",
+
+      "10) A simple 12-week plan (example):",
+      "Weeks 1–4 — Foundation: learn movement patterns, 3 sessions/week, focus on consistency and technique",
+      "Weeks 5–8 — Build: increase load gradually, maintain technique, add modest accessory volume",
+      "Weeks 9–12 — Consolidate: push slightly higher intensities on primary lifts while monitoring recovery; include a deload week after week 8 if needed",
+
+      "11) Coaching checkpoints and measurable signals. Track a primary metric (top-set weight or reps) and a readiness score (sleep, energy) each week. If top-set performance declines for two consecutive weeks, reduce accessory volume or insert a light recovery week.",
+
+      "12) Safety and gym etiquette for beginners. Learn how to rack and un-rack safely, use collars on barbells, and request a spotter for near-maximal lifts. Keep equipment tidy and follow gym time etiquette — this keeps the environment safe and respectful for everyone.",
+
+      "13) How group programming supports beginners. At Technical Lifts, group sessions retain individual progression by providing written progression rules and brief one-to-one coaching slots. Members follow the same session template and choose loads appropriate to their level, with coaches adjusting as needed.",
+
+      "14) Quick checklist for new members:",
+      "- Complete a movement screen with a coach",
+      "- Commit to 3 sessions per week for 12 weeks",
+      "- Use written progression rules and log top sets",
+      "- Prioritise protein and aim for consistent sleep",
+      "- Ask for a brief technique check every 2–4 weeks",
+
+      "15) Next steps and resources. Downloadable 3x/week PDF templates, printable checklists and local meal ideas (TODO: add asset links). Coaches can provide personalised scaling as needed.",
+
+      "TODO: Expand with printable beginner PDF, short tutorial videos, and permissioned example sessions when assets are available."
     ],
     meta: { description: "How to start training to build strength safely and effectively." },
   },
