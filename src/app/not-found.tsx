@@ -1,9 +1,9 @@
-import Link from "next/link";
+
 
 import { ArrowLeft } from "lucide-react";
 
 import { Background } from "@/components/background";
-import { Button } from "@/components/ui/button";
+import { CTA } from "@/components/ui/cta";
 
 export default function NotFound() {
   return (
@@ -20,20 +20,12 @@ export default function NotFound() {
           </p>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Button asChild size="lg" className="group min-w-[200px] gap-2">
-              <Link href="/">
-                <ArrowLeft className="size-5 transition-transform group-hover:-translate-x-1" />
-                Back to Home
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="min-w-[200px]"
-            >
-              <Link href="/contact">Contact Support</Link>
-            </Button>
+            <div className="group min-w-[200px]">
+              <CTA id="home" icon={<ArrowLeft className="size-5 transition-transform group-hover:-translate-x-1" />} />
+            </div>
+            <div className="min-w-[200px]">
+              <CTA id="contactSupport" />
+            </div>
           </div>
         </div>
       </div>
