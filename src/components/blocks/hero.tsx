@@ -23,21 +23,22 @@ const iconMap: Record<string, LucideIcon> = { Users, Zap, Target, TrendingUp };
 
 function SplitReveal({ text, className = "", delay = 0 }: { text: string; className?: string; delay?: number }) {
   const reduceMotion = useReducedMotion();
-  const words = text.split(" ");
-  const wordVariant = {
+  const lineVariant = {
     hidden: { y: "100%", opacity: 0 },
-    show: (i: number) => ({ y: 0, opacity: 1, transition: { delay: (delay / 1000) + i * 0.06, duration: 0.45 } }),
+    show: { y: 0, opacity: 1, transition: { delay: delay / 1000, duration: 0.55 } },
   };
 
+  // Animated copy is aria-hidden for screen readers/SEO; an sr-only H1 exists for crawlers.
   return (
-    <span className={className} aria-hidden={reduceMotion ? true : undefined}>
-      {words.map((w, i) => (
-        <span key={i} className="inline-block overflow-hidden align-middle mr-1">
-          <motion.span initial={reduceMotion ? false : "hidden"} animate={reduceMotion ? undefined : "show"} variants={wordVariant} custom={i} className="block">
-            {w}
-          </motion.span>
-        </span>
-      ))}
+    <span className={className} aria-hidden={true}>
+      <motion.span
+        initial={reduceMotion ? false : "hidden"}
+        animate={reduceMotion ? undefined : "show"}
+        variants={lineVariant}
+        className="block overflow-hidden"
+      >
+        <span className="inline-block">{text}</span>
+      </motion.span>
     </span>
   );
 }
@@ -73,8 +74,10 @@ export const Hero = () => {
             variants={item}
             className="max-w-160 text-4xl tracking-tight text-foreground md:text-5xl lg:text-6xl xl:text-7xl"
           >
-            {/* Split-line/word reveal for headline */}
-            {/** Render each word in a block-level span so translateY reveals per-word */}
+            {/* SEO-friendly: keep a single readable H1 for crawlers/screen readers */}
+            <span className="sr-only">{SITE.tagline} {SITE.taglineAccent}</span>
+
+            {/* Split-line/word reveal (aria-hidden) */}
             <SplitReveal text={SITE.tagline} className="inline-block" delay={0} />
             <br />
             <span className="inline-block overflow-hidden align-middle text-primary">
