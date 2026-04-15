@@ -26,7 +26,7 @@ export function Footer() {
         </p>
         <div>
           <Button size="lg" className="mt-4" asChild>
-            <Link href="/contact">{SITE.trialCTA}</Link>
+            <CTA />
           </Button>
         </div>
       </div>
