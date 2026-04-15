@@ -621,55 +621,76 @@ export const BLOG_POSTS = [
     title: "Strength Program Basics",
     excerpt: "A practical primer on sets, reps, frequency and how to build strength without overtraining.",
     content: [
-      "Strength training can feel complicated because of the noise: conflicting articles, flashy programs and social media extremes. At Technical Lifts we cut through that noise with straightforward rules that produce consistent results. The starting point is clarity: decide the primary goal (strength, hypertrophy, or general fitness), pick a small set of compound movements that support that goal, and measure progress with simple, repeatable metrics. For most members in Vikaspuri the primary everyday benefits are strength, resilience and improved function — lifting grocery bags, climbing stairs, and staying active with family — so programs emphasise practical strength that directly transfers to daily life.",
+      "Strength training can feel complicated because of noise: conflicting articles, flashy programs and social-media extremes. Technical Lifts removes the noise with practical rules that produce consistent results. This guide spells out the building blocks — movement selection, session structure, progression rules, frequency, recovery and simple troubleshooting — so members in Vikaspuri can train smarter and longer.",
 
-      "Movement selection is the first decision. Compound lifts — squats, deadlifts, presses, rows and hinges — recruit multiple joints and large muscle groups, producing meaningful hormonal and neuromuscular adaptations. These lifts form the backbone of almost every program we write. Why? Because they give the biggest return on time invested. Accessory exercises have a role, but they support the main lifts by correcting imbalances and strengthening weak links rather than forming the program’s core.",
+      "Start with purpose. Every effective program begins by answering two simple questions: what is the primary goal (strength, muscle, function) and what constraints exist (time, sleep, injuries)? Clear goals allow an efficient plan. For most of our members the primary outcomes are practical strength and durability — strength that helps in daily life and reduces injury risk. With that in mind, programming emphasizes compound lifts with small, measurable progressions.",
 
-      "Sets, reps and intensity: the practical rules. There is a useful mapping between training intent and the sets/reps that produce it. Low-rep ranges (1–5 reps) at higher intensity build maximal strength; moderate rep ranges (6–12) are effective for hypertrophy; higher reps support muscular endurance and metabolic conditioning. We program with target rep ranges and clear intensity guidelines: choose a weight that allows the prescribed reps with good technique, and when the target reps are achieved across sets, increase load by a small, manageable increment (2.5–5kg depending on the lift and equipment). These small increments compound into durable progress over months and years.",
+      "Movement selection: anchors and assistants. Anchor movements are the lifts that create the most return on training time. Squat patterns, hinge/deadlifts, horizontal and vertical presses/pulls form the backbone of almost every plan. Accessory exercises are chosen specifically to address weaknesses — for example, glute bridges and RDLs for posterior chain, rows for upper-back strength, and single-leg work for balance. Accessories are not filler: they accelerate main-lift progress by reducing bottlenecks.",
 
-      "Frequency and recovery: match training to life. Many trainees assume more is always better, but frequency must align with recovery capacity. For most working adults in Delhi, training each major pattern 2–4 times per week is effective. This can look like three full-body sessions, or an upper/lower split across four days. The sweet spot balances enough frequency to stimulate adaptation with enough recovery to consolidate gains. Coaches at Technical Lifts evaluate sleep, stress, job demands and recovery habits to set frequency. If life becomes more stressful, volume can be reduced while preserving the most important lifts — a principle we call progressive preservation.",
+      "Session structure: a reliable template. Consistency beats complexity. A simple, repeatable session structure increases training quality and reduces decision fatigue. Here’s a compact template used at Technical Lifts:",
 
-      "Progression rules that stick. The most effective progression rules are simple and repeatable. Incremental load increases, additional repetitions within a target range, and improved execution (range of motion, tempo, or positional control) are the primary methods we use. Complex periodisation models have their place for advanced athletes, but for most members a clear set of progression rules eliminates guesswork and keeps training consistent. The mantra: keep it simple, measure, and adjust.",
+      "- Warm-up (8–12 minutes): joint mobility, movement prep, ramp sets for the main lift",
+      "- Primary lift (3–5 working sets): focus on progression rules (load, reps, or quality)",
+      "- Secondary lift (3–4 sets): complementary strength or hypertrophy work",
+      "- Accessory (2–4 exercises): corrective or capacity-building pieces, lower total volume",
+      "- Optional conditioning (8–12 minutes): short, purposeful conditioning that complements the primary goal",
 
-      "Accessory work with purpose. Accessory exercises should be selected to address specific weaknesses that limit primary lifts. For example, weak posterior chain strength undermines deadlift progress; limited upper-back control compromises press mechanics. Accessory choices are prescriptive rather than scattershot: targeted hamstring work, upper-back reinforcement, or unilateral leg strength help accelerate main lift improvements. Accessory volume is modest — enough to address the bottleneck without stealing recovery from the primary lifts.",
+      "This structure ensures the most important work (the primary lift) is performed when the athlete is freshest and that supporting work is targeted and time-efficient.",
 
-      "Technique as the rate-limiter. For many beginners and intermediate trainees, improving technique is the fastest way to lift more safely and effectively. We prioritise drills that reinforce the fundamentals — hip hinge mechanics, braced breathing, scapular control and efficient bar path. Sessions include technical practice: lighter, focused repetitions that reinforce position and movement patterns. This technical investment pays dividends in load capacity and injury resilience.",
+      "Load, reps and progression. A practical mapping exists between rep ranges and training outcomes. Low reps (1–5) with higher loads are best for maximal strength; moderate reps (6–12) promote hypertrophy; higher reps support endurance. Rather than rigidly chasing percentages, Technical Lifts uses simple progression rules that members can follow easily: add small weight increments when you can complete the prescribed reps for your top sets on two consecutive sessions, or add a rep to the top set when technique remains clean. These tiny, reliable steps compound into large gains over months.",
 
-      "Program structure examples. A practical weekly structure for a busy member could be:",
+      "Frequency and recovery: balance matters. Training frequency should match recovery capacity. For busy adults, training each movement pattern 2–3 times per week (e.g., three full-body sessions) typically yields the best balance of stimulus and recovery. If life stress increases, reduce accessory volume or conditioning while preserving the main lifts. Coaches monitor readiness via simple metrics (sleep quality, session performance, perceived recovery) and adjust frequency as needed.",
 
-      "- Monday: Full body — primary squat variation + press + short accessory (pulling emphasis)",
-      "- Wednesday: Full body — primary hinge (deadlift/variation) + vertical pull + bracing work",
-      "- Friday: Full body — squat variation (different emphasis), bench or press variations, unilateral work",
+      "Programming examples by availability:",
+      "1) Busy schedule — 3x/week full-body",
+      "- Day 1: Squat variation + bench/press + posterior chain accessory",
+      "- Day 2: Hinge/deadlift variation + vertical pull + core/bracing",
+      "- Day 3: Squat/press variation + unilateral work + short conditioning",
 
-      "Each session begins with a movement-specific warm-up and ends with focused accessory work. The sequence preserves intensity for the primary lifts and ensures the highest-value exercises are performed when the athlete is freshest.",
+      "2) Moderate availability — 4x/week upper/lower split",
+      "- Upper A / Lower A / Upper B / Lower B with varying emphases (heavy/light),
 
-      "Programming for different experience levels. Beginners benefit from higher frequency and lower complexity: full-body sessions 3x/week with simple linear progressions are highly effective. Intermediates may adopt more variation and planned phases (blocks) that emphasise volume, intensity or technique. Advanced athletes require more sophisticated load management. Regardless of level, the principle remains: pick appropriate progressions, measure outcomes, and prioritise recovery.",
+      "3) Time-rich trainee — 5x/week with clear mesocycle objectives (volume blocks or intensity blocks)",
 
-      "Deloads and planned recovery. Every 6–8 weeks we typically schedule a lighter week that reduces intensity and volume — a deload. This practice allows the nervous system and connective tissues to consolidate gains without the grind of constant high intensity. Deloads are not punishment; they are planned resets that enable consistent long-term progress.",
+      "Quality over quantity: technical practice. Technique is the rate-limiter. Investing the first sets of a session in purposeful technical practice (lighter sets with focus on position, tempo, and breathing) pays dividends. Coaches teach bracing, breathing under load, and efficient bar path so heavy work becomes safer and more productive. Regular technical cues and short finishers maintain motor patterns between heavy sessions.",
 
-      "Nutrition and sleep are non-negotiables. Strength adaptations require both stimulus and resources. Practical nutrition advice includes consistent protein distribution across meals, sensible calorie management relative to goals, and timing choices that support training sessions. Sleep is foundational; even a small improvement in sleep quality can significantly enhance training adaptations. For Vikaspuri members, coaches recommend sustainable dietary changes that match local food habits and realistic meal preparation rhythms.",
+      "Accessory selection with intent. Accessory exercises should be chosen to improve a specific weak link. Examples:",
+      "- Weak lockout on deadlifts: add deficit deadlifts and heavy rack pulls",
+      "- Poor squat depth: prescribe ankle mobility drills and pause squats at lighter loads",
+      "- Bench press sticking point: increase upper-back work and paused bench reps",
 
-      "Tracking and accountability. We keep logs simple but meaningful: record working sets, reps and loads for the primary lifts and note subjective recovery. Tracking highlights progress and reveals trends that guide programming adjustments. When numbers plateau, the data clarifies whether to change load, add variety, or address recovery.",
+      "Volume control: the 3-week rule. Monitor volume trends over three-week blocks rather than day-to-day noise. A useful heuristic: if training quality and sleep degrade across a block, reduce accessory volume or add a light recovery session. This prevents program creep (slowly adding volume until recovery collapses).",
 
-      "Common barriers and practical fixes. Plateaus often come from unmanaged life stress, inconsistent nutrition, or technical drift. The coaching response is diagnostic: adjust training variables first (reduce volume, increase density of key lifts), then correct technique, and finally address recovery and nutrition. These steps prevent knee-jerk programming changes that increase fatigue without resolving the core issue.",
+      "Deloads and smart recovery. Planned deloads every 4–8 weeks are non-negotiable for long-term progress. A deload reduces volume by 30–60% and intensity slightly while maintaining movement quality. During deloads, focus on mobility, technique, and light aerobic work; use the period to catch up on sleep and nutrition.",
 
-      "Safety and load selection. Safe progression is controlled progression. Use gradual loading steps, prioritise movement quality over maximal load, and employ spotters, belt use, or technique variations as necessary. We teach members to recognise signs of overreaching—persistent soreness, poor sleep, reduced performance—and to communicate these early.",
+      "Nutrition and recovery basics for strength gains. Strength gains require adequate protein (aim for consistent protein at meals), sufficient calories relative to goals, and prioritized sleep. For Vikaspuri members, practical food choices like eggs, paneer, dal and curd provide reliable protein—no exotic ingredients required. Hydration and simple electrolytes support consistent session intensity, especially in Delhi’s climate.",
 
-      "Realistic expectations over time. In the first 4–12 weeks members typically reap neural improvements — better coordination and technique. Structural changes (noticeable size and sustained strength gains) follow months of consistent work. The program’s design encourages steady improvement rather than short-lived feats. For Vikaspuri residents balancing life commitments, the emphasis on sustainability produces more meaningful outcomes than occasional extreme efforts.",
+      "Monitoring progress without overcomplicating. Keep logs focused on primary lift top-set load and reps plus a one-line readiness note. Monthly checkpoints (e.g., 5-rep or 3-rep tests) provide signal without obsessing. Use trends to inform program changes—20% decline in session quality across two weeks signals a need for adjustment.",
 
-      "Practical checklist for your next gym session:",
-      "1) Review and commit to the session’s primary lift and progression rule.",
-      "2) Perform a specific warm-up that addresses mobility and the lift’s positions.",
-      "3) Execute working sets with a focus on technique, not ego.",
-      "4) Finish with 15–20 minutes of targeted accessory work that addresses a known weakness.",
-      "5) Log your load, reps and recovery notes for the week.",
+      "Troubleshooting common problems. When progress stalls, follow a prioritized troubleshooting process:",
+      "1) Check recovery and sleep — small improvements often yield big returns",
+      "2) Review technique with a coach — small technical fixes preserve gains",
+      "3) Adjust volume rather than immediately increasing intensity",
+      "4) Reintroduce variation (exercise change or rep scheme) if adaptation has plateaued",
 
-      "Implementation in a small gym environment. Technical Lifts structures coaching to provide high-touch feedback without creating coddling dependency. Group sessions incorporate coaching checkpoints and movement standards so every member benefits from both individual attention and community accountability. This hybrid approach works well for busy urban gyms because it scales coaching quality without requiring one-on-one time for every detail.",
+      "Safety: practical rules. Use progressive load, avoid ego-driven jumps, and ensure spotters or safety measures for near-maximal attempts. Teach members to recognise early signs of overreach and encourage open communication with coaches.",
 
-      "In summary: strength programming that works is simple in concept and deliberate in execution. Choose compound movements, progress consistently with small increments, prioritise technique and recovery, and make programming decisions that fit each member’s life. With these rules, strength becomes an achievable, lasting outcome rather than a short-lived sprint."
+      "Case example (practical): A 34-year-old member limited to three weekly sessions improved his squat 1RM by 8% over 12 weeks by following a structured plan: prioritized technique sessions, small weekly load increases when the top set target was met, reduced accessory volume in stressful weeks, and maintained sleep hygiene. The key difference: consistency and targeted adjustments rather than program complexity.",
+
+      "Implementation in Technical Lifts’ group coaching: coaches use a hybrid model where group sessions include checkpoints, written progression rules, and brief one-on-one coaching slices. Members follow a shared session template with scaled loads and optional accessory variations depending on individual needs. This approach keeps sessions efficient while preserving individualized progression.",
+
+      "Quick checklist for members to apply tomorrow:",
+      "- Choose 2–3 anchor lifts for the week",
+      "- Use a consistent session template and log top sets",
+      "- Add small, regular weight increases when prescribed reps are met",
+      "- Schedule a light deload week every 4–8 weeks",
+      "- Prioritise protein and sleep",
+
+      "TODO: Expand with local Vikaspuri examples, printable 3x/week PDF and downloadable grocery list (add assets when available)."
     ],
     meta: { description: "Strength training fundamentals from Technical Lifts — practical, evidence-based, and human-centered." },
   },
+
   {
     slug: "nutrition-for-performance",
     title: "Nutrition for Performance",
