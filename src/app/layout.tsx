@@ -21,6 +21,8 @@ const bricolageGrotesque = localFont({
   display: "swap",
 });
 
+const bricolageGrotesque = Bricola
+
 const inter = localFont({
   src: [
     { path: "../../fonts/dm-sans/DMSans-Regular.ttf", weight: "400" },
@@ -74,7 +76,7 @@ export default function RootLayout({
           forcedTheme="dark" */}
           {/* <StyleGlideProvider /> */}
           <Navbar />
-          <main className="pt-28">{children}</main>
+          <main className="pt-32">{children}</main>
           <Footer />
         {/* </ThemeProvider> */}
       </body>

@@ -43,12 +43,12 @@ export const Navbar = () => {
   };
 
   return (
-    <section className="fixed inset-x-0 top-0 z-50 pointer-events-auto">
+    <section className="fixed inset-x-0 top-0 z-50 pointer-events-auto px-4">
       {/* small full-width top strip to avoid visible background gap at the very top */}
-      <div className="w-full bg-background h-4" />
+      <div className="w-full h-4" />
       <div
         className={cn(
-          "bg-background shadow-xl w-[min(90%,900px)] mx-auto rounded-4xl border backdrop-blur-md transition-all duration-300 py-2",
+          "bg-background/50 shadow-xl mx-auto rounded-4xl border backdrop-blur-md transition-all duration-300 py-2",
         )}
       >
       <div className="flex items-center justify-between px-6 py-3">
@@ -64,7 +64,7 @@ export const Navbar = () => {
                 <button
                   onClick={() => handleNavClick(link.href)}
                   className={cn(
-                    "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75",
+                    "relative bg-transparent px-1.5 text-sm uppercase transition-opacity hover:opacity-75",
                     pathname === link.href && "text-muted-foreground",
                   )}
                 >
