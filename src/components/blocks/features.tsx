@@ -65,7 +65,7 @@ export const Features = () => {
                   </div>
 
                   <Link
-                    href="#trial"
+                    href="/#trial"
                     className="group flex items-center justify-between gap-4 pe-4 pt-4 md:pe-6 md:pt-6"
                   >
                     <div className="space-y-2">
