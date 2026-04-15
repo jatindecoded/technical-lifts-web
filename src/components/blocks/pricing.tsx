@@ -10,6 +10,7 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CardHeading } from "@/components/ui/card-heading";
+import { CTA } from "@/components/ui/cta";
 import { PRICING_PLANS, PRICING_SECTION, SITE, CONTACT_FORM } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -150,7 +151,7 @@ export const Pricing = ({ className }: { className?: string }) => {
                       <div>
                         <div className={cn("font-heading text-3xl font-bold tracking-tight blur-sm select-none", plan.isPopular && "text-primary")}>
                           {/* simple obfuscated number to entice submission */}
-                          {`₹${Math.floor(1000 + Math.random() * 9000)}`}
+                          {`₹XXXX}`}
                         </div>
                         <p className="mt-2 text-sm text-muted-foreground">{PRICING_SECTION.lockedMessage}</p>
                       </div>
@@ -173,15 +174,9 @@ export const Pricing = ({ className }: { className?: string }) => {
                     ))}
                   </div>
 
-                  <Button
-                    className="w-full"
-                    variant={plan.isPopular ? "default" : "outline"}
-                    asChild
-                  >
-                    <Link href={`/contact?inquiry=membership`}>
-                      {PRICING_SECTION.ctaLabel}
-                    </Link>
-                  </Button>
+                  <div>
+                    <CTA id="pricingContact" buttonVariant={plan.isPopular ? "default" : "outline"} className="w-full" />
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>

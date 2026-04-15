@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { ArrowUpRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+
 import { CTA } from "@/components/ui/cta";
 import {
   FOOTER_CTA,
@@ -26,9 +26,7 @@ export function Footer() {
           {FOOTER_CTA.subheading}
         </p>
         <div>
-          <Button size="lg" className="mt-4" asChild>
-            <CTA />
-          </Button>
+          <CTA />
         </div>
       </div>
 

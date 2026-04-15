@@ -3,15 +3,13 @@
 import React from "react";
 
 import Image from "next/image";
-import Link from "next/link";
 
 import { motion } from "framer-motion";
 import { DumbbellIcon } from "lucide-react";
 
 import { DashedLine } from "../dashed-line";
 
-import { Button } from "@/components/ui/button";
-// constants & utils
+import { CTA } from "@/components/ui/cta";
 import { FACILITIES, FEATURE_SECTIONS, IMAGE_ASSETS, PT_INCLUDES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -179,9 +177,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
 
             {item.cta && (
                 <div className="mb-4">
-                    <Button variant="outline" className="shadow-md" asChild>
-                        <Link href={item.cta.href}>{item.cta.label}</Link>
-                    </Button>
+                    <CTA id="personalTraining" />
                 </div>
             )}
 

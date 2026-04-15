@@ -15,7 +15,7 @@ export const SITE = {
   instagramUrl: "",
   // TODO: Add Google Reviews URL
   googleReviewsUrl: "",
-  trialCTA: "Book Free Trial",
+  trialCTA: "Book Free Trial OKOKOK",
   trialSubtext: "Free for website visitors. Walk-ins pay ₹500.",
   secondaryCTA: "See Membership Plans",
   timings: "Open 7 Days  |  5AM – 12AM (Midnight)",
@@ -154,6 +154,7 @@ export const CTA_REGISTRY: Record<string, { label: string; href: string; variant
   callNow: { label: "Call Now", href: `tel:${SITE.phone}`, variant: "default" },
   whatsapp: { label: "WhatsApp", href: `https://wa.me/${(SITE.whatsapp || SITE.phone).replace(/\D/g, "")}`, variant: "outline" },
   instagram: { label: "Instagram", href: SITE.instagramUrl || "#", variant: "outline" },
+  pricingContact: { label: "Get Started", href: "/contact?inquiry=membership", variant: "default" },
 };
 
 // ─── Gym Stats (About page) ───────────────────────────────────────────────────
