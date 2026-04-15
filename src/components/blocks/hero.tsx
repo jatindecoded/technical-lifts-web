@@ -91,7 +91,7 @@ export const Hero = () => {
                 className="from-background gap-2 bg-linear-to-r to-transparent shadow-md"
                 asChild
               >
-                <a href="#pricing" className="max-w-56 truncate text-start md:max-w-none">
+                <a href="/#pricing" className="max-w-56 truncate text-start md:max-w-none">
                   {SITE.secondaryCTA}
                   <ArrowRight className="stroke-3 shrink-0" />
                 </a>
