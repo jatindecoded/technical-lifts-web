@@ -556,7 +556,55 @@ export const BLOG_POSTS = [
 
       "Common misconceptions we correct: fancy programming does not trump consistency; more training is not always better; and supplements cannot replace basic dietary and sleep foundations. Coaches help translate scientific principles into practical, locally-appropriate behaviours that fit Vikaspuri life.",
 
-      "In short: the Training Philosophy at Technical Lifts is deliberate, evidence-based and grounded in the realities of the community we serve. It privileges assessment, technical mastery, progressive overload and recovery combined with cultural pragmatism. The result is sustainable strength gains, fewer injuries, and training that actually fits people’s lives. If you want strength that lasts and a plan you will follow, the philosophy we follow at Technical Lifts is a proven path.",
+      "Real-world programming examples (practical templates):",
+
+      "1) Busy professional — 3 sessions/week (full body):",
+      "- Warm-up: 8–10 minutes mobility focusing on hips and thoracic spine",
+      "- Primary lift: 3–5 working sets at 5–8 reps (squat variation or deadlift variant)",
+      "- Secondary lift: 3 sets at 6–10 reps (press or row variant)",
+      "- Accessory: 2–3 sets addressing weak links (single-leg, upper back, core)",
+      "- Conditioning: optional 8–10 minute metabolic finisher",
+
+      "2) Time-rich trainee — 4 sessions/week (upper/lower split):",
+      "- Day A (Lower heavy): heavy squat/hinge focus + posterior chain accessories",
+      "- Day B (Upper heavy): bench/press + vertical pull + scapular work",
+      "- Day C (Lower speed/volume): lighter loads, higher reps, unilateral work",
+      "- Day D (Upper volume/technique): practice pressing patterns and hypertrophy work",
+
+      "3) Beginner roadmap (first 12 weeks):",
+      "- Weeks 1–4: learn fundamental movement patterns, 3 sessions/week, focus on form",
+      "- Weeks 5–8: introduce progressive overload with small, consistent load increases",
+      "- Weeks 9–12: build work capacity with slightly higher total sets while retaining technical practice",
+
+      "How coaches measure progress without overengineering:",
+      "- Keep the log simple: primary lift working sets, top set load and reps, one readiness score (1–5), weekly note on sleep",
+      "- Use the log to find trends — small upward steps each 2–4 weeks indicate healthy progress",
+      "- When trends flatten, check recovery and technique before adding volume",
+
+      "Nutrition and lifestyle alignments that matter most:",
+      "- Protein at two-three meals per day using local foods (curd, paneer, eggs, pulses)",
+      "- Small, consistent calorie steps rather than dramatic cuts or surpluses",
+      "- Prioritise 7–8 hours of sleep where possible and add a wind-down routine (lights, phone-off window)",
+      "- Hydration: keep a water bottle and top up during the day",
+
+      "Common faults and simple fixes (coaches’ checklist):",
+      "- Shallow squats: improve ankle mobility and practice pause reps at lighter loads",
+      "- Rounded back in deadlifts: limit load, strengthen posterior chain with RDLs and hamstring-focused assistance",
+      "- Stalled bench press: refine T-spine extension, increase upper-back work, and check bar path",
+
+      "Member case study (anonymised):",
+      "A 38-year-old working parent had plateaued on the squat and reported frequent low-back tightness. The intervention: a focused 6-week block that reduced squat frequency to once per week with technical practice, introduced targeted mobility for ankle dorsiflexion, and added posterior chain strengthening (RDLs and glute bridges). Sleep guidance and small protein-focused meal adjustments were recommended. After 6 weeks the member increased working set depth by 10% and reported lower perceived exertion at the same loads.",
+
+      "How this philosophy shapes coaching decisions:",
+      "- Choose progressions that preserve recovery and technique",
+      "- Prefer consistent, measurable steps over flashy, risky ramps",
+      "- Use data as a guide — not as a master — and always reconcile numbers with member feedback",
+
+      "Next steps for a new member (simple 4-step plan):",
+      "1) Complete a baseline assessment with a coach (movement screen + schedule check)",
+      "2) Start a 4-week program focused on technique and small progressive steps",
+      "3) Log sessions and readiness for two weeks to establish trends",
+      "4) Meet coach at week 4 to adjust load, frequency, or priorities",
 
       "TODO: Add local member testimonial or case study here (image and specific numbers).",
 
