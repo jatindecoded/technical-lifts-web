@@ -476,6 +476,10 @@ export const CONTACT_FORM = {
     { value: "personal-training", label: "Personal training" },
     { value: "other", label: "Something else" },
   ],
+  // Form submission recipient: replace with real email before deploy.
+  // For static export we POST to formsubmit.co/<email>
+  // TODO: Replace with actual recipient email address.
+  recipientEmail: "hello@technical-lifts.example",
 };
 
 // ─── Images ───────────────────────────────────────────────────────────────────
