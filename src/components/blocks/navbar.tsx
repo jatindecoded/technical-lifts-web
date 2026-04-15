@@ -13,17 +13,43 @@ import {
 } from "@/components/ui/navigation-menu";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleNavClick = async (href: string) => {
+    // If the link is an anchor to home, ensure we navigate to root then scroll
+    if (href.startsWith("/#")) {
+      const anchor = href.replace("/#", "");
+      if (pathname === "/") {
+        const el = document.getElementById(anchor);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      } else {
+        await router.push("/");
+        // small delay to allow DOM to render
+        setTimeout(() => {
+          const el = document.getElementById(anchor);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 150);
+      }
+    } else {
+      // normal navigation
+      router.push(href);
+    }
+  };
 
   return (
-    <section className="fixed inset-x-0 top-5 z-50 pointer-events-auto">
+    <section className="fixed inset-x-0 top-0 z-50 pointer-events-auto">
+      {/* small full-width top strip to avoid visible background gap at the very top */}
+      <div className="w-full bg-background h-4" />
       <div
         className={cn(
-          "bg-background shadow-xl w-[min(90%,900px)] mx-auto rounded-4xl border backdrop-blur-md transition-all duration-300",
-          "lg:top-12",
+          "bg-background shadow-xl w-[min(90%,900px)] mx-auto rounded-4xl border backdrop-blur-md transition-all duration-300 py-2",
         )}
       >
       <div className="flex items-center justify-between px-6 py-3">
@@ -33,7 +59,7 @@ export const Navbar = () => {
 
         {/* Desktop Navigation */}
         <NavigationMenu className="max-lg:hidden">
-          <NavigationMenuList className="flex flex-wrap gap-4">
+          <NavigationMenuList className="flex gap-4 whitespace-nowrap overflow-x-auto no-scrollbar">
             {NAV_LINKS.map((link) => (
               <NavigationMenuItem key={link.label} className="">
                 <Link
