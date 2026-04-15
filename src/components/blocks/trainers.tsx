@@ -4,7 +4,7 @@ import React from "react";
 
 import Image from "next/image";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { CardHeading } from "@/components/ui/card-heading";
@@ -21,6 +21,8 @@ const item = {
 };
 
 export const Trainers = () => {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section id={TRAINERS_SECTION.id} className="py-24 lg:py-32">
       <div className="container">
@@ -41,9 +43,8 @@ export const Trainers = () => {
           variants={container}
         >
           {TRAINERS.map((trainer, index) => (
-            <motion.div key={index} variants={item}>
-              <Card className="bg-muted h-full overflow-hidden border-none">
-                <CardContent className="flex h-full flex-col p-0">
+            <motion.div key={index} variants={item} whileHover={reduceMotion ? {} : { scale: 1.03 }} whileTap={reduceMotion ? {} : { scale: 0.995 }} transition={{ type: 'spring', stiffness: 300 }}>
+              <Card className="bg-muted h-full overflow-hidden border-none">                <CardContent className="flex h-full flex-col p-0">
                   <div className="relative aspect-[3/2] w-full overflow-hidden">
                     <Image
                       src={trainer.photo}
