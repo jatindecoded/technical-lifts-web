@@ -15,7 +15,6 @@ import {
 
 import { Logos } from "@/components/blocks/logos";
 import { DashedLine } from "@/components/dashed-line";
-import { Button } from "@/components/ui/button";
 import { CTA } from "@/components/ui/cta";
 import { HERO_FEATURES, IMAGE_ASSETS, SITE } from "@/lib/constants";
 
@@ -96,17 +95,7 @@ export const Hero = () => {
               <CTA />
             </motion.div>
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-              <Button
-                size="lg"
-                variant="outline"
-                className="from-background gap-2 bg-linear-to-r to-transparent shadow-md"
-                asChild
-              >
-                <a href="/#pricing" className="max-w-56 truncate text-start md:max-w-none">
-                  {SITE.secondaryCTA}
-                  <ArrowRight className="stroke-3 shrink-0" />
-                </a>
-              </Button>
+              <CTA id="seePricing" icon={<ArrowRight className="stroke-3 shrink-0" />} />
             </motion.div>
           </motion.div>
           <motion.p variants={item} className="text-text-muted mt-3 text-center text-xs lg:text-left">
