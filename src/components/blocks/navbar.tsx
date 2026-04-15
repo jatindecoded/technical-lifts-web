@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { useRouter } from "next/navigation";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,15 +61,15 @@ export const Navbar = () => {
           <NavigationMenuList className="flex gap-4 whitespace-nowrap overflow-x-auto no-scrollbar">
             {NAV_LINKS.map((link) => (
               <NavigationMenuItem key={link.label} className="">
-                <Link
-                  href={link.href}
+                <button
+                  onClick={() => handleNavClick(link.href)}
                   className={cn(
                     "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75",
                     pathname === link.href && "text-muted-foreground",
                   )}
                 >
                   {link.label}
-                </Link>
+                </button>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
@@ -119,17 +118,19 @@ export const Navbar = () => {
       >
         <nav className="divide-border flex flex-1 flex-col divide-y">
           {NAV_LINKS.map((link) => (
-            <Link
+            <button
               key={link.label}
-              href={link.href}
+              onClick={() => {
+                setIsMenuOpen(false);
+                handleNavClick(link.href);
+              }}
               className={cn(
-                "text-primary hover:text-primary/80 py-4 text-base font-medium transition-colors first:pt-0 last:pb-0",
+                "text-primary hover:text-primary/80 py-4 text-base font-medium transition-colors first:pt-0 last:pb-0 text-left w-full",
                 pathname === link.href && "text-muted-foreground",
               )}
-              onClick={() => setIsMenuOpen(false)}
             >
               {link.label}
-            </Link>
+            </button>
           ))}
         </nav>
       </div>
