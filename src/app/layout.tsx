@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 import { Footer } from "@/components/blocks/footer";
 import { Navbar } from "@/components/blocks/navbar";
+import { SITE } from "@/lib/constants";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -50,6 +51,7 @@ export default function RootLayout({
     >
       {/* <body className="bg-dark font-body antialiased">{children}</body> */}
       <head>
+        <title>{SITE.name} — {SITE.taglineAccent ? SITE.taglineAccent : SITE.tagline}</title>
         <script
           async
           crossOrigin="anonymous"
@@ -57,6 +59,8 @@ export default function RootLayout({
         />
       </head>
       <body className={`bg-dark font-body dark antialiased`}>
+        {/* top primary band to match home hero spacing */}
+        <div className="absolute inset-x-0 top-0 h-40 lg:h-56 bg-primary -z-10" aria-hidden="true" />
         {/* <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -65,7 +69,7 @@ export default function RootLayout({
           forcedTheme="dark" */}
         {/* <StyleGlideProvider /> */}
         <Navbar />
-        <main className="pt-32">{children}</main>
+        <main className="pt-40 lg:pt-56">{children}</main>
         <Footer />
         {/* </ThemeProvider> */}
       </body>
