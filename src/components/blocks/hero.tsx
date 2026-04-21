@@ -90,12 +90,12 @@ export const Hero = () => {
             </motion.span>
           </motion.p>
 
-          <motion.div variants={item} className="mt-8 flex flex-col flex-wrap items-center gap-4 lg:flex-nowrap lg:flex-row">
+          <motion.div variants={item} className="mt-8 w-full max-w-md grid grid-cols-1 gap-4 lg:flex lg:flex-row lg:items-center lg:max-w-none">
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-              <CTA />
+              <CTA className="w-full" />
             </motion.div>
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-              <CTA id="seePricing" icon={<ArrowRight className="stroke-3 shrink-0" />} />
+              <CTA className="w-full" id="seePricing" icon={<ArrowRight className="stroke-3 shrink-0" />} />
             </motion.div>
           </motion.div>
           <motion.p variants={item} className="text-text-muted mt-3 text-center text-xs lg:text-left">
