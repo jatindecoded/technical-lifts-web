@@ -6,7 +6,7 @@ import { Clock, MapPin, Phone } from "lucide-react";
 
 import { ContactForm } from "@/components/blocks/contact-form";
 import { DashedLine } from "@/components/dashed-line";
-import { Card } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { CTA } from "@/components/ui/cta";
 import { SITE } from "@/lib/constants";
 
@@ -22,52 +22,54 @@ export default function Contact() {
         </p>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-3 lg:mt-16">
-          <Card>
-            <MapPin className="text-primary size-5" />
-            <h2 className="font-heading text-sm font-bold uppercase tracking-wide">
-              Where We Train
-            </h2>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              {SITE.address}
-            </p>
-            <div>
+          <Card className="h-full">
+            <CardHeader className="p-6">
+              <MapPin className="text-primary size-5 mb-2" />
+              <CardTitle className="text-3xl md:text-4xl font-heading font-bold tracking-tight uppercase">
+                Where We Train
+              </CardTitle>
+              <CardDescription className="mt-3 text-sm leading-relaxed">
+                {SITE.address}
+              </CardDescription>
+            </CardHeader>
+            <CardFooter className="p-6 pt-0">
               <CTA id="mapsOpen" buttonVariant="outline" />
-            </div>
+            </CardFooter>
           </Card>
 
-          <Card>
-            <Phone className="text-primary size-5" />
-            <h2 className="font-heading text-sm font-bold uppercase tracking-wide">
-              Call / WhatsApp
-            </h2>
-            <Link
-              href={`tel:${SITE.phone}`}
-              className="text-muted-foreground text-sm hover:text-foreground transition-colors block"
-            >
-              {SITE.phone}
-            </Link>
-            <p className="text-muted-foreground text-xs">
-              WhatsApp same number
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <CTA id="callNow" />
-              <CTA id="whatsapp" />
-            </div>
-          </Card>
-
-          <Card>
-            <Clock className="text-primary size-5" />
-            <h2 className="font-heading text-sm font-bold uppercase tracking-wide">
-              Hours
-            </h2>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              {SITE.timings}
-            </p>
-            {SITE.instagramUrl && (
-              <div>
-                <CTA id="instagram" />
+          <Card className="h-full">
+            <CardHeader className="p-6">
+              <Phone className="text-primary size-5 mb-2" />
+              <CardTitle className="text-3xl md:text-4xl font-heading font-bold tracking-tight uppercase">
+                Call / WhatsApp
+              </CardTitle>
+              <Link
+                href={`tel:${SITE.phone}`}
+                className="text-muted-foreground mt-3 block text-sm hover:text-foreground transition-colors"
+              >
+                {SITE.phone}
+              </Link>
+              <CardDescription className="mt-2 text-xs">WhatsApp same number</CardDescription>
+            </CardHeader>
+            <CardFooter className="p-6 pt-0">
+              <div className="flex flex-wrap gap-2">
+                <CTA id="callNow" />
+                <CTA id="whatsapp" />
               </div>
-            )}
+            </CardFooter>
+          </Card>
+
+          <Card className="h-full">
+            <CardHeader className="p-6">
+              <Clock className="text-primary size-5 mb-2" />
+              <CardTitle className="text-3xl md:text-4xl font-heading font-bold tracking-tight uppercase">
+                Hours
+              </CardTitle>
+              <CardDescription className="mt-3 text-sm leading-relaxed">{SITE.timings}</CardDescription>
+            </CardHeader>
+            <CardFooter className="p-6 pt-0">
+              {SITE.instagramUrl && <CTA id="instagram" />}
+            </CardFooter>
           </Card>
         </div>
 
