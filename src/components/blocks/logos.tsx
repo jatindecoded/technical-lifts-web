@@ -11,17 +11,16 @@ const iconMap = {
 export const Logos = () => {
   return (
     <section className="overflow-hidden">
-      <div className="container space-y-10 lg:space-y-16">
-        <div className="grid grid-cols-2 lg:flex-row w-full items-center justify-between gap-4 text-center">
+      <div className="container">
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
           {TRUST_BAR.map((item) => {
             const Icon = iconMap[item.iconName as keyof typeof iconMap];
-
             return (
-              <div key={item.label} className="flex md:flex-col items-center gap-2">
-                <Icon className="text-primary size-4 shrink-0 lg:size-5" />
-                <h3 className="text-foreground text-lg text-balance md:text-xl lg:text-2xl underline decoration-dashed underline-offset-4">
+              <div key={item.label} className="flex items-center gap-3">
+                <Icon className="text-primary size-5 shrink-0" />
+                <span className="font-heading text-base font-bold uppercase tracking-wide text-text-base underline decoration-dashed underline-offset-4 md:text-lg">
                   {item.label}
-                </h3>
+                </span>
               </div>
             );
           })}

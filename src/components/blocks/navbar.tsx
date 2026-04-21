@@ -3,9 +3,9 @@
 import { useState } from "react";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
-import { Button } from "@/components/ui/button";
+import { CTA } from "@/components/ui/cta";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -17,33 +17,59 @@ import { cn } from "@/lib/utils";
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleNavClick = async (href: string) => {
+    // If the link is an anchor to home, ensure we navigate to root then scroll
+    if (href.startsWith("/#")) {
+      const anchor = href.replace("/#", "");
+      if (pathname === "/") {
+        const el = document.getElementById(anchor);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      } else {
+        await router.push("/");
+        // small delay to allow DOM to render
+        setTimeout(() => {
+          const el = document.getElementById(anchor);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 150);
+      }
+    } else {
+      // normal navigation
+      router.push(href);
+    }
+  };
 
   return (
-    <section
-      className={cn(
-        "bg-background shadow-xl absolute left-1/2 z-50 w-[min(90%,900px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
-        "top-5 lg:top-12",
-      )}
-    >
+    <section className="fixed inset-x-0 top-0 z-50 pointer-events-auto px-4">
+      {/* small full-width top strip to avoid visible background gap at the very top */}
+      <div className="w-full h-4" />
+      <div
+        className={cn(
+          "bg-background/50 shadow-xl mx-auto rounded-4xl border backdrop-blur-md transition-all duration-300 py-2",
+        )}
+      >
       <div className="flex items-center justify-between px-6 py-3">
-        <Link href="/" className="flex text-primary shrink-0 items-center gap-2 font-heading uppercase">
+        <Link href="/" className="flex text-primary shrink-0 items-center gap-2 font-heading font-bold uppercase">
           {SITE.name}
         </Link>
 
         {/* Desktop Navigation */}
         <NavigationMenu className="max-lg:hidden">
-          <NavigationMenuList>
+          <NavigationMenuList className="flex gap-4 whitespace-nowrap overflow-x-auto no-scrollbar">
             {NAV_LINKS.map((link) => (
               <NavigationMenuItem key={link.label} className="">
-                <Link
-                  href={link.href}
+                <button
+                  onClick={() => handleNavClick(link.href)}
                   className={cn(
-                    "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75",
+                    "relative bg-transparent px-1.5 text-sm uppercase transition-opacity hover:opacity-75",
                     pathname === link.href && "text-muted-foreground",
                   )}
                 >
                   {link.label}
-                </Link>
+                </button>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
@@ -51,11 +77,9 @@ export const Navbar = () => {
 
         {/* Auth Buttons */}
         <div className="flex items-center gap-2.5">
-          <Link href="#trial" className="max-lg:hidden">
-            <Button variant="outline">
-              <span className="relative z-10">{SITE.trialCTA}</span>
-            </Button>
-          </Link>
+          <div className="max-lg:hidden">
+            <CTA buttonVariant="outline" />
+          </div>
 
           {/* Hamburger Menu Button (Mobile Only) */}
           <button
@@ -92,19 +116,22 @@ export const Navbar = () => {
       >
         <nav className="divide-border flex flex-1 flex-col divide-y">
           {NAV_LINKS.map((link) => (
-            <Link
+            <button
               key={link.label}
-              href={link.href}
+              onClick={() => {
+                setIsMenuOpen(false);
+                handleNavClick(link.href);
+              }}
               className={cn(
-                "text-primary hover:text-primary/80 py-4 text-base font-medium transition-colors first:pt-0 last:pb-0",
+                "text-primary hover:text-primary/80 py-4 text-base font-medium transition-colors first:pt-0 last:pb-0 text-left w-full",
                 pathname === link.href && "text-muted-foreground",
               )}
-              onClick={() => setIsMenuOpen(false)}
             >
               {link.label}
-            </Link>
+            </button>
           ))}
         </nav>
+      </div>
       </div>
     </section>
   );
