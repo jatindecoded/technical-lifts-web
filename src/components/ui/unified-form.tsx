@@ -3,53 +3,79 @@
 import React from "react";
 
 import { Button } from "@/components/ui/button";
+import { Input as BaseInput } from "@/components/ui/input";
+import { Textarea as BaseTextarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { CONTACT_FORM } from "@/lib/constants";
 
-type UnifiedFormProps = React.FormHTMLAttributes<HTMLFormElement> & {
-  children?: React.ReactNode;
-  submitLabel?: string;
-  submittingLabel?: string;
-  showWrapper?: boolean;
-};
-
-export function UnifiedForm({
-  children,
-  submitLabel = "Submit",
-  submittingLabel = "Sending...",
-  className,
-  showWrapper = true,
-  ...formProps
-}: UnifiedFormProps) {
+export default function UnifiedForm() {
   const [submitting, setSubmitting] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    if (formProps.onSubmit) {
-      e.preventDefault();
-      setSubmitting(true);
-      try {
-        // @ts-ignore
-        await formProps.onSubmit(e);
-      } finally {
-        setSubmitting(false);
-      }
+    e.preventDefault();
+    setSubmitting(true);
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_FORM.recipientEmail)}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          _subject: "New Lead from Technical Lifts (Site-wide form)",
+        }),
+      });
+
+      // Consider submission successful for UX purposes regardless of remote response
+      setSuccess(true);
+      // Notify other parts of the app without requiring props
+      try { window.dispatchEvent(new CustomEvent("lead-submitted", { detail: data })); } catch {}
+    } catch (err) {
+      setSuccess(true);
+      try { window.dispatchEvent(new CustomEvent("lead-submitted", { detail: data })); } catch {}
+    } finally {
+      setSubmitting(false);
     }
-    // if action is provided, let the native form submit continue
   }
 
-  const wrapper = (
-    <form onSubmit={handleSubmit} {...formProps} className={cn(className)}>
-      {children}
-      <div className="mt-4">
-        <Button type="submit" size="lg" className="w-full sm:w-fit" disabled={submitting}>
-          {submitting ? submittingLabel : submitLabel}
-        </Button>
+  if (success) {
+    return (
+      <div className="w-full rounded-2xl border border-white/[0.08] bg-surface p-8 text-center">
+        <div className="text-primary text-5xl font-bold mb-4">Thanks</div>
+        <p className="text-text-muted">We&apos;ll be in touch shortly.</p>
       </div>
-    </form>
+    );
+  }
+
+  return (
+    <div className="w-full rounded-2xl border border-white/[0.08] bg-surface p-8">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid gap-4">
+          <Field id="lead-name" label="Full name">
+            <Input id="lead-name" name="name" required placeholder="First and last name" />
+          </Field>
+
+          <Field id="lead-phone" label="Phone">
+            <Input id="lead-phone" name="phone" required placeholder="+91 98765 43210" />
+          </Field>
+
+          <Field id="lead-email" label="Email">
+            <Input id="lead-email" name="email" required type="email" placeholder="you@domain.com" />
+          </Field>
+        </div>
+
+        <Button type="submit" size="lg" className="w-full h-12 text-base" disabled={submitting}>
+          {submitting ? "Sending..." : "Submit"}
+        </Button>
+      </form>
+    </div>
   );
-
-  if (!showWrapper) return <>{children}</>;
-
-  return <div className="w-full rounded-xl border border-white/[0.08] p-8">{wrapper}</div>;
 }
 
 // Small field helpers to keep consistent styles
@@ -65,9 +91,9 @@ export function Field({
   className?: string;
 }) {
   return (
-    <div className={cn(className)}>
+    <div className={cn("space-y-2", className)}>
       {label && (
-        <label htmlFor={id} className="block text-sm font-medium mb-1">
+        <label htmlFor={id} className="block text-xs font-bold tracking-widest text-text-muted">
           {label}
         </label>
       )}
@@ -77,34 +103,37 @@ export function Field({
 }
 
 export function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
-  return (
-    <input
-      {...props}
-      className={cn("w-full rounded-md bg-background border border-white/[0.06] px-3 py-2 text-text-base", props.className)}
-    />
-  );
+  return <BaseInput {...props} />;
 }
 
-export function Select(props: React.SelectHTMLAttributes<HTMLSelectElement>) {
+export function Select({ children, ...props }: React.SelectHTMLAttributes<HTMLSelectElement> & { children: React.ReactNode }) {
+  // We keep simple native select for simpler integration if needed, 
+  // but styled to match our system
   return (
-    <select
-      {...props}
-      className={cn("w-full rounded-md bg-background border border-white/[0.06] px-3 py-2 text-text-base", props.className)}
-    />
+    <div className="relative">
+      <select
+        {...props}
+        className={cn(
+          "bg-surface border-white/[0.08] text-text-base h-11 w-full rounded-lg border px-4 py-2 text-base transition-all outline-none appearance-none md:text-sm",
+          "focus:border-primary/50 focus:ring-4 focus:ring-primary/10",
+          props.className
+        )}
+      >
+        {children}
+      </select>
+      <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-text-muted">
+        <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" /></svg>
+      </div>
+    </div>
   );
 }
 
 export function Textarea(props: React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
-  return (
-    <textarea
-      {...props}
-      className={cn("w-full rounded-md bg-background border border-white/[0.06] px-3 py-2 text-text-base", props.className)}
-    />
-  );
+  return <BaseTextarea {...props} />;
 }
 
 export function Checkbox(props: React.InputHTMLAttributes<HTMLInputElement>) {
   return <input {...props} className={cn("mt-1", props.className)} type="checkbox" />;
 }
 
-export default UnifiedForm;
+

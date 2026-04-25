@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import Link from "next/link";
@@ -6,79 +8,104 @@ import { Clock, MapPin, Phone } from "lucide-react";
 
 import { ContactForm } from "@/components/blocks/contact-form";
 import { DashedLine } from "@/components/dashed-line";
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { CardHeading } from "@/components/ui/card-heading";
 import { CTA } from "@/components/ui/cta";
+import { SectionHeader } from "@/components/ui/section-header";
 import { SITE } from "@/lib/constants";
-
+  
 export default function Contact() {
   return (
-    <section className="py-28 lg:py-32 lg:pt-44">
-      <div className="container max-w-4xl">
-        <h1 className="text-center text-3xl font-heading font-bold tracking-tight md:text-5xl lg:text-6xl">
-          Come Train With Us
-        </h1>
-        <p className="text-muted-foreground mt-3 text-center leading-tight md:text-lg">
-          Drop in, call, or send a message. We&apos;ll get back to you fast.
-        </p>
+    <section className="bg-dark py-28 lg:py-32 lg:pt-44">
+      <div className="container max-w-5xl">
+        <SectionHeader
+          badge="Contact"
+          title="Come Train With Us"
+          description="Drop in, call, or send a message. We'll get back to you fast."
+          align="center"
+          className="mb-16"
+        />
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-3 lg:mt-16">
-          <Card className="h-full">
-            <CardHeader className="p-6">
-              <MapPin className="text-primary size-5 mb-2" />
-              <CardTitle className="text-3xl md:text-4xl font-heading font-bold tracking-tight uppercase">
-                Where We Train
-              </CardTitle>
-              <CardDescription className="mt-3 text-sm leading-relaxed">
-                {SITE.address}
-              </CardDescription>
-            </CardHeader>
-            <CardFooter className="p-6 pt-0">
-              <CTA id="mapsOpen" buttonVariant="outline" />
-            </CardFooter>
-          </Card>
-
-          <Card className="h-full">
-            <CardHeader className="p-6">
-              <Phone className="text-primary size-5 mb-2" />
-              <CardTitle className="text-3xl md:text-4xl font-heading font-bold tracking-tight uppercase">
-                Call / WhatsApp
-              </CardTitle>
-              <Link
-                href={`tel:${SITE.phone}`}
-                className="text-muted-foreground mt-3 block text-sm hover:text-foreground transition-colors"
-              >
-                {SITE.phone}
-              </Link>
-              <CardDescription className="mt-2 text-xs">WhatsApp same number</CardDescription>
-            </CardHeader>
-            <CardFooter className="p-6 pt-0">
-              <div className="flex flex-wrap gap-2">
-                <CTA id="callNow" />
-                <CTA id="whatsapp" />
+        <div className="grid gap-6 sm:grid-cols-3">
+          <Card className="bg-surface h-full overflow-hidden rounded-2xl border-white/[0.08] shadow-2xl">
+            <CardContent className="flex h-full flex-col justify-between gap-8 p-8">
+              <div className="space-y-4">
+                <MapPin className="text-primary size-6" />
+                <CardHeading as="h3" className="text-xl">
+                  Where We Train
+                </CardHeading>
+                <p className="text-text-muted text-sm leading-relaxed">
+                  {SITE.address}
+                </p>
               </div>
-            </CardFooter>
+              <CTA id="mapsOpen" buttonVariant="outline" className="w-full" />
+            </CardContent>
           </Card>
 
-          <Card className="h-full">
-            <CardHeader className="p-6">
-              <Clock className="text-primary size-5 mb-2" />
-              <CardTitle className="text-3xl md:text-4xl font-heading font-bold tracking-tight uppercase">
-                Hours
-              </CardTitle>
-              <CardDescription className="mt-3 text-sm leading-relaxed">{SITE.timings}</CardDescription>
-            </CardHeader>
-            <CardFooter className="p-6 pt-0">
-              {SITE.instagramUrl && <CTA id="instagram" />}
-            </CardFooter>
+          <Card className="bg-surface h-full overflow-hidden rounded-2xl border-white/[0.08] shadow-2xl">
+            <CardContent className="flex h-full flex-col justify-between gap-8 p-8">
+              <div className="space-y-4">
+                <Phone className="text-primary size-6" />
+                <CardHeading as="h3" className="text-xl">
+                  Call / WhatsApp
+                </CardHeading>
+                <div className="space-y-1">
+                  <Link
+                    href={`tel:${SITE.phone}`}
+                    className="text-text-base hover:text-primary text-lg font-bold transition-colors"
+                  >
+                    {SITE.phone}
+                  </Link>
+                  <p className="text-text-muted text-xs font-bold tracking-widest ">
+                    WhatsApp same number
+                  </p>
+                </div>
+              </div>
+              <div className="grid gap-2">
+                <CTA id="callNow" className="w-full" />
+                <CTA id="whatsapp" buttonVariant="outline" className="w-full" />
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-surface h-full overflow-hidden rounded-2xl border-white/[0.08] shadow-2xl">
+            <CardContent className="flex h-full flex-col justify-between gap-8 p-8">
+              <div className="space-y-4">
+                <Clock className="text-primary size-6" />
+                <CardHeading as="h3" className="text-xl">
+                  Hours
+                </CardHeading>
+                <div className="space-y-1">
+                  <p className="text-text-base text-sm font-bold tracking-tight ">
+                    Open 7 Days
+                  </p>
+                  <p className="text-text-muted text-sm leading-relaxed">
+                    {SITE.timings}
+                  </p>
+                </div>
+              </div>
+              {SITE.instagramUrl && (
+                <CTA
+                  id="instagram"
+                  buttonVariant="outline"
+                  className="w-full"
+                />
+              )}
+            </CardContent>
           </Card>
         </div>
 
-        <DashedLine className="my-12" />
+        <DashedLine className="my-24 opacity-20" />
 
         <div className="mx-auto max-w-2xl">
-          <h2 className="font-heading mb-6 text-xl font-bold uppercase tracking-tight">
-            Send a Message
-          </h2>
+          <div className="mb-12 space-y-4 text-center">
+            <div className="text-primary text-[10px] font-bold tracking-[0.2em] ">
+              Enquiry
+            </div>
+            <h2 className="font-heading text-3xl font-bold tracking-tight ">
+              Send a Message
+            </h2>
+          </div>
           <ContactForm />
         </div>
       </div>

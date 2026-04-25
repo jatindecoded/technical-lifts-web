@@ -13,7 +13,7 @@ export function CardHeading({
 }) {
   const Tag: React.ElementType = as as React.ElementType;
   return (
-    <Tag className={cn("font-heading font-bold tracking-tight uppercase", className)}>
+    <Tag className={cn("font-heading font-bold tracking-tight", className)}>
       {children}
     </Tag>
   );

@@ -48,24 +48,24 @@ export const Navbar = () => {
       <div className="w-full h-4" />
       <div
         className={cn(
-          "bg-background/50 shadow-xl mx-auto rounded-4xl border backdrop-blur-md transition-all duration-300 py-2",
+          "bg-dark/50 shadow-xl mx-auto rounded-4xl border border-white/[0.08] backdrop-blur-md transition-all duration-300 py-1",
         )}
       >
-      <div className="flex items-center justify-between px-6 py-3">
-        <Link href="/" className="flex text-primary shrink-0 items-center gap-2 font-heading font-bold uppercase">
+      <div className="flex items-center justify-between px-6 py-2">
+        <Link href="/" className="flex text-primary shrink-0 items-center gap-2 uppercase font-bold">
           {SITE.name}
         </Link>
 
         {/* Desktop Navigation */}
         <NavigationMenu className="max-lg:hidden">
-          <NavigationMenuList className="flex gap-4 whitespace-nowrap overflow-x-auto no-scrollbar">
+          <NavigationMenuList className="flex gap-4 whitespace-nowrap">
             {NAV_LINKS.map((link) => (
-              <NavigationMenuItem key={link.label} className="">
+              <NavigationMenuItem key={link.label}>
                 <button
                   onClick={() => handleNavClick(link.href)}
                   className={cn(
-                    "relative bg-transparent px-1.5 text-sm uppercase transition-opacity hover:opacity-75",
-                    pathname === link.href && "text-muted-foreground",
+                    "relative bg-transparent px-2 text-sm uppercase font-medium transition-opacity hover:opacity-75",
+                    pathname === link.href && "border p-2 rounded-xl border-primary",
                   )}
                 >
                   {link.label}
@@ -75,10 +75,10 @@ export const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Auth Buttons */}
+        {/* CTA */}
         <div className="flex items-center gap-2.5">
           <div className="max-lg:hidden">
-            <CTA buttonVariant="outline" />
+            <CTA id="trial" />
           </div>
 
           {/* Hamburger Menu Button (Mobile Only) */}
