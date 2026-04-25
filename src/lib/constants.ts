@@ -78,6 +78,7 @@ export const TRUST_BAR = [
   { label: "100+ Google Reviews", iconName: "Star" },
   { label: "5+ Certified Trainers", iconName: "Users" },
   { label: "Vikaspuri's Top-Rated Gym", iconName: "Trophy" },
+  { label: "100+ Transformations", iconName: "TrendingUp" },
 ];
 
 // ─── Features / Who It's For ──────────────────────────────────────────────────
@@ -237,43 +238,38 @@ export interface Trainer {
   certification: string;
   speciality: string;
   photo: string;
+  experience?: string;
+  results?: string;
+  approach?: string;
 }
 
 export const TRAINERS: Trainer[] = [
   {
-    name: "Trainer Name",
-    certification: "ISSA CPT",
-    speciality: "Strength & Hypertrophy",
-    // Replace with: /gym/trainers/trainer-1.webp
-    photo: "/gym/trainers/trainer-1.webp",
+    name: "Amit Kumar",
+    certification: "ACE Certified Personal Trainer, CPR & First Aid",
+    speciality: "Strength Training & Fat Loss",
+    experience: "4 Years",
+    results: "Helped 40+ clients lose 6–10 kg",
+    approach: "Focuses on simple, sustainable routines for busy professionals",
+    photo: "/trainer-photos/DSC03356.JPG.jpeg",
   },
   {
-    name: "Trainer Name",
-    certification: "ACE CPT",
-    speciality: "Weight Loss & Cardio",
-    // Replace with: /gym/trainers/trainer-2.webp
-    photo: "/gym/trainers/trainer-2.webp",
+    name: "Sunny",
+    certification: "K11 Certified Fitness Trainer, Functional Training Specialist",
+    speciality: "Functional Fitness & Mobility",
+    experience: "6 Years",
+    results: "Improved strength & flexibility for 30+ beginner clients",
+    approach: "Beginner-friendly coaching with focus on correct form & injury prevention",
+    photo: "/trainer-photos/DSC03357.JPG.jpeg",
   },
   {
-    name: "Trainer Name",
-    certification: "ISSA CPT",
-    speciality: "Functional Fitness",
-    // Replace with: /gym/trainers/trainer-3.webp
-    photo: "/gym/trainers/trainer-3.webp",
-  },
-  {
-    name: "Trainer Name",
-    certification: "ACE CPT",
-    speciality: "Muscle Building",
-    // Replace with: /gym/trainers/trainer-4.webp
-    photo: "/gym/trainers/trainer-4.webp",
-  },
-  {
-    name: "Trainer Name",
-    certification: "ISSA CPT",
-    speciality: "Beginner Programs",
-    // Replace with: /gym/trainers/trainer-5.webp
-    photo: "/gym/trainers/trainer-5.webp",
+    name: "Surender",
+    certification: "Gold’s Gym Fitness Institute Certified, Nutrition Basics",
+    speciality: "Muscle Building & Body Transformation",
+    experience: "5 Years",
+    results: "Helped 25+ clients gain lean muscle and improve physique",
+    approach: "Structured workout plans with practical diet guidance",
+    photo: "/trainer-photos/DSC03359.JPG.jpeg",
   },
 ];
 

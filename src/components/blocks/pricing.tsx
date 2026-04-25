@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CardHeading } from "@/components/ui/card-heading";
 import { CTA } from "@/components/ui/cta";
+import UnifiedForm, { Field, Input, Select } from "@/components/ui/unified-form";
 import { PRICING_PLANS, PRICING_SECTION, SITE, CONTACT_FORM } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -26,23 +27,14 @@ const item = {
 
 // Simple inline lead form used only on this block. Keeps pricing and lead together as requested.
 function LeadForm({ onSuccess }: { onSuccess: () => void }) {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [inquiry, setInquiry] = useState("membership");
-  const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitting(true);
-    try {
-      // Simulate submission; integrate real API where needed.
-      await new Promise((r) => setTimeout(r, 700));
-      setSuccess(true);
-      onSuccess();
-    } finally {
-      setSubmitting(false);
-    }
+    // Simulate submission; integrate real API where needed.
+    await new Promise((r) => setTimeout(r, 700));
+    setSuccess(true);
+    onSuccess();
   }
 
   if (success) {
@@ -55,49 +47,27 @@ function LeadForm({ onSuccess }: { onSuccess: () => void }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3 rounded-xl bg-surface p-6">
+    <UnifiedForm onSubmit={handleSubmit} showWrapper={false} submitLabel={CONTACT_FORM.submitLabel} submittingLabel={CONTACT_FORM.submittingLabel}>
       <h4 className="font-heading text-lg uppercase">{CONTACT_FORM.heading}</h4>
 
-      <label className="block text-sm">
-        <span className="sr-only">Name</span>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Your name"
-          className="mt-1 w-full rounded-md bg-muted px-3 py-2 text-text-base"
-          required
-        />
-      </label>
+      <Field>
+        <Input placeholder="Your name" name="name" required />
+      </Field>
 
-      <label className="block text-sm">
-        <span className="sr-only">Phone or WhatsApp</span>
-        <input
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          placeholder="Phone or WhatsApp"
-          className="mt-1 w-full rounded-md bg-muted px-3 py-2 text-text-base"
-          required
-        />
-      </label>
+      <Field>
+        <Input placeholder="Phone or WhatsApp" name="phone" required />
+      </Field>
 
-      <label className="block text-sm">
-        <select
-          value={inquiry}
-          onChange={(e) => setInquiry(e.target.value)}
-          className="mt-1 w-full rounded-md bg-muted px-3 py-2 text-text-base"
-        >
+      <Field>
+        <Select name="inquiry">
           {CONTACT_FORM.inquiryOptions.map((opt) => (
             <option key={opt.value} value={opt.value}>
               {opt.label}
             </option>
           ))}
-        </select>
-      </label>
-
-      <Button type="submit" className="w-full" disabled={submitting}>
-        {submitting ? CONTACT_FORM.submittingLabel : CONTACT_FORM.submitLabel}
-      </Button>
-    </form>
+        </Select>
+      </Field>
+    </UnifiedForm>
   );
 }
 
