@@ -2,14 +2,13 @@
 
 import React from "react";
 
-
 import Link from "next/link";
 
 import { motion } from "framer-motion";
 
 import { DashedLine } from "../dashed-line";
+import { SectionHeader } from "../ui/section-header";
 
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -17,22 +16,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {
-  SITE,
-  TRANSFORMATIONS,
-  TRANSFORMATIONS_SECTION,
-} from "@/lib/constants";
+import { TRANSFORMATIONS, TRANSFORMATIONS_SECTION, SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
-// motion tokens
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.06 } },
+  show: { transition: { staggerChildren: 0.1 } },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 export const Testimonials = ({
@@ -44,18 +38,16 @@ export const Testimonials = ({
 }) => {
   return (
     <>
-      <motion.section id="transformations" className={cn("overflow-hidden py-24 lg:py-32", className)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} variants={container}>
+      <motion.section id="transformations" className={cn("overflow-hidden py-section bg-surface", className)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} variants={container}>
         <div className="container">
-          <div className="space-y-3">
-            <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl text-center">
-              {TRANSFORMATIONS_SECTION.heading}
-            </h2>
-            <p className="text-muted-foreground text-center text-sm md:text-base">
-              {TRANSFORMATIONS_SECTION.subheading}
-            </p>
-          </div>
+          <SectionHeader 
+            badge="Success Stories"
+            title={TRANSFORMATIONS_SECTION.heading}
+            description={TRANSFORMATIONS_SECTION.subheading}
+            className="mb-12"
+          />
 
-          <div className="relative mt-8 -mr-[max(3rem,calc((100vw-80rem)/2+3rem))] md:mt-12 lg:mt-16">
+          <div className="relative mt-12 -mr-[max(3rem,calc((100vw-80rem)/2+3rem))] lg:mt-20">
             <Carousel
               opts={{ align: "start", loop: true }}
               className="w-full"
@@ -64,56 +56,54 @@ export const Testimonials = ({
                 {TRANSFORMATIONS.map((transformation, index) => (
                   <CarouselItem
                     key={index}
-                    className="xl:basis-1/3.5 grow basis-4/5 sm:basis-3/5 md:basis-2/5 lg:basis-[28%] 2xl:basis-[24%]"
+                    className="xl:basis-1/3.5 grow basis-4/5 sm:basis-3/5 md:basis-2/5 lg:basis-[28%] 2xl:basis-[24%] flex"
                   >
-                    <motion.div variants={item}>
-                      <Card className="bg-muted h-full overflow-hidden border-none">
-                        <CardContent className="flex h-full flex-col p-0">
-                          <div className="h-36 lg:h-44 flex-none bg-gradient-to-br from-primary/10 via-surface to-muted/10 flex items-center justify-center">
-                            <motion.div whileHover={{ y: -6 }} transition={{ type: 'spring', stiffness: 260, damping: 18 }} className="px-6 text-center">
-                              <div className="text-xs uppercase tracking-widest text-primary font-heading">Transformation</div>
-                              <div className="mt-2 text-2xl font-heading font-bold leading-tight text-text-base">{transformation.name}</div>
-                            </motion.div>
+                    <motion.div variants={item} className="flex-1">
+                      <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.08] bg-dark shadow-2xl transition-all hover:border-primary/20">
+                        <div className="flex-none bg-linear-to-br from-primary/5 via-surface to-dark/5 p-10 text-center">
+                          <motion.div whileHover={{ scale: 1.05 }} transition={{ type: 'spring', stiffness: 260, damping: 18 }}>
+                            <div className="text-[10px] font-bold tracking-[0.2em] text-primary ">Transformation</div>
+                            <div className="mt-4 text-3xl font-extrabold tracking-tighter text-text-base font-heading">{transformation.name}</div>
+                          </motion.div>
                           </div>
-                          <div className="flex flex-1 flex-col justify-between gap-6 p-6">
-                            <blockquote className="font-heading text-xl font-bold leading-tight tracking-tight md:text-2xl">
-                              {transformation.result}
-                            </blockquote>
-                            <div className="space-y-0.5">
-                              <div className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
-                                {transformation.name}
-                              </div>
-                              <div className="text-muted-foreground text-sm">
-                                {transformation.duration}
-                              </div>
+                          <div className="flex flex-1 flex-col justify-between gap-10 p-10">
+                          <blockquote className="text-xl font-bold italic leading-tight text-text-base md:text-2xl font-heading">
+                            "{transformation.result}"
+                          </blockquote>
+                          <div className="space-y-1">
+                            <div className="text-xs font-bold tracking-widest text-primary font-heading ">
+                              {transformation.name}
+                            </div>
+                            <div className="text-text-muted text-sm font-medium">
+                              {transformation.duration}
                             </div>
                           </div>
-                        </CardContent>
-                      </Card>
+                        </div>
+                      </div>
                     </motion.div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="mt-8 flex gap-3">
-                <CarouselPrevious className="bg-muted hover:bg-muted/80 static size-14 translate-x-0 translate-y-0 transition-colors [&>svg]:size-6 lg:[&>svg]:size-8" />
-                <CarouselNext className="bg-muted hover:bg-muted/80 static size-14 translate-x-0 translate-y-0 transition-colors [&>svg]:size-6 lg:[&>svg]:size-8" />
+              <div className="mt-12 flex gap-4">
+                <CarouselPrevious className="static size-14 translate-x-0 translate-y-0 border-white/[0.08] bg-dark hover:bg-dark/80 transition-all [&>svg]:size-6" />
+                <CarouselNext className="static size-14 translate-x-0 translate-y-0 border-white/[0.08] bg-dark hover:bg-dark/80 transition-all [&>svg]:size-6" />
               </div>
             </Carousel>
           </div>
 
-          <p className="mt-8">
+          <motion.p variants={item} className="mt-12">
             <Link
               href={SITE.googleReviewsUrl || "#"}
-              className="font-heading text-sm uppercase tracking-wide text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
+              className="text-xs font-bold tracking-widest text-text-muted underline underline-offset-8 transition-colors hover:text-primary"
             >
               {TRANSFORMATIONS_SECTION.googleReviewsLine}
             </Link>
-          </p>
+          </motion.p>
         </div>
       </motion.section>
       <DashedLine
         orientation="horizontal"
-        className={cn("mx-auto max-w-[80%]", dashedLineClassName)}
+        className={cn("opacity-20", dashedLineClassName)}
       />
     </>
   );

@@ -10,12 +10,12 @@ export const SITE = {
   whatsapp: "+91-89205-76059",
   address: "C-596, Vikas Puri, Near PVR Cinema, New Delhi - 110018",
   // TODO: Add Google Maps URL for the gym when available
-  googleMapsUrl: "",
+  googleMapsUrl: "https://share.google/NEvGaP2XWNLfYDD6k",
   // TODO: Add Instagram handle URL
-  instagramUrl: "",
+  instagramUrl: "https://www.instagram.com/technicallifts_gym/",
   // TODO: Add Google Reviews URL
-  googleReviewsUrl: "",
-  trialCTA: "Book Free Trial OKOKOK",
+  googleReviewsUrl: "https://share.google/NEvGaP2XWNLfYDD6k",
+  trialCTA: "Book Free Trial",
   trialSubtext: "Free for website visitors. Walk-ins pay ₹500.",
   secondaryCTA: "See Membership Plans",
   timings: "Open 7 Days  |  5AM – 12AM (Midnight)",
@@ -33,7 +33,10 @@ export const NAV_LINKS = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const FOOTER_NAV = NAV_LINKS.map(({ label, href }) => ({ name: label, href }));
+export const FOOTER_NAV = NAV_LINKS.map(({ label, href }) => ({
+  name: label,
+  href,
+}));
 
 export const FOOTER_LEGAL = [{ name: "Privacy Policy", href: "/privacy" }];
 
@@ -75,10 +78,13 @@ export const HERO_FEATURES = [
 // ─── Trust Bar ────────────────────────────────────────────────────────────────
 
 export const TRUST_BAR = [
-  { label: "100+ Google Reviews", iconName: "Star" },
-  { label: "5+ Certified Trainers", iconName: "Users" },
-  { label: "Vikaspuri's Top-Rated Gym", iconName: "Trophy" },
-  { label: "100+ Transformations", iconName: "TrendingUp" },
+  { label: "Elite Equipment", iconName: "Trophy" },
+  { label: "100+ Success Stories", iconName: "Star" },
+  { label: "Certified Coaching", iconName: "Users" },
+  { label: "Results Focused", iconName: "TrendingUp" },
+  { label: "Science Based", iconName: "Target" },
+  { label: "Community Driven", iconName: "Users" },
+  { label: "Open 7 Days", iconName: "Star" },
 ];
 
 // ─── Features / Who It's For ──────────────────────────────────────────────────
@@ -113,6 +119,8 @@ export const FACILITIES = [
   "Squat Racks",
   "Dedicated Deadlift Platforms",
   "Full Machine Section",
+  "Chiller Zone",
+  "Steam Room",
   "Cardio Zone",
   "Locker Rooms",
   "Parking Available",
@@ -146,19 +154,60 @@ export const TRIAL_CTA = {
 };
 
 // Centralised CTA registry — use CTA component with id to change labels/targets globally
-export const CTA_REGISTRY: Record<string, { label: string; href: string; variant?: "default" | "outline" }> = {
-  trial: { label: TRIAL_CTA.primaryCTA, href: TRIAL_CTA.primaryCtaHref, variant: "default" },
-  trialSecondary: { label: TRIAL_CTA.secondaryCTA, href: TRIAL_CTA.secondaryCtaHref, variant: "outline" },
-  personalTraining: { label: FEATURE_SECTIONS.personalTrainingCTA, href: FEATURE_SECTIONS.personalTrainingCtaHref, variant: "outline" },
+export const CTA_REGISTRY: Record<
+  string,
+  { label: string; href: string; variant?: "default" | "outline" }
+> = {
+  trial: {
+    label: TRIAL_CTA.primaryCTA,
+    href: TRIAL_CTA.primaryCtaHref,
+    variant: "default",
+  },
+  trialSecondary: {
+    label: TRIAL_CTA.secondaryCTA,
+    href: TRIAL_CTA.secondaryCtaHref,
+    variant: "outline",
+  },
+  personalTraining: {
+    label: FEATURE_SECTIONS.personalTrainingCTA,
+    href: FEATURE_SECTIONS.personalTrainingCtaHref,
+    variant: "outline",
+  },
   bookContact: { label: SITE.trialCTA, href: "/contact", variant: "default" },
-  mapsOpen: { label: "Open in Maps", href: SITE.googleMapsUrl || "https://maps.google.com/?q=C-596%2C+Vikas+Puri%2C+Near+PVR+Cinema%2C+New+Delhi+-+110018", variant: "outline" },
+  mapsOpen: {
+    label: "Open in Maps",
+    href:
+      SITE.googleMapsUrl ||
+      "https://maps.google.com/?q=C-596%2C+Vikas+Puri%2C+Near+PVR+Cinema%2C+New+Delhi+-+110018",
+    variant: "outline",
+  },
   callNow: { label: "Call Now", href: `tel:${SITE.phone}`, variant: "default" },
-  whatsapp: { label: "WhatsApp", href: `https://wa.me/${(SITE.whatsapp || SITE.phone).replace(/\D/g, "")}`, variant: "outline" },
-  instagram: { label: "Instagram", href: SITE.instagramUrl || "#", variant: "outline" },
-  pricingContact: { label: "Get Started", href: "/contact?inquiry=membership", variant: "default" },
-  seePricing: { label: SITE.secondaryCTA, href: "/#pricing", variant: "outline" },
+  whatsapp: {
+    label: "WhatsApp",
+    href: `https://wa.me/${(SITE.whatsapp || SITE.phone).replace(/\D/g, "")}`,
+    variant: "outline",
+  },
+  instagram: {
+    label: "Instagram",
+    href: SITE.instagramUrl || "#",
+    variant: "outline",
+  },
+  pricingContact: {
+    label: "Get Started",
+    href: "/contact?inquiry=membership",
+    variant: "default",
+  },
+  seePricing: {
+    label: SITE.secondaryCTA,
+    href: "/#pricing",
+    variant: "outline",
+  },
   home: { label: "Back to Home", href: "/", variant: "outline" },
-  contactSupport: { label: "Contact Support", href: "/contact", variant: "outline" },
+  contactSupport: {
+    label: "Contact Support",
+    href: "/contact",
+    variant: "outline",
+  },
 };
 
 // ─── Gym Stats (About page) ───────────────────────────────────────────────────
@@ -203,7 +252,8 @@ export const GYM_HIGHLIGHTS = [
   {
     stat: "5AM–12AM",
     label: "Every day",
-    description: "The gym is open seven days a week, including public holidays.",
+    description:
+      "The gym is open seven days a week, including public holidays.",
   },
   {
     stat: "₹3,000",
@@ -228,9 +278,9 @@ export const GYM_HIGHLIGHTS = [
 
 export const TRAINERS_SECTION = {
   id: "trainers",
-  heading: "The People Behind Your Progress",
+  heading: "Expert Coaching",
   subline:
-    "Every trainer is certified and has helped real members hit real goals.",
+    "Our certified trainers don't just count reps. They build the technical foundation you need for lifelong progress.",
 };
 
 export interface Trainer {
@@ -238,9 +288,9 @@ export interface Trainer {
   certification: string;
   speciality: string;
   photo: string;
-  experience?: string;
-  results?: string;
-  approach?: string;
+  experience: string;
+  results: string;
+  approach: string;
 }
 
 export const TRAINERS: Trainer[] = [
@@ -255,11 +305,13 @@ export const TRAINERS: Trainer[] = [
   },
   {
     name: "Sunny",
-    certification: "K11 Certified Fitness Trainer, Functional Training Specialist",
+    certification:
+      "K11 Certified Fitness Trainer, Functional Training Specialist",
     speciality: "Functional Fitness & Mobility",
     experience: "6 Years",
     results: "Improved strength & flexibility for 30+ beginner clients",
-    approach: "Beginner-friendly coaching with focus on correct form & injury prevention",
+    approach:
+      "Beginner-friendly coaching with focus on correct form & injury prevention",
     photo: "/trainer-photos/DSC03357.JPG.jpeg",
   },
   {
@@ -273,6 +325,20 @@ export const TRAINERS: Trainer[] = [
   },
 ];
 
+// ─── Founder ──────────────────────────────────────────────────────────────────
+
+export const FOUNDER = {
+  name: "Paramjit Singh Bindra",
+  title: "Founder & Head of Strength",
+  bio: "With over a decade of elite management and training experience from industry giants like Gold’s Gym and Fitness First, Paramjit founded Technical Lifts to deliver real, measurable results. A specialist in Nutrition (NESTA) and precision mechanics (GGU), he is committed to building a gym that prioritizes technical mastery over ego. At Technical Lifts, we don't just provide a space to lift — we provide the system to transform.",
+  highlights: [
+    "Former Club Manager at Transfitness & Athlesis",
+    "GGU & NESTA Certified Specialist",
+    "Recipient of 'Best Personal Trainer' Awards",
+    "Expert in Strength Mechanics & Nutrition",
+  ],
+  photo: "/photos-og/param.webp",
+};
 // ─── Transformations ─────────────────────────────────────────────────────────
 
 export const TRANSFORMATIONS_SECTION = {
@@ -290,32 +356,46 @@ export interface Transformation {
 
 export const TRANSFORMATIONS: Transformation[] = [
   {
-    name: "Priya",
-    result: "Lost 14kg",
-    duration: "5 months",
-    // TODO: Replace with: /gym/transformations/priya.webp
-    photo: "/gym/transformations/priya.webp",
-  },
-  {
     name: "Arjun",
-    result: "Gained 8kg lean muscle",
-    duration: "4 months",
-    // TODO: Replace with: /gym/transformations/arjun.webp
+    result:
+      "Lost 12kg and finally fixed my chronic lower back pain through deadlifting.",
+    duration: "6 Months",
     photo: "/gym/transformations/arjun.webp",
   },
   {
+    name: "Priya",
+    result:
+      "Went from zero lifting experience to squatting 60kg for reps. Strength feels amazing.",
+    duration: "4 Months",
+    photo: "/gym/transformations/priya.webp",
+  },
+  {
     name: "Rahul",
-    result: "Lost 10kg",
-    duration: "3 months",
-    // TODO: Replace with: /gym/transformations/rahul.webp
+    result:
+      "Dropped 8% body fat while increasing my bench press by 20kg. Highly technical coaching.",
+    duration: "3 Months",
     photo: "/gym/transformations/rahul.webp",
   },
   {
     name: "Sneha",
-    result: "First fitness goal hit",
-    duration: "6 weeks",
-    // TODO: Replace with: /gym/transformations/sneha.webp
+    result:
+      "Recovered from a shoulder injury and built serious muscle definition. Best gym in Vikaspuri.",
+    duration: "5 Months",
     photo: "/gym/transformations/sneha.webp",
+  },
+  {
+    name: "Vikram",
+    result:
+      "Finally understood how to track macros and train with intensity. Gained 5kg of lean muscle.",
+    duration: "8 Months",
+    photo: "/gym/gallery/hero.webp",
+  },
+  {
+    name: "Ishani",
+    result:
+      "Coaching here is different. It's about mechanics, not just sweating. Changed my life.",
+    duration: "1 Year",
+    photo: "/gym/gallery/trainer.webp",
   },
 ];
 
@@ -328,7 +408,9 @@ export const PRICING_SECTION = {
   footnote:
     "Personal Training pricing is customized. Talk to us — no commitment required.",
   // Message shown when prices are locked until lead form submission
-  lockedMessage: "Submit the membership form to reveal exact prices. Fill the form — it only takes a minute.",
+  lockedMessage:
+    "Submit the membership form to reveal exact prices. Fill the form — it only takes a minute.",
+  pricePlaceholder: "₹XXXX",
 };
 
 export interface PricingPlan {
@@ -463,9 +545,11 @@ export const CONTACT_FORM = {
   heading: "Send a Message",
   submitLabel: "Send Message",
   submittingLabel: "Sending...",
-  successHeading: "Message Sent",
+  successHeading: "Here you go.",
   successBody:
     "We'll get back to you within a few hours. Or just call us directly.",
+  namePlaceholder: "Your name",
+  phonePlaceholder: "Phone or WhatsApp",
   inquiryOptions: [
     { value: "trial", label: "Book a free trial" },
     { value: "membership", label: "Membership enquiry" },
@@ -495,40 +579,62 @@ export const CONTACT_FORM = {
 export const IMAGE_ASSETS = {
   hero: {
     // TODO: Replace with: /gym/gallery/hero.webp
-    src: "/gym/gallery/hero.webp",
+    src: "/photos-og/DSC02572.webp",
     alt: "Group training inside Technical Lifts gym",
   },
   whoItsFor: [
     {
       // TODO: Replace with: /gym/gallery/equipment.webp
-      src: "/gym/gallery/equipment.webp",
+      src: "/photos-og/DSC02562.webp",
       alt: "Gym equipment and machine setup",
     },
     {
       // TODO: Replace with: /gym/gallery/kettlebells.webp
-      src: "/gym/gallery/kettlebells.webp",
+      src: "/photos-og/DSC02566.webp",
       alt: "Kettlebells and strength equipment",
     },
     {
-      // TODO: Replace with: /gym/gallery/trainer.webp
-      src: "/gym/gallery/trainer.webp",
-      alt: "Trainer standing with arms crossed",
+      // TODO: Replace with: /gym/gallery/about-2.webp
+      src: "/photos-og/DSC02584.webp",
+      alt: "Member resting between sets",
+    },
+    {
+      src: "/photos-og/DSC02625.webp",
+      alt: "Trainer at Technical Lifts",
+    },
+    {
+      src: "/photos-og/DSC02621.webp",
+      alt: "Trainer at Technical Lifts",
+    },
+    {
+      src: "/photos-og/DSC02579.webp",
+      alt: "Trainer at Technical Lifts",
+    },
+    {
+      // TODO: Replace with: /gym/gallery/personal-training.webp
+      src: "/photos-og/DSC02572.webp",
+      alt: "Member holding dumbbells in gym",
+    },
+    {
+      // TODO: Replace with: /gym/gallery/personal-training.webp
+      src: "/photos-og/DSC02652.webp",
+      alt: "Member holding dumbbells in gym",
     },
   ],
   personalTraining: {
     // TODO: Replace with: /gym/gallery/personal-training.webp
-    src: "/gym/gallery/personal-training.webp",
+    src: "/photos-og/DSC02572.webp",
     alt: "Member holding dumbbells in gym",
   },
   about: [
     {
       // TODO: Replace with: /gym/gallery/about-1.webp
-      src: "/gym/about/about-1.webp",
+      src: "/photos-og/DSC02579.webp",
       alt: "Trainer at Technical Lifts",
     },
     {
       // TODO: Replace with: /gym/gallery/about-2.webp
-      src: "/gym/about/about-2.webp",
+      src: "/photos-og/DSC02584.webp",
       alt: "Member resting between sets",
     },
     {
@@ -651,7 +757,7 @@ export const BLOG_POSTS = [
 
       "TODO: Add local member testimonial or case study here (image and specific numbers).",
 
-      "TODO: Add links to practical resources (beginner warm-up video, movement screening PDF) — replace with final assets when available."
+      "TODO: Add links to practical resources (beginner warm-up video, movement screening PDF) — replace with final assets when available.",
     ],
     meta: {
       description:
@@ -662,7 +768,8 @@ export const BLOG_POSTS = [
   {
     slug: "strength-program-basics",
     title: "Strength Program Basics",
-    excerpt: "A practical primer on sets, reps, frequency and how to build strength without overtraining.",
+    excerpt:
+      "A practical primer on sets, reps, frequency and how to build strength without overtraining.",
     content: [
       "Strength training can feel complicated because of noise: conflicting articles, flashy programs and social-media extremes. Technical Lifts removes the noise with practical rules that produce consistent results. This guide spells out the building blocks — movement selection, session structure, progression rules, frequency, recovery and simple troubleshooting — so members in Vikaspuri can train smarter and longer.",
 
@@ -694,7 +801,6 @@ export const BLOG_POSTS = [
       "- Upper A / Lower A / Upper B / Lower B with varying emphases (heavy/light)",
 
       "3) Time-rich trainee — 5x/week with clear mesocycle objectives (volume blocks or intensity blocks)",
-
 
       "Quality over quantity: technical practice. Technique is the rate-limiter. Investing the first sets of a session in purposeful technical practice (lighter sets with focus on position, tempo, and breathing) pays dividends. Coaches teach bracing, breathing under load, and efficient bar path so heavy work becomes safer and more productive. Regular technical cues and short finishers maintain motor patterns between heavy sessions.",
 
@@ -730,15 +836,19 @@ export const BLOG_POSTS = [
       "- Schedule a light deload week every 4–8 weeks",
       "- Prioritise protein and sleep",
 
-      "TODO: Expand with local Vikaspuri examples, printable 3x/week PDF and downloadable grocery list (add assets when available)."
+      "TODO: Expand with local Vikaspuri examples, printable 3x/week PDF and downloadable grocery list (add assets when available).",
     ],
-    meta: { description: "Strength training fundamentals from Technical Lifts — practical, evidence-based, and human-centered." },
+    meta: {
+      description:
+        "Strength training fundamentals from Technical Lifts — practical, evidence-based, and human-centered.",
+    },
   },
 
   {
     slug: "nutrition-for-performance",
     title: "Nutrition for Performance",
-    excerpt: "Simple, sustainable nutrition advice that supports training and recovery.",
+    excerpt:
+      "Simple, sustainable nutrition advice that supports training and recovery.",
     content: [
       "Nutrition is the silent partner of every training program — it determines whether the metres you run and the kilos you lift translate into long-term progress. At Technical Lifts, the nutrition approach is pragmatic: use local foods, create repeatable habits, and prioritise the small actions that compound into measurable results. This guide is written for Vikaspuri members who need realistic, actionable steps that fit busy lives rather than brittle, complicated regimens.",
 
@@ -828,14 +938,18 @@ export const BLOG_POSTS = [
 
       "TODO: Add downloadable 3x/week printable plan, sample grocery list PDF, and two local recipe cards (images/links) when assets are available.",
 
-      "TODO: Add short recipe cards (3–4) that are Vikaspuri-friendly and quick to prepare."
+      "TODO: Add short recipe cards (3–4) that are Vikaspuri-friendly and quick to prepare.",
     ],
-    meta: { description: "Practical nutrition tips that help you train harder and recover better." },
+    meta: {
+      description:
+        "Practical nutrition tips that help you train harder and recover better.",
+    },
   },
   {
     slug: "recovery-and-mobility",
     title: "Recovery & Mobility",
-    excerpt: "Focused strategies to keep you training consistently and reduce injury risk.",
+    excerpt:
+      "Focused strategies to keep you training consistently and reduce injury risk.",
     content: [
       "Recovery and mobility are not optional extras — they are the infrastructure that allows training to accumulate. At Technical Lifts we frame recovery as the deliberate choices members make between sessions: sleep, movement quality, nutrition, and programmed rest. For residents of Vikaspuri who balance work, family and commuting, recovery must be efficient, evidence-based and realistic. This longform guide explains why recovery matters, what to prioritise, and how to adopt simple daily habits that reduce injury risk and accelerate progress.",
 
@@ -879,15 +993,19 @@ export const BLOG_POSTS = [
 
       "TODO: Add local physiotherapist contact list and downloadable 5-minute mobility routines (images/video links).",
 
-      "TODO: Add two short member recovery stories with before/after metrics and supporting photos."
+      "TODO: Add two short member recovery stories with before/after metrics and supporting photos.",
     ],
-    meta: { description: "Recovery and mobility routines that keep you training longer and stronger." },
+    meta: {
+      description:
+        "Recovery and mobility routines that keep you training longer and stronger.",
+    },
   },
   // Additional blog placeholders — expand to 2500+ words each (TODO)
   {
     slug: "training-variations",
     title: "Training Variations & Periodisation",
-    excerpt: "How to use phases, deloads and planned variation to sustain progress over months and years.",
+    excerpt:
+      "How to use phases, deloads and planned variation to sustain progress over months and years.",
     content: [
       "Introduction",
       "Sustained progress in strength and conditioning rarely comes from repeating the exact same session week after week. At Technical Lifts, the lifter who makes the most reliable gains is the one who treats training like a planned cycle rather than a single day. This article explains practical periodisation and variation strategies that local members of Vikaspuri can use to keep improving while staying healthy. It covers the why, the how, sample 12-week phases, deloading, program templates for beginners to experienced lifters, monitoring, and ready-to-use checklists — all tailored to a high-intensity, editorial gym style.",
@@ -1009,12 +1127,16 @@ export const BLOG_POSTS = [
       "- Add downloadable 12-week printable PDF (TODO)",
       "- Replace anonymized case study with permissioned photo/metrics when available (TODO)",
     ],
-    meta: { description: "Practical guide to periodisation, deloading and planned variation for gym members in Vikaspuri." },
+    meta: {
+      description:
+        "Practical guide to periodisation, deloading and planned variation for gym members in Vikaspuri.",
+    },
   },
   {
     slug: "local-nutrition-guide-vikaspuri",
     title: "Local Nutrition Guide — Vikaspuri Edition",
-    excerpt: "Practical meal and grocery strategies using local food to support training and recovery.",
+    excerpt:
+      "Practical meal and grocery strategies using local food to support training and recovery.",
     content: [
       "This local guide turns broad nutrition principles into practical actions you can use in Vikaspuri markets and kitchens. It focuses on affordable, familiar foods, simple meal templates, and small habits that support training without demanding extra time or money.",
 
@@ -1084,13 +1206,17 @@ export const BLOG_POSTS = [
 
       "TODO: Add printable 3x/week meal templates, a Vikaspuri grocery checklist PDF, and two quick recipe cards with local images when assets are available.",
     ],
-    meta: { description: "A realistic nutrition playbook for trainees in Vikaspuri and nearby neighbourhoods." },
+    meta: {
+      description:
+        "A realistic nutrition playbook for trainees in Vikaspuri and nearby neighbourhoods.",
+    },
   },
 
   {
     slug: "member-stories-vikaspuri",
     title: "Member Stories: Vikaspuri Transformations",
-    excerpt: "Case studies from local members — goals, programming and the results achieved.",
+    excerpt:
+      "Case studies from local members — goals, programming and the results achieved.",
     content: [
       "Member stories are the clearest proof that consistent coaching and a realistic plan work. This collection focuses on real members from Vikaspuri and nearby neighbourhoods — their starting points, the obstacles they faced, the coaching interventions we used, and the measurable outcomes they achieved. Names and photos are anonymised where necessary; when permission is granted we will replace placeholders with full images and precise metrics.",
 
@@ -1135,14 +1261,18 @@ export const BLOG_POSTS = [
       "- Track just one metric consistently — session completion, top-set load, or sleep hours — and review after two weeks",
       "- Treat setbacks as data, not failure; reduce volume or prioritize recovery and return to planned progression once readiness improves",
 
-      "TODO: Add 3–4 fully permissioned, long-form case studies with images, timelines, and downloadable PDF summaries for members who want a guided template."
+      "TODO: Add 3–4 fully permissioned, long-form case studies with images, timelines, and downloadable PDF summaries for members who want a guided template.",
     ],
-    meta: { description: "Real member case studies highlighting long-term, sustainable change." },
+    meta: {
+      description:
+        "Real member case studies highlighting long-term, sustainable change.",
+    },
   },
   {
     slug: "program-design-for-beginners",
     title: "Program Design for Beginners",
-    excerpt: "A step-by-step guide for someone new to the gym: what to prioritise and why.",
+    excerpt:
+      "A step-by-step guide for someone new to the gym: what to prioritise and why.",
     content: [
       "Starting a training program should be simple, predictable and sustainable. This guide breaks down the first 12 weeks of training into clear steps so beginners build strength safely and make steady progress.",
 
@@ -1190,14 +1320,18 @@ export const BLOG_POSTS = [
 
       "15) Next steps and resources. Downloadable 3x/week PDF templates, printable checklists and local meal ideas (TODO: add asset links). Coaches can provide personalised scaling as needed.",
 
-      "TODO: Expand with printable beginner PDF, short tutorial videos, and permissioned example sessions when assets are available."
+      "TODO: Expand with printable beginner PDF, short tutorial videos, and permissioned example sessions when assets are available.",
     ],
-    meta: { description: "How to start training to build strength safely and effectively." },
+    meta: {
+      description:
+        "How to start training to build strength safely and effectively.",
+    },
   },
   {
     slug: "overcoming-plateaus",
     title: "Overcoming Plateaus: Practical Strategies",
-    excerpt: "Why progress stalls and what to change in training, nutrition and recovery to restart gains.",
+    excerpt:
+      "Why progress stalls and what to change in training, nutrition and recovery to restart gains.",
     content: [
       "Plateaus are a natural part of training — they are the signal that adaptation has saturated under the current stimulus. The valuable response is diagnostic, not punitive: understand which systems (neuromuscular, structural, metabolic, or behavioural) are limiting progress and make small, targeted changes. This guide gives a practical, step-by-step blueprint to diagnose plateaus and implement corrective strategies that preserve progress and reduce risk.",
 
@@ -1256,14 +1390,14 @@ export const BLOG_POSTS = [
       "- Week 5–6: Consolidation — select the most effective accessory exercises from weeks 2–3 and stabilise volume for continued progression; plan a light deload after week 6 if fatigue markers rise",
       "- Notes: Increase protein slightly (+10%) during re-accumulation and prioritise post-session carbohydrate on high-volume days.",
 
-      "Example anonymised timeline — \"Priya\" (strength stall to resumed progress):",
+      'Example anonymised timeline — "Priya" (strength stall to resumed progress):',
       "- Baseline: Priya plateaued on her squat for 8 weeks despite consistent attendance; logged top-set reps and noted reduced sleep over the same period",
       "- Intervention week 1: Technique rework with paused squat variations and ankle mobility + reduced accessory volume",
       "- Intervention week 2–3: Added a technique practice session with lighter loads and micro-loading on the main session",
       "- Outcome by week 6: 5% increase in working top-set load and improved squat depth; subjective reduction in perceived exertion for the same load",
       "- Learning: small technical changes + micro-loading and a focus on sleep restored upward trend without radical program change",
 
-      "Example anonymised timeline — \"Arjun\" (hypertrophy stall -> volume re-accumulation):",
+      'Example anonymised timeline — "Arjun" (hypertrophy stall -> volume re-accumulation):',
       "- Baseline: Arjun’s arm and chest measurements stalled despite heavier top sets; reported high daily stress and inconsistent protein intake",
       "- Intervention week 1–3: Volume-first protocol — reduced heavy top-set intensity slightly and increased accessory volume and time-under-tension; improved protein distribution at meals",
       "- Intervention week 4–6: Re-introduced heavier top sets while maintaining accumulated accessory volume",
@@ -1281,12 +1415,16 @@ export const BLOG_POSTS = [
 
       "TODO: Add anonymised timelines as downloadable PDFs and replace with permissioned case images when releases are obtained.",
     ],
-    meta: { description: "A tactical guide to diagnosing and overcoming training plateaus." },
+    meta: {
+      description:
+        "A tactical guide to diagnosing and overcoming training plateaus.",
+    },
   },
   {
     slug: "gym-etiquette-and-safety",
     title: "Gym Etiquette & Safety",
-    excerpt: "Simple rules to keep the training environment respectful, safe and efficient for everyone.",
+    excerpt:
+      "Simple rules to keep the training environment respectful, safe and efficient for everyone.",
     content: [
       "A great gym is built on shared responsibility. Etiquette and safety are not optional niceties — they are the practices that keep training consistent, reduce risk and make the space welcoming for everyone. This guide explains practical rules for members and coaches at Technical Lifts in Vikaspuri.",
 
@@ -1332,15 +1470,19 @@ export const BLOG_POSTS = [
 
       "19) Legal and consent notes. For member photos or transformations, obtain written consent before public use. Respect privacy when sharing progress details publicly — use anonymised data when consent is not granted.",
 
-      "TODO: Add printable etiquette cards for the reception area and a short orientation video for new members. Expand with local emergency contact list and staff first-aid certifications."
+      "TODO: Add printable etiquette cards for the reception area and a short orientation video for new members. Expand with local emergency contact list and staff first-aid certifications.",
     ],
-    meta: { description: "Guidelines to maintain a safe and welcoming gym atmosphere." },
+    meta: {
+      description:
+        "Guidelines to maintain a safe and welcoming gym atmosphere.",
+    },
   },
 
   {
     slug: "strength-starter-guide",
     title: "Strength Training Starter Guide (Vikaspuri)",
-    excerpt: "A practical, step-by-step strength programme for new gym members in Vikaspuri — habits, sample weeks, and progress rules.",
+    excerpt:
+      "A practical, step-by-step strength programme for new gym members in Vikaspuri — habits, sample weeks, and progress rules.",
     content: [
       "Introduction",
       "Starting strength training is both simple and intimidating. For new members of Technical Lifts in Vikaspuri, the key is a plan that respects time, equipment access, and the reality of modern life. This guide gives a full, practical starter programme: how to pick exercises, scale load responsibly, manage nutrition and recovery, and build a habit that lasts beyond the first 12 weeks.",
@@ -1386,12 +1528,16 @@ export const BLOG_POSTS = [
       "- Add printable 3x/week PDF and sample grocery list (TODO: assets/strength-starter.pdf)",
       "- Add member quotes and local meal photos (TODO)",
     ],
-    meta: { description: "Starter strength plan and habit guide for new members in Vikaspuri." },
+    meta: {
+      description:
+        "Starter strength plan and habit guide for new members in Vikaspuri.",
+    },
   },
   {
     slug: "shoulder-health-injury-prevention",
     title: "Shoulder Health & Injury Prevention for Lifters",
-    excerpt: "Evidence-informed strategies to keep shoulders strong and pain-free while pressing, benching, and training overhead.",
+    excerpt:
+      "Evidence-informed strategies to keep shoulders strong and pain-free while pressing, benching, and training overhead.",
     content: [
       "Overview",
       "The shoulder is a complex joint that tolerates heavy loads well when trained intelligently. Many pressing-related issues come from poor movement patterns, inadequate scapular control, and forgotten rotator cuff conditioning. This longform guide provides assessment cues, corrective progressions, programming templates, and a 6-week rehabilitation-friendly protocol suitable for members training at Technical Lifts.",
@@ -1434,12 +1580,16 @@ export const BLOG_POSTS = [
       "- Add demonstration videos for key corrective drills (TODO)",
       "- Add patient-friendly diagrams and referral list (TODO)",
     ],
-    meta: { description: "Prevent shoulder injuries with targeted mobility, cuff work, and programming guidance." },
+    meta: {
+      description:
+        "Prevent shoulder injuries with targeted mobility, cuff work, and programming guidance.",
+    },
   },
   {
     slug: "home-workouts-for-commuters",
     title: "Home Workouts for Busy Commuters",
-    excerpt: "Short, high-value sessions for days when getting to the gym isn't possible.",
+    excerpt:
+      "Short, high-value sessions for days when getting to the gym isn't possible.",
     content: [
       "Overview",
       "Commuting, work, family and the unpredictable schedule of modern life make consistent gym attendance hard. For many Technical Lifts members in Vikaspuri, the most useful training is the kind that can fit into a commute day: 20–30 minutes, low equipment needs, and a clear progression path. This longform guide explains exactly what to do on those days: routines you can complete at home or in a small hotel room, how to progress without heavy weights, how to combine home training with gym sessions, nutrition and recovery rules for busy days, and real-world schedules that match local life in Vikaspuri.",
@@ -1502,7 +1652,7 @@ export const BLOG_POSTS = [
       "Nutrition & recovery for commuter days",
       "On busy days, simple nutrition wins: carry a high-protein snack (boiled eggs, paneer cubes, roasted chana) and aim to hit at least one balanced meal with protein, carbs and vegetables. Hydration matters—carry a refillable bottle and sip consistently, especially during Delhi’s hotter months. Sleep prioritisation remains critical: if the day is stressful and training is light, accept lighter sessions and protect sleep quality.",
       "Managing intensity vs life demands",
-      "Use a simple readiness check before a planned home workout (1–2 quick self-questions): " ,
+      "Use a simple readiness check before a planned home workout (1–2 quick self-questions): ",
       "- Sleep (good/ok/poor)?",
       "- Energy (high/ok/low)?",
       "If both are poor, choose a light mobility or walk session; preserve effort for days when energy and sleep are acceptable. This keeps training sustainable and reduces cumulative fatigue.",
@@ -1536,7 +1686,10 @@ export const BLOG_POSTS = [
       "Home workouts for commuters are not a second-best option — when done with structure, they are a first-rate tool for preserving progress, maintaining health and fitting training into a busy life. The most important rule: plan them intentionally. Choose a template from this guide, track progress, and treat short sessions as non-negotiable anchors in a busy week. Over time, these small sessions compound into meaningful gains.",
       "TODO: Add printable quick routines, downloadable videos, and local equipment supplier links (TODO: assets/home-workouts.zip)",
     ],
-    meta: { description: "Short, effective training routines for members who commute or travel frequently." },
+    meta: {
+      description:
+        "Short, effective training routines for members who commute or travel frequently.",
+    },
   },
 ];
 
@@ -1544,7 +1697,8 @@ export const COMPONENT_PAGES = [
   {
     slug: "hero-variants",
     title: "Hero Variants",
-    excerpt: "A showcase of hero layouts and headline treatments used across the site.",
+    excerpt:
+      "A showcase of hero layouts and headline treatments used across the site.",
     content: [
       "Two-tone headlines, tight tracking, and a single accent word define our hero treatments. Variants show different CTA priorities and visual balance.",
     ],
@@ -1560,7 +1714,8 @@ export const COMPONENT_PAGES = [
   {
     slug: "schedule-pricing",
     title: "Schedule & Pricing",
-    excerpt: "Detailed breakdown of class schedules, membership tiers, and PT booking flow.",
+    excerpt:
+      "Detailed breakdown of class schedules, membership tiers, and PT booking flow.",
     content: [
       "Use this page to deep-link pricing CTAs and provide an expanded explanation of what's included in each plan.",
     ],
@@ -1568,20 +1723,23 @@ export const COMPONENT_PAGES = [
   {
     slug: "member-story",
     title: "Member Story — Ravi",
-    excerpt: "An editorial-style case study documenting one member's transformation.",
+    excerpt:
+      "An editorial-style case study documenting one member's transformation.",
     content: [
       "Ravi arrived at Technical Lifts with sporadic training, inconsistent nutrition, and limited time to train. He wanted results without a programme that demanded his life.",
       "The first step was assessment: movement screening, a simple strength baseline, and a conversation about time and priorities. From there, coaches designed a 16-week plan focused on compound lifts and recovery.",
       "Key changes included three focused sessions per week, small but consistent nutritional improvements, and mobility work to fix movement restrictions that had limited his lifts.",
       "By week 8 Ravi was consistently adding load to his major lifts. By week 16 he reported better posture, a 12% improvement in his main lifts, and most importantly—a sustainable routine he could keep.",
-      "Ravi’s story is typical of our approach: individual assessment, simple programming, consistent coaching, and measurable progress."
+      "Ravi’s story is typical of our approach: individual assessment, simple programming, consistent coaching, and measurable progress.",
     ],
   },
 ];
 
 // quick combined list for routing and sitemap generation
-export const EXTRA_PAGES = [...BLOG_POSTS.map((p) => ({ path: `/blog/${p.slug}`, title: p.title })),
-  ...COMPONENT_PAGES.map((p) => ({ path: `/${p.slug}`, title: p.title }))];
+export const EXTRA_PAGES = [
+  ...BLOG_POSTS.map((p) => ({ path: `/blog/${p.slug}`, title: p.title })),
+  ...COMPONENT_PAGES.map((p) => ({ path: `/${p.slug}`, title: p.title })),
+];
 
 // Page-level headings and small copy used by scaffolding pages
 export const PAGES = {

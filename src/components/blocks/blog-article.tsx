@@ -2,28 +2,20 @@
 
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
-import { Card } from "@/components/ui/card";
 import { CTA } from "@/components/ui/cta";
 import { BLOG_POSTS } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 type PostBase = (typeof BLOG_POSTS)[0];
 type Post = PostBase & { heroImage?: string; heroAlt?: string; pullQuote?: string };
 
 export function BlogArticle({ post }: { post: Post }) {
   const prefersReduced = useReducedMotion();
-
-  const header = {
-    hidden: { opacity: 0, y: 8 },
-    enter: { opacity: 1, y: 0, transition: { duration: 0.45 } },
-  };
-
-  const paragraph = {
-    hidden: { opacity: 0, y: 8 },
-    enter: (i: number) => ({ opacity: 1, y: 0, transition: { delay: 0.08 * i, duration: 0.35 } }),
-  };
 
   const wordCount = post.content.join(" ").split(/\s+/).length;
   const readMins = Math.max(2, Math.round(wordCount / 200));
@@ -32,92 +24,96 @@ export function BlogArticle({ post }: { post: Post }) {
 
   return (
     <article className="py-section max-w-container mx-auto px-6">
-      <motion.header
-        initial={prefersReduced ? false : "hidden"}
-        animate={prefersReduced ? false : "enter"}
-        variants={header}
-        className="mb-8"
-      >
-        <h1 className="text-4xl font-heading tracking-tight leading-none text-text-base uppercase">
-          {post.title}
-        </h1>
-        <p className="mt-3 text-text-muted max-w-2xl">{post.excerpt}</p>
-
-        <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-text-muted">
-          <span className="uppercase tracking-wide font-semibold">{readMins} min read</span>
-          <span className="h-1 w-1 rounded-full bg-white/20 inline-block" aria-hidden />
-          {post.meta?.description && (
-            <span className="text-text-muted">{post.meta.description}</span>
-          )}
-        </div>
-      </motion.header>
-
-      {/* Optional hero image */}
-      {post.heroImage && (
-        <figure className="mb-8">
-          <Image src={post.heroImage} alt={post.heroAlt || post.title} width={1200} height={600} className="w-full rounded-xl object-cover" />
-        </figure>
-      )}
-
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-        <motion.div
-          className="prose prose-invert max-w-none col-span-2 text-text-base"
-          initial={prefersReduced ? false : "hidden"}
-          animate={prefersReduced ? false : "enter"}
+      <div className="max-w-3xl">
+        <motion.header
+          initial={prefersReduced ? false : { opacity: 0, y: 10 }}
+          animate={prefersReduced ? false : { opacity: 1, y: 0 }}
+          className="mb-12"
         >
-          {/* Lead paragraph: larger, more readable */}
-          {post.content.slice(0, 1).map((p, i) => (
-            <motion.p key={i} variants={paragraph} custom={i} className="mb-6 text-lg leading-relaxed">
-              {p}
-            </motion.p>
-          ))}
-
-          {post.content.slice(1).map((p, i) => (
-            <motion.p key={i} variants={paragraph} custom={i + 1} className="mb-6">
-              {p}
-            </motion.p>
-          ))}
-
-          {/* Pull quote placeholder (optional) */}
-          {post.pullQuote && (
-            <blockquote className="my-8 border-l-2 border-white/10 pl-6 italic text-text-muted">{post.pullQuote}</blockquote>
-          )}
-
-          {/* Related posts */}
-          <hr className="my-8 border-white/8" />
-          <div className="mt-6">
-            <h3 className="font-heading text-sm uppercase tracking-tight">Related</h3>
-            <ul className="mt-3 space-y-3">
-              {related.map((r) => (
-                <li key={r.slug}>
-                  <a href={`/blog/${r.slug}`} className="underline underline-offset-4">{r.title}</a>
-                </li>
-              ))}
-            </ul>
+          <div className="mb-6 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+            <span>{readMins} Min Read</span>
+            <span className="h-1 w-1 rounded-full bg-white/20" />
+            <span>Technical Lifts Blog</span>
           </div>
-        </motion.div>
+          <h1 className="uppercase">
+            {post.title}
+          </h1>
+          <p className="text-text-muted mt-6 text-xl font-medium leading-relaxed">
+            {post.excerpt}
+          </p>
+        </motion.header>
 
-        <aside>
-          <Card className="sticky top-24">
-            <h3 className="font-heading text-sm uppercase tracking-tight">Get started</h3>
-            <p className="text-muted-foreground mt-2 text-sm">Book a free trial session or talk to a trainer to discuss programming.</p>
-            <div className="mt-4">
-              <CTA id="trial" />
+        {post.heroImage && (
+          <figure className="mb-12">
+            <div className="relative aspect-[21/9] overflow-hidden rounded-3xl border border-white/[0.08] shadow-2xl">
+              <Image src={post.heroImage} alt={post.heroAlt || post.title} fill className="object-cover  hover:-0 transition-all duration-1000" />
             </div>
-          </Card>
+          </figure>
+        )}
 
-          <Card className="mt-6">
-            <h4 className="font-heading text-xs uppercase tracking-tight">Other resources</h4>
-            <ul className="mt-3 space-y-2 text-sm">
-              <li>
-                <a href="/blog" className="underline underline-offset-4">All blog posts</a>
-              </li>
-              <li>
-                <a href="/transformations" className="underline underline-offset-4">Transformations gallery</a>
-              </li>
-            </ul>
-          </Card>
-        </aside>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-8 space-y-8 text-text-base">
+            <div className="prose prose-invert max-w-none">
+              {post.content.map((p, i) => (
+                <p key={i} className={cn("text-lg leading-relaxed", i === 0 && "text-xl font-medium text-text-base")}>
+                  {p}
+                </p>
+              ))}
+            </div>
+
+            {post.pullQuote && (
+              <blockquote className="my-12 border-l-4 border-primary pl-8 text-2xl font-heading font-bold italic tracking-tight text-text-base">
+                "{post.pullQuote}"
+              </blockquote>
+            )}
+
+            <hr className="border-white/10" />
+            
+            <div className="pt-4">
+              <h3 className="mb-6 text-xs font-bold uppercase tracking-[0.2em] text-text-muted">Related Articles</h3>
+              <div className="grid gap-4">
+                {related.map((r) => (
+                  <Link 
+                    key={r.slug} 
+                    href={`/blog/${r.slug}`}
+                    className="group flex items-center justify-between rounded-xl border border-white/[0.06] bg-surface p-6 transition-all hover:border-primary/20"
+                  >
+                    <span className="font-heading font-bold uppercase group-hover:text-primary transition-colors">{r.title}</span>
+                    <ArrowRight className="size-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-primary" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <aside className="lg:col-span-4 space-y-8">
+            <div className="sticky top-24 space-y-6">
+              <div className="rounded-2xl border border-white/[0.08] bg-surface p-8 shadow-2xl">
+                <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-primary">Get Started</h3>
+                <p className="text-text-muted mb-6 text-sm leading-relaxed">
+                  Ready to apply these principles? Book a free session and let&apos;s build your plan.
+                </p>
+                <CTA id="trial" className="w-full" />
+              </div>
+
+              <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8">
+                <h4 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-text-muted">Navigation</h4>
+                <ul className="space-y-4 text-sm font-bold tracking-widest">
+                  <li>
+                    <Link href="/blog" className="text-text-muted hover:text-primary transition-colors flex items-center gap-2">
+                      <ArrowRight className="size-3" /> All Articles
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/transformations" className="text-text-muted hover:text-primary transition-colors flex items-center gap-2">
+                      <ArrowRight className="size-3" /> Transformations
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
     </article>
   );

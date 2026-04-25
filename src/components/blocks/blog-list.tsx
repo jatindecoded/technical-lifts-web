@@ -34,18 +34,22 @@ export function BlogList() {
           variants={reduce ? undefined : item}
           whileHover={reduce ? undefined : { y: -6 }}
           transition={reduce ? undefined : { type: 'spring', stiffness: 260, damping: 20 }}
-          className="bg-surface border border-white/[0.06] rounded-xl p-6"
+          className="group relative bg-surface border border-white/[0.06] rounded-2xl p-8"
         >
-          <h2 className="text-xl md:text-2xl font-heading tracking-tight uppercase text-text-base">
-            <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-          </h2>
-          <p className="mt-2 text-text-muted">{post.excerpt}</p>
-          <Link
-            href={`/blog/${post.slug}`}
-            className="inline-block mt-4 bg-primary text-dark rounded-full px-5 py-2 font-heading uppercase"
-          >
-            Read
+          <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-10">
+            <span className="sr-only">Read {post.title}</span>
           </Link>
+          <div className="flex flex-col h-full justify-between">
+            <div>
+              <h2 className="text-2xl uppercase text-text-base group-hover:text-primary transition-colors">
+                {post.title}
+              </h2>
+              <p className="mt-4 text-text-muted leading-relaxed">{post.excerpt}</p>
+            </div>
+            <div className="mt-8 flex items-center gap-2 text-primary font-bold tracking-widest text-xs">
+              Read Article <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </div>
         </motion.article>
       ))}
     </motion.div>

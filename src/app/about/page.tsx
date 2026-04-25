@@ -1,3 +1,5 @@
+"use client";
+
 import { Background } from "@/components/background";
 import About from "@/components/blocks/about";
 import { AboutHero } from "@/components/blocks/about-hero";

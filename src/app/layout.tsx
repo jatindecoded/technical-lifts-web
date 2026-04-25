@@ -1,10 +1,10 @@
-import { Inter, Bricolage_Grotesque } from "next/font/google";
+import { Bricolage_Grotesque, Inter } from "next/font/google";
 
 import type { Metadata } from "next";
 
-import "../styles/globals.css";
 import { Footer } from "@/components/blocks/footer";
 import { Navbar } from "@/components/blocks/navbar";
+import "../styles/globals.css";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -48,7 +48,6 @@ export default function RootLayout({
       lang="en"
       className={`${bricolageGrotesque.variable} ${inter.variable}`}
     >
-      {/* <body className="bg-dark font-body antialiased">{children}</body> */}
       <head>
         <script
           async
@@ -56,18 +55,10 @@ export default function RootLayout({
           src="https://tweakcn.com/live-preview.min.js"
         />
       </head>
-      <body className={`bg-dark font-body dark antialiased`}>
-        {/* <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-          forcedTheme="dark" */}
-        {/* <StyleGlideProvider /> */}
+      <body className="bg-dark font-body antialiased">
         <Navbar />
         <main className="pt-32">{children}</main>
         <Footer />
-        {/* </ThemeProvider> */}
       </body>
     </html>
   );

@@ -29,7 +29,7 @@ const renderValue = (value: boolean | string) => {
 
 export const PricingTable = () => {
   return (
-    <section className="pb-28 lg:pb-32">
+    <section className="p-28 lg:pb-32">
       <div className="container max-w-3xl">
         <h2 className="mb-2 text-2xl tracking-tight md:text-3xl">
           {PT_PLAN.heading}

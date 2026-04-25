@@ -1,4 +1,10 @@
+"use client";
+
+import React from "react";
+
 import Link from "next/link";
+
+import { SectionHeader } from "../ui/section-header";
 
 import {
   Accordion,
@@ -10,43 +16,42 @@ import { FAQ_ITEMS, FAQ_SECTION } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export const FAQ = ({
-  headerTag = "h2",
   className,
   className2,
+  headerTag = "h2",
 }: {
-  headerTag?: "h1" | "h2";
   className?: string;
   className2?: string;
+  headerTag?: "h1" | "h2";
 }) => {
   return (
-    <section className={cn("py-48 lg:py-64", className)}>
-      <div className="container max-w-5xl">
-        <div className={cn("mx-auto grid gap-16 lg:grid-cols-2", className2)}>
-          <div className="space-y-4">
-            {headerTag === "h1" ? (
-              <h1 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-                {FAQ_SECTION.heading}
-              </h1>
-            ) : (
-              <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-                {FAQ_SECTION.heading}
-              </h2>
-            )}
-            <p className="text-muted-foreground max-w-md leading-tight lg:mx-auto">
+    <section className={cn("py-section bg-dark", className)}>
+      <div className="container">
+        <div className={cn("grid gap-16 lg:grid-cols-12", className2)}>
+          <div className="lg:col-span-5">
+            <SectionHeader 
+              badge="FAQ"
+              title={FAQ_SECTION.heading}
+              className="mb-8"
+              level={headerTag}
+            />
+            <p className="text-text-muted text-lg font-medium leading-relaxed max-w-md">
               {FAQ_SECTION.supportLinePrefix}{" "}
-              <Link href="/contact" className="underline underline-offset-4">
+              <Link href="/contact" className="text-primary hover:underline underline-offset-4 font-bold">
                 {FAQ_SECTION.supportLinkLabel}
               </Link>
               .
             </p>
           </div>
 
-          <div className="grid gap-6 text-start">
-            <Accordion type="single" collapsible className="w-full">
+          <div className="lg:col-span-7">
+            <Accordion type="single" collapsible className="w-full space-y-4">
               {FAQ_ITEMS.map((item, i) => (
-                <AccordionItem key={i} value={`${i}`}>
-                  <AccordionTrigger>{item.question}</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
+                <AccordionItem key={i} value={`${i}`} className="border border-white/[0.08] bg-surface rounded-2xl px-8 py-2 overflow-hidden shadow-xl transition-all hover:border-primary/20">
+                  <AccordionTrigger className="text-left hover:no-underline font-bold tracking-tight text-text-base">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-text-muted leading-relaxed pb-6 font-medium">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

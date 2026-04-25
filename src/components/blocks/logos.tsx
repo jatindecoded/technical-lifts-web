@@ -1,4 +1,5 @@
-import { Star, Trophy, Users, TrendingUp } from "lucide-react";
+import { Star, Trophy, Users, TrendingUp, Target, Dumbbell } from "lucide-react";
+import Marquee from "react-fast-marquee";
 
 import { TRUST_BAR } from "@/lib/constants";
 
@@ -7,27 +8,34 @@ const iconMap = {
   Users,
   Trophy,
   TrendingUp,
+  Target,
+  Dumbbell,
 };
 
 export const Logos = () => {
   return (
-    <section className="overflow-hidden">
-      <div className="max-w-container mx-auto px-6">
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
-          {TRUST_BAR.map((item) => {
-            const Icon = iconMap[item.iconName as keyof typeof iconMap];
-            return (
-              <div key={item.label} className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-muted/20">
-                  <Icon className="text-primary size-5" />
-                </span>
-                <span className="font-heading text-sm font-bold uppercase tracking-tight text-foreground md:text-base">
-                  {item.label}
-                </span>
-              </div>
-            );
-          })}
-        </div>
+    <section className="overflow-hidden py-12 relative">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 blur-[120px] pointer-events-none" />
+
+      <div className="mx-auto w-full relative z-10">
+        <Marquee gradient={true} gradientColor="black" speed={50} pauseOnHover={true}>
+          <div className="flex items-center gap-16 pr-16">
+            {TRUST_BAR.map((item, i) => {
+              const Icon = iconMap[item.iconName as keyof typeof iconMap] || Dumbbell;
+              return (
+                <div key={item.label + i} className="flex items-center gap-4 whitespace-nowrap group">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-surface border border-white/[0.08] transition-all group-hover:border-primary/40 group-hover:scale-110">
+                    <Icon className="text-primary size-5" />
+                  </div>
+                  <span className="text-sm font-bold uppercase tracking-[0.2em] text-text-base">
+                    {item.label}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </Marquee>
       </div>
     </section>
   );

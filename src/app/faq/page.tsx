@@ -1,3 +1,5 @@
+"use client";
+
 import { Background } from "@/components/background";
 import { FAQ } from "@/components/blocks/faq";
 import { Testimonials } from "@/components/blocks/testimonials";

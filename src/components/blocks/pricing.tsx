@@ -1,18 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Link from "next/link";
 
-import { motion, useReducedMotion } from "framer-motion";
-import { Check } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { Check, X } from "lucide-react";
+
+import { SectionHeader } from "../ui/section-header";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CardHeading } from "@/components/ui/card-heading";
-import { CTA } from "@/components/ui/cta";
 import UnifiedForm, { Field, Input, Select } from "@/components/ui/unified-form";
-import { PRICING_PLANS, PRICING_SECTION, SITE, CONTACT_FORM } from "@/lib/constants";
+import { CONTACT_FORM, PRICING_PLANS, PRICING_SECTION, SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const container = {
@@ -21,154 +22,193 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45 } },
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-// Simple inline lead form used only on this block. Keeps pricing and lead together as requested.
-function LeadForm({ onSuccess }: { onSuccess: () => void }) {
+function LeadDialog({ isOpen, onClose, onSuccess }: { isOpen: boolean; onClose: () => void; onSuccess: () => void }) {
   const [success, setSuccess] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    // Simulate submission; integrate real API where needed.
-    await new Promise((r) => setTimeout(r, 700));
-    setSuccess(true);
-    onSuccess();
-  }
+  useEffect(() => {
+    function onLeadSubmitted() {
+      setSuccess(true);
+      setTimeout(() => {
+        onSuccess();
+        onClose();
+      }, 1500);
+    }
 
-  if (success) {
-    return (
-      <div className="rounded-xl bg-surface p-6">
-        <h4 className="mb-2 font-heading text-lg uppercase">{CONTACT_FORM.successHeading}</h4>
-        <p className="text-sm text-muted-foreground">{CONTACT_FORM.successBody}</p>
-      </div>
-    );
-  }
+    if (isOpen) {
+      window.addEventListener('lead-submitted', onLeadSubmitted as EventListener);
+    }
+
+    return () => window.removeEventListener('lead-submitted', onLeadSubmitted as EventListener);
+  }, [isOpen, onClose, onSuccess]);
 
   return (
-    <UnifiedForm onSubmit={handleSubmit} showWrapper={false} submitLabel={CONTACT_FORM.submitLabel} submittingLabel={CONTACT_FORM.submittingLabel}>
-      <h4 className="font-heading text-lg uppercase">{CONTACT_FORM.heading}</h4>
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="absolute inset-0 bg-dark/80 backdrop-blur-sm"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-white/[0.08] bg-surface p-8 shadow-2xl lg:p-12"
+          >
+            <button
+              onClick={onClose}
+              className="absolute right-6 top-6 text-text-muted hover:text-primary transition-colors"
+            >
+              <X className="size-6" />
+            </button>
 
-      <Field>
-        <Input placeholder="Your name" name="name" required />
-      </Field>
+            {success ? (
+              <div className="text-center py-8">
+                <div className="mb-6 flex justify-center text-primary">
+                  <Check className="size-16" />
+                </div>
+                <h3 className="mb-4 text-2xl">{CONTACT_FORM.successHeading}</h3>
+                <p className="text-text-muted text-lg">{CONTACT_FORM.successBody}</p>
+              </div>
+            ) : (
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <div className="text-primary text-[10px] font-bold  tracking-[0.2em]">Unlock Access</div>
+                  <h3 className="text-3xl font-bold">See Membership Pricing</h3>
+                  <p className="text-text-muted leading-relaxed">
+                    Submit your details to reveal our plans. No commitment required.
+                  </p>
+                </div>
 
-      <Field>
-        <Input placeholder="Phone or WhatsApp" name="phone" required />
-      </Field>
-
-      <Field>
-        <Select name="inquiry">
-          {CONTACT_FORM.inquiryOptions.map((opt) => (
-            <option key={opt.value} value={opt.value}>
-              {opt.label}
-            </option>
-          ))}
-        </Select>
-      </Field>
-    </UnifiedForm>
+                <UnifiedForm />
+              </div>
+            )}
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
   );
 }
 
 export const Pricing = ({ className }: { className?: string }) => {
   const reduceMotion = useReducedMotion();
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
-    <section id="pricing" className={cn("py-24 lg:py-32", className)}>
+    <section id="pricing" className={cn("py-section bg-dark", className)}>
       <div className="container">
-        <div className="space-y-3 text-center">
-          <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-            {PRICING_SECTION.heading}
-          </h2>
-          <p className="text-muted-foreground mx-auto max-w-md leading-snug">
-            {PRICING_SECTION.subheading}
-          </p>
-        </div>
+        <SectionHeader 
+          badge="Membership"
+          title={PRICING_SECTION.heading}
+          description={PRICING_SECTION.subheading}
+          align="center"
+          className="mb-16"
+        />
 
-        {/* Parent grid: pricing cards + lead form */}
-        <div className="mt-8 grid gap-6 md:mt-12 md:grid-cols-6 lg:mt-16">
-          <motion.div className="md:col-span-4 grid gap-4 text-start" initial={reduceMotion ? "show" : "hidden"} whileInView={reduceMotion ? undefined : "show"} viewport={{ once: true, amount: 0.12 }} variants={container}>
+        <div className="mt-16 max-w-5xl mx-auto">
+          <motion.div
+            className="grid gap-8 lg:grid-cols-2"
+            initial={reduceMotion ? "show" : "hidden"}
+            whileInView={reduceMotion ? undefined : "show"}
+            viewport={{ once: true, amount: 0.1 }}
+            variants={container}
+          >
             {PRICING_PLANS.map((plan) => (
-              <motion.div key={plan.name} variants={item} whileHover={reduceMotion ? {} : { y: -8 }} whileTap={reduceMotion ? {} : { scale: 0.995 }} transition={{ type: 'spring', stiffness: 280, damping: 20 }}>
+              <motion.div
+                key={plan.name}
+                variants={item}
+                whileHover={reduceMotion ? {} : { scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              >
                 <Card
                   className={cn(
-                    "relative h-full transition-all",
-                    plan.isPopular &&
-                      "border-primary/60 shadow-[0_0_0_1px_var(--color-primary)]",
+                    "relative h-full flex flex-col bg-surface border-white/[0.08] rounded-3xl transition-all",
+                    plan.isPopular && "border-primary/50 ring-1 ring-primary/20",
                   )}
                 >
-                {plan.isPopular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="rounded-full bg-primary px-3 py-0.5 font-heading text-xs font-bold uppercase tracking-widest text-dark">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                <CardContent className="flex h-full flex-col gap-6 px-6 py-5">
-                  <div className="space-y-1">
-                    <CardHeading as="h3" className="text-lg uppercase tracking-tight">
-                      {plan.name}
-                    </CardHeading>
-
-                    {/* Price reveal logic: show actual price only after form submission */}
-                    {formSubmitted ? (
-                      <div className={cn("font-heading text-3xl font-bold tracking-tight", plan.isPopular && "text-primary")}>
-                        {plan.price}
-                      </div>
-                    ) : (
-                      <div>
-                        <div className={cn("font-heading text-3xl font-bold tracking-tight blur-sm select-none", plan.isPopular && "text-primary")}>
-                          {/* simple obfuscated number to entice submission */}
-                          {`₹XXXX}`}
-                        </div>
-                        <p className="mt-2 text-sm text-muted-foreground">{PRICING_SECTION.lockedMessage}</p>
-                      </div>
-                    )}
-
-                    <div className="text-muted-foreground text-sm">
-                      {plan.duration} · {plan.priceNote}
+                  {plan.isPopular && (
+                    <div className="absolute top-0 right-0 bg-primary px-6 py-2 rounded-tr-3xl rounded-bl-3xl shadow-xl z-20">
+                      <span className="text-[10px] font-bold  tracking-widest text-dark">
+                        Popular
+                      </span>
                     </div>
-                  </div>
-
-                  <div className="flex-1 space-y-2.5">
-                    {plan.features.map((feature) => (
-                      <div
-                        key={feature}
-                        className="text-muted-foreground flex items-center gap-2"
-                      >
-                        <Check className="text-primary size-4 shrink-0" />
-                        <span className="text-sm">{feature}</span>
+                  )}
+                  <CardContent className="flex flex-1 flex-col p-10 gap-6 text-text-base relative z-10">
+                    <div>
+                      <div className="text-sm text-primary font-bold mb-2 tracking-wide">
+                        {plan.duration}
                       </div>
-                    ))}
-                  </div>
+                      <CardHeading as="h3" className="text-3xl tracking-tight font-bold">
+                        {plan.name}
+                      </CardHeading>
+                    </div>
 
-                  <div>
-                    <CTA id="pricingContact" buttonVariant={plan.isPopular ? "default" : "outline"} className="w-full" />
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                    <div>
+                      {formSubmitted ? (
+                        <div className="flex items-baseline gap-2">
+                          <span className={cn("text-4xl font-extrabold tracking-tighter font-heading", plan.isPopular ? "text-primary" : "")}>
+                            {plan.price}
+                          </span>
+                          {/* <span className="text-lg text-text-muted font-medium italic">/{plan.priceNote.split(' ')[1]}</span> */}
+                        </div>
+                      ) : (
+                        <div className="space-y-4">
+                          <div className="text-5xl font-extrabold tracking-tighter font-heading blur">
+                            {PRICING_SECTION.pricePlaceholder}
+                          </div>
+                          <Button 
+                            onClick={() => setIsDialogOpen(true)}
+                          >
+                            Click to View Pricing
+                          </Button>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="flex-1 space-y-2">
+                      {plan.features.map((feature) => (
+                        <div key={feature} className="flex items-start gap-4">
+                          <Check className="mt-1 size-4 shrink-0 text-primary" />
+                          <span className="text-sm font-medium opacity-80 leading-snug">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </motion.div>
-
-          {/* Lead form sits alongside pricing cards */}
-          <div className="md:col-span-2">
-            <LeadForm onSuccess={() => setFormSubmitted(true)} />
-          </div>
         </div>
 
-        <p className="text-muted-foreground mt-6 text-sm">
-          {PRICING_SECTION.footnote}{" "}
-          <Link
-            href={`tel:${SITE.phone}`}
-            className="underline underline-offset-4 hover:text-foreground transition-colors"
-          >
-            {SITE.phone}
-          </Link>
-        </p>
+        <div className="mt-16 text-center">
+            <div className="inline-block p-8 rounded-3xl bg-white/[0.03] border border-white/[0.05] italic max-w-2xl">
+              <p className="text-sm text-text-muted leading-relaxed">
+                {PRICING_SECTION.footnote}{" "}
+                <Link
+                  href={`tel:${SITE.phone.replace(/\D/g, "")}`}
+                  className="text-primary hover:underline font-bold not-italic"
+                >
+                  {SITE.phone}
+                </Link>
+              </p>
+            </div>
+        </div>
       </div>
+
+      <LeadDialog 
+        isOpen={isDialogOpen} 
+        onClose={() => setIsDialogOpen(false)} 
+        onSuccess={() => setFormSubmitted(true)}
+      />
     </section>
   );
 };

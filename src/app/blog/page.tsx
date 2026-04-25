@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import { BlogList } from "@/components/blocks/blog-list";
