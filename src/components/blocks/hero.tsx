@@ -60,7 +60,7 @@ export const Hero = () => {
 
   return (
     <section className="relative pb-32 pt-40 lg:pb-48 lg:pt-56">
-      <div className="container flex flex-col items-center justify-center gap-10 lg:flex-row">
+      <div className="max-w-container mx-auto px-6 flex flex-col items-center justify-center gap-10 lg:flex-row">
         {/* Left — Main content */}
         <motion.div
           className="flex flex-col items-center overflow-hidden text-center lg:items-start lg:text-left"
@@ -76,10 +76,11 @@ export const Hero = () => {
             {/* SEO-friendly: keep a single readable H1 for crawlers/screen readers */}
             <span className="sr-only">{SITE.tagline} {SITE.taglineAccent}</span>
 
-            {/* Split-line/word reveal (aria-hidden) */}
-            <SplitReveal text={SITE.tagline} className="inline-block" delay={0} />
-            <br />
-            <span className="inline-block overflow-hidden align-middle text-primary">
+            {/* Split-line/word reveal (aria-hidden) with consistent spacing */}
+            <span className="block font-heading tracking-tight leading-none">
+              <SplitReveal text={SITE.tagline} className="inline-block" delay={0} />
+            </span>
+            <span className="block text-primary font-heading tracking-tight leading-none">
               <SplitReveal text={SITE.taglineAccent} className="inline-block" delay={60} />
             </span>
           </motion.h1>
@@ -104,7 +105,7 @@ export const Hero = () => {
         </motion.div>
 
         {/* Right — Feature list */}
-        <div className="relative flex flex-col justify-center space-y-5 pt-10 lg:pl-10 lg:pt-0">
+        <div className="relative flex flex-col justify-center space-y-5 pt-10 lg:pl-10 lg:pt-0 lg:w-[32rem] lg:ml-8">
           <DashedLine
             orientation="vertical"
             className="absolute top-0 left-0 max-lg:hidden"
@@ -113,17 +114,26 @@ export const Hero = () => {
             orientation="horizontal"
             className="absolute top-0 lg:hidden"
           />
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-1">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {HERO_FEATURES.map((feature) => {
               const Icon = iconMap[feature.iconName];
               return (
-                <motion.div key={feature.title} variants={item} whileHover={reduceMotion ? {} : { scale: 1.04, rotate: -1 }} transition={{ type: 'spring', stiffness: 300 }} className="flex gap-2.5 lg:gap-5">
-                  <Icon className="mt-1 size-4 shrink-0 text-primary lg:size-5" />
-                  <div>
-                    <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-foreground lg:text-base">
+                <motion.div
+                  key={feature.title}
+                  variants={item}
+                  whileHover={reduceMotion ? {} : { scale: 1.02 }}
+                  transition={{ type: 'spring', stiffness: 250 }}
+                  className="bg-surface border border-white/[0.08] rounded-xl p-5 flex gap-4 items-start"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-md bg-muted text-primary">
+                    <Icon className="size-4" />
+                  </div>
+
+                  <div className="flex-1">
+                    <h3 className="font-heading text-sm font-bold uppercase tracking-tight leading-none text-foreground">
                       {feature.title}
                     </h3>
-                    <p className="text-muted-foreground hidden max-w-76 text-sm md:block">
+                    <p className="text-muted-foreground mt-2 text-sm max-w-[20rem]">
                       {feature.description}
                     </p>
                   </div>

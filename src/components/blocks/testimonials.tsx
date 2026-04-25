@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import Image from "next/image";
+
 import Link from "next/link";
 
 import { motion } from "framer-motion";
@@ -69,14 +69,10 @@ export const Testimonials = ({
                     <motion.div variants={item}>
                       <Card className="bg-muted h-full overflow-hidden border-none">
                         <CardContent className="flex h-full flex-col p-0">
-                          <div className="relative h-[288px] lg:h-[328px]">
-                            <motion.div whileHover={{ y: -8 }} transition={{ type: 'spring', stiffness: 260, damping: 18 }} className="h-full">
-                              <Image
-                                src={transformation.photo}
-                                alt={transformation.name}
-                                fill
-                                className="object-cover object-top"
-                              />
+                          <div className="h-36 lg:h-44 flex-none bg-gradient-to-br from-primary/10 via-surface to-muted/10 flex items-center justify-center">
+                            <motion.div whileHover={{ y: -6 }} transition={{ type: 'spring', stiffness: 260, damping: 18 }} className="px-6 text-center">
+                              <div className="text-xs uppercase tracking-widest text-primary font-heading">Transformation</div>
+                              <div className="mt-2 text-2xl font-heading font-bold leading-tight text-text-base">{transformation.name}</div>
                             </motion.div>
                           </div>
                           <div className="flex flex-1 flex-col justify-between gap-6 p-6">

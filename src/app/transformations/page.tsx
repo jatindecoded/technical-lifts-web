@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { Background } from "@/components/background";
@@ -25,24 +24,26 @@ export default function TransformationsPage() {
               key={index}
               className="group overflow-hidden rounded-2xl border border-white/[0.08] bg-surface"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={transformation.photo}
-                  alt={transformation.name}
-                  fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                />
+              <div className="h-36 flex-none bg-gradient-to-br from-primary/10 via-surface to-muted/10 flex items-center justify-center">
+                <div className="px-6 text-center">
+                  <div className="text-xs uppercase tracking-widest text-primary font-heading">Transformation</div>
+                  <div className="mt-2 text-2xl font-heading font-bold leading-tight text-text-base">{transformation.name}</div>
+                </div>
               </div>
-              <div className="p-6 space-y-1">
-                <p className="font-heading text-2xl font-bold leading-tight tracking-tight">
-                  {transformation.result}
-                </p>
-                <p className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
-                  {transformation.name}
-                </p>
-                <p className="text-muted-foreground text-sm">
-                  {transformation.duration}
-                </p>
+              <div className="p-6 space-y-1 flex-1 flex flex-col justify-between">
+                <div>
+                  <p className="font-heading text-2xl font-bold leading-tight tracking-tight">
+                    {transformation.result}
+                  </p>
+                </div>
+                <div>
+                  <p className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
+                    {transformation.name}
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    {transformation.duration}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
