@@ -47,17 +47,17 @@ export const Hero = () => {
   return (
     <section className="relative pt-16 pb-32 lg:pt-24">
       <motion.div className="max-w-container mx-auto flex flex-col items-center justify-center gap-16 px-6 lg:flex-row lg:items-start lg:justify-between lg:gap-24"
-        initial={reduceMotion ? undefined : { scale: 1.08 }}
-        whileInView={reduceMotion ? undefined : { scale: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        viewport={{ once: true }}
+        // initial={reduceMotion ? undefined : { scale: 4 }}
+        // whileInView={reduceMotion ? undefined : { scale: 1 }}
+        // transition={{ duration: 0.5, ease: "easeOut" }}
+        // viewport={{ once: true }}
       >
         {/* Left — Main content */}
         <motion.div
           className="flex flex-col items-center text-center lg:flex-1 lg:items-start lg:text-left"
           initial={reduceMotion ? "show" : "hidden"}
           whileInView={reduceMotion ? undefined : "show"}
-          viewport={{ once: true, amount: 0.12 }}
+          viewport={{ once: true, amount: 0.82 }}
           variants={container}
         >
           <motion.h1 variants={item} className="">
