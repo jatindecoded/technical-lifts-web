@@ -29,7 +29,6 @@ export const NAV_LINKS = [
   { label: "Pricing", href: "/pricing" },
   { label: "Transformations", href: "/transformations" },
   { label: "Blog", href: "/blog" },
-  { label: "Schedule & Pricing", href: "/schedule-pricing" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -1709,15 +1708,6 @@ export const COMPONENT_PAGES = [
     excerpt: "Design and use-cases for the card components used site-wide.",
     content: [
       "Cards are low-contrast surfaces with subtle borders and tight typography. Use them for trainers, transformations, and blog teasers.",
-    ],
-  },
-  {
-    slug: "schedule-pricing",
-    title: "Schedule & Pricing",
-    excerpt:
-      "Detailed breakdown of class schedules, membership tiers, and PT booking flow.",
-    content: [
-      "Use this page to deep-link pricing CTAs and provide an expanded explanation of what's included in each plan.",
     ],
   },
   {

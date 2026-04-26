@@ -5,8 +5,8 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input as BaseInput } from "@/components/ui/input";
 import { Textarea as BaseTextarea } from "@/components/ui/textarea";
-import { cn } from "@/lib/utils";
 import { CONTACT_FORM } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 export default function UnifiedForm() {
   const [submitting, setSubmitting] = React.useState(false);
@@ -20,7 +20,7 @@ export default function UnifiedForm() {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_FORM.recipientEmail)}`, {
+      await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_FORM.recipientEmail)}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +36,7 @@ export default function UnifiedForm() {
       setSuccess(true);
       // Notify other parts of the app without requiring props
       try { window.dispatchEvent(new CustomEvent("lead-submitted", { detail: data })); } catch {}
-    } catch (err) {
+    } catch {
       setSuccess(true);
       try { window.dispatchEvent(new CustomEvent("lead-submitted", { detail: data })); } catch {}
     } finally {

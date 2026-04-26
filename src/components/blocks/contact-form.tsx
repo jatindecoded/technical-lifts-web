@@ -1,9 +1,7 @@
 "use client";
 
-import React from "react";
 
-import UnifiedForm, { Field, Input, Select, Textarea, Checkbox } from "@/components/ui/unified-form";
-import { CONTACT_FORM } from "@/lib/constants";
+import UnifiedForm from "@/components/ui/unified-form";
 
 // Simple HTML form posting to FormSubmit.co for static export compatibility.
 // NOTE: Using a non-production placeholder address below. Replace with the real recipient email before deployment.
