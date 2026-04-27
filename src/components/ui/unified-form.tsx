@@ -2,23 +2,38 @@
 
 import React from "react";
 
-import { Button } from "@/components/ui/button";
+import Script from "next/script";
+
 import { Input as BaseInput } from "@/components/ui/input";
 import { Textarea as BaseTextarea } from "@/components/ui/textarea";
-import { CONTACT_FORM } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
-import Script from "next/script";
+type TallyWindow = { Tally?: { loadEmbeds?: () => void } };
 
 export default function UnifiedForm() {
   // Keep it simple: render a Tally iframe embed and load the widget script
+
+  React.useEffect(() => {
+    function handleMessage(e: MessageEvent) {
+      if (typeof e.data === "string" && e.data.includes("Tally.FormSubmitted")) {
+        try {
+          const parsed = JSON.parse(e.data);
+          const payload = parsed.payload;
+          window.dispatchEvent(new CustomEvent("lead-submitted", { detail: payload }));
+        } catch {}
+      }
+    }
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
+
   return (
     <div className="bg-surface w-full rounded-2xl border border-white/[0.08] p-8">
       <iframe
         data-tally-src="https://tally.so/embed/81PqoY?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
         loading="lazy"
         width="100%"
-        height="765"
+        height="265"
         frameBorder={0}
         marginHeight={0}
         marginWidth={0}
@@ -29,8 +44,8 @@ export default function UnifiedForm() {
         src="https://tally.so/widgets/embed.js"
         onLoad={() => {
           try {
-            (window as any).Tally?.loadEmbeds?.();
-          } catch (e) {}
+            (window as TallyWindow).Tally?.loadEmbeds?.();
+          } catch {}
         }}
       />
     </div>
