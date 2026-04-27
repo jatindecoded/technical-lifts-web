@@ -8,104 +8,31 @@ import { Textarea as BaseTextarea } from "@/components/ui/textarea";
 import { CONTACT_FORM } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
+import Script from "next/script";
+
 export default function UnifiedForm() {
-  const [submitting, setSubmitting] = React.useState(false);
-  const [success, setSuccess] = React.useState(false);
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setSubmitting(true);
-    const form = e.target as HTMLFormElement;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    try {
-      await fetch(
-        `https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_FORM.recipientEmail)}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            ...data,
-            _subject: "New Lead from Technical Lifts (Site-wide form)",
-          }),
-        },
-      );
-
-      // Consider submission successful for UX purposes regardless of remote response
-      setSuccess(true);
-      // Notify other parts of the app without requiring props
-      try {
-        window.dispatchEvent(
-          new CustomEvent("lead-submitted", { detail: data }),
-        );
-      } catch {}
-    } catch {
-      setSuccess(true);
-      try {
-        window.dispatchEvent(
-          new CustomEvent("lead-submitted", { detail: data }),
-        );
-      } catch {}
-    } finally {
-      setSubmitting(false);
-    }
-  }
-
-  if (success) {
-    return (
-      <div className="bg-surface w-full rounded-2xl border border-white/[0.08] p-8 text-center">
-        <div className="text-primary mb-4 text-5xl font-bold">Thanks</div>
-        <p className="text-text-muted">We&apos;ll be in touch shortly.</p>
-      </div>
-    );
-  }
-
+  // Keep it simple: render a Tally iframe embed and load the widget script
   return (
     <div className="bg-surface w-full rounded-2xl border border-white/[0.08] p-8">
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid gap-4">
-          <Field id="lead-name" label="Full name">
-            <Input
-              id="lead-name"
-              name="name"
-              required
-              placeholder="First and last name"
-            />
-          </Field>
+      <iframe
+        data-tally-src="https://tally.so/embed/81PqoY?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy"
+        width="100%"
+        height="765"
+        frameBorder={0}
+        marginHeight={0}
+        marginWidth={0}
+        title="Registration Form Template"
+      />
 
-          <Field id="lead-phone" label="Phone">
-            <Input
-              id="lead-phone"
-              name="phone"
-              required
-              placeholder="+91 98765 43210"
-            />
-          </Field>
-
-          <Field id="lead-email" label="Email">
-            <Input
-              id="lead-email"
-              name="email"
-              required
-              type="email"
-              placeholder="you@domain.com"
-            />
-          </Field>
-        </div>
-
-        <Button
-          type="submit"
-          size="lg"
-          className="h-12 w-full text-base"
-          disabled={submitting}
-        >
-          {submitting ? "Sending..." : "Submit"}
-        </Button>
-      </form>
+      <Script
+        src="https://tally.so/widgets/embed.js"
+        onLoad={() => {
+          try {
+            (window as any).Tally?.loadEmbeds?.();
+          } catch (e) {}
+        }}
+      />
     </div>
   );
 }
