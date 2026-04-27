@@ -107,7 +107,7 @@ export const Hero = () => {
         </motion.div>
 
         {/* Right — Feature list */}
-        <div className="relative flex flex-col justify-center space-y-6 pt-10 lg:w-[32rem] lg:pt-4">
+        <div className="relative flex flex-col justify-center space-y-6 pt-10 md:pt-0 lg:w-lg">
           <DashedLine
             orientation="vertical"
             className="absolute top-0 left-0 opacity-30 max-lg:hidden"
