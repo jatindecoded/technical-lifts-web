@@ -12,7 +12,7 @@ export default function TrainersPage() {
     <Background>
       <div className="py-28 lg:py-32 lg:pt-44">
         <div className="container max-w-5xl">
-          <h1 className="text-3xl font-heading font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
             {TRAINERS_SECTION.heading}
           </h1>
           <p className="text-muted-foreground mt-4 max-w-xl text-lg leading-relaxed">
@@ -24,7 +24,7 @@ export default function TrainersPage() {
           {TRAINERS.map((trainer, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-2xl border border-white/[0.08] bg-surface"
+              className="bg-surface overflow-hidden rounded-2xl border border-white/[0.08]"
             >
               <div className="relative aspect-[3/2] overflow-hidden">
                 <Image
@@ -34,8 +34,8 @@ export default function TrainersPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-5 space-y-1">
-                <div className="font-heading text-base font-bold uppercase tracking-wide text-primary">
+              <div className="space-y-1 p-5">
+                <div className="font-heading text-primary text-base font-bold tracking-wide uppercase">
                   {trainer.name}
                 </div>
                 <div className="text-muted-foreground text-sm">
@@ -49,7 +49,7 @@ export default function TrainersPage() {
           ))}
         </div>
 
-        <DashedLine className="container max-w-5xl scale-x-115 mt-16" />
+        <DashedLine className="container mt-16 max-w-5xl scale-x-115" />
         <TrialCta />
       </div>
     </Background>

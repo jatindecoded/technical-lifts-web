@@ -22,7 +22,7 @@ export function BlogList() {
 
   return (
     <motion.div
-      className="grid grid-cols-1 md:grid-cols-2 gap-6"
+      className="grid grid-cols-1 gap-6 md:grid-cols-2"
       initial={reduce ? undefined : "hidden"}
       whileInView={reduce ? undefined : "show"}
       viewport={{ once: true, amount: 0.12 }}
@@ -33,21 +33,28 @@ export function BlogList() {
           key={post.slug}
           variants={reduce ? undefined : item}
           whileHover={reduce ? undefined : { y: -6 }}
-          transition={reduce ? undefined : { type: 'spring', stiffness: 260, damping: 20 }}
-          className="group relative bg-surface border border-white/[0.06] rounded-2xl p-8"
+          transition={
+            reduce ? undefined : { type: "spring", stiffness: 260, damping: 20 }
+          }
+          className="group bg-surface relative rounded-2xl border border-white/[0.06] p-8"
         >
           <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-10">
             <span className="sr-only">Read {post.title}</span>
           </Link>
-          <div className="flex flex-col h-full justify-between">
+          <div className="flex h-full flex-col justify-between">
             <div>
-              <h2 className="text-2xl uppercase text-text-base group-hover:text-primary transition-colors">
+              <h2 className="text-text-base group-hover:text-primary text-2xl uppercase transition-colors">
                 {post.title}
               </h2>
-              <p className="mt-4 text-text-muted leading-relaxed">{post.excerpt}</p>
+              <p className="text-text-muted mt-4 leading-relaxed">
+                {post.excerpt}
+              </p>
             </div>
-            <div className="mt-8 flex items-center gap-2 text-primary font-bold tracking-widest text-xs">
-              Read Article <span className="group-hover:translate-x-1 transition-transform">→</span>
+            <div className="text-primary mt-8 flex items-center gap-2 text-xs font-bold tracking-widest">
+              Read Article{" "}
+              <span className="transition-transform group-hover:translate-x-1">
+                →
+              </span>
             </div>
           </div>
         </motion.article>

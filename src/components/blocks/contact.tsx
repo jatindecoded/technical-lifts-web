@@ -13,7 +13,7 @@ import { CardHeading } from "@/components/ui/card-heading";
 import { CTA } from "@/components/ui/cta";
 import { SectionHeader } from "@/components/ui/section-header";
 import { SITE } from "@/lib/constants";
-  
+
 export default function Contact() {
   return (
     <section className="bg-dark py-28 lg:py-32 lg:pt-44">
@@ -56,7 +56,7 @@ export default function Contact() {
                   >
                     {SITE.phone}
                   </Link>
-                  <p className="text-text-muted text-xs font-bold tracking-widest ">
+                  <p className="text-text-muted text-xs font-bold tracking-widest">
                     WhatsApp same number
                   </p>
                 </div>
@@ -76,7 +76,7 @@ export default function Contact() {
                   Hours
                 </CardHeading>
                 <div className="space-y-1">
-                  <p className="text-text-base text-sm font-bold tracking-tight ">
+                  <p className="text-text-base text-sm font-bold tracking-tight">
                     Open 7 Days
                   </p>
                   <p className="text-text-muted text-sm leading-relaxed">
@@ -99,10 +99,10 @@ export default function Contact() {
 
         <div className="mx-auto max-w-2xl">
           <div className="mb-12 space-y-4 text-center">
-            <div className="text-primary text-[10px] font-bold tracking-[0.2em] ">
+            <div className="text-primary text-[10px] font-bold tracking-[0.2em]">
               Enquiry
             </div>
-            <h2 className="font-heading text-3xl font-bold tracking-tight ">
+            <h2 className="font-heading text-3xl font-bold tracking-tight">
               Send a Message
             </h2>
           </div>

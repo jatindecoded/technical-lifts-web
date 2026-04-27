@@ -23,8 +23,9 @@ const COMPARISON_ROWS: ComparisonRow[] = [
 
 const renderValue = (value: boolean | string) => {
   if (value === true) return <Check className="text-primary size-5" />;
-  if (value === false) return <Minus className="text-muted-foreground/40 size-5" />;
-  return <span className="text-sm text-muted-foreground">{value}</span>;
+  if (value === false)
+    return <Minus className="text-muted-foreground/40 size-5" />;
+  return <span className="text-muted-foreground text-sm">{value}</span>;
 };
 
 export const PricingTable = () => {
@@ -34,18 +35,20 @@ export const PricingTable = () => {
         <h2 className="mb-2 text-2xl tracking-tight md:text-3xl">
           {PT_PLAN.heading}
         </h2>
-        <p className="text-muted-foreground mb-8 text-sm">{PT_PLAN.subheading}</p>
+        <p className="text-muted-foreground mb-8 text-sm">
+          {PT_PLAN.subheading}
+        </p>
 
         {/* Header row */}
         <div className="grid grid-cols-3 border-b border-white/[0.08] pb-4">
           <div />
           <div className="text-center">
-            <div className="font-heading text-sm font-bold uppercase tracking-wide text-muted-foreground">
+            <div className="font-heading text-muted-foreground text-sm font-bold tracking-wide uppercase">
               Regular
             </div>
           </div>
           <div className="text-center">
-            <div className="font-heading text-sm font-bold uppercase tracking-wide text-primary">
+            <div className="font-heading text-primary text-sm font-bold tracking-wide uppercase">
               Personal Training
             </div>
           </div>
@@ -57,8 +60,12 @@ export const PricingTable = () => {
             key={row.feature}
             className="grid grid-cols-3 items-center border-b border-white/[0.08] py-3.5"
           >
-            <span className="text-sm text-muted-foreground pr-4">{row.feature}</span>
-            <div className="flex justify-center">{renderValue(row.regular)}</div>
+            <span className="text-muted-foreground pr-4 text-sm">
+              {row.feature}
+            </span>
+            <div className="flex justify-center">
+              {renderValue(row.regular)}
+            </div>
             <div className="flex justify-center">{renderValue(row.pt)}</div>
           </div>
         ))}

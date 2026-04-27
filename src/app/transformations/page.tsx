@@ -5,14 +5,18 @@ import Link from "next/link";
 import { Background } from "@/components/background";
 import { TrialCta } from "@/components/blocks/trial-cta";
 import { DashedLine } from "@/components/dashed-line";
-import { SITE, TRANSFORMATIONS, TRANSFORMATIONS_SECTION } from "@/lib/constants";
+import {
+  SITE,
+  TRANSFORMATIONS,
+  TRANSFORMATIONS_SECTION,
+} from "@/lib/constants";
 
 export default function TransformationsPage() {
   return (
     <Background>
       <div className="py-28 lg:py-32 lg:pt-44">
         <div className="container max-w-5xl">
-          <h1 className="text-3xl font-heading font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
             {TRANSFORMATIONS_SECTION.heading}
           </h1>
           <p className="text-muted-foreground mt-4 max-w-xl text-lg leading-relaxed">
@@ -24,22 +28,26 @@ export default function TransformationsPage() {
           {TRANSFORMATIONS.map((transformation, index) => (
             <div
               key={index}
-              className="group overflow-hidden rounded-2xl border border-white/[0.08] bg-surface"
+              className="group bg-surface overflow-hidden rounded-2xl border border-white/[0.08]"
             >
-              <div className="h-36 flex-none bg-gradient-to-br from-primary/10 via-surface to-muted/10 flex items-center justify-center">
+              <div className="from-primary/10 via-surface to-muted/10 flex h-36 flex-none items-center justify-center bg-gradient-to-br">
                 <div className="px-6 text-center">
-                  <div className="text-xs uppercase tracking-widest text-primary font-heading">Transformation</div>
-                  <div className="mt-2 text-2xl font-heading font-bold leading-tight text-text-base">{transformation.name}</div>
+                  <div className="text-primary font-heading text-xs tracking-widest uppercase">
+                    Transformation
+                  </div>
+                  <div className="font-heading text-text-base mt-2 text-2xl leading-tight font-bold">
+                    {transformation.name}
+                  </div>
                 </div>
               </div>
-              <div className="p-6 space-y-1 flex-1 flex flex-col justify-between">
+              <div className="flex flex-1 flex-col justify-between space-y-1 p-6">
                 <div>
-                  <p className="font-heading text-2xl font-bold leading-tight tracking-tight">
+                  <p className="font-heading text-2xl leading-tight font-bold tracking-tight">
                     {transformation.result}
                   </p>
                 </div>
                 <div>
-                  <p className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
+                  <p className="font-heading text-primary text-sm font-bold tracking-widest uppercase">
                     {transformation.name}
                   </p>
                   <p className="text-muted-foreground text-sm">
@@ -51,19 +59,19 @@ export default function TransformationsPage() {
           ))}
         </div>
 
-        <div className="container max-w-5xl mt-12">
+        <div className="container mt-12 max-w-5xl">
           <p className="text-muted-foreground text-sm">
             {TRANSFORMATIONS_SECTION.googleReviewsLine}{" "}
             <Link
               href={SITE.googleReviewsUrl || "#"}
-              className="underline underline-offset-4 hover:text-foreground transition-colors"
+              className="hover:text-foreground underline underline-offset-4 transition-colors"
             >
               Read on Google
             </Link>
           </p>
         </div>
 
-        <DashedLine className="container max-w-5xl scale-x-115 mt-16" />
+        <DashedLine className="container mt-16 max-w-5xl scale-x-115" />
         <TrialCta />
       </div>
     </Background>

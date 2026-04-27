@@ -23,25 +23,47 @@ export default function MemberStories() {
   return (
     <section className="py-section max-w-container mx-auto px-6">
       <header className="mb-8">
-        <h1 className="text-4xl font-heading tracking-tight leading-none text-text-base uppercase">
+        <h1 className="font-heading text-text-base text-4xl leading-none tracking-tight uppercase">
           {TRANSFORMATIONS_SECTION.heading}
         </h1>
-        <p className="mt-3 text-text-muted">{TRANSFORMATIONS_SECTION.subheading}</p>
+        <p className="text-text-muted mt-3">
+          {TRANSFORMATIONS_SECTION.subheading}
+        </p>
       </header>
 
-      <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} variants={container} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.12 }}
+        variants={container}
+        className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+      >
         {TRANSFORMATIONS.map((t) => (
-          <motion.article key={t.name} variants={card} className="bg-surface border border-white/[0.06] rounded-xl p-6">
-            <div className="mb-4 h-56 w-full overflow-hidden rounded-lg bg-background">
+          <motion.article
+            key={t.name}
+            variants={card}
+            className="bg-surface rounded-xl border border-white/[0.06] p-6"
+          >
+            <div className="bg-background mb-4 h-56 w-full overflow-hidden rounded-lg">
               {/* Photo placeholder — TODO: Replace with actual member photo when available */}
-              <Image src={t.photo} alt={t.name} width={800} height={450} className="object-cover w-full h-full" />
+              <Image
+                src={t.photo}
+                alt={t.name}
+                width={800}
+                height={450}
+                className="h-full w-full object-cover"
+              />
             </div>
-            <h2 className="font-heading uppercase text-text-base">{t.name}</h2>
-            <p className="mt-1 text-text-muted">{t.result} • {t.duration}</p>
-            <div className="mt-4 text-text-base">
+            <h2 className="font-heading text-text-base uppercase">{t.name}</h2>
+            <p className="text-text-muted mt-1">
+              {t.result} • {t.duration}
+            </p>
+            <div className="text-text-base mt-4">
               <p>
                 {/* Placeholder longform content — expand to full member story when assets and consent are available. */}
-                This space will contain a detailed account of the member's starting point, program, nutrition changes, and measurable outcomes. TODO: replace with permissioned story and photos.
+                This space will contain a detailed account of the member's
+                starting point, program, nutrition changes, and measurable
+                outcomes. TODO: replace with permissioned story and photos.
               </p>
             </div>
             <div className="mt-4">

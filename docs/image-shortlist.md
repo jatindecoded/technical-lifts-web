@@ -5,6 +5,7 @@ Curated stock-image references for the landing page.
 ## Existing shortlist
 
 ### Hero
+
 - **Barbell squat / strength focus**  
   Unsplash: https://unsplash.com/photos/man-performing-a-barbell-squat-in-a-gym-YFeoyqrFsGA
 - **Battle ropes / conditioning**  
@@ -13,6 +14,7 @@ Curated stock-image references for the landing page.
   Unsplash: https://unsplash.com/photos/a-man-holding-a-pair-of-black-dumbs-mI_feab4Kqo
 
 ### Personal training
+
 - **Coach + client in gym**  
   Unsplash: https://unsplash.com/photos/a-man-and-a-woman-doing-exercises-in-a-gym-BvGsoAlosDs
 - **Indian client with trainer**  
@@ -21,6 +23,7 @@ Curated stock-image references for the landing page.
   Freepik: https://www.freepik.com/free-photo/male-personal-trainer-helping-woman-working-with-heavy-dumbbells-gym_26674104.htm
 
 ### Trainers
+
 - **Coach portrait / hands on hips**  
   Unsplash: https://unsplash.com/photos/the-gym-coach-is-posing-with-hands-on-hips-nBpvOy0OC8c
 - **Arms crossed trainer portrait**  
@@ -29,6 +32,7 @@ Curated stock-image references for the landing page.
   Unsplash: https://unsplash.com/photos/sport-man-person-workout-exercise-and-training-in-gym-fit-muscular-of-athlete-body-SVwu2jQ-3gQ
 
 ### Transformations / results
+
 - **Fit man flexing**  
   Freepik: https://www.freepik.com/free-photo/fitness-concept-with-fit-man-flexing_11306835.htm
 - **Bodybuilder portrait**  
@@ -37,6 +41,7 @@ Curated stock-image references for the landing page.
   Freepik: https://www.freepik.com/free-photo/front-view-people-training-together-gym_40133017.htm
 
 ### Facilities / interiors
+
 - **Modern gym interior**  
   Unsplash: https://unsplash.com/photos/modern-gym-with-treadmills-and-exercise-equipment-NTZ_696GZq8
 - **Suspension straps close-up**  
@@ -49,6 +54,7 @@ Curated stock-image references for the landing page.
 These are more relevant for a Vikaspuri / Delhi audience.
 
 ### Best picks
+
 - **PT section / strongest fit**  
   Freepik: https://www.freepik.com/free-photo/indian-man-doing-excercisses-special-equipment-gym-with-personal-trainer_26964894.htm
 - **PT alt variation**  
@@ -63,6 +69,7 @@ These are more relevant for a Vikaspuri / Delhi audience.
   Freepik: https://www.freepik.com/free-photo/cheerful-indian-athlete_6766461.htm
 
 ### Men
+
 - **Confident sportsman with jumping rope**  
   Freepik: https://www.freepik.com/free-photo/confident-sportsman-with-headphones-jumping-rope_6802061.htm
 - **Strong man with dumbbell on dark blue wall**  
@@ -75,6 +82,7 @@ These are more relevant for a Vikaspuri / Delhi audience.
   Unsplash: https://unsplash.com/photos/a-man-sitting-on-a-bench-in-a-gym-IQEJcrK62Hw
 
 ### Women
+
 - **Woman training with string**  
   Freepik: https://www.freepik.com/free-photo/woman-training-with-string_9142148.htm
 - **Medium shot woman holding weight**  
@@ -87,6 +95,7 @@ These are more relevant for a Vikaspuri / Delhi audience.
   Freepik: https://www.freepik.com/free-photo/medium-shot-smiley-woman-training_19537973.htm
 
 ### Trainer / client pairings
+
 - **Trainer and man lifting dumbbells**  
   Freepik: https://www.freepik.com/free-photo/trainer-man-lying-lifting-dumbbells-gym_3298037.htm
 - **Woman at gym with coach**  
@@ -95,12 +104,14 @@ These are more relevant for a Vikaspuri / Delhi audience.
   Freepik: https://www.freepik.com/free-photo/male-personal-trainer-instructing-asian-client-barbell-bench-press-gym_5839407.htm
 
 ## Suggested mapping to current app
+
 - `/hero.jpg` → barbell squat or strong man with dumbbell
 - `/pt-session.jpg` → Indian client with trainer
 - `/trainers/t1.jpg` to `/trainers/t5.jpg` → coach portrait + crossed-arms portraits + dark-background athlete portraits
 - `/transformations/*.jpg` → real-member style portraits only after checking license and authenticity
 
 ## Notes
+
 - Prefer **Unsplash** when possible for cleaner website licensing.
 - Prefer **non-AI** Freepik images unless you explicitly want AI-generated assets.
 - Freepik free assets may require attribution depending on plan.

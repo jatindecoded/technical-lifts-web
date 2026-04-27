@@ -26,20 +26,22 @@ export const SectionHeader = ({
   level = "h2",
 }: SectionHeaderProps) => {
   const Tag = level as React.ElementType;
-  
+
   return (
     <div
       className={cn(
         "flex flex-col gap-6",
-        align === "center" ? "items-center text-center" : "items-start text-left",
-        className
+        align === "center"
+          ? "items-center text-center"
+          : "items-start text-left",
+        className,
       )}
     >
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-primary text-[10px] font-bold uppercase tracking-[0.2em]"
+        className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase"
       >
         {badge}
       </motion.div>
@@ -47,7 +49,12 @@ export const SectionHeader = ({
         <SplitReveal text={title} />
       </Tag>
       {description && (
-        <p className={cn("text-text-muted text-lg font-medium leading-relaxed", align === "center" ? "max-w-xl" : "max-w-2xl")}>
+        <p
+          className={cn(
+            "text-text-muted text-lg leading-relaxed font-medium",
+            align === "center" ? "max-w-xl" : "max-w-2xl",
+          )}
+        >
           {description}
         </p>
       )}

@@ -12,7 +12,6 @@ import { Trainers } from "@/components/blocks/trainers";
 import { TrialCta } from "@/components/blocks/trial-cta";
 import { IMAGE_ASSETS } from "@/lib/constants";
 
-
 export default function Home() {
   return (
     <>
@@ -21,7 +20,14 @@ export default function Home() {
           src={IMAGE_ASSETS.hero.src}
           alt={IMAGE_ASSETS.hero.alt}
           fill
-          className="rounded-2xl object-contain object-left-top opacity-10"
+          className="hidden rounded-2xl object-contain object-left-top opacity-10 lg:block"
+        />
+
+        <Image
+          src={"/photos-og/DSC02584.webp"}
+          alt={IMAGE_ASSETS.hero.alt}
+          fill
+          className="rounded-2xl object-contain object-left-top opacity-10 lg:hidden"
         />
 
         <Hero />

@@ -29,15 +29,18 @@ export const FAQ = ({
       <div className="container">
         <div className={cn("grid gap-16 lg:grid-cols-12", className2)}>
           <div className="lg:col-span-5">
-            <SectionHeader 
+            <SectionHeader
               badge="FAQ"
               title={FAQ_SECTION.heading}
               className="mb-8"
               level={headerTag}
             />
-            <p className="text-text-muted text-lg font-medium leading-relaxed max-w-md">
+            <p className="text-text-muted max-w-md text-lg leading-relaxed font-medium">
               {FAQ_SECTION.supportLinePrefix}{" "}
-              <Link href="/contact" className="text-primary hover:underline underline-offset-4 font-bold">
+              <Link
+                href="/contact"
+                className="text-primary font-bold underline-offset-4 hover:underline"
+              >
                 {FAQ_SECTION.supportLinkLabel}
               </Link>
               .
@@ -47,11 +50,15 @@ export const FAQ = ({
           <div className="lg:col-span-7">
             <Accordion type="single" collapsible className="w-full space-y-4">
               {FAQ_ITEMS.map((item, i) => (
-                <AccordionItem key={i} value={`${i}`} className="border border-white/[0.08] bg-surface rounded-2xl px-8 py-2 overflow-hidden shadow-xl transition-all hover:border-primary/20">
-                  <AccordionTrigger className="text-left hover:no-underline font-bold tracking-tight text-text-base">
+                <AccordionItem
+                  key={i}
+                  value={`${i}`}
+                  className="bg-surface hover:border-primary/20 overflow-hidden rounded-2xl border border-white/[0.08] px-8 py-2 shadow-xl transition-all"
+                >
+                  <AccordionTrigger className="text-text-base text-left font-bold tracking-tight hover:no-underline">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-text-muted leading-relaxed pb-6 font-medium">
+                  <AccordionContent className="text-text-muted pb-6 leading-relaxed font-medium">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

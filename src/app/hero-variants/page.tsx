@@ -8,21 +8,25 @@ export default function HeroVariants() {
   return (
     <section className="py-section max-w-container mx-auto px-6">
       <header className="mb-8">
-        <h1 className="text-4xl font-heading tracking-tight leading-none text-text-base uppercase">
+        <h1 className="font-heading text-text-base text-4xl leading-none tracking-tight uppercase">
           {page?.title ?? PAGES.componentsHeading}
         </h1>
-        <p className="mt-3 text-text-muted">{page?.excerpt}</p>
+        <p className="text-text-muted mt-3">{page?.excerpt}</p>
       </header>
 
       <div className="space-y-8">
         {/* Default hero */}
-        <div className="bg-surface border border-white/[0.06] rounded-xl p-6">
+        <div className="bg-surface rounded-xl border border-white/[0.06] p-6">
           <Hero />
         </div>
         {/* Small hero variant (reuse Hero with props later) */}
-        <div className="bg-surface border border-white/[0.06] rounded-xl p-6">
-          <h3 className="font-heading uppercase text-text-base">Compact Variant</h3>
-          <p className="mt-2 text-text-muted">A compact hero for inner pages.</p>
+        <div className="bg-surface rounded-xl border border-white/[0.06] p-6">
+          <h3 className="font-heading text-text-base uppercase">
+            Compact Variant
+          </h3>
+          <p className="text-text-muted mt-2">
+            A compact hero for inner pages.
+          </p>
         </div>
       </div>
     </section>
