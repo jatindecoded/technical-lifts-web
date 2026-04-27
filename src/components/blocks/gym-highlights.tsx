@@ -10,12 +10,12 @@ export function GymHighlights() {
         {GYM_HIGHLIGHTS.map((item) => (
           <div
             key={item.label}
-            className="rounded-xl border border-white/[0.08] bg-surface p-6 space-y-2"
+            className="bg-surface space-y-2 rounded-xl border border-white/[0.08] p-6"
           >
-            <div className="font-heading text-primary text-3xl font-bold tracking-tight leading-none">
+            <div className="font-heading text-primary text-3xl leading-none font-bold tracking-tight">
               {item.stat}
             </div>
-            <div className="font-heading text-sm uppercase font-semibold tracking-wide text-text-base">
+            <div className="font-heading text-text-base text-sm font-semibold tracking-wide uppercase">
               {item.label}
             </div>
             <p className="text-muted-foreground text-sm leading-snug">

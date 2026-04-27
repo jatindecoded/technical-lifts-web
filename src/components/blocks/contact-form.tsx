@@ -1,6 +1,5 @@
 "use client";
 
-
 import UnifiedForm from "@/components/ui/unified-form";
 
 // Simple HTML form posting to FormSubmit.co for static export compatibility.
@@ -9,4 +8,3 @@ export function ContactForm() {
   // Simplified site-wide lead form: name, phone, email only
   return <UnifiedForm />;
 }
-

@@ -17,7 +17,7 @@ export default function AboutPage() {
           <DashedLine className="container max-w-5xl scale-x-115" />
           <GymHighlights />
         </div>
-        <DashedLine className="container max-w-5xl scale-x-115 mt-12" />
+        <DashedLine className="container mt-12 max-w-5xl scale-x-115" />
         <TrialCta />
       </div>
     </Background>

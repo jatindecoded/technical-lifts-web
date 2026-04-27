@@ -1,6 +1,5 @@
 "use client";
 
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,7 +11,11 @@ import { BLOG_POSTS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 type PostBase = (typeof BLOG_POSTS)[0];
-type Post = PostBase & { heroImage?: string; heroAlt?: string; pullQuote?: string };
+type Post = PostBase & {
+  heroImage?: string;
+  heroAlt?: string;
+  pullQuote?: string;
+};
 
 export function BlogArticle({ post }: { post: Post }) {
   const prefersReduced = useReducedMotion();
@@ -30,15 +33,13 @@ export function BlogArticle({ post }: { post: Post }) {
           animate={prefersReduced ? false : { opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <div className="mb-6 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+          <div className="text-primary mb-6 flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase">
             <span>{readMins} Min Read</span>
             <span className="h-1 w-1 rounded-full bg-white/20" />
             <span>Technical Lifts Blog</span>
           </div>
-          <h1 className="uppercase">
-            {post.title}
-          </h1>
-          <p className="text-text-muted mt-6 text-xl font-medium leading-relaxed">
+          <h1 className="uppercase">{post.title}</h1>
+          <p className="text-text-muted mt-6 text-xl leading-relaxed font-medium">
             {post.excerpt}
           </p>
         </motion.header>
@@ -46,66 +47,92 @@ export function BlogArticle({ post }: { post: Post }) {
         {post.heroImage && (
           <figure className="mb-12">
             <div className="relative aspect-[21/9] overflow-hidden rounded-3xl border border-white/[0.08] shadow-2xl">
-              <Image src={post.heroImage} alt={post.heroAlt || post.title} fill className="object-cover  hover:-0 transition-all duration-1000" />
+              <Image
+                src={post.heroImage}
+                alt={post.heroAlt || post.title}
+                fill
+                className="hover:-0 object-cover transition-all duration-1000"
+              />
             </div>
           </figure>
         )}
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-8 space-y-8 text-text-base">
+          <div className="text-text-base space-y-8 lg:col-span-8">
             <div className="prose prose-invert max-w-none">
               {post.content.map((p, i) => (
-                <p key={i} className={cn("text-lg leading-relaxed", i === 0 && "text-xl font-medium text-text-base")}>
+                <p
+                  key={i}
+                  className={cn(
+                    "text-lg leading-relaxed",
+                    i === 0 && "text-text-base text-xl font-medium",
+                  )}
+                >
                   {p}
                 </p>
               ))}
             </div>
 
             {post.pullQuote && (
-              <blockquote className="my-12 border-l-4 border-primary pl-8 text-2xl font-heading font-bold italic tracking-tight text-text-base">
+              <blockquote className="border-primary font-heading text-text-base my-12 border-l-4 pl-8 text-2xl font-bold tracking-tight italic">
                 "{post.pullQuote}"
               </blockquote>
             )}
 
             <hr className="border-white/10" />
-            
+
             <div className="pt-4">
-              <h3 className="mb-6 text-xs font-bold uppercase tracking-[0.2em] text-text-muted">Related Articles</h3>
+              <h3 className="text-text-muted mb-6 text-xs font-bold tracking-[0.2em] uppercase">
+                Related Articles
+              </h3>
               <div className="grid gap-4">
                 {related.map((r) => (
-                  <Link 
-                    key={r.slug} 
+                  <Link
+                    key={r.slug}
                     href={`/blog/${r.slug}`}
-                    className="group flex items-center justify-between rounded-xl border border-white/[0.06] bg-surface p-6 transition-all hover:border-primary/20"
+                    className="group bg-surface hover:border-primary/20 flex items-center justify-between rounded-xl border border-white/[0.06] p-6 transition-all"
                   >
-                    <span className="font-heading font-bold uppercase group-hover:text-primary transition-colors">{r.title}</span>
-                    <ArrowRight className="size-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-primary" />
+                    <span className="font-heading group-hover:text-primary font-bold uppercase transition-colors">
+                      {r.title}
+                    </span>
+                    <ArrowRight className="text-primary size-4 opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
                   </Link>
                 ))}
               </div>
             </div>
           </div>
 
-          <aside className="lg:col-span-4 space-y-8">
+          <aside className="space-y-8 lg:col-span-4">
             <div className="sticky top-24 space-y-6">
-              <div className="rounded-2xl border border-white/[0.08] bg-surface p-8 shadow-2xl">
-                <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-primary">Get Started</h3>
+              <div className="bg-surface rounded-2xl border border-white/[0.08] p-8 shadow-2xl">
+                <h3 className="text-primary mb-4 text-xs font-bold tracking-[0.2em] uppercase">
+                  Get Started
+                </h3>
                 <p className="text-text-muted mb-6 text-sm leading-relaxed">
-                  Ready to apply these principles? Book a free session and let&apos;s build your plan.
+                  Ready to apply these principles? Book a free session and
+                  let&apos;s build your plan.
                 </p>
                 <CTA id="trial" className="w-full" />
               </div>
 
               <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8">
-                <h4 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-text-muted">Navigation</h4>
+                <h4 className="text-text-muted mb-4 text-xs font-bold tracking-[0.2em] uppercase">
+                  Navigation
+                </h4>
                 <ul className="space-y-4 text-sm font-bold tracking-widest">
                   <li>
-                    <Link href="/blog" className="text-text-muted hover:text-primary transition-colors flex items-center gap-2">
+                    <Link
+                      href="/blog"
+                      className="text-text-muted hover:text-primary flex items-center gap-2 transition-colors"
+                    >
                       <ArrowRight className="size-3" /> All Articles
                     </Link>
                   </li>
                   <li>
-                    <Link href="/transformations" className="text-text-muted hover:text-primary transition-colors flex items-center gap-2">
+                    <Link
+                      href="/transformations"
+                      className="text-text-muted hover:text-primary flex items-center gap-2 transition-colors"
+                    >
                       <ArrowRight className="size-3" /> Transformations
                     </Link>
                   </li>

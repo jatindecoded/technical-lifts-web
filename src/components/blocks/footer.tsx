@@ -2,14 +2,8 @@ import Link from "next/link";
 
 import { ArrowUpRight } from "lucide-react";
 
-
 import { CTA } from "@/components/ui/cta";
-import {
-  FOOTER_CTA,
-  FOOTER_LEGAL,
-  FOOTER_NAV,
-  SITE,
-} from "@/lib/constants";
+import { FOOTER_CTA, FOOTER_LEGAL, FOOTER_NAV, SITE } from "@/lib/constants";
 
 export function Footer() {
   const social = SITE.instagramUrl
@@ -68,7 +62,7 @@ export function Footer() {
       </nav>
 
       <div className="mt-10 w-full overflow-hidden md:mt-14 lg:mt-20">
-        <div className="font-heading mx-auto w-full max-w-[1570px] bg-linear-to-b from-primary to-white/40 bg-clip-text text-center text-[clamp(1rem,16vw,15.5rem)] leading-[0.78] tracking-tight text-transparent opacity-80 lowercase select-none translate-y-[30%] whitespace-nowrap">
+        <div className="font-heading from-primary mx-auto w-full max-w-[1570px] translate-y-[30%] bg-linear-to-b to-white/40 bg-clip-text text-center text-[clamp(1rem,16vw,15.5rem)] leading-[0.78] tracking-tight whitespace-nowrap text-transparent lowercase opacity-80 select-none">
           {SITE.name}
         </div>
       </div>

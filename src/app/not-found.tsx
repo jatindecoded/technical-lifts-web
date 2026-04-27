@@ -1,5 +1,3 @@
-
-
 import { ArrowLeft } from "lucide-react";
 
 import { Background } from "@/components/background";
@@ -21,7 +19,12 @@ export default function NotFound() {
 
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <div className="group min-w-[200px]">
-              <CTA id="home" icon={<ArrowLeft className="size-5 transition-transform group-hover:-translate-x-1" />} />
+              <CTA
+                id="home"
+                icon={
+                  <ArrowLeft className="size-5 transition-transform group-hover:-translate-x-1" />
+                }
+              />
             </div>
             <div className="min-w-[200px]">
               <CTA id="contactSupport" />

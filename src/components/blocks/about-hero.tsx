@@ -16,7 +16,7 @@ export function AboutHero() {
           </p>
         </div>
 
-        <div className="relative flex flex-1 flex-col justify-center gap-6 pt-10 lg:pl-10 lg:pt-0">
+        <div className="relative flex flex-1 flex-col justify-center gap-6 pt-10 lg:pt-0 lg:pl-10">
           <DashedLine
             orientation="vertical"
             className="absolute top-0 left-0 max-lg:hidden"
@@ -29,10 +29,13 @@ export function AboutHero() {
           <div className="grid grid-cols-3 gap-4">
             {GYM_STATS.map((stat, idx) => (
               <div key={stat.label} className="flex flex-col gap-0.5">
-                <div className="font-heading text-primary text-4xl font-bold tracking-tight md:text-5xl motion-safe:animate-fade-in-up" style={{ animationDelay: `${idx * 70}ms` }}>
+                <div
+                  className="font-heading text-primary motion-safe:animate-fade-in-up text-4xl font-bold tracking-tight md:text-5xl"
+                  style={{ animationDelay: `${idx * 70}ms` }}
+                >
                   {stat.value}
                 </div>
-                <div className="text-muted-foreground uppercase text-sm font-semibold tracking-wide">
+                <div className="text-muted-foreground text-sm font-semibold tracking-wide uppercase">
                   {stat.label}
                 </div>
               </div>

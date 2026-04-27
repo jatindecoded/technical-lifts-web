@@ -32,8 +32,8 @@ export function SplitReveal({
   };
 
   const child: Variants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 20,
     },
     show: {
@@ -55,11 +55,11 @@ export function SplitReveal({
       className={cn("inline-flex flex-wrap", className)}
     >
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden mr-[0.2em] last:mr-0">
-          <motion.span
-            variants={child}
-            className="inline-block"
-          >
+        <span
+          key={i}
+          className="mr-[0.2em] inline-block overflow-hidden last:mr-0"
+        >
+          <motion.span variants={child} className="inline-block">
             {word}
           </motion.span>
         </span>

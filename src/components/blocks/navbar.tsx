@@ -43,95 +43,99 @@ export const Navbar = () => {
   };
 
   return (
-    <section className="fixed inset-x-0 top-0 z-50 pointer-events-auto px-4">
+    <section className="pointer-events-auto fixed inset-x-0 top-0 z-50 px-4">
       {/* small full-width top strip to avoid visible background gap at the very top */}
-      <div className="w-full h-4" />
+      <div className="h-4 w-full" />
       <div
         className={cn(
-          "bg-dark/50 shadow-xl mx-auto rounded-4xl border border-white/[0.08] backdrop-blur-md transition-all duration-300 py-1",
+          "bg-dark/50 mx-auto rounded-4xl border border-white/[0.08] py-1 shadow-xl backdrop-blur-md transition-all duration-300",
         )}
       >
-      <div className="flex items-center justify-between px-6 py-2">
-        <Link href="/" className="flex text-primary shrink-0 items-center gap-2 uppercase font-bold">
-          {SITE.name}
-        </Link>
-
-        {/* Desktop Navigation */}
-        <NavigationMenu className="max-lg:hidden">
-          <NavigationMenuList className="flex gap-4 whitespace-nowrap">
-            {NAV_LINKS.map((link) => (
-              <NavigationMenuItem key={link.label}>
-                <button
-                  onClick={() => handleNavClick(link.href)}
-                  className={cn(
-                    "relative bg-transparent px-2 text-sm uppercase font-medium transition-opacity hover:opacity-75",
-                    pathname === link.href && "border p-2 rounded-xl border-primary",
-                  )}
-                >
-                  {link.label}
-                </button>
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
-
-        {/* CTA */}
-        <div className="flex items-center gap-2.5">
-          <div className="max-lg:hidden">
-            <CTA id="trial" />
-          </div>
-
-          {/* Hamburger Menu Button (Mobile Only) */}
-          <button
-            className="text-muted-foreground relative flex size-8 lg:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+        <div className="flex items-center justify-between px-6 py-2">
+          <Link
+            href="/"
+            className="text-primary flex shrink-0 items-center gap-2 font-bold uppercase"
           >
-            <span className="sr-only">Open main menu</span>
-            <div className="absolute top-1/2 left-1/2 block w-[18px] -translate-x-1/2 -translate-y-1/2">
-              <span
-                aria-hidden="true"
-                className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "rotate-45" : "-translate-y-1.5"}`}
-              ></span>
-              <span
-                aria-hidden="true"
-                className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "opacity-0" : ""}`}
-              ></span>
-              <span
-                aria-hidden="true"
-                className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "-rotate-45" : "translate-y-1.5"}`}
-              ></span>
-            </div>
-          </button>
-        </div>
-      </div>
+            {SITE.name}
+          </Link>
 
-      {/*  Mobile Menu Navigation */}
-      <div
-        className={cn(
-          "bg-background fixed inset-x-0 top-[calc(100%+1rem)] flex flex-col rounded-2xl border p-6 transition-all duration-300 ease-in-out lg:hidden",
-          isMenuOpen
-            ? "visible translate-y-0 opacity-100"
-            : "invisible -translate-y-4 opacity-0",
-        )}
-      >
-        <nav className="divide-border flex flex-1 flex-col divide-y">
-          {NAV_LINKS.map((link) => (
+          {/* Desktop Navigation */}
+          <NavigationMenu className="max-lg:hidden">
+            <NavigationMenuList className="flex gap-4 whitespace-nowrap">
+              {NAV_LINKS.map((link) => (
+                <NavigationMenuItem key={link.label}>
+                  <button
+                    onClick={() => handleNavClick(link.href)}
+                    className={cn(
+                      "relative bg-transparent px-2 text-sm font-medium uppercase transition-opacity hover:opacity-75",
+                      pathname === link.href &&
+                        "border-primary rounded-xl border p-2",
+                    )}
+                  >
+                    {link.label}
+                  </button>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          {/* CTA */}
+          <div className="flex items-center gap-2.5">
+            <div className="max-lg:hidden">
+              <CTA id="trial" />
+            </div>
+
+            {/* Hamburger Menu Button (Mobile Only) */}
             <button
-              key={link.label}
-              onClick={() => {
-                setIsMenuOpen(false);
-                handleNavClick(link.href);
-              }}
-              className={cn(
-                "text-primary hover:text-primary/80 py-4 text-base font-medium transition-colors first:pt-0 last:pb-0 text-left w-full",
-                pathname === link.href && "text-muted-foreground",
-              )}
+              className="text-muted-foreground relative flex size-8 lg:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {link.label}
+              <span className="sr-only">Open main menu</span>
+              <div className="absolute top-1/2 left-1/2 block w-[18px] -translate-x-1/2 -translate-y-1/2">
+                <span
+                  aria-hidden="true"
+                  className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "rotate-45" : "-translate-y-1.5"}`}
+                ></span>
+                <span
+                  aria-hidden="true"
+                  className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "opacity-0" : ""}`}
+                ></span>
+                <span
+                  aria-hidden="true"
+                  className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "-rotate-45" : "translate-y-1.5"}`}
+                ></span>
+              </div>
             </button>
-          ))}
-        </nav>
-      </div>
+          </div>
+        </div>
+
+        {/*  Mobile Menu Navigation */}
+        <div
+          className={cn(
+            "bg-background fixed inset-x-0 top-[calc(100%+1rem)] flex flex-col rounded-2xl border p-6 transition-all duration-300 ease-in-out lg:hidden",
+            isMenuOpen
+              ? "visible translate-y-0 opacity-100"
+              : "invisible -translate-y-4 opacity-0",
+          )}
+        >
+          <nav className="divide-border flex flex-1 flex-col divide-y">
+            {NAV_LINKS.map((link) => (
+              <button
+                key={link.label}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  handleNavClick(link.href);
+                }}
+                className={cn(
+                  "text-primary hover:text-primary/80 w-full py-4 text-left text-base font-medium transition-colors first:pt-0 last:pb-0",
+                  pathname === link.href && "text-muted-foreground",
+                )}
+              >
+                {link.label}
+              </button>
+            ))}
+          </nav>
+        </div>
       </div>
     </section>
   );

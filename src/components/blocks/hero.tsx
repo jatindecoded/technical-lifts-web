@@ -46,7 +46,8 @@ export const Hero = () => {
 
   return (
     <section className="relative pt-16 pb-32 lg:pt-24">
-      <motion.div className="max-w-container mx-auto flex flex-col items-center justify-center gap-16 px-6 lg:flex-row lg:items-start lg:justify-between lg:gap-24"
+      <motion.div
+        className="max-w-container mx-auto flex flex-col items-center justify-center gap-16 px-6 lg:flex-row lg:items-start lg:justify-between lg:gap-24"
         // initial={reduceMotion ? undefined : { scale: 4 }}
         // whileInView={reduceMotion ? undefined : { scale: 1 }}
         // transition={{ duration: 0.5, ease: "easeOut" }}
@@ -125,7 +126,7 @@ export const Hero = () => {
                   variants={item}
                   // whileHover={reduceMotion ? {} : { y: -5, scale: 1.02 }}
                   // transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className=" flex flex-col items-start rounded-2xl p-4"
+                  className="flex flex-col items-start rounded-2xl p-4"
                 >
                   <h4 className="font-body mb-2 text-sm font-bold tracking-widest">
                     <Icon className="text-primary m-2 inline size-4" />
@@ -139,15 +140,20 @@ export const Hero = () => {
             })}
           </div>
         </div>
-
       </motion.div>
 
       {/* Hero image */}
       <div className="mt-24 px-6 lg:container">
         <motion.div
           style={{ y }}
-          initial={reduceMotion ? { opacity: 0, y: 40 } : { opacity: 0, y: 40, scale: 1.08 }}
-          whileInView={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0, scale: 1 }}
+          initial={
+            reduceMotion
+              ? { opacity: 0, y: 40 }
+              : { opacity: 0, y: 40, scale: 1.08 }
+          }
+          whileInView={
+            reduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0, scale: 1 }
+          }
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true }}
           className="relative w-full overflow-hidden rounded-3xl border border-white/[0.08] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] will-change-transform"

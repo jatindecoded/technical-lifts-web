@@ -52,7 +52,10 @@ const Login = () => {
                         Remember me
                       </label>
                     </div>
-                    <button type="button" className="text-primary text-sm font-medium">
+                    <button
+                      type="button"
+                      className="text-primary text-sm font-medium"
+                    >
                       Forgot password
                     </button>
                   </div>
