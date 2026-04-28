@@ -1,1 +1,0 @@
-declare global {\n  interface Window {\n    /** Minimal Tally widget interface used in this project */\n    Tally?: {\n      loadEmbeds?: () => void;\n      openPopup?: (formId: string, options?: any) => void;\n      closePopup?: (formId: string) => void;\n    };\n  }\n}\n\nexport {};\n

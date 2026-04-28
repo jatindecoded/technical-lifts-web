@@ -49,11 +49,6 @@ export default function RootLayout({
       className={`${bricolageGrotesque.variable} ${inter.variable}`}
     >
       <head>
-        <script
-          async
-          crossOrigin="anonymous"
-          src="https://tweakcn.com/live-preview.min.js"
-        />
       </head>
       <body className="bg-dark font-body antialiased">
         <Navbar />
