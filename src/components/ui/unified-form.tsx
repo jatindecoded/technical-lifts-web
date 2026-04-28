@@ -15,11 +15,16 @@ export default function UnifiedForm() {
 
   React.useEffect(() => {
     function handleMessage(e: MessageEvent) {
-      if (typeof e.data === "string" && e.data.includes("Tally.FormSubmitted")) {
+      if (
+        typeof e.data === "string" &&
+        e.data.includes("Tally.FormSubmitted")
+      ) {
         try {
           const parsed = JSON.parse(e.data);
           const payload = parsed.payload;
-          window.dispatchEvent(new CustomEvent("lead-submitted", { detail: payload }));
+          window.dispatchEvent(
+            new CustomEvent("lead-submitted", { detail: payload }),
+          );
         } catch {}
       }
     }
@@ -67,10 +72,7 @@ export function Field({
   return (
     <div className={cn("space-y-2", className)}>
       {label && (
-        <label
-          htmlFor={id}
-          className="text-text-muted block text-xs font-bold tracking-widest"
-        >
+        <label htmlFor={id} className="text-text-muted block text-xs font-bold">
           {label}
         </label>
       )}

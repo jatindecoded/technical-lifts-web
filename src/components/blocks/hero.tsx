@@ -101,7 +101,7 @@ export const Hero = () => {
                 </div>
               ))}
             </div>
-            <p className="text-text-muted text-xs font-bold tracking-widest">
+            <p className="text-text-muted text-xs font-bold">
               {SITE.trialSubtext}
             </p>
           </motion.div>
@@ -128,7 +128,7 @@ export const Hero = () => {
                   // transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   className="flex flex-col items-start rounded-2xl p-4"
                 >
-                  <h4 className="font-body mb-2 text-sm font-bold tracking-widest">
+                  <h4 className="font-body mb-2 text-sm font-bold">
                     <Icon className="text-primary m-2 inline size-4" />
                     {feature.title}
                   </h4>

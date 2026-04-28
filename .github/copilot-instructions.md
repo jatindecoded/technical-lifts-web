@@ -31,7 +31,7 @@ max-w-container -> 80rem max width
 - Inspired by Nike Training / Gymshark editorial feel
 - Dark backgrounds only, no light mode
 - bg-primary used sparingly: one word in headlines, badges, main CTA only
-- Typography uppercase and tight for headings: tracking-tight leading-none
+- Typography uppercase and tight for headings: leading-none
 - Cards: bg-surface border border-white/[0.08] rounded-xl, no box shadows
 - Buttons: primary is bg-primary text-dark rounded-full font-heading uppercase
 - Ghost button: border border-white/20 text-text-base rounded-full

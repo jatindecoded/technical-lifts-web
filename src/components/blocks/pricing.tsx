@@ -102,7 +102,7 @@ function LeadDialog({
             ) : (
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <div className="text-primary text-[10px] font-bold tracking-[0.2em]">
+                  <div className="text-primary text-[10px] font-bold">
                     Unlock Access
                   </div>
                   <h3 className="text-3xl font-bold">See Membership Pricing</h3>
@@ -162,20 +162,17 @@ export const Pricing = ({ className }: { className?: string }) => {
                 >
                   {plan.isPopular && (
                     <div className="bg-primary absolute top-0 right-0 z-20 rounded-tr-3xl rounded-bl-3xl px-6 py-2 shadow-xl">
-                      <span className="text-dark text-[10px] font-bold tracking-widest">
+                      <span className="text-dark text-[10px] font-bold">
                         Popular
                       </span>
                     </div>
                   )}
                   <CardContent className="text-text-base relative z-10 flex flex-1 flex-col gap-6 p-10">
                     <div>
-                      <div className="text-primary mb-2 text-sm font-bold tracking-wide">
+                      <div className="text-primary mb-2 text-sm font-bold">
                         {plan.duration}
                       </div>
-                      <CardHeading
-                        as="h3"
-                        className="text-3xl font-bold tracking-tight"
-                      >
+                      <CardHeading as="h3" className="text-3xl font-bold">
                         {plan.name}
                       </CardHeading>
                     </div>
@@ -185,7 +182,7 @@ export const Pricing = ({ className }: { className?: string }) => {
                         <div className="flex items-baseline gap-2">
                           <span
                             className={cn(
-                              "font-heading text-4xl font-extrabold tracking-tighter",
+                              "font-heading text-4xl font-extrabold",
                               plan.isPopular ? "text-primary" : "",
                             )}
                           >
@@ -195,7 +192,7 @@ export const Pricing = ({ className }: { className?: string }) => {
                         </div>
                       ) : (
                         <div className="space-y-4">
-                          <div className="font-heading text-5xl font-extrabold tracking-tighter blur">
+                          <div className="font-heading text-5xl font-extrabold blur">
                             {PRICING_SECTION.pricePlaceholder}
                           </div>
                           <Button onClick={() => setIsDialogOpen(true)}>

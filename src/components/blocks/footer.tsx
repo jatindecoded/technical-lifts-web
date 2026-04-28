@@ -13,7 +13,7 @@ export function Footer() {
   return (
     <footer className="flex flex-col items-center gap-14 pt-28 lg:pt-32">
       <div className="container space-y-3 text-center">
-        <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
+        <h2 className="text-2xl md:text-4xl lg:text-5xl">
           {FOOTER_CTA.heading}
         </h2>
         <p className="text-muted-foreground mx-auto max-w-xl leading-snug text-balance">
@@ -62,7 +62,7 @@ export function Footer() {
       </nav>
 
       <div className="mt-10 w-full overflow-hidden md:mt-14 lg:mt-20">
-        <div className="font-heading from-primary mx-auto w-full max-w-[1570px] translate-y-[30%] bg-linear-to-b to-white/40 bg-clip-text text-center text-[clamp(1rem,16vw,15.5rem)] leading-[0.78] tracking-tight whitespace-nowrap text-transparent lowercase opacity-80 select-none">
+        <div className="font-heading from-primary mx-auto w-full max-w-[1570px] translate-y-[30%] bg-linear-to-b to-white/40 bg-clip-text text-center text-[clamp(1rem,16vw,15.5rem)] leading-[0.78] whitespace-nowrap text-transparent lowercase opacity-80 select-none">
           {SITE.name}
         </div>
       </div>

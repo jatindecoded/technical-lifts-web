@@ -15,19 +15,21 @@ import { IMAGE_ASSETS } from "@/lib/constants";
 export default function Home() {
   return (
     <>
-      <Background className="-mt-30 via-black to-black/80 pt-36">
+      <Background className="-mt-30 relative overflow-hi via-black to-black/80 pt-36">
         <Image
           src={IMAGE_ASSETS.hero.src}
           alt={IMAGE_ASSETS.hero.alt}
-          fill
-          className="hidden rounded-2xl object-contain object-left-top opacity-10 lg:block"
+          width={1000}
+          height={1000}
+          className="hidden rounded-2xl object-contain -mt-36 absolute object-left-top opacity-10 lg:block w-full t-0"
         />
 
         <Image
           src={"/photos-og/DSC02584.webp"}
           alt={IMAGE_ASSETS.hero.alt}
-          fill
-          className="rounded-2xl object-contain object-left-top opacity-10 lg:hidden"
+          width={1000}
+          height={1000}
+          className="object-contain absolute -mt-36 object-left-top opacity-10 lg:hidden"
         />
 
         <Hero />

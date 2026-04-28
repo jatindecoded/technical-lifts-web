@@ -30,11 +30,9 @@ const renderValue = (value: boolean | string) => {
 
 export const PricingTable = () => {
   return (
-    <section className="p-28 lg:pb-32">
+    <section className="py-12 lg:pb-32">
       <div className="container max-w-3xl">
-        <h2 className="mb-2 text-2xl tracking-tight md:text-3xl">
-          {PT_PLAN.heading}
-        </h2>
+        <h2 className="mb-2 text-2xl md:text-3xl">{PT_PLAN.heading}</h2>
         <p className="text-muted-foreground mb-8 text-sm">
           {PT_PLAN.subheading}
         </p>
@@ -43,12 +41,12 @@ export const PricingTable = () => {
         <div className="grid grid-cols-3 border-b border-white/[0.08] pb-4">
           <div />
           <div className="text-center">
-            <div className="font-heading text-muted-foreground text-sm font-bold tracking-wide uppercase">
+            <div className="font-heading text-muted-foreground text-sm font-bold uppercase">
               Regular
             </div>
           </div>
           <div className="text-center">
-            <div className="font-heading text-primary text-sm font-bold tracking-wide uppercase">
+            <div className="font-heading text-primary text-sm font-bold uppercase">
               Personal Training
             </div>
           </div>

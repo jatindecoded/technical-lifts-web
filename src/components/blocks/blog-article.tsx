@@ -33,7 +33,7 @@ export function BlogArticle({ post }: { post: Post }) {
           animate={prefersReduced ? false : { opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <div className="text-primary mb-6 flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase">
+          <div className="text-primary mb-6 flex items-center gap-3 text-[10px] font-bold uppercase">
             <span>{readMins} Min Read</span>
             <span className="h-1 w-1 rounded-full bg-white/20" />
             <span>Technical Lifts Blog</span>
@@ -74,7 +74,7 @@ export function BlogArticle({ post }: { post: Post }) {
             </div>
 
             {post.pullQuote && (
-              <blockquote className="border-primary font-heading text-text-base my-12 border-l-4 pl-8 text-2xl font-bold tracking-tight italic">
+              <blockquote className="border-primary font-heading text-text-base my-12 border-l-4 pl-8 text-2xl font-bold italic">
                 "{post.pullQuote}"
               </blockquote>
             )}
@@ -82,7 +82,7 @@ export function BlogArticle({ post }: { post: Post }) {
             <hr className="border-white/10" />
 
             <div className="pt-4">
-              <h3 className="text-text-muted mb-6 text-xs font-bold tracking-[0.2em] uppercase">
+              <h3 className="text-text-muted mb-6 text-xs font-bold uppercase">
                 Related Articles
               </h3>
               <div className="grid gap-4">
@@ -105,7 +105,7 @@ export function BlogArticle({ post }: { post: Post }) {
           <aside className="space-y-8 lg:col-span-4">
             <div className="sticky top-24 space-y-6">
               <div className="bg-surface rounded-2xl border border-white/[0.08] p-8 shadow-2xl">
-                <h3 className="text-primary mb-4 text-xs font-bold tracking-[0.2em] uppercase">
+                <h3 className="text-primary mb-4 text-xs font-bold uppercase">
                   Get Started
                 </h3>
                 <p className="text-text-muted mb-6 text-sm leading-relaxed">
@@ -116,10 +116,10 @@ export function BlogArticle({ post }: { post: Post }) {
               </div>
 
               <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8">
-                <h4 className="text-text-muted mb-4 text-xs font-bold tracking-[0.2em] uppercase">
+                <h4 className="text-text-muted mb-4 text-xs font-bold uppercase">
                   Navigation
                 </h4>
-                <ul className="space-y-4 text-sm font-bold tracking-widest">
+                <ul className="space-y-4 text-sm font-bold">
                   <li>
                     <Link
                       href="/blog"
