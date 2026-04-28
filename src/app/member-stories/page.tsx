@@ -23,7 +23,7 @@ export default function MemberStories() {
   return (
     <section className="py-section max-w-container mx-auto px-6">
       <header className="mb-8">
-        <h1 className="font-heading text-text-base text-4xl leading-none tracking-tight uppercase">
+        <h1 className="font-heading text-text-base text-4xl leading-none uppercase">
           {TRANSFORMATIONS_SECTION.heading}
         </h1>
         <p className="text-text-muted mt-3">

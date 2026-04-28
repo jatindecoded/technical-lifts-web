@@ -6,7 +6,7 @@ export function AboutHero() {
     <section>
       <div className="container flex max-w-5xl flex-col justify-between gap-8 md:gap-20 lg:flex-row lg:items-center lg:gap-24">
         <div className="flex-[1.5]">
-          <h1 className="text-3xl tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             {ABOUT_HERO.heading}
             <br />
             <span className="text-primary">{ABOUT_HERO.headingAccent}</span>
@@ -30,12 +30,12 @@ export function AboutHero() {
             {GYM_STATS.map((stat, idx) => (
               <div key={stat.label} className="flex flex-col gap-0.5">
                 <div
-                  className="font-heading text-primary motion-safe:animate-fade-in-up text-4xl font-bold tracking-tight md:text-5xl"
+                  className="font-heading text-primary motion-safe:animate-fade-in-up text-4xl font-bold md:text-5xl"
                   style={{ animationDelay: `${idx * 70}ms` }}
                 >
                   {stat.value}
                 </div>
-                <div className="text-muted-foreground text-sm font-semibold tracking-wide uppercase">
+                <div className="text-muted-foreground text-sm font-semibold uppercase">
                   {stat.label}
                 </div>
               </div>

@@ -50,7 +50,7 @@ export function BlogList() {
                 {post.excerpt}
               </p>
             </div>
-            <div className="text-primary mt-8 flex items-center gap-2 text-xs font-bold tracking-widest">
+            <div className="text-primary mt-8 flex items-center gap-2 text-xs font-bold">
               Read Article{" "}
               <span className="transition-transform group-hover:translate-x-1">
                 →

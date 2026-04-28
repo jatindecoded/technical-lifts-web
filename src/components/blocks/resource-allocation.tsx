@@ -100,7 +100,7 @@ export const ResourceAllocation = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase"
+            className="text-primary text-[10px] font-bold uppercase"
           >
             Personal Training
           </motion.div>
@@ -113,7 +113,7 @@ export const ResourceAllocation = () => {
           <DashedLine orientation="horizontal" className="opacity-30" />
 
           <motion.div
-            className="relative flex max-md:flex-col lg:items-center"
+            className="relative flex max-md:flex-col lg:items-start"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.12 }}
@@ -123,7 +123,12 @@ export const ResourceAllocation = () => {
             }}
           >
             {topItems.map((item, i) => (
-              <Item key={i} item={item} isLast={i === topItems.length - 1} />
+              <Item
+                key={i}
+                item={item}
+                isLast={i === topItems.length - 1}
+                className="justify-start"
+              />
             ))}
           </motion.div>
 
@@ -136,7 +141,7 @@ export const ResourceAllocation = () => {
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase"
+              className="text-primary text-[10px] font-bold uppercase"
             >
               Facilities
             </motion.div>
@@ -168,7 +173,7 @@ export const ResourceAllocation = () => {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-text-muted font-heading mt-16 text-center text-sm font-bold tracking-widest"
+            className="text-text-muted font-heading mt-16 text-center text-sm font-bold"
           >
             "{FEATURE_SECTIONS.facilitiesFootnote}"
           </motion.p>
@@ -194,7 +199,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
       whileInView="show"
       viewport={{ once: true, amount: 0.12 }}
       className={cn(
-        "relative flex flex-col items-center justify-between px-0 py-10 md:px-8",
+        "relative flex flex-col items-center justify-between px-0 py-10 md:pr-8",
         className,
         item.className,
       )}
@@ -210,7 +215,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
       )}
 
       {item.listItems && (
-        <ul className="text-text-muted mb-10 space-y-3 text-xs font-bold tracking-widest uppercase">
+        <ul className="text-text-muted mb-10 space-y-3 text-xs font-bold uppercase">
           {item.listItems.map((listItem) => (
             <li key={listItem} className="flex items-center gap-3">
               <DumbbellIcon className="text-primary size-4" />

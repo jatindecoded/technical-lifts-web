@@ -51,7 +51,7 @@ export const Features = () => {
                 variants={item}
                 className="flex flex-1 max-md:flex-col"
               >
-                <div className="flex-1 p-8 lg:p-12">
+                <div className="flex-1 p-8">
                   <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.05] shadow-inner">
                     <Image
                       src={
@@ -72,7 +72,7 @@ export const Features = () => {
                   <div className="mt-10 space-y-6">
                     <CardHeading
                       as="h4"
-                      className="text-text-base text-3xl font-bold tracking-tighter"
+                      className="text-text-base text-3xl font-bold"
                     >
                       {sectionItem.title}?
                     </CardHeading>

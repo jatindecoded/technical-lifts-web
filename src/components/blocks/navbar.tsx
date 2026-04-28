@@ -21,25 +21,25 @@ export const Navbar = () => {
 
   const handleNavClick = async (href: string) => {
     // If the link is an anchor to home, ensure we navigate to root then scroll
-    if (href.startsWith("/#")) {
-      const anchor = href.replace("/#", "");
-      if (pathname === "/") {
-        const el = document.getElementById(anchor);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      } else {
-        await router.push("/");
-        // small delay to allow DOM to render
-        setTimeout(() => {
-          const el = document.getElementById(anchor);
-          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 150);
-      }
-    } else {
+    // if (href.startsWith("/#")) {
+    //   const anchor = href.replace("/#", "");
+    //   if (pathname === "/") {
+    //     const el = document.getElementById(anchor);
+    //     if (el) {
+    //       el.scrollIntoView({ behavior: "smooth", block: "start" });
+    //     }
+    //   } else {
+    //     await router.push("/");
+    //     // small delay to allow DOM to render
+    //     setTimeout(() => {
+    //       const el = document.getElementById(anchor);
+    //       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    //     }, 150);
+    //   }
+    // } else {
       // normal navigation
       router.push(href);
-    }
+    // }
   };
 
   return (

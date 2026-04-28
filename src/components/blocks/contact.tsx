@@ -56,7 +56,7 @@ export default function Contact() {
                   >
                     {SITE.phone}
                   </Link>
-                  <p className="text-text-muted text-xs font-bold tracking-widest">
+                  <p className="text-text-muted text-xs font-bold">
                     WhatsApp same number
                   </p>
                 </div>
@@ -76,7 +76,7 @@ export default function Contact() {
                   Hours
                 </CardHeading>
                 <div className="space-y-1">
-                  <p className="text-text-base text-sm font-bold tracking-tight">
+                  <p className="text-text-base text-sm font-bold">
                     Open 7 Days
                   </p>
                   <p className="text-text-muted text-sm leading-relaxed">
@@ -99,12 +99,8 @@ export default function Contact() {
 
         <div className="mx-auto max-w-2xl">
           <div className="mb-12 space-y-4 text-center">
-            <div className="text-primary text-[10px] font-bold tracking-[0.2em]">
-              Enquiry
-            </div>
-            <h2 className="font-heading text-3xl font-bold tracking-tight">
-              Send a Message
-            </h2>
+            <div className="text-primary text-[10px] font-bold">Enquiry</div>
+            <h2 className="font-heading text-3xl font-bold">Send a Message</h2>
           </div>
           <ContactForm />
         </div>

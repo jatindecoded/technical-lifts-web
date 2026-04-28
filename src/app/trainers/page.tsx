@@ -12,7 +12,7 @@ export default function TrainersPage() {
     <Background>
       <div className="py-28 lg:py-32 lg:pt-44">
         <div className="container max-w-5xl">
-          <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="font-heading text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
             {TRAINERS_SECTION.heading}
           </h1>
           <p className="text-muted-foreground mt-4 max-w-xl text-lg leading-relaxed">
@@ -35,7 +35,7 @@ export default function TrainersPage() {
                 />
               </div>
               <div className="space-y-1 p-5">
-                <div className="font-heading text-primary text-base font-bold tracking-wide uppercase">
+                <div className="font-heading text-primary text-base font-bold uppercase">
                   {trainer.name}
                 </div>
                 <div className="text-muted-foreground text-sm">

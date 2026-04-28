@@ -68,7 +68,7 @@ interface TextSectionProps {
 export function TextSection({ section }: TextSectionProps) {
   return (
     <div className="flex-1 space-y-4 md:space-y-6">
-      <h2 className="text-foreground font-heading text-3xl font-bold tracking-tight md:text-4xl">
+      <h2 className="text-foreground font-heading text-3xl font-bold md:text-4xl">
         {section.title}
       </h2>
       <div className="text-muted-foreground max-w-xl space-y-4 text-lg leading-relaxed">

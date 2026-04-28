@@ -77,10 +77,10 @@ export const Testimonials = ({
                               damping: 18,
                             }}
                           >
-                            <div className="text-primary text-[10px] font-bold tracking-[0.2em]">
+                            <div className="text-primary text-[10px] font-bold">
                               Transformation
                             </div>
-                            <div className="text-text-base font-heading mt-4 text-3xl font-extrabold tracking-tighter">
+                            <div className="text-text-base font-heading mt-4 text-3xl font-extrabold">
                               {transformation.name}
                             </div>
                           </motion.div>
@@ -90,7 +90,7 @@ export const Testimonials = ({
                             "{transformation.result}"
                           </blockquote>
                           <div className="space-y-1">
-                            <div className="text-primary font-heading text-xs font-bold tracking-widest">
+                            <div className="text-primary font-heading text-xs font-bold">
                               {transformation.name}
                             </div>
                             <div className="text-text-muted text-sm font-medium">
@@ -113,7 +113,7 @@ export const Testimonials = ({
           <motion.p variants={item} className="mt-12">
             <Link
               href={SITE.googleReviewsUrl || "#"}
-              className="text-text-muted hover:text-primary text-xs font-bold tracking-widest underline underline-offset-8 transition-colors"
+              className="text-text-muted hover:text-primary text-xs font-bold underline underline-offset-8 transition-colors"
             >
               {TRANSFORMATIONS_SECTION.googleReviewsLine}
             </Link>

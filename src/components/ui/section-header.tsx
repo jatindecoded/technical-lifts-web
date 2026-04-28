@@ -41,7 +41,7 @@ export const SectionHeader = ({
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase"
+        className="text-primary text-[10px] font-bold uppercase"
       >
         {badge}
       </motion.div>

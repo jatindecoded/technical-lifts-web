@@ -16,7 +16,7 @@ export default function TransformationsPage() {
     <Background>
       <div className="py-28 lg:py-32 lg:pt-44">
         <div className="container max-w-5xl">
-          <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="font-heading text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
             {TRANSFORMATIONS_SECTION.heading}
           </h1>
           <p className="text-muted-foreground mt-4 max-w-xl text-lg leading-relaxed">
@@ -32,7 +32,7 @@ export default function TransformationsPage() {
             >
               <div className="from-primary/10 via-surface to-muted/10 flex h-36 flex-none items-center justify-center bg-gradient-to-br">
                 <div className="px-6 text-center">
-                  <div className="text-primary font-heading text-xs tracking-widest uppercase">
+                  <div className="text-primary font-heading text-xs uppercase">
                     Transformation
                   </div>
                   <div className="font-heading text-text-base mt-2 text-2xl leading-tight font-bold">
@@ -42,12 +42,12 @@ export default function TransformationsPage() {
               </div>
               <div className="flex flex-1 flex-col justify-between space-y-1 p-6">
                 <div>
-                  <p className="font-heading text-2xl leading-tight font-bold tracking-tight">
+                  <p className="font-heading text-2xl leading-tight font-bold">
                     {transformation.result}
                   </p>
                 </div>
                 <div>
-                  <p className="font-heading text-primary text-sm font-bold tracking-widest uppercase">
+                  <p className="font-heading text-primary text-sm font-bold uppercase">
                     {transformation.name}
                   </p>
                   <p className="text-muted-foreground text-sm">

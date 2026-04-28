@@ -44,7 +44,7 @@ export const Logos = () => {
                   <div className="bg-surface group-hover:border-primary/40 flex h-12 w-12 items-center justify-center rounded-xl border border-white/[0.08] transition-all group-hover:scale-110">
                     <Icon className="text-primary size-5" />
                   </div>
-                  <span className="text-text-base text-sm font-bold tracking-[0.2em] uppercase">
+                  <span className="text-text-base text-sm font-bold uppercase">
                     {item.label}
                   </span>
                 </div>

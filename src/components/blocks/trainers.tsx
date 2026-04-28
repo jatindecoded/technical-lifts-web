@@ -64,14 +64,14 @@ export const Trainers = () => {
                       <CardHeading as="div" className="text-primary text-2xl">
                         {trainer.name}
                       </CardHeading>
-                      <div className="text-text-muted text-[10px] font-bold tracking-[0.1em]">
+                      <div className="text-text-muted text-[10px] font-bold">
                         {trainer.certification}
                       </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4 border-y border-white/[0.05] py-4">
                       <div className="space-y-1">
-                        <div className="text-text-muted text-[10px] font-bold tracking-widest">
+                        <div className="text-text-muted text-[10px] font-bold">
                           Experience
                         </div>
                         <div className="text-text-base text-sm font-bold">
@@ -79,7 +79,7 @@ export const Trainers = () => {
                         </div>
                       </div>
                       <div className="space-y-1">
-                        <div className="text-text-muted text-[10px] font-bold tracking-widest">
+                        <div className="text-text-muted text-[10px] font-bold">
                           Impact
                         </div>
                         <div className="text-text-base truncate text-sm font-bold">
@@ -89,7 +89,7 @@ export const Trainers = () => {
                     </div>
 
                     <div className="text-text-base space-y-2">
-                      <div className="text-text-muted text-[10px] font-bold tracking-widest">
+                      <div className="text-text-muted text-[10px] font-bold">
                         Specialization
                       </div>
                       <p className="text-sm leading-relaxed">
@@ -98,7 +98,7 @@ export const Trainers = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <div className="text-text-muted text-[10px] font-bold tracking-widest">
+                      <div className="text-text-muted text-[10px] font-bold">
                         Approach
                       </div>
                       <p className="text-text-muted text-sm leading-relaxed italic">

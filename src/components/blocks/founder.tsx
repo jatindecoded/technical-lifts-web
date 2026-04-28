@@ -51,10 +51,10 @@ export const Founder = () => {
 
             {/* Experience Badge */}
             <div className="bg-primary text-dark absolute -right-8 -bottom-8 z-20 hidden max-w-48 rounded-2xl p-8 shadow-2xl md:block">
-              <div className="font-heading text-4xl leading-none font-extrabold tracking-tighter">
+              <div className="font-heading text-4xl leading-none font-extrabold">
                 10+
               </div>
-              <div className="mt-2 text-[10px] leading-tight font-bold tracking-widest">
+              <div className="mt-2 text-[10px] leading-tight font-bold">
                 Years of Elite Experience
               </div>
             </div>
@@ -92,7 +92,7 @@ export const Founder = () => {
                   className="flex items-center gap-3"
                 >
                   <CheckCircle2 className="text-primary size-5 shrink-0" />
-                  <span className="text-text-muted text-xs font-bold tracking-widest">
+                  <span className="text-text-muted text-xs font-bold">
                     {highlight}
                   </span>
                 </motion.div>
