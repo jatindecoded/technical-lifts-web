@@ -15,7 +15,7 @@ import { TrialCta } from "@/components/blocks/trial-cta";
 export default function Home() {
   return (
     <>
-      <Background className="-mt-30 relative overflow-hi via-black to-black/80">
+      <Background className="-mt-32 md:-mt-30 relative overflow-hi via-black to-black/80">
 
         <Hero />
         <Features />

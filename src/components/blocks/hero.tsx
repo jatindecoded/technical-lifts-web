@@ -102,7 +102,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative -mt-30 flex min-h-screen flex-col overflow-hidden rounded-3xl">
+    <section className="relative -mt-30 flex min-h-screen flex-col overflow-hidden md:rounded-3xl">
       {/* Full-bleed video background — poster shows until video buffers, then fades in */}
       <div className="absolute inset-0 overflow-hidden">
         <video

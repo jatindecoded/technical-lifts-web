@@ -16,7 +16,7 @@ export const Background = ({
   return (
     <div
       className={cn(
-        "relative mx-2.5 mt-2.5",
+        "relative md:mx-2.5 md:mt-2.5",
         variant === "top" &&
           "from-primary/20 rounded-t-3xl rounded-b-2xl bg-linear-to-b via-black via-5% to-black",
         variant === "bottom" &&

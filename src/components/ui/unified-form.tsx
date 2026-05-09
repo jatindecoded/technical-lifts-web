@@ -2,17 +2,19 @@
 
 import React from "react";
 
+import Link from "next/link";
 import Script from "next/script";
+
+import { MapPin, Phone } from "lucide-react";
 
 import { Input as BaseInput } from "@/components/ui/input";
 import { Textarea as BaseTextarea } from "@/components/ui/textarea";
+import { SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 type TallyWindow = { Tally?: { loadEmbeds?: () => void } };
 
 export default function UnifiedForm() {
-  // Keep it simple: render a Tally iframe embed and load the widget script
-
   React.useEffect(() => {
     function handleMessage(e: MessageEvent) {
       if (
@@ -53,6 +55,36 @@ export default function UnifiedForm() {
           } catch {}
         }}
       />
+
+      {/* Fallback contact info — always visible in case Tally doesn't load */}
+      <div className="border-t border-white/[0.08] mt-6 pt-6 flex flex-col sm:flex-row gap-6">
+        <Link
+          href={`tel:${SITE.phone}`}
+          className="flex items-center gap-3 group"
+        >
+          <Phone className="text-primary size-4 shrink-0" />
+          <div>
+            <p className="text-text-muted text-[10px] font-bold uppercase tracking-wider">Call / WhatsApp</p>
+            <p className="text-text-base text-sm font-bold group-hover:text-primary transition-colors whitespace-nowrap">
+              {SITE.phone}
+            </p>
+          </div>
+        </Link>
+        <Link
+          href={SITE.googleMapsUrl ?? "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 group"
+        >
+          <MapPin className="text-primary size-4 shrink-0" />
+          <div>
+            <p className="text-text-muted text-[10px] font-bold uppercase tracking-wider">Visit Us</p>
+            <p className="text-text-base text-sm font-bold group-hover:text-primary transition-colors">
+              {SITE.address}
+            </p>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 }
