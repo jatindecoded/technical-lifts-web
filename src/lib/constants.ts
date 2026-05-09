@@ -2,10 +2,11 @@
 
 export const SITE = {
   name: "Technical Lifts",
-  tagline: "Technical Lifts is Built for",
-  taglineAccent: "Transformations",
+  tagline: "Where Tech Meets",
+  taglineAccent: "the Lift",
+  motto: "Where Tech Meets the Lift",
   subheadline:
-    "Certified trainers. Real equipment. No fluff. Whether you are starting out or training seriously — this is where progress happens.",
+    "Your technical destination for body transformation. Structured programming. Precision mechanics. Certified coaching.",
   phone: "+91-89205-76059",
   whatsapp: "+91-89205-76059",
   address: "C-596, Vikas Puri, Near PVR Cinema, New Delhi - 110018",
@@ -80,10 +81,12 @@ export const TRUST_BAR = [
   { label: "Elite Equipment", iconName: "Trophy" },
   { label: "100+ Success Stories", iconName: "Star" },
   { label: "Certified Coaching", iconName: "Users" },
+  { label: "Precision Training", iconName: "Target" },
+  { label: "Biomechanics Focused", iconName: "Zap" },
   { label: "Results Focused", iconName: "TrendingUp" },
-  { label: "Science Based", iconName: "Target" },
   { label: "Community Driven", iconName: "Users" },
   { label: "Open 7 Days", iconName: "Star" },
+  { label: "Fit Cafe On-Site", iconName: "Coffee" },
 ];
 
 // ─── Features / Who It's For ──────────────────────────────────────────────────
@@ -115,24 +118,25 @@ export const PT_INCLUDES = [
 ];
 
 export const FACILITIES = [
-  "Squat Racks",
-  "Dedicated Deadlift Platforms",
-  "Full Machine Section",
-  "Chiller Zone",
-  "Steam Room",
+  "Machine Section",
   "Cardio Zone",
+  "Chiller Rooms",
+  "Steam Room",
+  "Spin Bikes",
+  "Training Floor",
   "Locker Rooms",
   "Parking Available",
+  "Fit Cafe — By Technical Lifts",
 ];
 
 export const FEATURE_SECTIONS = {
   whoItsForHeading: "Which Type of Lifter Are You?",
   personalTrainingHeading: "Train With a Plan, Not Just Motivation",
   personalTrainingBody:
-    "Most people plateau because they are working hard without direction. Our certified personal trainers build a plan around you — your schedule, your body, your goal.",
+    "Most people plateau because they train hard without direction. Our certified personal trainers build a precision program around you — your schedule, your body, your goal.",
   personalTrainingCTA: "Talk to a Trainer — It's Free",
   personalTrainingCtaHref: "#trial",
-  facilitiesHeading: "Built for Serious Training",
+  facilitiesHeading: "Elite Equipment. Serious Infrastructure.",
   facilitiesFootnote: "Everything you need. Nothing you don't.",
   personalTrainingImageAlt: "Member training with dumbbells",
 };
@@ -315,7 +319,7 @@ export const TRAINERS: Trainer[] = [
   },
   {
     name: "Surender",
-    certification: "Gold’s Gym Fitness Institute Certified, Nutrition Basics",
+    certification: "NSCA Certified Personal Trainer, Body Transformation Specialist",
     speciality: "Muscle Building & Body Transformation",
     experience: "5 Years",
     results: "Helped 25+ clients gain lean muscle and improve physique",
@@ -329,12 +333,12 @@ export const TRAINERS: Trainer[] = [
 export const FOUNDER = {
   name: "Paramjit Singh Bindra",
   title: "Founder & Head of Strength",
-  bio: "With over a decade of elite management and training experience from industry giants like Gold’s Gym and Fitness First, Paramjit founded Technical Lifts to deliver real, measurable results. A specialist in Nutrition (NESTA) and precision mechanics (GGU), he is committed to building a gym that prioritizes technical mastery over ego. At Technical Lifts, we don't just provide a space to lift — we provide the system to transform.",
+  bio: "Paramjit Singh Bindra brings over 15 years of experience in fitness training, nutrition, and gym operations. He uses technical precision, structured programming, and science-backed nutrition to deliver refined, measurable results. Recognized for his impact on both performance and client outcomes, he has consistently driven growth in personal training programs and excellence in coaching. As a certified nutritionist and fitness professional, Paramjit believes that true transformation goes beyond workouts — it requires the right balance of training, recovery, and nutrition. At Technical Lifts, he leads with a \"train with purpose\" philosophy, working closely with individuals of all fitness levels, including older adults and those who require specialized attention.",
   highlights: [
-    "Former Club Manager at Transfitness & Athlesis",
-    "GGU & NESTA Certified Specialist",
-    "Recipient of 'Best Personal Trainer' Awards",
-    "Expert in Strength Mechanics & Nutrition",
+    "Certified Nutritionist Focused on Sustainable Results",
+    "Technical Strength Training & Precision Programming",
+    "Specialized Training for All Ages & Needs",
+    "Expertise in Corrective and Functional Training",
   ],
   photo: "/photos-og/param.webp",
 };
@@ -538,6 +542,54 @@ export const FAQ_ITEMS: FAQItem[] = [
   },
 ];
 
+// ─── Group Classes ────────────────────────────────────────────────────────────
+
+export const GROUP_CLASSES_SECTION = {
+  id: "group-classes",
+  badge: "Group Classes",
+  heading: "Group Classes that feel like",
+  headingAccent: "Exclusive Training Sessions",
+  subheading:
+    "High-energy group sessions led by certified coaches. Every class is structured, purposeful, and capped — so you always get real attention.",
+};
+
+export interface GroupClassItem {
+  day: string;
+  period: "Morning" | "Evening";
+  time: string;
+  activity: string;
+}
+
+export const GROUP_CLASSES_SCHEDULE: GroupClassItem[] = [
+  { day: "Monday", period: "Morning", time: "07:30 AM", activity: "Aerobics" },
+  { day: "Monday", period: "Evening", time: "07:30 PM", activity: "Yoga" },
+  { day: "Tuesday", period: "Morning", time: "07:30 AM", activity: "Yoga" },
+  { day: "Wednesday", period: "Morning", time: "07:30 AM", activity: "Zumba" },
+  { day: "Wednesday", period: "Evening", time: "07:30 PM", activity: "Bhangra" },
+  { day: "Thursday", period: "Morning", time: "07:30 AM", activity: "Bhangra" },
+  { day: "Friday", period: "Morning", time: "07:30 AM", activity: "HIIT" },
+];
+
+// ─── App Section ──────────────────────────────────────────────────────────────
+
+export const APP_SECTION = {
+  badge: "Technical Lifts App",
+  heading: "Your Gym,",
+  headingAccent: "In Your Pocket",
+  subheading:
+    "Book sessions, track your progress, and stay connected with your coach — all through the official Technical Lifts app.",
+  features: [
+    "Reserve classes & personal training slots",
+    "Track workouts & daily progress",
+    "Refer friends and earn rewards",
+    "Nutrition & hydration dashboard",
+  ],
+  playStoreUrl:
+    "https://play.google.com/store/search?q=technical+lifts&c=apps",
+  appStoreUrl: "#",
+  footnote: "Available on Android. iOS coming soon.",
+};
+
 // ─── Contact Form ─────────────────────────────────────────────────────────────
 
 export const CONTACT_FORM = {
@@ -619,6 +671,19 @@ export const IMAGE_ASSETS = {
       src: "/photos-og/DSC02652.webp",
       alt: "Member holding dumbbells in gym",
     },
+  ],
+  // One image per facility — aligned 1:1 with FACILITIES array in constants.ts
+  // TODO: replace each src with a properly labelled photo once gym photos are sorted
+  facilities: [
+    { src: "/photos-og/DSC02562.webp", alt: "Machine section at Technical Lifts" },
+    { src: "/photos-og/DSC02566.webp", alt: "Cardio zone at Technical Lifts" },
+    { src: "/photos-og/DSC02625.webp", alt: "Shower rooms at Technical Lifts" },
+    { src: "/photos-og/DSC02621.webp", alt: "Steam room at Technical Lifts" },
+    { src: "/photos-og/DSC02579.webp", alt: "Spin bikes at Technical Lifts" },
+    { src: "/photos-og/DSC02584.webp", alt: "Training floor at Technical Lifts" },
+    { src: "/photos-og/DSC02572.webp", alt: "Locker rooms at Technical Lifts" },
+    { src: "/photos-og/DSC02652.webp", alt: "Parking available at Technical Lifts" },
+    { src: "/photos-og/DSC02553.webp", alt: "Fit Cafe — By Technical Lifts" },
   ],
   personalTraining: {
     // TODO: Replace with: /gym/gallery/personal-training.webp

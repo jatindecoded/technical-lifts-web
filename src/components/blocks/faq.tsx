@@ -28,7 +28,7 @@ export const FAQ = ({
     <section className={cn("py-section bg-dark", className)}>
       <div className="container">
         <div className={cn("grid gap-16 lg:grid-cols-12", className2)}>
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-4">
             <SectionHeader
               badge="FAQ"
               title={FAQ_SECTION.heading}
@@ -45,9 +45,29 @@ export const FAQ = ({
               </Link>
               .
             </p>
+
+            <div className="mt-10 space-y-4 border-t border-white/[0.06] pt-10">
+              <div>
+                <p className="text-text-muted text-xs font-bold uppercase tracking-widest">Timings</p>
+                <p className="text-text-base mt-1 text-sm font-medium">Mon – Sun: 5AM – 12AM</p>
+              </div>
+              <div>
+                <p className="text-text-muted text-xs font-bold uppercase tracking-widest">Location</p>
+                <p className="text-text-base mt-1 text-sm font-medium">C-596, Vikas Puri, New Delhi</p>
+              </div>
+              <div>
+                <p className="text-text-muted text-xs font-bold uppercase tracking-widest">Call / WhatsApp</p>
+                <Link
+                  href="tel:+918920576059"
+                  className="text-primary mt-1 block text-sm font-bold hover:underline"
+                >
+                  +91-89205-76059
+                </Link>
+              </div>
+            </div>
           </div>
 
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-8">
             <Accordion type="single" collapsible className="w-full space-y-4">
               {FAQ_ITEMS.map((item, i) => (
                 <AccordionItem

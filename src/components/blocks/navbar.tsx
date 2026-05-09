@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -54,9 +55,19 @@ export const Navbar = () => {
         <div className="flex items-center justify-between px-6 py-2">
           <Link
             href="/"
-            className="text-primary flex shrink-0 items-center gap-2 font-bold uppercase"
+            className="flex shrink-0 items-center gap-2.5"
           >
-            {SITE.name}
+            <Image
+              src="/technical_lifts_logo.jpg"
+              alt={SITE.name}
+              width={36}
+              height={36}
+              className="rounded-lg object-contain"
+              priority
+            />
+            <span className="text-primary font-heading text-sm font-bold uppercase tracking-wide">
+              {SITE.name}
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import { SplitReveal } from "./split-reveal";
 
@@ -23,9 +23,7 @@ export const SectionHeader = ({
   description,
   align = "left",
   className,
-  level = "h2",
 }: SectionHeaderProps) => {
-  const Tag = level as React.ElementType;
 
   return (
     <div
@@ -41,13 +39,13 @@ export const SectionHeader = ({
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-primary text-[10px] font-bold uppercase"
+        className="bg-primary text-dark inline-flex items-center rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider"
       >
         {badge}
       </motion.div>
-      <Tag className="max-w-4xl">
+      <h2 className="max-w-4xl">
         <SplitReveal text={title} />
-      </Tag>
+      </h2>
       {description && (
         <p
           className={cn(

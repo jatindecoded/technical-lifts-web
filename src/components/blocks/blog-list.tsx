@@ -3,7 +3,7 @@ import React from "react";
 
 import Link from "next/link";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "motion/react";
 
 import { BLOG_POSTS } from "@/lib/constants";
 

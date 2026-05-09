@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
 
 import { CTA } from "@/components/ui/cta";
 import { BLOG_POSTS } from "@/lib/constants";

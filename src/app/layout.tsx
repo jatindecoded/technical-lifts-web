@@ -29,6 +29,18 @@ export const metadata: Metadata = {
     "personal training vikaspuri",
     "fitness center vikaspuri",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico", sizes: "48x48" },
+      { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: [
+      { url: "/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "manifest", url: "/favicon/site.webmanifest" },
+    ],
+  },
   openGraph: {
     title: "Technical Lifts - Best Gym in Vikaspuri | Personal Training",
     description:
@@ -49,6 +61,13 @@ export default function RootLayout({
       className={`${bricolageGrotesque.variable} ${inter.variable}`}
     >
       <head>
+        <link rel="icon" href="/favicon/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon/favicon-96x96.png" sizes="96x96" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <meta name="theme-color" content="#0A0A0A" />
+        <meta name="msapplication-TileColor" content="#0A0A0A" />
+        <meta name="msapplication-TileImage" content="/favicon/web-app-manifest-192x192.png" />
       </head>
       <body className="bg-dark font-body antialiased">
         <Navbar />

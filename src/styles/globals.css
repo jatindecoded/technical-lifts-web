@@ -68,6 +68,10 @@
 }
 
 @layer base {
+  html {
+    font-size: 17px;
+  }
+
   *,
   *::before,
   *::after {
@@ -117,7 +121,7 @@ h6 {
 }
 
 h1 {
-  @apply text-3xl md:text-5xl;
+  @apply text-4xl md:text-5xl;
 }
 
 h2 {

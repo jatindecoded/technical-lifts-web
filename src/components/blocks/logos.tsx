@@ -5,6 +5,8 @@ import {
   TrendingUp,
   Target,
   Dumbbell,
+  Coffee,
+  Zap,
 } from "lucide-react";
 import Marquee from "react-fast-marquee";
 
@@ -17,6 +19,8 @@ const iconMap = {
   TrendingUp,
   Target,
   Dumbbell,
+  Coffee,
+  Zap,
 };
 
 export const Logos = () => {

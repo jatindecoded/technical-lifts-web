@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
-
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import { DashedLine } from "../dashed-line";
 import { SectionHeader } from "../ui/section-header";
@@ -11,7 +9,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CardHeading } from "@/components/ui/card-heading";
 import {
   FEATURE_SECTIONS,
-  IMAGE_ASSETS,
   SITE,
   WHO_ITS_FOR,
 } from "@/lib/constants";
@@ -52,7 +49,7 @@ export const Features = () => {
                 className="flex flex-1 max-md:flex-col"
               >
                 <div className="flex-1 p-8">
-                  <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.05] shadow-inner">
+                  {/* <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.05] shadow-inner">
                     <Image
                       src={
                         IMAGE_ASSETS.whoItsFor[
@@ -67,9 +64,9 @@ export const Features = () => {
                       fill
                       className="object-cover transition-transform duration-1000 hover:scale-105"
                     />
-                  </div>
+                  </div> */}
 
-                  <div className="mt-10 space-y-6">
+                  <div className="space-y-6">
                     <CardHeading
                       as="h4"
                       className="text-text-base text-3xl font-bold"

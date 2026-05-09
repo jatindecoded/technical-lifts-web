@@ -4,11 +4,11 @@ import React from "react";
 
 import Image from "next/image";
 
-import { motion } from "framer-motion";
 import { DumbbellIcon } from "lucide-react";
+import { motion } from "motion/react";
 
 import { DashedLine } from "../dashed-line";
-import { SplitReveal } from "../ui/split-reveal";
+import { SectionHeader } from "../ui/section-header";
 
 import { CTA } from "@/components/ui/cta";
 import {
@@ -64,8 +64,8 @@ const topItems: SectionItem[] = [
       {
         src: IMAGE_ASSETS.personalTraining.src,
         alt: IMAGE_ASSETS.personalTraining.alt,
-        width: 495,
-        height: 420,
+        width: 360,
+        height: 270,
       },
     ],
     className:
@@ -74,21 +74,6 @@ const topItems: SectionItem[] = [
   },
 ];
 
-const bottomItems: SectionItem[] = FACILITIES.map((facility, index) => ({
-  title: facility,
-  description: "",
-  images: [
-    {
-      src: IMAGE_ASSETS.whoItsFor[index]?.src,
-      alt: IMAGE_ASSETS.whoItsFor[index]?.alt,
-      width: 495,
-      height: 420,
-    },
-  ],
-  className: "",
-  fade: index % 2 === 0 ? ["bottom"] : [""],
-}));
-
 export const ResourceAllocation = () => {
   return (
     <section
@@ -96,18 +81,11 @@ export const ResourceAllocation = () => {
       className="py-section bg-dark overflow-hidden"
     >
       <div className="container">
-        <div className="mb-16 flex flex-col items-center justify-center gap-6 text-center lg:items-start lg:text-left">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-primary text-[10px] font-bold uppercase"
-          >
-            Personal Training
-          </motion.div>
-          <h2 className="">
-            <SplitReveal text={FEATURE_SECTIONS.personalTrainingHeading} />
-          </h2>
-        </div>
+        <SectionHeader
+          badge="Personal Training"
+          title={FEATURE_SECTIONS.personalTrainingHeading}
+          className="mb-16"
+        />
 
         <div className="mt-8 md:mt-12">
           <DashedLine orientation="horizontal" className="opacity-30" />
@@ -134,40 +112,50 @@ export const ResourceAllocation = () => {
 
           <DashedLine orientation="horizontal" className="opacity-30" />
 
-          <div
-            className="my-24 flex flex-col items-center justify-center gap-6 text-center lg:my-32 lg:items-start lg:text-left"
-            id="facilities"
-          >
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-primary text-[10px] font-bold uppercase"
-            >
-              Facilities
-            </motion.div>
-            <h2 className="">
-              <SplitReveal text={FEATURE_SECTIONS.facilitiesHeading} />
-            </h2>
+          <div id="facilities" className="my-24 lg:my-32">
+            <SectionHeader
+              badge="Facilities"
+              title={FEATURE_SECTIONS.facilitiesHeading}
+              className="[&_h2]:text-balance"
+            />
           </div>
 
           <motion.div
-            className="relative grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3"
+            className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
             variants={{
               hidden: {},
-              show: { transition: { staggerChildren: 0.08 } },
+              show: { transition: { staggerChildren: 0.07 } },
             }}
           >
-            {bottomItems.map((item, i) => (
-              <Item
-                key={i}
-                item={item}
-                isLast={i === bottomItems.length - 1}
-                className="md:pb-0"
-              />
-            ))}
+            {FACILITIES.map((facility, i) => {
+              const img = IMAGE_ASSETS.facilities[i] ?? IMAGE_ASSETS.facilities[0];
+              return (
+                <motion.div
+                  key={i}
+                  variants={motionItem}
+                  className="bg-surface border-white/[0.08] group relative overflow-hidden rounded-xl border"
+                >
+                  <div className="relative aspect-[4/3] w-full overflow-hidden">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 27vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  </div>
+                  <div className="p-4">
+                    <h4 className="text-text-base text-sm font-bold uppercase tracking-wide">
+                      {facility}
+                    </h4>
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div>
 
           <motion.p
@@ -282,7 +270,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
               alt={image.alt}
               width={image.width}
               height={image.height}
-              className="aspect-[9/16] rounded-2xl object-cover object-left-top"
+              className="max-w-xs rounded-2xl object-cover object-left-top lg:max-w-sm aspect-[4/3]"
             />
           ))}
         </div>

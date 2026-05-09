@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 import Link from "next/link";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Check, X } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 import { SectionHeader } from "../ui/section-header";
 
@@ -225,7 +225,7 @@ export const Pricing = ({ className }: { className?: string }) => {
               {PRICING_SECTION.footnote}{" "}
               <Link
                 href={`tel:${SITE.phone.replace(/\D/g, "")}`}
-                className="text-primary font-bold not-italic hover:underline"
+                className="text-primary whitespace-nowrap font-bold not-italic hover:underline"
               >
                 {SITE.phone}
               </Link>
