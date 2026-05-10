@@ -20,7 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Technical Lifts - Best Gym in Vikaspuri | Personal Training",
+  title: "Technical Lifts — Vikaspuri's Premier Gym | Train With Purpose",
   description:
     "Top-rated gym in Vikaspuri with certified personal trainers, full equipment, and real transformation results. Book your free trial today.",
   keywords: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Technical Lifts - Best Gym in Vikaspuri | Personal Training",
+    title: "Technical Lifts — Vikaspuri's Premier Gym | Train With Purpose",
     description:
       "Top-rated gym in Vikaspuri with certified personal trainers, full equipment, and real transformation results. Book your free trial today.",
     type: "website",

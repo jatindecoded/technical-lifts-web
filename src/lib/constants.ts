@@ -56,7 +56,7 @@ export const HERO_FEATURES = [
     iconName: "Users",
   },
   {
-    title: "Serious Equipment",
+    title: "Premuium Equipment",
     description:
       "Squat racks, deadlift platforms, full machine section — no compromises.",
     iconName: "Zap",

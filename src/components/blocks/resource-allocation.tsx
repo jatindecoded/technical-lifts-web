@@ -82,7 +82,7 @@ export const ResourceAllocation = () => {
     >
       <div className="container">
         <SectionHeader
-          badge="Personal Training"
+          badge="Train With Purpose"
           title={FEATURE_SECTIONS.personalTrainingHeading}
           className="mb-16"
         />
