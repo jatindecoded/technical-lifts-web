@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://technicallifts.com
+
+# Sitemaps
+Sitemap: https://technicallifts.com/sitemap.xml

@@ -9,4 +9,5 @@ module.exports = {
       { userAgent: "*", allow: "/" },
     ],
   },
+ generateIndexSitemap: false
 };
