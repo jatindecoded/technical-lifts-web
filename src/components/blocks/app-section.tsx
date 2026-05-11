@@ -64,6 +64,16 @@ export const AppSection = () => {
                 <Smartphone className="size-4" />
                 Get on Android
               </a>
+
+              <a
+                href={APP_SECTION.appStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-primary text-dark font-heading flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-bold uppercase transition-opacity hover:opacity-90"
+              >
+                <Smartphone className="size-4" />
+                Get on iOS
+              </a>
             </motion.div>
 
             <motion.p

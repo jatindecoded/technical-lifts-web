@@ -66,9 +66,9 @@ export const GroupClasses = () => {
               variants={item}
               className="bg-dark flex flex-col gap-4 rounded-2xl border border-white/[0.08] p-6"
             >
-              <h3 className="font-heading text-text-base text-sm font-bold uppercase tracking-widest">
+              <h4 className="font-heading text-text-base text-sm font-bold tracking-widest">
                 {day}
-              </h3>
+              </h4>
 
               {classes.length === 0 ? (
                 <p className="text-text-muted text-xs italic">Rest Day</p>

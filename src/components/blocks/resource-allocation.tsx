@@ -149,7 +149,7 @@ export const ResourceAllocation = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   </div>
                   <div className="p-4">
-                    <h4 className="text-text-base text-sm font-bold uppercase tracking-wide">
+                    <h4 className="text-text-base text-sm font-bold tracking-wide">
                       {facility}
                     </h4>
                   </div>

@@ -586,8 +586,8 @@ export const APP_SECTION = {
   ],
   playStoreUrl:
     "https://play.google.com/store/search?q=technical+lifts&c=apps",
-  appStoreUrl: "#",
-  footnote: "Available on Android. iOS coming soon.",
+  appStoreUrl: "https://apps.apple.com/us/app/technical-lifts/id6760121347",
+  footnote: "Available on Android and iOS both.",
 };
 
 // ─── Contact Form ─────────────────────────────────────────────────────────────
@@ -677,11 +677,11 @@ export const IMAGE_ASSETS = {
   facilities: [
     { src: "/photos-og/DSC02562.webp", alt: "Machine section at Technical Lifts" },
     { src: "/photos-og/DSC02566.webp", alt: "Cardio zone at Technical Lifts" },
-    { src: "/photos-og/DSC02625.webp", alt: "Shower rooms at Technical Lifts" },
-    { src: "/photos-og/DSC02621.webp", alt: "Steam room at Technical Lifts" },
+    { src: "/photos-og/chiller-room.webp", alt: "Chiller rooms at Technical Lifts" },
+    { src: "/photos-og/steam-room.webp", alt: "Steam room at Technical Lifts" },
     { src: "/photos-og/DSC02579.webp", alt: "Spin bikes at Technical Lifts" },
     { src: "/photos-og/DSC02584.webp", alt: "Training floor at Technical Lifts" },
-    { src: "/photos-og/DSC02572.webp", alt: "Locker rooms at Technical Lifts" },
+    { src: "/photos-og/locker-room.webp", alt: "Locker rooms at Technical Lifts" },
     { src: "/photos-og/DSC02652.webp", alt: "Parking available at Technical Lifts" },
     { src: "/photos-og/DSC02553.webp", alt: "Fit Cafe — By Technical Lifts" },
   ],

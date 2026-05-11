@@ -65,7 +65,7 @@ export const Navbar = () => {
               className="rounded-lg object-contain"
               priority
             />
-            <span className="text-primary font-heading text-sm font-bold uppercase tracking-wide">
+            <span className="text-primary text-sm font-bold uppercase tracking-wide">
               {SITE.name}
             </span>
           </Link>
