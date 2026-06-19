@@ -613,6 +613,13 @@ export const CONTACT_FORM = {
   recipientEmail: "hello@technical-lifts.example",
 };
 
+// ─── Tally Form ────────────────────────────────────────────────────────────────
+
+export const TALLY_FORM_URL =
+  "https://tally.so/embed/b5gd2e?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+
+export const DISCORD_WEBHOOK_URL = "";
+
 // ─── Images ───────────────────────────────────────────────────────────────────
 // Drop real photos from the Drive into public/gym/ and update paths here.
 // TODO: Replace placeholder image paths with production assets when available.

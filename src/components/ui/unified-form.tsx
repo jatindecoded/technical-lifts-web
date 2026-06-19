@@ -9,14 +9,19 @@ import { MapPin, Phone } from "lucide-react";
 
 import { Input as BaseInput } from "@/components/ui/input";
 import { Textarea as BaseTextarea } from "@/components/ui/textarea";
-import { SITE } from "@/lib/constants";
+import { DISCORD_WEBHOOK_URL, SITE, TALLY_FORM_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 type TallyWindow = { Tally?: { loadEmbeds?: () => void } };
 
+const tallyFormUrl =
+  process.env.NEXT_PUBLIC_TALLY_FORM_URL || TALLY_FORM_URL;
+const discordWebhookUrl =
+  process.env.NEXT_PUBLIC_DISCORD_WEBHOOK_URL || DISCORD_WEBHOOK_URL;
+
 export default function UnifiedForm() {
   React.useEffect(() => {
-    function handleMessage(e: MessageEvent) {
+    async function handleMessage(e: MessageEvent) {
       if (
         typeof e.data === "string" &&
         e.data.includes("Tally.FormSubmitted")
@@ -27,6 +32,30 @@ export default function UnifiedForm() {
           window.dispatchEvent(
             new CustomEvent("lead-submitted", { detail: payload }),
           );
+
+          if (discordWebhookUrl && payload) {
+            fetch(discordWebhookUrl, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                content: null,
+                embeds: [
+                  {
+                    title: "New Lead Form Submission",
+                    color: 0x00ff00,
+                    fields: Object.entries(payload.responses ?? {}).map(
+                      ([key, value]) => ({
+                        name: key,
+                        value: String(value),
+                        inline: true,
+                      }),
+                    ),
+                    timestamp: new Date().toISOString(),
+                  },
+                ],
+              }),
+            }).catch(() => {});
+          }
         } catch {}
       }
     }
@@ -37,7 +66,7 @@ export default function UnifiedForm() {
   return (
     <div className="bg-surface w-full rounded-2xl border border-white/[0.08] p-8">
       <iframe
-        data-tally-src="https://tally.so/embed/81PqoY?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        data-tally-src={tallyFormUrl}
         loading="lazy"
         width="100%"
         height="265"
