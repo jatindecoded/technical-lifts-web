@@ -304,7 +304,7 @@ export const TRAINERS: Trainer[] = [
     experience: "4 Years",
     results: "Helped 40+ clients lose 6–10 kg",
     approach: "Focuses on simple, sustainable routines for busy professionals",
-    photo: "/trainer-photos/DSC03356.JPG.jpeg",
+    photo: "/trainer-photos/DSC03356.JPG.webp",
   },
   {
     name: "Sunny",
@@ -315,7 +315,7 @@ export const TRAINERS: Trainer[] = [
     results: "Improved strength & flexibility for 30+ beginner clients",
     approach:
       "Beginner-friendly coaching with focus on correct form & injury prevention",
-    photo: "/trainer-photos/DSC03357.JPG.jpeg",
+    photo: "/trainer-photos/DSC03357.JPG.webp",
   },
   {
     name: "Surender",
@@ -324,7 +324,7 @@ export const TRAINERS: Trainer[] = [
     experience: "5 Years",
     results: "Helped 25+ clients gain lean muscle and improve physique",
     approach: "Structured workout plans with practical diet guidance",
-    photo: "/trainer-photos/DSC03359.JPG.jpeg",
+    photo: "/trainer-photos/DSC03359.JPG.webp",
   },
 ];
 
