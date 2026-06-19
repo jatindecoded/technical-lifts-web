@@ -25,9 +25,7 @@ export default function UnifiedForm() {
         e.data.includes("Tally.FormSubmitted")
       ) {
         try {
-          console.log("Received form submission message", e.data);
           const parsed = JSON.parse(e.data);
-          console.log("Parsed message", parsed);
           const payload = parsed.payload;
           window.dispatchEvent(
             new CustomEvent("lead-submitted", { detail: payload }),
