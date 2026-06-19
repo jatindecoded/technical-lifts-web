@@ -20,11 +20,17 @@ export default function Contact() {
       <div className="container max-w-5xl">
         <SectionHeader
           badge="Contact"
-          title="Come Train With Us"
+          title="Book a Free Trial"
           description="Drop in, call, or send a message. We'll get back to you fast."
           align="center"
-          className="mb-16"
+          className="mb-10"
         />
+
+        <DashedLine className="mb-12 opacity-20" />
+
+        <div className="mx-auto mb-24 max-w-2xl">
+          <ContactForm />
+        </div>
 
         <div className="grid gap-6 sm:grid-cols-3">
           <Card className="bg-surface h-full overflow-hidden rounded-2xl border-white/[0.08] shadow-2xl">
@@ -93,16 +99,6 @@ export default function Contact() {
               )}
             </CardContent>
           </Card>
-        </div>
-
-        <DashedLine className="my-24 opacity-20" />
-
-        <div className="mx-auto max-w-2xl">
-          <div className="mb-12 space-y-4 text-center">
-            <div className="text-primary text-[10px] font-bold">Enquiry</div>
-            <h2 className="font-heading text-3xl font-bold">Send a Message</h2>
-          </div>
-          <ContactForm />
         </div>
       </div>
     </section>

@@ -593,7 +593,7 @@ export const APP_SECTION = {
 // ─── Contact Form ─────────────────────────────────────────────────────────────
 
 export const CONTACT_FORM = {
-  heading: "Send a Message",
+  heading: "Book a Free Trial",
   submitLabel: "Send Message",
   submittingLabel: "Sending...",
   successHeading: "Here you go.",
@@ -616,9 +616,9 @@ export const CONTACT_FORM = {
 // ─── Tally Form ────────────────────────────────────────────────────────────────
 
 export const TALLY_FORM_URL =
-  "https://tally.so/embed/b5gd2e?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+  "https://tally.so/embed/b5gd2e?hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1";
 
-export const DISCORD_WEBHOOK_URL = "";
+export const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1517496152092573709/PTBRQRbEn3MLs4Syeb70Lfu1G1tl7OZ0vHffiYzrY8FJZch4azFDJdX40RW2GUcWpfw5";
 
 // ─── Images ───────────────────────────────────────────────────────────────────
 // Drop real photos from the Drive into public/gym/ and update paths here.

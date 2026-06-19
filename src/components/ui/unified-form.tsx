@@ -12,8 +12,6 @@ import { Textarea as BaseTextarea } from "@/components/ui/textarea";
 import { DISCORD_WEBHOOK_URL, SITE, TALLY_FORM_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
-type TallyWindow = { Tally?: { loadEmbeds?: () => void } };
-
 const tallyFormUrl =
   process.env.NEXT_PUBLIC_TALLY_FORM_URL || TALLY_FORM_URL;
 const discordWebhookUrl =
@@ -27,32 +25,30 @@ export default function UnifiedForm() {
         e.data.includes("Tally.FormSubmitted")
       ) {
         try {
+          console.log("Received form submission message", e.data);
           const parsed = JSON.parse(e.data);
+          console.log("Parsed message", parsed);
           const payload = parsed.payload;
           window.dispatchEvent(
             new CustomEvent("lead-submitted", { detail: payload }),
           );
 
           if (discordWebhookUrl && payload) {
+            const val = (title: string) =>
+              payload.fields?.find(
+                (f: { title: string }) => f.title === title,
+              )?.answer?.value ?? "—";
+
             fetch(discordWebhookUrl, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
-                content: null,
-                embeds: [
-                  {
-                    title: "New Lead Form Submission",
-                    color: 0x00ff00,
-                    fields: Object.entries(payload.responses ?? {}).map(
-                      ([key, value]) => ({
-                        name: key,
-                        value: String(value),
-                        inline: true,
-                      }),
-                    ),
-                    timestamp: new Date().toISOString(),
-                  },
-                ],
+                content: [
+                  "TECHNICAL_LIFTS_TRIAL_BOOKED",
+                  `Name: ${val("Name")}`,
+                  `Email: ${val("Email address")}`,
+                  `Phone: ${val("Phone number")}`,
+                ].join("\n"),
               }),
             }).catch(() => {});
           }
@@ -69,19 +65,28 @@ export default function UnifiedForm() {
         data-tally-src={tallyFormUrl}
         loading="lazy"
         width="100%"
-        height="265"
+        height="253"
         frameBorder={0}
         marginHeight={0}
         marginWidth={0}
-        title="Registration Form Template"
+        title="Technical Lifts"
       />
 
       <Script
-        src="https://tally.so/widgets/embed.js"
-        onLoad={() => {
-          try {
-            (window as TallyWindow).Tally?.loadEmbeds?.();
-          } catch {}
+        id="tally-embed"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `
+var d=document,w="https://tally.so/widgets/embed.js",v=function(){
+  "undefined"!=typeof Tally
+    ? Tally.loadEmbeds()
+    : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})
+};
+if("undefined"!=typeof Tally) v();
+else if(d.querySelector('script[src="'+w+'"]')==null){
+  var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);
+}
+          `,
         }}
       />
 
